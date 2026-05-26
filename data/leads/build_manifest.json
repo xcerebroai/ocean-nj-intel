@@ -3,24 +3,17 @@
   "county_name": "Ocean County",
   "state_name": "New Jersey",
   "framework_version": "v5.5.0",
-  "build_timestamp": "2026-05-26T18:48:46Z",
+  "build_timestamp": "2026-05-26T21:26:22Z",
   "build_mode": "PARTIAL_BUILD",
-  "total_leads": 1424,
+  "total_leads": 1426,
   "lead_counts_by_signal": {
     "foreclosure_sale_scheduled": 32,
-    "probate_filing_recent": 1392,
-    "foreclosure_complaint_filed": 0
-  },
-  "nj_courts_s4_status": {
-    "source_id": "nj_courts_foreclosure",
-    "leads_emitted": 0,
-    "blocked": true,
-    "block_status": "MISSING",
-    "block_detail": "cookie jar not found at /Users/quentinflores/Dev/xcerebro/counties/ocean-nj/runs/ocean_nj/.session_njcourts.json — the operator must complete the registration + cookie-capture handoff (runs/ocean_nj/recon/operator_verified_sources.yml)"
+    "foreclosure_notice_published": 2,
+    "probate_filing_recent": 1392
   },
   "lead_counts_by_status": {
     "APPROVED_FOR_DASHBOARD": 22,
-    "REVIEW_REQUIRED": 1402
+    "REVIEW_REQUIRED": 1404
   },
   "parcel_join": {
     "hits": 24,
@@ -48,24 +41,7 @@
         "OWNER_STATUS"
       ],
       "source_role": "BLOCKED_SOURCE",
-      "reported_at": "2026-05-26T18:02:32Z",
-      "v5_5_0_recon_anchor": "runs/ocean_nj/recon/source_of_record_matrix.json#sources"
-    },
-    {
-      "source_id": "nj_courts_civil",
-      "name": "NJ Courts Civil + Foreclosure Public Access",
-      "url": "https://www.njcourts.gov/public/find-a-case/civil-and-foreclosure-public-access",
-      "intended_role": "PRIMARY_EVENT_SOURCE",
-      "failure_classification": "LOGIN_REQUIRED",
-      "blocker_detail": "Registration required for all searches; no anonymous public tier.",
-      "operator_unlock": [
-        "Operator registers public NJ Courts account; supplies session cookie via operator_verified_sources.yml.nj_courts_civil.session_cookie"
-      ],
-      "intended_lead_origins": [
-        "RECORDED_EVENT"
-      ],
-      "source_role": "BLOCKED_SOURCE",
-      "reported_at": "2026-05-26T18:02:32Z",
+      "reported_at": "2026-05-26T21:26:21Z",
       "v5_5_0_recon_anchor": "runs/ocean_nj/recon/source_of_record_matrix.json#sources"
     },
     {
@@ -82,7 +58,7 @@
         "RECORDED_EVENT"
       ],
       "source_role": "BLOCKED_SOURCE",
-      "reported_at": "2026-05-26T18:02:32Z",
+      "reported_at": "2026-05-26T21:26:21Z",
       "v5_5_0_recon_anchor": "runs/ocean_nj/recon/source_of_record_matrix.json#sources"
     },
     {
@@ -100,7 +76,7 @@
         "TAX_DEFAULT"
       ],
       "source_role": "BLOCKED_SOURCE",
-      "reported_at": "2026-05-26T18:02:32Z",
+      "reported_at": "2026-05-26T21:26:21Z",
       "v5_5_0_recon_anchor": "runs/ocean_nj/recon/source_of_record_matrix.json#sources"
     },
     {
@@ -115,7 +91,7 @@
       ],
       "intended_lead_origins": [],
       "source_role": "BLOCKED_SOURCE",
-      "reported_at": "2026-05-26T18:02:32Z",
+      "reported_at": "2026-05-26T21:26:21Z",
       "v5_5_0_recon_anchor": "runs/ocean_nj/recon/source_of_record_matrix.json#sources"
     }
   ]

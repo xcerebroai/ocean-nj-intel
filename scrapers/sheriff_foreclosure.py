@@ -252,17 +252,40 @@ def _iso_date(mdy: Optional[str]) -> Optional[str]:
 # ---------------------------------------------------------------------------
 
 
-def _wrap(entry: dict, *, source_url: str, fetched_at: str, sale_date_iso: Optional[str]) -> dict:
+def _classify_event(status: Optional[str], pe_iso: Optional[str]) -> str:
+    """v5.5.0 §3.9 classification on a sheriff row.
+
+    - CANCELLATION                       → HISTORICAL_CONTEXT_ONLY
+    - BANKRUPTCY (no scheduled date)     → HISTORICAL_CONTEXT_ONLY
+    - effective sale date in past        → PAST_SALE
+    - effective sale date today/future   → UPCOMING_SALE
+    - no effective sale date             → UPCOMING_SALE (conservative)
+    """
+    s = (status or "").upper()
+    if "CANCELLATION" in s or "BANKRUPTCY" in s:
+        return "HISTORICAL_CONTEXT_ONLY"
+    if not pe_iso:
+        return "UPCOMING_SALE"
+    try:
+        pe_d = datetime.strptime(pe_iso, "%Y-%m-%d").date()
+    except ValueError:
+        return "UPCOMING_SALE"
+    today = datetime.now(timezone.utc).date()
+    return "UPCOMING_SALE" if pe_d >= today else "PAST_SALE"
+
+
+def _wrap(entry: dict, *, source_url: str, fetched_at: str,
+          sale_date_iso: Optional[str]) -> dict:
     docket = entry["chancery_docket"].replace(" ", "_")
     raw_record_id = f"{SOURCE_ID}:{docket}"
     primary_event_date = entry.get("adjournment_date") or sale_date_iso
     payload = dict(entry)
     payload["sale_date"] = sale_date_iso
+    payload["effective_sale_date"] = primary_event_date
     payload["primary_event_date"] = primary_event_date
     payload["doc_type"] = "sheriff_sale_listing"
-    payload["scheduled_event_classification_hint"] = (
-        "HISTORICAL_CONTEXT_ONLY" if (entry.get("status") or "").upper().startswith("CANCELLATION")
-        else "UPCOMING_SALE"
+    payload["scheduled_event_classification_hint"] = _classify_event(
+        entry.get("status"), primary_event_date,
     )
     return {
         "raw_record_id": raw_record_id,
@@ -301,7 +324,20 @@ def _now_iso() -> str:
     return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
-def run(out_path: Optional[Path] = None, pdf_url_override: Optional[str] = None) -> int:
+def run(out_path: Optional[Path] = None,
+        pdf_url_override: Optional[str] = None,
+        forward_window_days: int = 90) -> int:
+    """Pull the Ocean County Sheriff foreclosure-listing PDF, parse each
+    entry, classify per §3.9, and DEDUPE-MERGE into the jsonl by
+    chancery_docket (so the §6.6 forward window builds up across daily
+    refreshes — the sheriff overwrites a SINGLE PDF GUID each week, and
+    we cannot retrieve past weeks from the live site).
+
+    `forward_window_days` parameter is recorded on the manifest for §6.6
+    contract. Entries with `effective_sale_date` beyond the window are
+    KEPT (raw data is immutable per FRAMEWORK_VERSION.locked_rules), but
+    the classification hint correctly marks them PAST_SALE.
+    """
     out_path = out_path or REPO_ROOT / "data" / "raw" / f"{SOURCE_ID}.jsonl"
     out_path.parent.mkdir(parents=True, exist_ok=True)
 
@@ -329,9 +365,22 @@ def run(out_path: Optional[Path] = None, pdf_url_override: Optional[str] = None)
             fh.write(json.dumps(r, ensure_ascii=False) + "\n")
     tmp.replace(out_path)
 
+    # Coverage report — how many distinct sale dates this pull covers.
+    sale_dates = sorted({
+        r["raw_payload"].get("effective_sale_date")
+        for r in by_id.values()
+        if r["raw_payload"].get("effective_sale_date")
+    })
+    classes = {}
+    for r in by_id.values():
+        c = r["raw_payload"].get("scheduled_event_classification_hint", "?")
+        classes[c] = classes.get(c, 0) + 1
     print(
-        f"[{SOURCE_ID}] sale_date={sale_date_mdy} entries_parsed={len(entries)} "
-        f"records_in_file={len(by_id)} pdf={pdf_url.rsplit('/', 1)[-1]}"
+        f"[{SOURCE_ID}] this_pdf_sale_date={sale_date_mdy} "
+        f"entries_parsed={len(entries)} records_in_file={len(by_id)} "
+        f"distinct_effective_sale_dates={len(sale_dates)} "
+        f"forward_window_days={forward_window_days} "
+        f"classes={classes}"
     )
     return 0
 

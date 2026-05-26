@@ -1,0 +1,41 @@
+{
+  "recon_step": "v5.5.0 §1.5 OFFICIAL-VENUE TEST — Auction.com for Ocean County NJ",
+  "performed_at": "2026-05-26",
+  "platform": "auction.com",
+  "default_classification": {
+    "verdict": "CONDITIONAL_REQUIRES_EVIDENCE",
+    "rationale": "PRIMARY_EVENT_SOURCE only in counties where recon documents that the sheriff / trustee officially conducts the sale through Auction.com; otherwise REJECTED_SOURCE.",
+    "requires_county_evidence": true,
+    "evidence_provided": false,
+    "suggested_role": null
+  },
+  "recon_evidence_gathered": {
+    "ocean_county_sheriff_official_page": {
+      "url": "https://sheriff.co.ocean.nj.us/frmForeclosures",
+      "verbatim_venue_text": "Sheriff's Sales are held at Administration Building 101 Hooper Avenue, Room 119",
+      "verbatim_timing_text": "Sales are conducted on Tuesdays at 2:00 pm except on legal holidays",
+      "auction_com_mentioned": false,
+      "any_third_party_platform_mentioned": false
+    },
+    "ocean_county_sheriff_news_announcement_june_3_2026": {
+      "url": "https://sheriff.co.ocean.nj.us/frmRegContent.aspx?ID=de04d89f-16be-44a7-b765-fbcaa25bfa56",
+      "auction_com_mentioned": false,
+      "any_third_party_platform_mentioned": false
+    },
+    "ocean_county_sheriff_homepage": {
+      "url": "https://sheriff.co.ocean.nj.us/",
+      "auction_com_mentioned": false,
+      "any_third_party_platform_mentioned": false
+    }
+  },
+  "final_verdict": "REJECTED_SOURCE",
+  "final_verdict_rationale": "Ocean County Sheriff's own foreclosures page designates the in-person venue (101 Hooper Avenue, Room 119, Tuesdays 2pm). No designation of Auction.com on the sheriff's page, sale-announcement page, or homepage. Per §1.5 the required evidence (an official_designation_url + officer_or_office) is ABSENT, so Auction.com falls back to REJECTED_SOURCE.  Auction.com's https://www.auction.com/residential/nj/ocean-county listings are a MARKETPLACE RE-LISTING of events conducted by the Ocean County Sheriff in-person — exactly the §1.5 disqualifier.",
+  "lead_value_lost": "Zero. S1 sheriff_foreclosure already carries the complete row-set per the sheriff's own PDF (chancery docket, plaintiff, defendant, upset, adjournment, address). Auction.com's re-listings derive from the same source.",
+  "classifier_invocation_for_provenance": {
+    "function": "scaffold.pipeline.source_venue_classifier.classify_source_venue",
+    "args": {
+      "url_or_host": "auction.com",
+      "county_evidence": null
+    }
+  }
+}

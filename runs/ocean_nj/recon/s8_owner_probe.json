@@ -1,0 +1,20 @@
+{
+  "recon_step": "S8 Ocean County Tax Board — owner-of-record exposure probe",
+  "performed_at": "2026-05-26",
+  "portal": "https://tax.co.ocean.nj.us/frmTaxBoardTaxListSearch",
+  "probe_method": "Playwright — select district=Toms River (code 8), block=392, lot=15.11 (CH 780503 from S1 sheriff data), click btnSearch",
+  "verdict": "OWNER_NAMES_REDACTED",
+  "evidence_captured_verbatim": "Ownership names will no longer be available online due to pending Daniel's Law redactions. These records may be searched within the Tax Board office, by the public, during regular business hours.",
+  "evidence_location": "HTML comment block inside the Tax Board search page main panel (immediately preceding the Municipality dropdown label)",
+  "interpretation": "Ocean County Tax Board has redacted owner names from its public-online search to comply with Daniel's Law (P.L. 2020, c. 125), independently of NJOGIS's redaction. The county directs online users to visit the Tax Board office in person to obtain owner names.",
+  "implications": [
+    "S9 NJOGIS — owners redacted (confirmed earlier).",
+    "S8 Tax Board online — owners redacted (this probe).",
+    "Per-municipality assessor portals — likely same Daniel's Law policy across NJ.",
+    "Owner enrichment for Ocean County is STRUCTURALLY UNAVAILABLE via any online automated source.",
+    "The §6.4 publish-gate override `enrichment_join_unavailable=True` remains the correct posture indefinitely for this county — not a stopgap.",
+    "The §3.5 estate-titled owner pathway is NOT closeable via current data sources; surrogate-probate records remain REVIEW_REQUIRED research targets.",
+    "The only path to owner-of-record for Ocean County NJ is an in-person visit to the Tax Board office (101 Hooper Avenue) during business hours OR a §4.31 manual-assisted pull mode operator-research workflow."
+  ],
+  "does_close_daniels_law_gap": false
+}

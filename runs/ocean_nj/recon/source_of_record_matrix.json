@@ -71,19 +71,12 @@
       "id": "S4",
       "name": "NJ Courts Civil + Foreclosure Public Access",
       "url": "https://www.njcourts.gov/public/find-a-case/civil-and-foreclosure-public-access",
-      "source_role": "BLOCKED_SOURCE",
-      "intended_role": "PRIMARY_EVENT_SOURCE",
-      "lead_origin_types_when_unblocked": ["RECORDED_EVENT"],
-      "doc_types_when_unblocked": ["foreclosure_complaint", "final_judgment", "writ_of_execution", "lis_pendens", "motion_to_dismiss", "default_judgment"],
-      "access_status": "BLOCKED",
-      "failure_classification": "LOGIN_REQUIRED",
-      "blocker_detail": "Registration required for all searches; no anonymous public tier.",
-      "operator_unlock_options": [
-        "Operator registers NJ Courts public account; capture session cookie; supply via operator_verified_sources.yml.session_cookie (operator_credentialed_login_allowed: true)"
-      ],
+      "source_role": "REJECTED_SOURCE",
+      "rejected_at": "2026-05-26",
+      "rejection_reason": "Authenticated CIVSearch returns zero records for Ocean + Foreclosure filter. The lead row-set is fully covered by S1 sheriff foreclosure listings (chancery docket + plaintiff + defendant + upset + address per entry).",
+      "successor_source": "sheriff_foreclosure",
       "reliability_grade": "A",
-      "build_priority": "high_value",
-      "p_tier": "P0"
+      "p_tier": "rejected"
     },
     {
       "id": "S5",
@@ -192,10 +185,20 @@
     },
     {
       "id": "REJ2",
-      "name": "Third-party paid aggregators",
-      "examples": ["realtytrac.com", "foreclosure.com", "auction.com", "propertyshark.com", "foreclosurelistings.com"],
+      "name": "Third-party paid aggregators (auction.com singled out per §1.5)",
+      "examples": ["realtytrac.com", "foreclosure.com", "propertyshark.com", "foreclosurelistings.com"],
       "source_role": "REJECTED_SOURCE",
       "reject_reason": "Framework rule: paid aggregators are not primary recon targets (knowledge_base/protocols/01_county_recon.md §01.6 / MASTER_PROMPT §4.7 Layer 5)."
+    },
+    {
+      "id": "S11",
+      "name": "Auction.com (Ocean County listings)",
+      "url": "https://www.auction.com/residential/nj/ocean-county",
+      "source_role": "REJECTED_SOURCE",
+      "venue_classifier_default": "CONDITIONAL_REQUIRES_EVIDENCE",
+      "venue_classifier_final": "REJECTED_SOURCE",
+      "rejection_evidence_ref": "runs/ocean_nj/recon/auction_com_classification.json",
+      "reject_reason": "v5.5.0 §1.5 — Ocean County Sheriff officially designates in-person venue (Administration Bldg, 101 Hooper Ave, Room 119, Tuesdays 2pm). No designation of Auction.com on the sheriff's official pages. Auction.com is a MARKETPLACE RE-LISTING of S1 data. S1 carries the authoritative row-set."
     }
   ],
   "municipalities": {
