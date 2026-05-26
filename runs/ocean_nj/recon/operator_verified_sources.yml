@@ -1,0 +1,66 @@
+# operator_verified_sources.yml — Ocean County NJ
+#
+# Stub for operator-supplied credentials and unlocks. The framework reads
+# this file at scraper-launch time when a BLOCKED_SOURCE has its
+# operator unlock satisfied. Until an entry is filled in here, the
+# corresponding scraper either short-circuits (BLOCKED_SOURCE) or runs
+# in a degraded mode.
+#
+# Locked-rules permissions (from FRAMEWORK_VERSION.json):
+#   captcha_solver_allowed: true
+#   stealth_browser_allowed: true
+#   seeded_session_allowed: true
+#   operator_seeded_session_allowed: true
+#   residential_proxy_allowed: true
+#   operator_credentialed_login_allowed: true
+
+# ---------------------------------------------------------------------
+# S3 — Ocean County Clerk Land Records (CAPTCHA-blocked)
+# ---------------------------------------------------------------------
+clerk_land_records:
+  status: BLOCKED
+  unlock_strategy: null      # one of: "captcha_solver" | "seeded_session" | "alternate_portal" | "opra_bulk"
+  captcha_solver:
+    provider: null           # "2captcha" | "anticaptcha" | null
+    api_key: null
+  seeded_session:
+    cookie_jar_path: null    # path to a .json cookie jar exported from operator browser
+    user_agent: null
+  alternate_portal:
+    base_url: null           # e.g. "https://oceancountyclerk.com/frmSearch"
+
+# ---------------------------------------------------------------------
+# S4 — NJ Courts Civil + Foreclosure Public Access (LOGIN_REQUIRED)
+# ---------------------------------------------------------------------
+nj_courts_civil:
+  status: BLOCKED
+  account_email: null
+  session_cookie: null       # full Cookie header value after operator login
+  csrf_token: null
+
+# ---------------------------------------------------------------------
+# S5 — NJ DCA Notice of Intention to Foreclose (NOI) Database
+#      (read-only access restricted to counties/munis/state agencies)
+# ---------------------------------------------------------------------
+nj_dca_noi:
+  status: BLOCKED
+  partnership_signed: false
+  account_email: null
+  session_cookie: null
+
+# ---------------------------------------------------------------------
+# S7 — Per-municipality tax-lien sales (33 sub-feeds; WAF-blocked)
+# ---------------------------------------------------------------------
+muni_tax_sales:
+  status: BLOCKED
+  vendor_recon_completed: false   # set true when all 33 munis enumerated for vendor + URL
+  stealth_playwright_enabled: false
+  per_muni_overrides: {}          # { "ocean_gate": { "url": "...", "vendor": "newjerseytaxsale" }, ... }
+
+# ---------------------------------------------------------------------
+# S8 — Ocean County Tax Board Tax List Search (probe pending)
+# ---------------------------------------------------------------------
+tax_board_search:
+  status: UNBLOCKED            # search form reachable; owner-exposure probe pending
+  owner_probe_completed: false
+  owner_exposed: null          # null | true | false (set by probe in Phase 2)

@@ -1,0 +1,231 @@
+{
+  "county_slug": "ocean_nj",
+  "county_name": "Ocean County",
+  "state_code": "nj",
+  "state_name": "New Jersey",
+  "framework_version": "v5.5.0",
+  "recon_date": "2026-05-26",
+  "build_eligibility_verdict": "PROCEED_WITH_PARTIAL_BUILD",
+  "sources": [
+    {
+      "id": "S1",
+      "name": "Ocean County Sheriff Foreclosure Sales",
+      "url": "https://sheriff.co.ocean.nj.us/frmForeclosures",
+      "auxiliary_url_pattern": "https://co.ocean.nj.us/WebContentFiles/<guid>.pdf",
+      "source_role": "PRIMARY_EVENT_SOURCE",
+      "lead_origin_types": ["RECORDED_EVENT"],
+      "scheduled_event_categories": ["UPCOMING_SALE", "PAST_SALE"],
+      "doc_types": ["notice_of_sale", "sheriff_sale_listing"],
+      "access_method": "stdlib_http_plus_pdfplumber",
+      "access_status": "UNBLOCKED",
+      "reliability_grade": "A",
+      "build_priority": "mvp_required",
+      "p_tier": "P0",
+      "refresh_cadence_days": 2,
+      "refresh_window_kind": "forward",
+      "refresh_window_days": 84,
+      "notes": "Oracle-Reports-generated PDF, ~6 pages, text-extractable. Sales held Tuesdays 2pm. Schedule in HTML; properties in linked weekly PDF."
+    },
+    {
+      "id": "S2",
+      "name": "Ocean County Surrogate (Bluestone Public Search)",
+      "url": "https://surrogateweb.co.ocean.nj.us/BluestoneWeb/default.aspx?FROM_MSG=99",
+      "source_role": "PRIMARY_EVENT_SOURCE",
+      "additional_roles": ["PRIMARY_OWNER_STATUS_SOURCE"],
+      "lead_origin_types": ["RECORDED_EVENT", "OWNER_STATUS"],
+      "doc_types": ["probate_filing", "executor_appointment", "administrator_appointment", "will_record"],
+      "access_method": "stdlib_http_plus_viewstate",
+      "access_status": "UNBLOCKED",
+      "reliability_grade": "A",
+      "build_priority": "mvp_required",
+      "p_tier": "P0",
+      "refresh_cadence_days": 1,
+      "refresh_window_kind": "backward",
+      "refresh_window_days": 90,
+      "notes": "ASP.NET WebForms + DevExpress, server-rendered, no login, no CAPTCHA. Ocean is one of only 2 NJ counties with this online access level."
+    },
+    {
+      "id": "S3",
+      "name": "Ocean County Clerk Land Records",
+      "url": "https://sng.co.ocean.nj.us/publicsearch/",
+      "alternate_url": "https://oceancountyclerk.com/frmSearch",
+      "source_role": "BLOCKED_SOURCE",
+      "intended_role": "PRIMARY_EVENT_SOURCE",
+      "intended_additional_roles": ["PRIMARY_OWNER_STATUS_SOURCE"],
+      "lead_origin_types_when_unblocked": ["RECORDED_EVENT", "POST_SALE_TITLE_EVENT", "OWNER_STATUS"],
+      "doc_types_when_unblocked": ["deed", "mortgage", "lis_pendens", "notice_of_default", "assignment_of_mortgage", "release_of_mortgage", "tax_sale_certificate", "sheriff_deed", "executor_deed", "quitclaim_deed", "mechanics_lien"],
+      "access_status": "BLOCKED",
+      "failure_classification": "CAPTCHA_REQUIRED",
+      "blocker_detail": "Angular SPA with reCAPTCHA on every query. No vendor branding (LandLink/Cott/Tyler not detected).",
+      "operator_unlock_options": [
+        "Playwright + 2Captcha/anticaptcha (captcha_solver_allowed: true)",
+        "Operator-seeded session (operator_seeded_session_allowed: true)",
+        "Alternate portal recon: oceancountyclerk.com/frmSearch",
+        "OPRA bulk-extract daily (operationally heavy)"
+      ],
+      "reliability_grade": "A",
+      "build_priority": "high_value",
+      "p_tier": "P0"
+    },
+    {
+      "id": "S4",
+      "name": "NJ Courts Civil + Foreclosure Public Access",
+      "url": "https://www.njcourts.gov/public/find-a-case/civil-and-foreclosure-public-access",
+      "source_role": "BLOCKED_SOURCE",
+      "intended_role": "PRIMARY_EVENT_SOURCE",
+      "lead_origin_types_when_unblocked": ["RECORDED_EVENT"],
+      "doc_types_when_unblocked": ["foreclosure_complaint", "final_judgment", "writ_of_execution", "lis_pendens", "motion_to_dismiss", "default_judgment"],
+      "access_status": "BLOCKED",
+      "failure_classification": "LOGIN_REQUIRED",
+      "blocker_detail": "Registration required for all searches; no anonymous public tier.",
+      "operator_unlock_options": [
+        "Operator registers NJ Courts public account; capture session cookie; supply via operator_verified_sources.yml.session_cookie (operator_credentialed_login_allowed: true)"
+      ],
+      "reliability_grade": "A",
+      "build_priority": "high_value",
+      "p_tier": "P0"
+    },
+    {
+      "id": "S5",
+      "name": "NJ DCA Notice of Intention to Foreclose (NOI) Database",
+      "url": "https://www.nj.gov/dca/foreclosure.html",
+      "source_role": "BLOCKED_SOURCE",
+      "intended_role": "PRIMARY_EVENT_SOURCE",
+      "lead_origin_types_when_unblocked": ["RECORDED_EVENT"],
+      "doc_types_when_unblocked": ["notice_of_intention_to_foreclose"],
+      "access_status": "BLOCKED",
+      "failure_classification": "LOGIN_REQUIRED",
+      "blocker_detail": "Read-only access restricted to Counties / Municipalities / State Agencies. No general-public access path.",
+      "operator_unlock_options": [
+        "Engagement with Ocean County Department of Planning (county-level credential)",
+        "Engagement with an individual Ocean County municipality (municipal-level credential)"
+      ],
+      "reliability_grade": "A",
+      "build_priority": "future",
+      "p_tier": "P0",
+      "notes": "Highest-friction unlock in catalog. Do not block ship on this. NOI is the earliest signal in the foreclosure cycle (30 days pre-complaint)."
+    },
+    {
+      "id": "S6",
+      "name": "NJPA Public Notices Aggregator",
+      "url": "https://www.njpublicnotices.com/Search.aspx",
+      "source_role": "SUPPORTING_EVENT_SOURCE",
+      "doc_types": ["notice_of_sale_publication", "tax_sale_notice", "sheriff_sale_notice"],
+      "access_method": "stdlib_http_plus_viewstate",
+      "access_status": "UNBLOCKED",
+      "reliability_grade": "C",
+      "build_priority": "optional",
+      "p_tier": "P1",
+      "refresh_cadence_days": 1,
+      "refresh_window_kind": "backward",
+      "refresh_window_days": 14,
+      "notes": "12-month rolling archive. Per recent NJ law (effective 2026-03-01), public notices may move to municipal websites; aggregator coverage may thin over time. Cannot be sole distress feed per P-tier rules."
+    },
+    {
+      "id": "S7",
+      "name": "Per-Municipality Tax-Lien Sales (33 sub-feeds)",
+      "url_pattern": "https://<municipality>.newjerseytaxsale.com",
+      "alternate_vendors": ["realauction.com", "microbilt", "in-person", "muni-PDF"],
+      "source_role": "BLOCKED_SOURCE",
+      "intended_role": "PRIMARY_DEFAULT_SOURCE",
+      "lead_origin_types_when_unblocked": ["TAX_DEFAULT"],
+      "doc_types_when_unblocked": ["tax_default", "tax_sale", "tax_certificate", "tax_foreclosure"],
+      "qualification_gate": "§3.3 five-criteria",
+      "access_status": "BLOCKED",
+      "failure_classification": "WAF_BLOCKED",
+      "blocker_detail": "Direct fetch to oceangate.newjerseytaxsale.com returned HTTP 403 (anti-bot WAF). Not all 33 munis use the same vendor — some run in-person sales, some Realauction, some MicroBilt.",
+      "operator_unlock_options": [
+        "Playwright + stealth (stealth_browser_allowed: true) against WAF",
+        "Per-municipality recon pass: enumerate all 33 muni tax-collector pages, capture their vendor + URL",
+        "TCTANJ supplemental feed (tctanj.org/cn/webpage.cfm?tpid=14659) — thin coverage observed"
+      ],
+      "sub_feed_count": 33,
+      "reliability_grade": "A",
+      "build_priority": "high_value",
+      "p_tier": "P0"
+    },
+    {
+      "id": "S8",
+      "name": "Ocean County Board of Taxation Tax List Search",
+      "url": "https://tax.co.ocean.nj.us/frmTaxBoardTaxListSearch",
+      "source_role": "AMBIGUOUS_OWNER_PROBE_NEEDED",
+      "intended_roles_if_owner_exposed": ["PRIMARY_OWNER_STATUS_SOURCE", "ENRICHMENT_SOURCE"],
+      "intended_roles_if_owner_redacted": ["ENRICHMENT_SOURCE"],
+      "access_method": "stdlib_http",
+      "access_status": "UNBLOCKED",
+      "reliability_grade": "A",
+      "build_priority": "high_value",
+      "p_tier": "P0_or_P2_pending_probe",
+      "probe_required": "Live block/lot search to determine whether owner column is shown or redacted under Daniel's Law.",
+      "notes": "Cross-municipality parcel search across all 33 munis; no login or CAPTCHA observed on the form."
+    },
+    {
+      "id": "S9",
+      "name": "NJOGIS Parcels + MOD-IV (Ocean County extract)",
+      "url": "https://njogis-newjersey.opendata.arcgis.com/datasets/parcels-and-mod-iv-of-ocean-county-nj-shp-download",
+      "source_role": "ENRICHMENT_SOURCE",
+      "access_method": "stdlib_http_direct_download",
+      "access_status": "UNBLOCKED",
+      "owner_redaction": "DANIELS_LAW_PL2020_C125",
+      "available_fields": ["PAMS_PIN", "block", "lot", "qualifier", "county_code", "muni_code", "property_location", "property_class", "land_value", "improvement_value", "total_assessed_value", "deed_book", "deed_page", "consideration", "sale_date", "parcel_geometry"],
+      "redacted_fields": ["owner_name", "owner_mailing_address"],
+      "formats": ["shp", "fgdb"],
+      "reliability_grade": "B",
+      "build_priority": "mvp_required",
+      "p_tier": "P2",
+      "refresh_cadence_days": 30,
+      "notes": "Daniel's Law redacts owner names from ALL NJOGIS-hosted parcel/tax-list datasets. Owner enrichment must come from S8 (probe pending) or a non-NJOGIS source."
+    },
+    {
+      "id": "S10",
+      "name": "Per-municipality assessor records",
+      "source_role": "REJECTED_SOURCE",
+      "reject_reason": "33 separate municipal sites, no uniform format, no API; cost-of-coverage prohibitive for daily refresh window.",
+      "p_tier": "rejected",
+      "promotion_path": "If S8 owner-probe confirms Daniel's-Law redaction at county level, re-classify as BLOCKED_SOURCE with OPRA bulk-request unlock to top-5 munis (Toms River, Brick, Lakewood, Jackson, Berkeley) for ~70% parcel coverage."
+    },
+    {
+      "id": "REJ1",
+      "name": "Per-municipality code enforcement violations",
+      "source_role": "REJECTED_SOURCE",
+      "reject_reason": "No public machine-readable feed; OPRA-only across 33 munis; refresh-incompatible."
+    },
+    {
+      "id": "REJ2",
+      "name": "Third-party paid aggregators",
+      "examples": ["realtytrac.com", "foreclosure.com", "auction.com", "propertyshark.com", "foreclosurelistings.com"],
+      "source_role": "REJECTED_SOURCE",
+      "reject_reason": "Framework rule: paid aggregators are not primary recon targets (knowledge_base/protocols/01_county_recon.md §01.6 / MASTER_PROMPT §4.7 Layer 5)."
+    }
+  ],
+  "municipalities": {
+    "count": 33,
+    "townships": [
+      "Barnegat Township", "Berkeley Township", "Brick Township",
+      "Eagleswood Township", "Jackson Township", "Lacey Township",
+      "Lakewood Township", "Little Egg Harbor Township",
+      "Long Beach Township", "Manchester Township", "Ocean Township",
+      "Plumsted Township", "Stafford Township", "Toms River Township"
+    ],
+    "boroughs": [
+      "Barnegat Light Borough", "Bay Head Borough", "Beach Haven Borough",
+      "Beachwood Borough", "Harvey Cedars Borough",
+      "Island Heights Borough", "Lakehurst Borough", "Lavallette Borough",
+      "Mantoloking Borough", "Ocean Gate Borough", "Pine Beach Borough",
+      "Point Pleasant Beach Borough", "Point Pleasant Borough",
+      "Seaside Heights Borough", "Seaside Park Borough",
+      "Ship Bottom Borough", "South Toms River Borough",
+      "Surf City Borough", "Tuckerton Borough"
+    ],
+    "lead_volume_targets_top5": [
+      "Toms River Township", "Brick Township", "Lakewood Township",
+      "Jackson Township", "Berkeley Township"
+    ]
+  },
+  "missed_source_audit": {
+    "operator_requested_classes_covered": 8,
+    "operator_requested_classes_total": 8,
+    "additional_sources_found_in_recon": ["S5 — NJ DCA NOI Database"],
+    "no_other_in_scope_classes_identified": true
+  }
+}
