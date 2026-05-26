@@ -81,6 +81,8 @@ KNOWN_OFFICIAL_VENUE_PLATFORMS: dict[str, str] = {
     "publicsurplus.com": "Government surplus / sheriff-sale platform used by some counties; per-county recon evidence still required.",
     "bid4assets.com":   "County-appointed tax-deed / sheriff-sale platform precedent; per-county recon evidence still required.",
     "civicsource.com":  "Tax-sale platform used by some parish / municipal tax collectors; per-county recon evidence still required.",
+    "civilview.com":    "CivilView salesweb — sheriff-appointed foreclosure-sale listing platform used by multiple NJ counties (and other states); per-county recon evidence still required to confirm the local sheriff is publishing to it.",
+    "salesweb.civilview.com": "CivilView salesweb subdomain — same platform; alias for direct host matching.",
 }
 
 

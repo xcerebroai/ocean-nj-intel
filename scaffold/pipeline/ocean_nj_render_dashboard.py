@@ -40,6 +40,7 @@ def _signal_to_distress(signal: str) -> str:
         "foreclosure_sale_scheduled": "Sheriff foreclosure sale",
         "probate_filing_recent": "Probate filing (estate-titled owner research)",
         "foreclosure_notice_published": "Foreclosure notice (NJPA publication)",
+        "tax_default_brick": "Tax default — Brick Twp (HLS)",
     }.get(signal, signal or "")
 
 
@@ -186,6 +187,7 @@ HTML_TEMPLATE = r"""<!doctype html>
       <span class="label">Distress</span>
       <span class="chip" data-filter="distress_type" data-value="foreclosure_sale_scheduled">Sheriff foreclosure</span>
       <span class="chip" data-filter="distress_type" data-value="foreclosure_notice_published">Foreclosure notice</span>
+      <span class="chip" data-filter="distress_type" data-value="tax_default_brick">Tax default (Brick)</span>
       <span class="chip" data-filter="distress_type" data-value="probate_filing_recent">Probate filing</span>
     </div>
     <div class="filter-group">

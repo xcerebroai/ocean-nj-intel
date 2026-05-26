@@ -2,14 +2,14 @@
   "verdict": "PUBLISH",
   "reason": null,
   "counts": {
-    "lead_count": 1426,
-    "actionable": 22,
-    "known_owner": 0,
+    "lead_count": 1930,
+    "actionable": 526,
+    "known_owner": 504,
     "with_address": 0
   },
   "fractions": {
-    "actionable": 0.0154,
-    "known_owner": 0.0,
+    "actionable": 0.2725,
+    "known_owner": 0.2611,
     "with_address": 0.0
   },
   "notes": [

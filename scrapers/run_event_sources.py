@@ -18,13 +18,17 @@ from __future__ import annotations
 
 from scrapers.sheriff_foreclosure import run as run_sheriff
 from scrapers.njpa_legal_notices import run as run_njpa
+from scrapers.civilview_sheriff_sales import run as run_civilview
+from scrapers.hls_brick_taxsale import run as run_hls_brick
 from scrapers._blocked_sources import main as run_blocked_punchlist
 
 
 def main() -> int:
     rc = 0
-    rc |= run_sheriff()               # S1 — critical
-    rc |= run_njpa()                  # S6 — supporting, never fails fatal
+    rc |= run_sheriff()               # S1 — critical (PDF, until CivilView resumes)
+    rc |= run_civilview()             # S1' — dormant today, primary when live
+    rc |= run_njpa()                  # S6 — supporting
+    rc |= run_hls_brick()             # S7c — PRIMARY_DEFAULT for Brick Twp
     rc |= run_blocked_punchlist()
     return rc
 

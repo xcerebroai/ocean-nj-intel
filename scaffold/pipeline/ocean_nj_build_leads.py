@@ -34,7 +34,10 @@ DATA = REPO_ROOT / "data"
 SHERIFF_RAW = DATA / "raw" / "sheriff_foreclosure.jsonl"
 SURROGATE_RAW = DATA / "raw" / "surrogate_probate.jsonl"
 NJPA_RAW = DATA / "raw" / "njpa_legal_notices.jsonl"
+HLS_BRICK_RAW = DATA / "raw" / "hls_brick_taxsale.jsonl"
+CIVILVIEW_RAW = DATA / "raw" / "civilview_sheriff_sales.jsonl"
 PARCEL_IDX = DATA / "enriched" / "parcel_index.jsonl"
+TAX_BOARD_DETAIL = DATA / "enriched" / "ocean_tax_board_detail.jsonl"
 BLOCKED = DATA / "raw" / "_blocked_sources.jsonl"
 
 OUT_LEADS = DATA / "leads" / "scored_leads.json"
@@ -352,6 +355,106 @@ def build_njpa_leads(parcel_idx: dict[tuple, dict]) -> list[dict]:
     return leads
 
 
+def build_hls_brick_leads(parcel_idx: dict[tuple, dict],
+                          tax_board_idx: dict[tuple, dict]) -> tuple[list[dict], dict]:
+    """S7c — Brick Township tax-default leads via HLS Systems.
+
+    Each row is already §3.3-qualified by the adapter. Apply the §6.4
+    actionable contract: QUALIFIED rows with `tax_certificate` or
+    `tax_default` lead types are APPROVED_FOR_DASHBOARD; everything
+    else is REVIEW_REQUIRED.
+    """
+    leads: list[dict] = []
+    qual_counts: dict = {}
+    type_counts: dict = {}
+    parcel_hits = 0
+    for rec in _iter_jsonl(HLS_BRICK_RAW):
+        p = rec["raw_payload"]
+        qual_counts[p["qualification_status"]] = qual_counts.get(p["qualification_status"], 0) + 1
+        type_counts[p["lead_type"]] = type_counts.get(p["lead_type"], 0) + 1
+        block_norm = _norm_block_lot(p.get("block") or "")
+        lot_norm = _norm_block_lot(p.get("lot") or "")
+        parcel = parcel_idx.get(("BRICK TWP", block_norm, lot_norm))
+        if parcel:
+            parcel_hits += 1
+        approved = (p["qualification_status"] == "QUALIFIED" and
+                    p["lead_type"] in ("tax_certificate", "tax_default"))
+        leads.append({
+            "lead_id": f"hls_brick_taxsale:{p['account_number']}",
+            "lead_origin_type": "TAX_DEFAULT",
+            "primary_event_date": p.get("sale_date"),
+            "qualification_status": p["qualification_status"],
+            "qualification_evidence": p.get("qualification_evidence", []),
+            "source_ids": ["hls_brick_taxsale"] + (
+                ["njogis_parcels_modiv"] if parcel else []),
+            "evidence_ids": [rec["raw_record_id"]] + (
+                [f"njogis_parcels_modiv:{parcel['parcel_id']}"] if parcel else []),
+            "lead_status": ("APPROVED_FOR_DASHBOARD" if approved
+                             else "REVIEW_REQUIRED"),
+            "doc_type": p.get("doc_type"),
+            "distress_signal": "tax_default_brick",
+            "muni_name": "Brick Township",
+            "account_number": p["account_number"],
+            "block": p.get("block"),
+            "lot": p.get("lot"),
+            "qual_code": p.get("qual_code"),
+            "property_address": p.get("property_location"),
+            "property_city": "BRICK",
+            "property_state": "NJ",
+            "owner_name": p.get("owner_name"),
+            "owner_resolved": bool(p.get("owner_name")),
+            "owner_resolution_status": "HLS_BRICK_EXPOSED",
+            "tax_amount": p.get("tax_amount"),
+            "mua_amount": p.get("mua_amount"),
+            "cost_amount": p.get("cost_amount"),
+            "total_due": p.get("total_due"),
+            "investor_name": p.get("investor_name"),
+            "sale_date": p.get("sale_date"),
+            "lead_type": p.get("lead_type"),
+            # parcel enrichment
+            "parcel_id": parcel.get("parcel_id") if parcel else None,
+            "net_value": parcel.get("net_value") if parcel else None,
+            "year_built": parcel.get("yr_constr") if parcel else None,
+            "last_sale_price": parcel.get("sale_price") if parcel else None,
+        })
+    status = {
+        "leads_emitted": len(leads),
+        "qualification_counts": qual_counts,
+        "lead_type_counts": type_counts,
+        "njogis_parcel_join_hits": parcel_hits,
+    }
+    return leads, status
+
+
+def build_civilview_status() -> dict:
+    """Surface CivilView's dormancy in the manifest without emitting leads."""
+    out = {"source_id": "civilview_sheriff_sales", "active_leads": 0,
+           "dormant": False, "dormancy_detail": None}
+    for rec in _iter_jsonl(CIVILVIEW_RAW):
+        if rec.get("source_role") == "DORMANT_PRIMARY_EVENT_SOURCE":
+            out["dormant"] = True
+            out["dormancy_detail"] = rec["raw_payload"].get("detail")
+        else:
+            out["active_leads"] += 1
+    return out
+
+
+def build_tax_board_detail_index() -> dict[tuple, dict]:
+    """Index Tax Board detail records by (district_code, block, lot) so the
+    §3.7 enrichment can supplement NJOGIS with mailing address +
+    absentee-owner signal."""
+    idx: dict[tuple, dict] = {}
+    for rec in _iter_jsonl(TAX_BOARD_DETAIL):
+        p = rec["raw_payload"]
+        key = (
+            (p.get("district_code") or "").strip(),
+            _norm_block_lot(p.get("block") or ""),
+            _norm_block_lot(p.get("lot") or ""),
+        )
+        idx.setdefault(key, p)
+    return idx
+
+
 def build_blocked_punchlist() -> list[dict]:
     """Surface the BLOCKED_SOURCEs in the build manifest."""
     return [b for b in _iter_jsonl(BLOCKED)]
@@ -389,10 +492,21 @@ def main() -> int:
     njpa_leads = build_njpa_leads(parcel_idx)
     print(f"[build_leads] NJPA leads: {len(njpa_leads)}")
 
+    print("[build_leads] building HLS Brick tax-default leads…")
+    tax_board_idx = build_tax_board_detail_index()
+    hls_leads, hls_status = build_hls_brick_leads(parcel_idx, tax_board_idx)
+    print(f"[build_leads] HLS Brick leads: {len(hls_leads)} "
+          f"qual={hls_status['qualification_counts']} "
+          f"njogis_joins={hls_status['njogis_parcel_join_hits']}")
+
+    civilview_status = build_civilview_status()
+    print(f"[build_leads] CivilView: dormant={civilview_status['dormant']} "
+          f"active_leads={civilview_status['active_leads']}")
+
     blocked = build_blocked_punchlist()
     print(f"[build_leads] blocked sources: {len(blocked)}")
 
-    all_leads = sheriff_leads + surrogate_leads + njpa_leads
+    all_leads = sheriff_leads + surrogate_leads + njpa_leads + hls_leads
     payload = {
         "county_slug": "ocean_nj",
         "county_name": "Ocean County",
@@ -405,7 +519,11 @@ def main() -> int:
             "foreclosure_sale_scheduled": len(sheriff_leads),
             "foreclosure_notice_published": len(njpa_leads),
             "probate_filing_recent": len(surrogate_leads),
+            "tax_default_brick": len(hls_leads),
         },
+        "hls_brick_status": hls_status,
+        "civilview_status": civilview_status,
+        "tax_board_detail_indexed": len(tax_board_idx),
         "lead_counts_by_status": {
             "APPROVED_FOR_DASHBOARD": sum(
                 1 for l in all_leads if l["lead_status"] == "APPROVED_FOR_DASHBOARD"),
