@@ -1,0 +1,114 @@
+{
+  "county_slug": "ocean_nj",
+  "county_name": "Ocean County",
+  "state_name": "New Jersey",
+  "framework_version": "v5.5.0",
+  "build_timestamp": "2026-05-26T18:04:05Z",
+  "build_mode": "PARTIAL_BUILD",
+  "total_leads": 1424,
+  "lead_counts_by_signal": {
+    "foreclosure_sale_scheduled": 32,
+    "probate_filing_recent": 1392
+  },
+  "lead_counts_by_status": {
+    "APPROVED_FOR_DASHBOARD": 22,
+    "REVIEW_REQUIRED": 1402
+  },
+  "parcel_join": {
+    "hits": 24,
+    "misses": 8,
+    "resolved_owner_fraction": 0.0,
+    "enrichment_join_unavailable": true,
+    "enrichment_join_unavailable_reason": "Daniel's Law (P.L. 2020, c. 125) redacts owner_name from NJOGIS Ocean County parcels/MOD-IV. Surrogate probate records carry decedent name + town but no street address. Owner-resolution path requires either S8 Tax Board owner probe OR S3 Clerk land-records unlock."
+  },
+  "blocked_sources": [
+    {
+      "source_id": "clerk_land_records",
+      "name": "Ocean County Clerk Land Records",
+      "url": "https://sng.co.ocean.nj.us/publicsearch/",
+      "intended_role": "PRIMARY_EVENT_SOURCE",
+      "failure_classification": "CAPTCHA_REQUIRED",
+      "blocker_detail": "Angular SPA + reCAPTCHA on every query; no anonymous machine path.",
+      "operator_unlock": [
+        "Playwright + 2Captcha/anticaptcha (captcha_solver_allowed: true)",
+        "Operator-seeded session cookie (operator_seeded_session_allowed: true)",
+        "Recon alternate portal: oceancountyclerk.com/frmSearch"
+      ],
+      "intended_lead_origins": [
+        "RECORDED_EVENT",
+        "POST_SALE_TITLE_EVENT",
+        "OWNER_STATUS"
+      ],
+      "source_role": "BLOCKED_SOURCE",
+      "reported_at": "2026-05-26T18:02:32Z",
+      "v5_5_0_recon_anchor": "runs/ocean_nj/recon/source_of_record_matrix.json#sources"
+    },
+    {
+      "source_id": "nj_courts_civil",
+      "name": "NJ Courts Civil + Foreclosure Public Access",
+      "url": "https://www.njcourts.gov/public/find-a-case/civil-and-foreclosure-public-access",
+      "intended_role": "PRIMARY_EVENT_SOURCE",
+      "failure_classification": "LOGIN_REQUIRED",
+      "blocker_detail": "Registration required for all searches; no anonymous public tier.",
+      "operator_unlock": [
+        "Operator registers public NJ Courts account; supplies session cookie via operator_verified_sources.yml.nj_courts_civil.session_cookie"
+      ],
+      "intended_lead_origins": [
+        "RECORDED_EVENT"
+      ],
+      "source_role": "BLOCKED_SOURCE",
+      "reported_at": "2026-05-26T18:02:32Z",
+      "v5_5_0_recon_anchor": "runs/ocean_nj/recon/source_of_record_matrix.json#sources"
+    },
+    {
+      "source_id": "nj_dca_noi",
+      "name": "NJ DCA Notice of Intention to Foreclose Database",
+      "url": "https://www.nj.gov/dca/foreclosure.html",
+      "intended_role": "PRIMARY_EVENT_SOURCE",
+      "failure_classification": "LOGIN_REQUIRED",
+      "blocker_detail": "Read-only access restricted to Counties, Municipalities, State Agencies.",
+      "operator_unlock": [
+        "County- or municipality-level data-sharing arrangement"
+      ],
+      "intended_lead_origins": [
+        "RECORDED_EVENT"
+      ],
+      "source_role": "BLOCKED_SOURCE",
+      "reported_at": "2026-05-26T18:02:32Z",
+      "v5_5_0_recon_anchor": "runs/ocean_nj/recon/source_of_record_matrix.json#sources"
+    },
+    {
+      "source_id": "muni_tax_sales",
+      "name": "Per-Municipality Tax-Lien Sales (33 sub-feeds)",
+      "url": "https://<municipality>.newjerseytaxsale.com",
+      "intended_role": "PRIMARY_DEFAULT_SOURCE",
+      "failure_classification": "WAF_BLOCKED",
+      "blocker_detail": "Direct fetch returns HTTP 403 (WAF); per-muni vendor enumeration also incomplete (33 munis split across newjerseytaxsale.com, RealAuction, MicroBilt, and in-person).",
+      "operator_unlock": [
+        "Playwright + stealth (stealth_browser_allowed: true)",
+        "Per-municipality vendor recon pass; populate operator_verified_sources.yml.muni_tax_sales.per_muni_overrides"
+      ],
+      "intended_lead_origins": [
+        "TAX_DEFAULT"
+      ],
+      "source_role": "BLOCKED_SOURCE",
+      "reported_at": "2026-05-26T18:02:32Z",
+      "v5_5_0_recon_anchor": "runs/ocean_nj/recon/source_of_record_matrix.json#sources"
+    },
+    {
+      "source_id": "njpa_public_notices",
+      "name": "NJPA Public Notices Aggregator",
+      "url": "https://www.njpublicnotices.com/Search.aspx",
+      "intended_role": "SUPPORTING_EVENT_SOURCE",
+      "failure_classification": "DEFERRED_TO_NEXT_RELEASE",
+      "blocker_detail": "Reachable but classified P1 — cannot be a sole distress feed per v5.5.0 P-tier rules. Wired into the blocker report only so the catalog stays honest; will be built when an unblocked primary source needs cross-confirmation.",
+      "operator_unlock": [
+        "Operator authorization to build the supporting adapter (low priority — depends on the §6.4 gate verdict)"
+      ],
+      "intended_lead_origins": [],
+      "source_role": "BLOCKED_SOURCE",
+      "reported_at": "2026-05-26T18:02:32Z",
+      "v5_5_0_recon_anchor": "runs/ocean_nj/recon/source_of_record_matrix.json#sources"
+    }
+  ]
+}

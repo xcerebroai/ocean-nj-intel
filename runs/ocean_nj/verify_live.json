@@ -1,0 +1,56 @@
+{
+  "half": "STATIC",
+  "verdict": "STATIC_OK",
+  "checks": [
+    {
+      "name": "static.1_url_fetches_200_with_body",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "static.2_body_is_html",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "static.3_body_is_not_json_parse_error",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "static.4_data_artifact_reachable",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "static.5_data_artifact_parseable_non_empty",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "static.6_data_carries_v5_5_0_dashboard_contract_fields",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "static.7_no_stale_foreign_county_labels",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "static.8_no_banner_prohibited_tokens",
+      "status": "PASS",
+      "detail": null
+    }
+  ],
+  "interactive_checks_declared_but_blocked": [
+    "interactive.1_at_least_one_lead_card_renders",
+    "interactive.2_owner_and_address_render_or_honest_fallback",
+    "interactive.3_distress_type_filter_changes_visible_count",
+    "interactive.4_recency_filter_changes_visible_count",
+    "interactive.5_address_resolved_filter_changes_visible_count",
+    "interactive.6_reset_restores_original_count",
+    "interactive.7_no_uncaught_js_errors"
+  ],
+  "interactive_blocked_reason": "operator unlock pending: GitHub Pages remote not wired yet (Phase 4 decision). The INTERACTIVE half re-runs after the live URL exists and the daily-refresh workflow has deployed."
+}

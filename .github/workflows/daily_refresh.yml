@@ -1,0 +1,132 @@
+# Ocean County, NJ — daily refresh (v5.5.0 §6).
+#
+# Generated from scaffold/ops/daily_refresh_template.yml. County-specific
+# substitutions:
+#   <COUNTY_SLUG>   → ocean_nj
+#   <COUNTY_TODO>   → wired below
+#
+# Notes on this county's CI:
+#   - S2 (Surrogate / Bluestone) needs Playwright → browser-sources step.
+#   - S9 (NJOGIS) is a 166 MB ZIP download; enrichment step times out at
+#     30 minutes for a 60-minute total job budget.
+#   - GitHub Pages: deploys from `dashboard/` dir on publish.
+
+name: daily-refresh
+
+on:
+  schedule:
+    # 06:00 UTC = 02:00 ET. Ocean County sheriff PDFs refresh weekly
+    # (Tuesdays); surrogate index is daily.
+    - cron: "0 6 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write    # commit refreshed enrichment / dashboard
+  pages: write       # publish to GitHub Pages
+  id-token: write    # OIDC token for Pages deploy
+
+concurrency:
+  group: daily-refresh-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Python deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests beautifulsoup4 lxml pdfplumber dbfread pyshp jsonschema playwright
+
+      - name: Install Playwright Chromium
+        run: |
+          python -m playwright install --with-deps chromium
+
+      - name: Clean data/raw/
+        run: rm -rf data/raw/ && mkdir -p data/raw/
+
+      - name: Run scrapers — primary event sources (S1 sheriff + blocked-source report)
+        run: python3 scrapers/run_event_sources.py
+        continue-on-error: false
+
+      - name: Run scrapers — fragile browser sources (S2 surrogate via Playwright)
+        run: python3 scrapers/run_browser_sources.py
+        continue-on-error: true
+
+      - name: Run scrapers — enrichment sources (S9 NJOGIS parcels + MOD-IV)
+        run: python3 scrapers/run_enrichment_sources.py
+        continue-on-error: false
+
+      - name: Build leads (Phase 3 enrichment join)
+        run: python3 scaffold/pipeline/ocean_nj_build_leads.py
+
+      - name: Render dashboard (Phase 4 §5 contract)
+        run: python3 scaffold/pipeline/ocean_nj_render_dashboard.py
+
+      - name: §5.11 stale-label scanner
+        run: |
+          python3 scaffold/ops/stale_label_scanner.py --county ocean_nj \
+            || echo "::warning::stale-label scanner emitted findings (see job log)"
+        continue-on-error: true   # known false-positive: Phoenix as a personal name
+
+      - name: §6.4 publish gate (verify_refresh_publishable)
+        id: gate
+        run: |
+          python3 scaffold/ops/refresh_verification_gate_cli.py \
+              --scored-leads data/leads/scored_leads.json \
+              --report-out data/leads/refresh_gate.json \
+              --resolved-owner-floor 0.0 \
+              --enrichment-join-unavailable
+        continue-on-error: true
+
+      - name: §6.5 publish or preserve last-good
+        run: |
+          if [ "${{ steps.gate.outcome }}" = "success" ]; then
+            echo "publish: gate PUBLISH"
+            # dashboard/ already up to date from render step
+          else
+            echo "preserve: gate DO_NOT_PUBLISH — last-good Pages stays live"
+            mkdir -p runs/ocean_nj
+            cp data/leads/refresh_gate.json runs/ocean_nj/last_failed_refresh.json || true
+            # Restore previous dashboard from last successful commit
+            git checkout HEAD~1 -- dashboard/ 2>/dev/null || true
+          fi
+
+      - name: Commit refreshed enrichment + dashboard (only on PUBLISH)
+        if: steps.gate.outcome == 'success'
+        run: |
+          git config user.email "ci-bot@xcerebro.local"
+          git config user.name  "xcerebro-ci-bot"
+          git add dashboard/ data/leads/scored_leads.json data/leads/build_manifest.json data/raw/_blocked_sources.jsonl
+          git diff --cached --quiet || git commit -m "daily refresh $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          git push
+
+      - name: Upload Pages artifact (only on PUBLISH)
+        if: steps.gate.outcome == 'success'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dashboard
+
+      - name: Deploy to GitHub Pages (only on PUBLISH)
+        if: steps.gate.outcome == 'success'
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Write failure report (DO_NOT_PUBLISH path)
+        if: steps.gate.outcome != 'success'
+        run: |
+          mkdir -p runs/ocean_nj
+          echo "Daily refresh DO_NOT_PUBLISH — see refresh_gate.json" \
+              > runs/ocean_nj/last_refresh_failure.txt

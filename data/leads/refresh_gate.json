@@ -1,0 +1,25 @@
+{
+  "verdict": "PUBLISH",
+  "reason": null,
+  "counts": {
+    "lead_count": 1424,
+    "actionable": 22,
+    "known_owner": 0,
+    "with_address": 0
+  },
+  "fractions": {
+    "actionable": 0.0154,
+    "known_owner": 0.0,
+    "with_address": 0.0
+  },
+  "notes": [
+    "enrichment_join_unavailable=True \u2014 owner / address floors skipped per \u00a74.3 operator override carve-out."
+  ],
+  "args": {
+    "min_lead_count": 1,
+    "resolved_owner_floor": 0.0,
+    "resolved_address_floor": 0.5,
+    "actionable_floor": 0.01,
+    "enrichment_join_unavailable": true
+  }
+}
