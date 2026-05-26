@@ -3,12 +3,20 @@
   "county_name": "Ocean County",
   "state_name": "New Jersey",
   "framework_version": "v5.5.0",
-  "build_timestamp": "2026-05-26T18:04:05Z",
+  "build_timestamp": "2026-05-26T18:48:46Z",
   "build_mode": "PARTIAL_BUILD",
   "total_leads": 1424,
   "lead_counts_by_signal": {
     "foreclosure_sale_scheduled": 32,
-    "probate_filing_recent": 1392
+    "probate_filing_recent": 1392,
+    "foreclosure_complaint_filed": 0
+  },
+  "nj_courts_s4_status": {
+    "source_id": "nj_courts_foreclosure",
+    "leads_emitted": 0,
+    "blocked": true,
+    "block_status": "MISSING",
+    "block_detail": "cookie jar not found at /Users/quentinflores/Dev/xcerebro/counties/ocean-nj/runs/ocean_nj/.session_njcourts.json — the operator must complete the registration + cookie-capture handoff (runs/ocean_nj/recon/operator_verified_sources.yml)"
   },
   "lead_counts_by_status": {
     "APPROVED_FOR_DASHBOARD": 22,

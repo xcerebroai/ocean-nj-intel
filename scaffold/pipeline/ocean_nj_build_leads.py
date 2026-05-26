@@ -33,8 +33,10 @@ DATA = REPO_ROOT / "data"
 
 SHERIFF_RAW = DATA / "raw" / "sheriff_foreclosure.jsonl"
 SURROGATE_RAW = DATA / "raw" / "surrogate_probate.jsonl"
+COURTS_RAW = DATA / "raw" / "nj_courts_foreclosure.jsonl"
 PARCEL_IDX = DATA / "enriched" / "parcel_index.jsonl"
 BLOCKED = DATA / "raw" / "_blocked_sources.jsonl"
+COURTS_RESEED_MARKER = REPO_ROOT / "runs" / "ocean_nj" / "last_failed_refresh.json"
 
 OUT_LEADS = DATA / "leads" / "scored_leads.json"
 OUT_MANIFEST = DATA / "leads" / "build_manifest.json"
@@ -313,6 +315,63 @@ def build_surrogate_leads() -> list[dict]:
     return leads
 
 
+def build_courts_leads() -> tuple[list[dict], dict]:
+    """Read S4 nj_courts_foreclosure.jsonl. The adapter writes either:
+      - real foreclosure-case records (source_role=PRIMARY_EVENT_SOURCE), OR
+      - a single BLOCKED_SOURCE _BLOCKED_ record when the session is
+        MISSING / MALFORMED / EXPIRED / WAF_BLOCKED.
+
+    Returns (leads, status_block). The status_block goes into the build
+    manifest so the operator can see at a glance whether S4 is producing
+    data this run.
+    """
+    leads: list[dict] = []
+    status: dict = {"source_id": "nj_courts_foreclosure"}
+    blocked_rec = None
+    for rec in _iter_jsonl(COURTS_RAW):
+        if rec.get("source_role") == "BLOCKED_SOURCE":
+            blocked_rec = rec
+            continue
+        p = rec["raw_payload"]
+        leads.append({
+            "lead_id": f"nj_courts_foreclosure:{p['chancery_docket']}",
+            "lead_origin_type": "RECORDED_EVENT",
+            "primary_event_date": p.get("primary_event_date"),
+            "qualification_status": "REVIEW_REQUIRED",  # tighten after live tune
+            "source_ids": ["nj_courts_foreclosure"],
+            "evidence_ids": [rec["raw_record_id"]],
+            "lead_status": "REVIEW_REQUIRED",
+            "doc_type": p.get("doc_type") or "foreclosure_complaint",
+            "distress_signal": "foreclosure_complaint_filed",
+            "chancery_docket": p.get("chancery_docket"),
+            "case_type": p.get("case_type"),
+            "filed_date": p.get("filed_date"),
+            "property_city": None,
+            "property_state": "NJ",
+            "owner_name": None,
+            "owner_resolved": False,
+            "owner_resolution_status": "COURT_DOCKET_ONLY_NO_PARCEL_LINK",
+            "enrichment_join_unavailable": True,
+        })
+    status["leads_emitted"] = len(leads)
+    status["blocked"] = bool(blocked_rec)
+    if blocked_rec:
+        status["block_status"] = blocked_rec["raw_payload"].get("status")
+        status["block_detail"] = blocked_rec["raw_payload"].get("detail")
+    if COURTS_RESEED_MARKER.exists():
+        try:
+            marker = json.loads(COURTS_RESEED_MARKER.read_text(encoding="utf-8"))
+            status["reseed_marker"] = {
+                "failure_layer": marker.get("failure_layer"),
+                "failure_kind": marker.get("failure_kind"),
+                "failed_at": marker.get("failed_at"),
+                "needs_operator_action": marker.get("needs_operator_action"),
+            }
+        except (json.JSONDecodeError, OSError):
+            pass
+    return leads, status
+
+
 def build_blocked_punchlist() -> list[dict]:
     """Surface the BLOCKED_SOURCEs in the build manifest."""
     return [b for b in _iter_jsonl(BLOCKED)]
@@ -346,10 +405,15 @@ def main() -> int:
     surrogate_leads = build_surrogate_leads()
     print(f"[build_leads] surrogate leads: {len(surrogate_leads)}")
 
+    print("[build_leads] reading court (S4) leads…")
+    court_leads, courts_status = build_courts_leads()
+    print(f"[build_leads] court leads: {len(court_leads)} "
+          f"(blocked={courts_status.get('blocked')})")
+
     blocked = build_blocked_punchlist()
     print(f"[build_leads] blocked sources: {len(blocked)}")
 
-    all_leads = sheriff_leads + surrogate_leads
+    all_leads = sheriff_leads + surrogate_leads + court_leads
     payload = {
         "county_slug": "ocean_nj",
         "county_name": "Ocean County",
@@ -361,7 +425,9 @@ def main() -> int:
         "lead_counts_by_signal": {
             "foreclosure_sale_scheduled": len(sheriff_leads),
             "probate_filing_recent": len(surrogate_leads),
+            "foreclosure_complaint_filed": len(court_leads),
         },
+        "nj_courts_s4_status": courts_status,
         "lead_counts_by_status": {
             "APPROVED_FOR_DASHBOARD": sum(
                 1 for l in all_leads if l["lead_status"] == "APPROVED_FOR_DASHBOARD"),

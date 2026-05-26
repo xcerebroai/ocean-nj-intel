@@ -40,21 +40,12 @@ BLOCKED = [
         "intended_lead_origins": ["RECORDED_EVENT", "POST_SALE_TITLE_EVENT",
                                   "OWNER_STATUS"],
     },
-    {
-        "source_id": "nj_courts_civil",
-        "name": "NJ Courts Civil + Foreclosure Public Access",
-        "url": ("https://www.njcourts.gov/public/find-a-case/"
-                "civil-and-foreclosure-public-access"),
-        "intended_role": "PRIMARY_EVENT_SOURCE",
-        "failure_classification": "LOGIN_REQUIRED",
-        "blocker_detail": ("Registration required for all searches; no "
-                           "anonymous public tier."),
-        "operator_unlock": [
-            "Operator registers public NJ Courts account; supplies session "
-            "cookie via operator_verified_sources.yml.nj_courts_civil.session_cookie"
-        ],
-        "intended_lead_origins": ["RECORDED_EVENT"],
-    },
+    # S4 nj_courts_foreclosure has moved from always-BLOCKED to
+    # conditionally-blocked: the adapter scrapers/nj_courts_foreclosure.py
+    # is live and consumes runs/ocean_nj/.session_njcourts.json. When the
+    # cookie jar is missing/malformed the adapter emits its own
+    # _BLOCKED_ record; when it's expired the adapter writes
+    # runs/ocean_nj/last_failed_refresh.json. It no longer belongs here.
     {
         "source_id": "nj_dca_noi",
         "name": "NJ DCA Notice of Intention to Foreclose Database",

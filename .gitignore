@@ -46,6 +46,11 @@ secrets/
 *.pem
 *.key
 
+# Operator-seeded session cookie jars (v5.5.0 §2.2). These hold live
+# auth tokens that rotate; treat as ephemeral, never commit.
+runs/*/.session_*.json
+*.session.json
+
 # Coverage / test artifacts
 .coverage
 htmlcov/

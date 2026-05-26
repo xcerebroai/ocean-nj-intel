@@ -30,13 +30,47 @@ clerk_land_records:
     base_url: null           # e.g. "https://oceancountyclerk.com/frmSearch"
 
 # ---------------------------------------------------------------------
-# S4 — NJ Courts Civil + Foreclosure Public Access (LOGIN_REQUIRED)
+# S4 — NJ Courts Civil + Foreclosure Public Access
+#
+# Operator-seeded session per v5.5.0 §2.2. The adapter
+# scrapers/nj_courts_foreclosure.py reads cookies from the local file
+# below (gitignored). Replace this file when the Pega ESSO session
+# expires (typically 30 min idle / 8 h hard).
 # ---------------------------------------------------------------------
 nj_courts_civil:
-  status: BLOCKED
-  account_email: null
-  session_cookie: null       # full Cookie header value after operator login
-  csrf_token: null
+  status: OPERATOR_SEEDED       # was BLOCKED — adapter now live
+  registration_url: https://portalselfreg-cloud.njcourts.gov/prweb/PRServletPublicAuth?AppName=ESSO
+  login_url: https://portal-cloud.njcourts.gov/prweb/PRAuth/CloudSAMLAuth?AppName=ESSO
+  search_app_url: https://portalcivsearch-cloud.njcourts.gov/prweb/PRServletPublicAuth?AppName=CIVSearch
+
+  # Path to the cookie jar the operator writes. NEVER commit this file.
+  # Schema:
+  #   { "captured_at": "<ISO-8601>",
+  #     "session_user": "<label>",
+  #     "cookies": [ {name,value,domain,path}, ... ] }
+  cookie_jar_path: runs/ocean_nj/.session_njcourts.json
+
+  required_cookie_names:
+    - PD-S-SESSION-ID           # master IBM Verify Access token, .njcourts.gov, HttpOnly
+    - JSESSIONID                # portalcivsearch-cloud.njcourts.gov, /prweb
+    - PEGA-SESSION-COOKIE       # portalcivsearch-cloud.njcourts.gov, /
+    - PEGA-SESSION-COOKIE-CORS  # portalcivsearch-cloud.njcourts.gov, /
+    - visid_incap_2548127       # .njcourts.gov  (Imperva — suffix may rotate)
+    - nlbi_2548127              # .njcourts.gov  (Imperva)
+    - incap_ses_68_2548127      # .njcourts.gov  (Imperva)
+
+  ua_hint: >-
+    Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
+    (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+
+  expiry_handling:
+    detect_via: redirect_to_ESSO_login_or_session_expired_banner
+    on_expiry: write_runs/ocean_nj/last_failed_refresh.json + exit_2
+    operator_action: re-run registration + cookie capture; rewrite cookie_jar_path
+
+  pull_window:
+    direction: BACKWARD
+    days_back_default: 30
 
 # ---------------------------------------------------------------------
 # S5 — NJ DCA Notice of Intention to Foreclose (NOI) Database

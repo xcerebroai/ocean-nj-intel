@@ -57,9 +57,19 @@ jobs:
       - name: Clean data/raw/
         run: rm -rf data/raw/ && mkdir -p data/raw/
 
-      - name: Run scrapers — primary event sources (S1 sheriff + blocked-source report)
+      - name: Run scrapers — primary event sources (S1 sheriff + S4 courts + blocked-source report)
         run: python3 scrapers/run_event_sources.py
         continue-on-error: false
+
+      - name: S4 session health check (surfaces re-seed marker as warning)
+        if: always()
+        run: |
+          if [ -f runs/ocean_nj/last_failed_refresh.json ]; then
+            echo "::warning title=NJ Courts S4 session needs re-seed::$(jq -r '.needs_operator_action' runs/ocean_nj/last_failed_refresh.json)"
+            cat runs/ocean_nj/last_failed_refresh.json
+          else
+            echo "S4 session health: OK (no re-seed marker present)"
+          fi
 
       - name: Run scrapers — fragile browser sources (S2 surrogate via Playwright)
         run: python3 scrapers/run_browser_sources.py
