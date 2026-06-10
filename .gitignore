@@ -64,3 +64,6 @@ htmlcov/
 
 # Large regenerable enrichment artifact (260MB; rebuilt by run_enrichment_sources.py)
 data/enriched/parcel_index.jsonl
+
+# Per-machine venv symlink (breaks GitHub Pages build; never commit)
+.venv
