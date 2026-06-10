@@ -61,3 +61,6 @@ htmlcov/
 
 # Claude Code runtime locks/state
 .claude/
+
+# Large regenerable enrichment artifact (260MB; rebuilt by run_enrichment_sources.py)
+data/enriched/parcel_index.jsonl
