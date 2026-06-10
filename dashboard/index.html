@@ -37,8 +37,21 @@
   button.reset{background:transparent;border:1px solid var(--border);color:var(--muted);
                padding:5px 12px;border-radius:6px;cursor:pointer;font-size:12px}
   button.reset:hover{color:var(--text);border-color:var(--text)}
+  .probate-toggle{display:flex;align-items:center;gap:6px;color:var(--muted);
+                  font-size:12.5px;cursor:pointer;margin-left:6px}
+  .probate-toggle input{cursor:pointer}
   .counts{margin-left:auto;color:var(--muted);font-size:13px}
   .counts strong{color:var(--text)}
+  .card .owner{font-size:13.5px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .card .owner .name{font-weight:600;color:var(--text)}
+  .card .owner .otag{font-size:10.5px;text-transform:uppercase;letter-spacing:.04em;
+                     padding:1px 6px;border-radius:4px;background:#1f2630;
+                     border:1px solid var(--border);color:var(--muted)}
+  .card .contacts{font-size:12px;color:var(--muted);display:flex;flex-direction:column;gap:2px}
+  .card .contacts .c{color:var(--text)}
+  .card .src{font-size:10.5px;color:var(--muted)}
+  .card .src .dm{color:#d2a8ff}
+  .card .recency{font-size:11.5px;color:var(--muted)}
   .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(380px,1fr));gap:14px}
   .card{background:var(--panel);border:1px solid var(--border);border-radius:8px;
         padding:14px 16px;display:flex;flex-direction:column;gap:6px}
@@ -81,8 +94,10 @@
       <span class="chip" data-filter="distress_type" data-value="probate_filing_recent">Probate filing</span>
     </div>
     <div class="filter-group">
-      <span class="label">Owner</span>
-      <span class="chip" data-filter="owner_type" data-value="Resolved">Resolved</span>
+      <span class="label">Owner type</span>
+      <span class="chip" data-filter="owner_type" data-value="Individual">Individual</span>
+      <span class="chip" data-filter="owner_type" data-value="Entity">Entity (LLC)</span>
+      <span class="chip" data-filter="owner_type" data-value="Estate">Estate</span>
       <span class="chip" data-filter="owner_type" data-value="Unknown">Unknown</span>
     </div>
     <div class="filter-group">
@@ -91,30 +106,19 @@
       <span class="chip" data-filter="recency" data-value="last_90_days">Last 90 days</span>
     </div>
     <div class="filter-group">
-      <span class="label">Years delinquent</span>
-      <span class="chip" data-filter="years_delinquent" data-value="1">1</span>
-      <span class="chip" data-filter="years_delinquent" data-value="2">2</span>
-      <span class="chip" data-filter="years_delinquent" data-value="3">3</span>
-      <span class="chip" data-filter="years_delinquent" data-value="4">4</span>
-      <span class="chip" data-filter="years_delinquent" data-value="5+">5+</span>
-    </div>
-    <div class="filter-group">
       <span class="label">Owner residency</span>
-      <span class="chip" data-filter="absentee_or_out_of_state" data-value="absentee">Absentee</span>
-      <span class="chip" data-filter="absentee_or_out_of_state" data-value="out_of_state">Out-of-state</span>
+      <span class="chip" data-filter="residency" data-value="absentee">Absentee</span>
+      <span class="chip" data-filter="residency" data-value="out_of_state">Out-of-state</span>
     </div>
     <div class="filter-group">
       <span class="label">Address</span>
       <span class="chip" data-filter="address_resolved" data-value="true">Resolved</span>
       <span class="chip" data-filter="address_resolved" data-value="false">Unresolved</span>
     </div>
-    <div class="filter-group">
-      <span class="label">Review</span>
-      <span class="chip" data-filter="review_status" data-value="APPROVED_FOR_DASHBOARD">Approved</span>
-      <span class="chip" data-filter="review_status" data-value="REVIEW_REQUIRED">Needs review</span>
-    </div>
-    <input type="search" id="search" placeholder="Search address, defendant, decedent, docket…" />
+    <input type="search" id="search" placeholder="Search address, owner, defendant, decedent, docket…" />
     <button class="reset" data-filter="reset">Reset</button>
+    <label class="probate-toggle"><input type="checkbox" id="show-probate" />
+      Show probate research targets (<span id="probate-count">0</span>)</label>
     <div class="counts"><strong id="shown">0</strong> of <span id="total">0</span> leads</div>
   </div>
   <div id="grid" class="grid"></div>
@@ -128,9 +132,9 @@
 <script>
 const STATE = {
   filters: { distress_type:null, owner_type:null, recency:null,
-             years_delinquent:null, absentee_or_out_of_state:null,
-             address_resolved:null, review_status:null },
+             residency:null, address_resolved:null },
   search: "",
+  showProbate: false,   // probate research targets hidden by default (§5)
   rows: [],
 };
 
@@ -141,13 +145,14 @@ async function load() {
     const data = await res.json();
     document.getElementById('build-ts').textContent = data.build_timestamp || '—';
     STATE.rows = (data.records || data.rows || []).slice().sort((a,b)=>{
-      // §5.3: address-resolved first, then recorded_date desc
+      // §5.3: address-resolved first, then recorded_date desc (neutral sort)
       const aR = a.address_resolved ? 1 : 0;
       const bR = b.address_resolved ? 1 : 0;
       if (aR !== bR) return bR - aR;
       return (b.recorded_date || '').localeCompare(a.recorded_date || '');
     });
-    document.getElementById('total').textContent = STATE.rows.length;
+    const probateN = STATE.rows.filter(r => r.is_probate).length;
+    document.getElementById('probate-count').textContent = probateN.toLocaleString();
     render();
   } catch (err) {
     document.getElementById('error-banner').style.display = 'block';
@@ -161,12 +166,17 @@ function toggleChip(filter, value) {
 
 function matches(row) {
   const f = STATE.filters;
+  // Probate research targets are hidden unless explicitly toggled on (§5).
+  if (row.is_probate && !STATE.showProbate) return false;
   if (f.distress_type && row.signal_type !== f.distress_type) return false;
   if (f.owner_type && row.owner_type !== f.owner_type) return false;
-  if (f.review_status && row.review_status !== f.review_status) return false;
   if (f.address_resolved !== null) {
     if (f.address_resolved === 'true' && !row.address_resolved) return false;
     if (f.address_resolved === 'false' && row.address_resolved) return false;
+  }
+  if (f.residency) {
+    if (f.residency === 'absentee' && !row.absentee) return false;
+    if (f.residency === 'out_of_state' && !row.out_of_state) return false;
   }
   if (f.recency) {
     const cutoff = new Date();
@@ -175,15 +185,12 @@ function matches(row) {
     if (!row.recorded_date) return false;
     if (row.recorded_date < cutoff.toISOString().slice(0,10)) return false;
   }
-  // years_delinquent + absentee_or_out_of_state: no source data today → these
-  // filters match nothing, which is the honest behavior (operator unlock S8).
-  if (f.years_delinquent) return false;
-  if (f.absentee_or_out_of_state) return false;
   if (STATE.search) {
     const q = STATE.search.toLowerCase();
     const hay = [row.property_full_address, row.owner_name, row.defendant,
                  row.decedent_name, row.plaintiff, row.lead_id, row.muni,
-                 row.block, row.lot].filter(Boolean).join(' ').toLowerCase();
+                 row.block, row.lot, (row.owner_phones||[]).join(' '),
+                 (row.owner_emails||[]).join(' ')].filter(Boolean).join(' ').toLowerCase();
     if (!hay.includes(q)) return false;
   }
   return true;
@@ -217,7 +224,37 @@ function renderCard(row) {
     badges.push('<span class="badge bad">Bankruptcy</span>');
   if (row.sheriff_status === 'CANCELLATION')
     badges.push('<span class="badge bad">Cancelled</span>');
+  if (row.out_of_state) badges.push('<span class="badge warn">Out-of-state owner</span>');
+  else if (row.absentee) badges.push('<span class="badge">Absentee owner</span>');
   const sig = isProbate ? 'probate' : '';
+
+  // Owner line (now DealMachine-enriched) + owner-type tag.
+  const ownerName = row.owner_name
+    ? `<span class="name">${escape(row.owner_name)}</span>`
+    : `<span class="name" style="color:var(--muted);font-style:italic">Owner not resolved</span>`;
+  const ownerBlock = isProbate ? '' : `<div class="owner">${ownerName}
+    <span class="otag">${escape(row.owner_type)}</span></div>`;
+
+  // DealMachine contacts + provenance stamp (only on enriched leads).
+  let contactsBlock = '';
+  if (row.dealmachine_matched && ((row.owner_phones||[]).length || (row.owner_emails||[]).length)) {
+    const ph = (row.owner_phones||[]).slice(0,3).map(p =>
+      `<span class="c">${escape(p)}</span>`).join(' · ');
+    const em = (row.owner_emails||[]).slice(0,2).map(e =>
+      `<span class="c">${escape(e)}</span>`).join(' · ');
+    contactsBlock = `<div class="contacts">
+      ${ph ? `<div>📞 ${ph}</div>` : ''}
+      ${em ? `<div>✉ ${em}</div>` : ''}
+    </div><div class="src">source: <span class="dm">dealmachine</span>${
+      row.daniels_law_backfilled ? ' · owner backfilled (Daniel\'s Law)' : ''}</div>`;
+  } else if (row.dm_enrichment_status === 'pending_retry') {
+    contactsBlock = '<div class="src">DealMachine: pending retry (API unavailable)</div>';
+  } else if (row.dm_enrichment_status === 'no_dm_record') {
+    contactsBlock = '<div class="src">DealMachine: no record</div>';
+  }
+  const recency = row.recorded_date
+    ? `<div class="recency">Recorded ${escape(row.recorded_date)}</div>` : '';
+
   let body;
   if (isProbate) {
     body = `
@@ -244,14 +281,22 @@ function renderCard(row) {
   return `<div class="card ${cls}">
     <div class="signal ${sig}">${escape(row.distress_label)}</div>
     ${addr}
+    ${ownerBlock}
     <div>${badges.join('')}</div>
+    ${contactsBlock}
     ${body}
+    ${recency}
   </div>`;
 }
 
 function render() {
   const filtered = STATE.rows.filter(matches);
+  // Total reflects the currently-visible universe (probate excluded unless toggled).
+  const universe = STATE.showProbate
+    ? STATE.rows.length
+    : STATE.rows.filter(r => !r.is_probate).length;
   document.getElementById('shown').textContent = filtered.length;
+  document.getElementById('total').textContent = universe;
   const grid = document.getElementById('grid');
   const empty = document.getElementById('empty');
   if (!filtered.length) { grid.innerHTML = ''; empty.style.display = 'block'; return; }
@@ -266,12 +311,14 @@ function render() {
 }
 
 document.addEventListener('click', (e) => {
-  const t = e.target.closest('.chip');
+  const t = e.target.closest('.chip, .reset');
   if (!t) return;
   if (t.dataset.filter === 'reset') {
     Object.keys(STATE.filters).forEach(k => STATE.filters[k] = null);
     STATE.search = '';
+    STATE.showProbate = false;
     document.getElementById('search').value = '';
+    document.getElementById('show-probate').checked = false;
   } else {
     toggleChip(t.dataset.filter, t.dataset.value);
   }
@@ -280,6 +327,11 @@ document.addEventListener('click', (e) => {
 
 document.getElementById('search').addEventListener('input', (e) => {
   STATE.search = e.target.value.trim();
+  render();
+});
+
+document.getElementById('show-probate').addEventListener('change', (e) => {
+  STATE.showProbate = e.target.checked;
   render();
 });
 

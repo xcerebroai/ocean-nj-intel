@@ -82,6 +82,36 @@ jobs:
       - name: Build leads (Phase 3 enrichment join)
         run: python3 scaffold/pipeline/ocean_nj_build_leads.py
 
+      # ── DealMachine commercial enrichment (COMMERCIAL_ENRICHMENT_SOURCE) ──
+      # Ocean-scoped, NOT framework canon (county #5 does not inherit it).
+      # Enriches ACTIONABLE leads (S1 sheriff + S7c HLS Brick); probate gated out.
+      # Incremental + small-batch (BATCH_SIZE=6): only NEW/changed leads and
+      # PENDING_RETRY leads (API flapped last time) are re-fetched. GENUINE_NO_MATCH
+      # leads (DealMachine has no record) are cached and NEVER retried. If the DM API
+      # is down during a run, the health gate skips the fetch and the rest of the
+      # refresh publishes (continue-on-error) — the board is never blocked; pending
+      # leads retry next run.
+      - name: Set up Node (DealMachine CLI)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+        continue-on-error: true
+
+      - name: DealMachine enrichment — actionable leads only (Ocean-scoped)
+        continue-on-error: true
+        env:
+          DEALMACHINE_API_KEY: ${{ secrets.DEALMACHINE_API_KEY }}
+        run: |
+          if [ -z "$DEALMACHINE_API_KEY" ]; then
+            echo "::warning title=DealMachine enrichment skipped::DEALMACHINE_API_KEY secret not set — leads publish without DM enrichment"
+            exit 0
+          fi
+          npm install -g @dealmachine/cli >/dev/null 2>&1 || { echo "::warning title=DealMachine CLI install failed::publishing without DM enrichment"; exit 0; }
+          dm login --key "$DEALMACHINE_API_KEY" --quiet \
+            || { echo "::warning title=DealMachine login failed (invalid key?)::publishing without DM enrichment"; exit 0; }
+          python3 scrapers/dealmachine_enrich.py \
+            || echo "::warning title=DealMachine enrichment errored::publishing without DM enrichment (see log)"
+
       - name: Render dashboard (Phase 4 §5 contract)
         run: python3 scaffold/pipeline/ocean_nj_render_dashboard.py
 
@@ -120,6 +150,8 @@ jobs:
           git config user.email "ci-bot@xcerebro.local"
           git config user.name  "xcerebro-ci-bot"
           git add dashboard/ data/leads/scored_leads.json data/leads/build_manifest.json data/raw/_blocked_sources.jsonl
+          # DealMachine enrichment cache (incremental gate) + provenance ledger
+          git add data/enriched/dealmachine_cache.json data/enriched/dealmachine_enrichment.jsonl 2>/dev/null || true
           git diff --cached --quiet || git commit -m "daily refresh $(date -u +%Y-%m-%dT%H:%M:%SZ)"
           git push
 

@@ -46,6 +46,9 @@ secrets/
 *.pem
 *.key
 
+# DealMachine beta API key (Bearer) — per-county, never commit
+runs/*/.dealmachine_key
+
 # Operator-seeded session cookie jars (v5.5.0 §2.2). These hold live
 # auth tokens that rotate; treat as ephemeral, never commit.
 runs/*/.session_*.json
@@ -55,3 +58,6 @@ runs/*/.session_*.json
 .coverage
 htmlcov/
 .tox/
+
+# Claude Code runtime locks/state
+.claude/
