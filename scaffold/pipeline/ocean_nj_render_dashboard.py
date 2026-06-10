@@ -184,6 +184,10 @@ def _to_row(lead: dict) -> dict:
         "dm_list_type": lead.get("lead_type") or "" if lead.get("is_dealmachine_list") else "",
         "dm_property_value": _dmp(lead, "estimated_value"),
         "property_type": _dmp(lead, "property_type") or "",
+        # Motivation MULTIPLIER flags (DealMachine owner attributes) — context on an
+        # existing lead, never a lead origin. (source: dealmachine)
+        "senior_owner_flag": bool(lead.get("senior_owner_flag")),
+        "tired_landlord_flag": bool(lead.get("tired_landlord_flag")),
         # ── CSV export fields (exact client column spec) ──
         "lead_type": _lead_type(lead),
         "export_first_name": _export_name(lead)[0],
@@ -276,6 +280,7 @@ HTML_TEMPLATE = r"""<!doctype html>
   .card.dm-list{border-left:3px solid #8957e5;background:#17141f}
   .card .signal.dmlist{color:#d2a8ff}
   .card .badge.dmlist{background:#241a3d;color:#d2a8ff;border-color:#3d2f66}
+  .card .badge.motiv{background:#0c2f33;color:#56d4dd;border-color:#164b52}
   .card .signal{font-weight:600;color:var(--accent);font-size:13px}
   .card .signal.probate{color:#d2a8ff}
   .card .address{font-weight:600;font-size:14.5px}
@@ -334,6 +339,11 @@ HTML_TEMPLATE = r"""<!doctype html>
       <span class="chip" data-filter="address_resolved" data-value="true">Resolved</span>
       <span class="chip" data-filter="address_resolved" data-value="false">Unresolved</span>
     </div>
+    <div class="filter-group">
+      <span class="label">Motivation</span>
+      <span class="chip" data-filter="senior_owner_flag" data-value="1">Senior owner</span>
+      <span class="chip" data-filter="tired_landlord_flag" data-value="1">Tired landlord</span>
+    </div>
     <div class="filter-group" id="list-type-group" style="display:none">
       <span class="label">DM list type</span>
       <span class="chip" data-filter="dm_list_type" data-value="vacant">Vacant</span>
@@ -361,7 +371,8 @@ HTML_TEMPLATE = r"""<!doctype html>
 <script>
 const STATE = {
   filters: { distress_type:null, owner_type:null, recency:null,
-             residency:null, address_resolved:null, dm_list_type:null },
+             residency:null, address_resolved:null, dm_list_type:null,
+             senior_owner_flag:null, tired_landlord_flag:null },
   search: "",
   showProbate: false,   // probate research targets hidden by default (§5)
   showLists: false,     // DealMachine commercial lists hidden by default (distinct)
@@ -403,6 +414,8 @@ function matches(row) {
   if (row.is_probate && !STATE.showProbate) return false;
   if (row.is_dealmachine_list && !STATE.showLists) return false;
   if (f.dm_list_type && row.dm_list_type !== f.dm_list_type) return false;
+  if (f.senior_owner_flag && !row.senior_owner_flag) return false;
+  if (f.tired_landlord_flag && !row.tired_landlord_flag) return false;
   if (f.distress_type && row.signal_type !== f.distress_type) return false;
   if (f.owner_type && row.owner_type !== f.owner_type) return false;
   if (f.address_resolved !== null) {
@@ -463,6 +476,8 @@ function renderCard(row) {
     badges.push('<span class="badge bad">Cancelled</span>');
   if (row.out_of_state) badges.push('<span class="badge warn">Out-of-state owner</span>');
   else if (row.absentee) badges.push('<span class="badge">Absentee owner</span>');
+  if (row.senior_owner_flag) badges.push('<span class="badge motiv">Senior owner</span>');
+  if (row.tired_landlord_flag) badges.push('<span class="badge motiv">Tired landlord</span>');
   if (isList) badges.unshift('<span class="badge dmlist">DealMachine list</span>');
   const sig = isList ? 'dmlist' : (isProbate ? 'probate' : '');
 

@@ -75,10 +75,21 @@ def count(filter_id: str) -> dict:
     return {"properties": d.get("total_properties"), "people": d.get("total_people")}
 
 
+# Motivation-flag fields stacked onto each pulled lead (returnable only via
+# `properties search` + a `fields` selection — NOT via enrich/get/ids). Riding the
+# pull we already do, so they cost nothing extra on already-pulled (deduplicated) rows.
+MOTIVATION_FIELDS = ["has_senior_owners", "has_tired_landlords"]
+
+
+def _yn(v) -> bool:
+    return str(v).strip().lower() == "yes"
+
+
 def search_page(filter_id: str, page: int) -> dict:
     body = {"locations": [OCEAN_COUNTY],
             "filters": [{"filter_id": filter_id, "value": True}],
-            "page": page, "per_page": PER_PAGE}
+            "page": page, "per_page": PER_PAGE,
+            "fields": MOTIVATION_FIELDS}
     return _dm(["properties", "search", "--body", json.dumps(body), "--json"])
 
 
@@ -96,6 +107,9 @@ def to_lead(row: dict, lead_type: str, when: str) -> dict:
         "source_ids": ["dealmachine"],
         "is_dealmachine_list": True,
         "lead_type": lead_type,
+        # Motivation MULTIPLIER flags (owner attributes, not lead origins).
+        "senior_owner_flag": _yn(row.get("has_senior_owners")),
+        "tired_landlord_flag": _yn(row.get("has_tired_landlords")),
         "distress_signal": None,
         "primary_event_date": None,
         "lead_status": "DEALMACHINE_LIST",

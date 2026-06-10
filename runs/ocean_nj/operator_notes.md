@@ -64,3 +64,13 @@ does not get it).
   owner-people matching), NOT property-only — contacts/phones still require a
   separate export/enrichment step. The 4 pulled lists (3,959 properties) cost
   ~7,461 credits.
+- **Motivation flags (senior_owner / tired_landlord):** stacked as MULTIPLIER flags
+  on existing leads, NOT pulled as lists (105k/24k blanket = noise). These are
+  returnable fields ONLY via `properties search` + a `fields` selection
+  (`["has_senior_owners","has_tired_landlords"]`, values "Yes"/"No") — the
+  per-property `dm enrich`/`get`/`ids` lookups IGNORE field selection and never
+  return them. So they were captured for the 3,959 list leads by re-running the pull
+  with the fields (dedup-free, 0 incremental credits): 1,025 senior, 367 tired. The
+  538 source-of-record leads are enriched via `dm enrich` (no field selection) and
+  cannot ride this cheaply; stacking on them would need the full senior/tired set
+  pull (~130k credits) — NOT done. Surfaced as card badges + stackable filters.
