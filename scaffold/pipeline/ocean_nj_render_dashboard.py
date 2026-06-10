@@ -49,6 +49,41 @@ _ENTITY_TOKENS = (" LLC", " L.L.C", " INC", " CORP", " CO.", " COMPANY", " LP",
                   " PROPERTIES", " REALTY", " FUND", " GROUP", " ENTERPRISES")
 
 
+def _lead_type(lead: dict) -> str:
+    return {
+        "foreclosure_sale_scheduled": "Sheriff Foreclosure",
+        "foreclosure_notice_published": "Foreclosure Notice",
+        "tax_default_brick": "Tax Default",
+        "probate_filing_recent": "Probate",
+    }.get(lead.get("distress_signal") or "", lead.get("distress_signal") or "")
+
+
+def _owner_first_last(lead: dict, owner_type: str) -> tuple[str, str]:
+    """(first_name_or_entity_name, last_name). Entities/estates -> full name in
+    first column, last blank. Individuals -> split. Prefer the structured
+    DealMachine contact (clean first/last); else parse owner_name; else defendant."""
+    # DealMachine owner contact has structured first/last.
+    for c in ((lead.get("dealmachine") or {}).get("contacts") or []):
+        if c.get("contact_type") == "owner" and (c.get("first_name") or c.get("last_name")):
+            if owner_type in ("Entity", "Estate"):
+                return (c.get("full_name") or "").strip(), ""
+            return (c.get("first_name") or "").strip(), (c.get("last_name") or "").strip()
+    name = (lead.get("owner_name") or lead.get("defendant_name") or "").strip()
+    if not name:
+        return "", ""
+    if owner_type in ("Entity", "Estate"):
+        return name, ""
+    # "LAST, FIRST ..." (county/defendant format)
+    if "," in name:
+        last, first = name.split(",", 1)
+        return first.strip(), last.strip()
+    # "FIRST [MIDDLE] LAST"
+    parts = name.split()
+    if len(parts) == 1:
+        return parts[0], ""
+    return " ".join(parts[:-1]), parts[-1]
+
+
 def _owner_type(lead: dict) -> str:
     """Owner-type tag from the (now DealMachine-enriched) owner name."""
     name = (lead.get("owner_name") or "").upper().strip()
@@ -131,7 +166,29 @@ def _to_row(lead: dict) -> dict:
         "out_of_state": bool(lead.get("out_of_state")),
         # Probate research targets are hidden by default behind a toggle
         "is_probate": lead.get("distress_signal") == "probate_filing_recent",
+        # ── CSV export fields (exact client column spec) ──
+        "lead_type": _lead_type(lead),
+        "export_first_name": _export_name(lead)[0],
+        "export_last_name": _export_name(lead)[1],
+        # property address components (prefer DealMachine-normalized, else county)
+        "exp_prop_address": _dmp(lead, "address") or (lead.get("property_address") or ""),
+        "exp_prop_city": _dmp(lead, "city") or (lead.get("property_city") or ""),
+        "exp_prop_state": _dmp(lead, "state") or (lead.get("property_state") or ""),
+        "exp_prop_zip": _dmp(lead, "zip") or (lead.get("property_zip") or ""),
+        # owner mailing address (county MOD-IV)
+        "exp_mail_address": lead.get("owner_mailing_address") or "",
+        "exp_mail_city": lead.get("owner_mailing_city") or "",
+        "exp_mail_state": lead.get("owner_mailing_state") or "",
+        "exp_mail_zip": lead.get("owner_mailing_zip") or "",
     }
+
+
+def _dmp(lead: dict, key: str):
+    return ((lead.get("dealmachine") or {}).get("property") or {}).get(key)
+
+
+def _export_name(lead: dict) -> tuple[str, str]:
+    return _owner_first_last(lead, _owner_type(lead))
 
 
 HTML_TEMPLATE = r"""<!doctype html>
@@ -173,6 +230,10 @@ HTML_TEMPLATE = r"""<!doctype html>
   button.reset{background:transparent;border:1px solid var(--border);color:var(--muted);
                padding:5px 12px;border-radius:6px;cursor:pointer;font-size:12px}
   button.reset:hover{color:var(--text);border-color:var(--text)}
+  button.export{background:var(--good);border:1px solid var(--good);color:#06210f;
+                padding:5px 12px;border-radius:6px;cursor:pointer;font-size:12px;
+                font-weight:600}
+  button.export:hover{filter:brightness(1.1)}
   .probate-toggle{display:flex;align-items:center;gap:6px;color:var(--muted);
                   font-size:12.5px;cursor:pointer;margin-left:6px}
   .probate-toggle input{cursor:pointer}
@@ -253,6 +314,7 @@ HTML_TEMPLATE = r"""<!doctype html>
     </div>
     <input type="search" id="search" placeholder="Search address, owner, defendant, decedent, docket…" />
     <button class="reset" data-filter="reset">Reset</button>
+    <button class="export" id="export-csv">⬇ Export CSV</button>
     <label class="probate-toggle"><input type="checkbox" id="show-probate" />
       Show probate research targets (<span id="probate-count">0</span>)</label>
     <div class="counts"><strong id="shown">0</strong> of <span id="total">0</span> leads</div>
@@ -383,6 +445,9 @@ function renderCard(row) {
       ${em ? `<div>✉ ${em}</div>` : ''}
     </div><div class="src">source: <span class="dm">dealmachine</span>${
       row.daniels_law_backfilled ? ' · owner backfilled (Daniel\'s Law)' : ''}</div>`;
+  } else if (row.dealmachine_matched) {
+    // Property matched but DealMachine returned no owner contact (skip-trace miss).
+    contactsBlock = '<div class="src">DealMachine: property matched — no owner contact on file</div>';
   } else if (row.dm_enrichment_status === 'pending_retry') {
     contactsBlock = '<div class="src">DealMachine: pending retry (API unavailable)</div>';
   } else if (row.dm_enrichment_status === 'no_dm_record') {
@@ -470,6 +535,59 @@ document.getElementById('show-probate').addEventListener('change', (e) => {
   STATE.showProbate = e.target.checked;
   render();
 });
+
+// ── CSV export — exact client column order; exports the CURRENTLY-FILTERED set
+// (respects active filters AND the probate toggle). ──
+const EXPORT_COLUMNS = [
+  "lead_type", "first_name_or_entity_name", "last_name",
+  "property_address", "property_city", "property_state", "property_zip",
+  "mailing_address", "mailing_city", "mailing_state", "mailing_zip",
+  "phone_1", "phone_2", "phone_3", "phone_4", "phone_5", "phone_6", "email",
+];
+
+function csvCell(v) {
+  const s = (v === null || v === undefined) ? "" : String(v);
+  return /[",\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s;
+}
+
+function rowToExport(r) {
+  const ph = r.owner_phones || [];
+  return {
+    lead_type: r.lead_type || "",
+    first_name_or_entity_name: r.export_first_name || "",
+    last_name: r.export_last_name || "",
+    property_address: r.exp_prop_address || "",
+    property_city: r.exp_prop_city || "",
+    property_state: r.exp_prop_state || "",
+    property_zip: r.exp_prop_zip || "",
+    mailing_address: r.exp_mail_address || "",
+    mailing_city: r.exp_mail_city || "",
+    mailing_state: r.exp_mail_state || "",
+    mailing_zip: r.exp_mail_zip || "",
+    phone_1: ph[0] || "", phone_2: ph[1] || "", phone_3: ph[2] || "",
+    phone_4: ph[3] || "", phone_5: ph[4] || "", phone_6: ph[5] || "",
+    email: (r.owner_emails || [])[0] || "",
+  };
+}
+
+function exportCSV() {
+  const rows = STATE.rows.filter(matches);
+  const lines = [EXPORT_COLUMNS.join(",")];
+  for (const r of rows) {
+    const e = rowToExport(r);
+    lines.push(EXPORT_COLUMNS.map(c => csvCell(e[c])).join(","));
+  }
+  const blob = new Blob([lines.join("\r\n")], {type: "text/csv;charset=utf-8"});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  const stamp = new Date().toISOString().slice(0,10);
+  a.href = url;
+  a.download = `ocean_nj_leads_${stamp}_${rows.length}.csv`;
+  document.body.appendChild(a); a.click(); a.remove();
+  URL.revokeObjectURL(url);
+}
+
+document.getElementById('export-csv').addEventListener('click', exportCSV);
 
 load();
 </script>

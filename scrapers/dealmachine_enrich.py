@@ -72,6 +72,25 @@ DANIELS_LAW_STATUSES = {
     "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
 }
 
+# Ocean County, NJ ZIP codes. The DealMachine NJ APN index is keyed by the
+# 2-digit MUNICIPAL DISTRICT only (no county), so an APN like 01-00110-0000-00009
+# collides across counties and can resolve to the wrong county. We HARD-REJECT any
+# match whose property is outside Ocean County (correctness over coverage).
+OCEAN_ZIPS = {
+    "08005", "08006", "08008", "08050", "08087", "08092", "08527", "08533",
+    "08555", "08701", "08720", "08721", "08722", "08723", "08724", "08731",
+    "08732", "08733", "08734", "08735", "08738", "08739", "08740", "08741",
+    "08742", "08751", "08752", "08753", "08754", "08755", "08756", "08757",
+    "08758", "08759",
+}
+
+
+def in_ocean(rec: dict) -> bool:
+    """True if a matched DealMachine record is actually in Ocean County, NJ."""
+    if (rec.get("state") or "NJ") != "NJ":
+        return False
+    return (rec.get("zip") or "")[:5] in OCEAN_ZIPS
+
 
 # ─────────────────────────────────────────────────────────── APN derivation ──
 def derive_apn(parcel_id: str | None) -> str | None:
@@ -141,13 +160,17 @@ def load_parcel_situs(parcel_ids: set[str]) -> dict[str, dict]:
             if pid in parcel_ids:
                 cs = (payload.get("city_state") or "").strip()
                 state = cs.split()[-1] if cs else None   # "RICHMOND TX" -> "TX"
-                city = cs.replace(" NJ", "").strip()
+                mail_city = " ".join(cs.split()[:-1]) if len(cs.split()) > 1 else cs
                 out[pid] = {
                     "prop_loc": payload.get("prop_loc"),
-                    "city": city,
+                    "city": cs.replace(" NJ", "").strip(),
                     "zip5": payload.get("zip5"),
                     "muni": payload.get("muni"),
-                    "owner_mailing_state": state,   # county MOD-IV owner mailing state
+                    # OWNER MAILING address (MOD-IV: st_address / city_state / zip5)
+                    "owner_mailing_address": payload.get("st_address"),
+                    "owner_mailing_city": mail_city,
+                    "owner_mailing_state": state,
+                    "owner_mailing_zip": payload.get("zip5"),
                 }
                 if len(out) == len(parcel_ids):
                     break
@@ -155,19 +178,23 @@ def load_parcel_situs(parcel_ids: set[str]) -> dict[str, dict]:
 
 
 def stamp_residency(actionable: list[dict]) -> None:
-    """Stamp owner-residency signals onto each actionable lead, for the
-    absentee / out-of-state dashboard filters:
-      • owner_occupied      — from DealMachine (source: dealmachine)
-      • owner_mailing_state — from county MOD-IV mailing address (source: county)
-      • absentee            — owner does not occupy (DM owner_occupied == False)
-      • out_of_state        — owner mails outside NJ
+    """Stamp owner-residency + mailing signals onto each actionable lead:
+      • owner_occupied       — from DealMachine (source: dealmachine)
+      • owner_mailing_*       — county MOD-IV owner mailing address (source: county)
+      • absentee             — owner does not occupy (DM owner_occupied == False)
+      • out_of_state         — owner mails outside NJ
+    Used by the absentee / out-of-state filters and the CSV export.
     """
     situs = load_parcel_situs({l["parcel_id"] for l in actionable if l.get("parcel_id")})
     for l in actionable:
         occ = ((l.get("dealmachine") or {}).get("property") or {}).get("owner_occupied")
         l["owner_occupied"] = occ
-        ms = (situs.get(l.get("parcel_id") or "") or {}).get("owner_mailing_state")
+        pj = situs.get(l.get("parcel_id") or "") or {}
+        ms = pj.get("owner_mailing_state")
+        l["owner_mailing_address"] = pj.get("owner_mailing_address")
+        l["owner_mailing_city"] = pj.get("owner_mailing_city")
         l["owner_mailing_state"] = ms
+        l["owner_mailing_zip"] = pj.get("owner_mailing_zip")
         l["absentee"] = (occ is False)
         l["out_of_state"] = bool(ms and ms != "NJ")
 
@@ -280,8 +307,17 @@ def _enrich_adaptive(kind: str, items: list[str], field: str, extra: dict,
             resp = _dm_enrich(kind, body)
             for rec in resp.get("data", []):
                 key = (rec.get("input") or {}).get(field)
-                if key is not None:
-                    results[key] = rec                       # persist success
+                if key is None:
+                    continue
+                # Ocean-County guard: an APN/address can resolve to a same-district
+                # property in the WRONG county. Reject it (clean no_match) so wrong
+                # property/owner data is never attached.
+                if rec.get("matched") and not in_ocean(rec):
+                    rec = {"input": rec.get("input"), "matched": False,
+                           "match_failure": {"code": "wrong_county",
+                                             "reason": f"APN resolved outside Ocean County "
+                                                       f"({rec.get('city')}, {rec.get('zip')})"}}
+                results[key] = rec                           # persist success
             consec_outage[0] = 0
             time.sleep(RATE_LIMIT_SLEEP)
             return
@@ -421,8 +457,23 @@ def mark_pending(lead: dict) -> None:
         srcs.append(SOURCE_TAG)
 
 
+def _revert_dm_owner(lead: dict) -> None:
+    """Undo any prior DealMachine owner backfill so re-apply is idempotent
+    (e.g. a match later rejected by the Ocean-County guard must not keep the
+    DM-sourced owner name)."""
+    if lead.get("owner_name_source") == SOURCE_TAG:
+        lead["owner_name"] = None
+        lead.pop("owner_name_source", None)
+        if lead.pop("daniels_law_backfilled", False):
+            lead["owner_resolved"] = False
+            prior = lead.pop("owner_resolution_status_prior", None)
+            if prior:
+                lead["owner_resolution_status"] = prior
+
+
 def apply_to_lead(lead: dict, block: dict) -> dict:
     """Attach block; fill Daniel's-Law owner_name (labeled). Returns stats dict."""
+    _revert_dm_owner(lead)                       # idempotency: clear stale backfill
     lead["dealmachine"] = block
     lead["dm_enrichment_status"] = block.get("enrichment_status") or (
         "enriched" if block.get("matched") else "no_dm_record")
