@@ -32,3 +32,35 @@ knowledge surfaces. Each entry should be:
 ## <source_id>
 
 (populated by Claude Code as operator knowledge surfaces during Phase 0)
+
+## dealmachine — CLIENT-SPECIFIC OVERRIDE (Ocean-only, NOT framework canon)
+
+2026-06-10 — Client requested commercial lead lists pulled directly from
+DealMachine for Ocean County. This is a **client-specific, Ocean-only override**.
+It MUST NOT be added to the framework or inherited by any other county (county #5
+does not get it).
+
+- **Enrichment** (`scrapers/dealmachine_enrich.py`): attaches DealMachine owner /
+  contact / property data onto the 536 actionable source-of-record leads (S1
+  sheriff + S7c HLS Brick). Tagged `source: dealmachine`,
+  scope `COMMERCIAL_ENRICHMENT_SOURCE`. Auth via `dm` CLI against
+  `api.v2.dealmachine.com` (key in gitignored `~/.dealmachine/config.json`).
+  Ocean-County ZIP guard rejects cross-county APN collisions.
+- **List-pull** (`scrapers/dealmachine_listpull.py`): pulls aggregator lead lists
+  via `dm properties search` scoped to Ocean County (`loc_county_34029`). Tagged
+  `source: dealmachine`, `lead_origin_type=COMMERCIAL_LIST`,
+  `is_dealmachine_list=true` — kept visually/structurally DISTINCT from county
+  source-of-record distress leads (hidden by default behind a dashboard toggle;
+  purple "DealMachine list" card styling). Output lives in
+  `data/enriched/dealmachine_listpull.json`, merged in at dashboard-render time so
+  county `build_leads` never wipes it.
+- **Lead types** (all 6 confirmed available as DealMachine property filters):
+  expired_listing (`is_mls_listing_expired`), hoa_lien (`has_hoa_lien`),
+  vacant (`is_vacant_home`), zombie (`is_zombie_property`) — PULLED.
+  senior_owner (`has_senior_owners`, ~105k) and tired_landlord
+  (`has_tired_landlords`, ~24k) — GATED (too large/broad; exceed credit budget;
+  require refinement or explicit cap before pulling).
+- **Cost note:** `dm properties search` charges ~1.9 credits/property (property +
+  owner-people matching), NOT property-only — contacts/phones still require a
+  separate export/enrichment step. The 4 pulled lists (3,959 properties) cost
+  ~7,461 credits.

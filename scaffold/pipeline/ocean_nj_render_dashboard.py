@@ -49,7 +49,17 @@ _ENTITY_TOKENS = (" LLC", " L.L.C", " INC", " CORP", " CO.", " COMPANY", " LP",
                   " PROPERTIES", " REALTY", " FUND", " GROUP", " ENTERPRISES")
 
 
+_LIST_TYPE_LABELS = {
+    "vacant": "Vacant Home", "hoa_lien": "HOA Lien", "zombie": "Zombie Property",
+    "expired_listing": "Expired Listing", "senior_owner": "Senior Owner",
+    "tired_landlord": "Tired Landlord",
+}
+
+
 def _lead_type(lead: dict) -> str:
+    # DealMachine commercial-list leads carry lead_type directly.
+    if lead.get("is_dealmachine_list") and lead.get("lead_type"):
+        return _LIST_TYPE_LABELS.get(lead["lead_type"], lead["lead_type"])
     return {
         "foreclosure_sale_scheduled": "Sheriff Foreclosure",
         "foreclosure_notice_published": "Foreclosure Notice",
@@ -133,7 +143,9 @@ def _to_row(lead: dict) -> dict:
         "year_built": lead.get("year_built"),
         "qualification_status": lead.get("qualification_status") or "",
         # Display-only extras
-        "distress_label": _signal_to_distress(lead.get("distress_signal") or ""),
+        "distress_label": (_LIST_TYPE_LABELS.get(lead.get("lead_type"), lead.get("lead_type"))
+                           if lead.get("is_dealmachine_list")
+                           else _signal_to_distress(lead.get("distress_signal") or "")),
         "city": lead.get("property_city") or "",
         "plaintiff": lead.get("plaintiff") or "",
         "defendant": lead.get("defendant_name") or "",
@@ -166,6 +178,12 @@ def _to_row(lead: dict) -> dict:
         "out_of_state": bool(lead.get("out_of_state")),
         # Probate research targets are hidden by default behind a toggle
         "is_probate": lead.get("distress_signal") == "probate_filing_recent",
+        # DealMachine commercial list-pull leads (Ocean-only, client-specific) —
+        # kept structurally distinct from county source-of-record distress leads.
+        "is_dealmachine_list": bool(lead.get("is_dealmachine_list")),
+        "dm_list_type": lead.get("lead_type") or "" if lead.get("is_dealmachine_list") else "",
+        "dm_property_value": _dmp(lead, "estimated_value"),
+        "property_type": _dmp(lead, "property_type") or "",
         # ── CSV export fields (exact client column spec) ──
         "lead_type": _lead_type(lead),
         "export_first_name": _export_name(lead)[0],
@@ -254,6 +272,10 @@ HTML_TEMPLATE = r"""<!doctype html>
         padding:14px 16px;display:flex;flex-direction:column;gap:6px}
   .card.review-required{border-left:3px solid var(--warn)}
   .card.approved{border-left:3px solid var(--good)}
+  /* DealMachine commercial-list leads — visually distinct from source-of-record */
+  .card.dm-list{border-left:3px solid #8957e5;background:#17141f}
+  .card .signal.dmlist{color:#d2a8ff}
+  .card .badge.dmlist{background:#241a3d;color:#d2a8ff;border-color:#3d2f66}
   .card .signal{font-weight:600;color:var(--accent);font-size:13px}
   .card .signal.probate{color:#d2a8ff}
   .card .address{font-weight:600;font-size:14.5px}
@@ -312,11 +334,20 @@ HTML_TEMPLATE = r"""<!doctype html>
       <span class="chip" data-filter="address_resolved" data-value="true">Resolved</span>
       <span class="chip" data-filter="address_resolved" data-value="false">Unresolved</span>
     </div>
+    <div class="filter-group" id="list-type-group" style="display:none">
+      <span class="label">DM list type</span>
+      <span class="chip" data-filter="dm_list_type" data-value="vacant">Vacant</span>
+      <span class="chip" data-filter="dm_list_type" data-value="hoa_lien">HOA lien</span>
+      <span class="chip" data-filter="dm_list_type" data-value="zombie">Zombie</span>
+      <span class="chip" data-filter="dm_list_type" data-value="expired_listing">Expired listing</span>
+    </div>
     <input type="search" id="search" placeholder="Search address, owner, defendant, decedent, docket…" />
     <button class="reset" data-filter="reset">Reset</button>
     <button class="export" id="export-csv">⬇ Export CSV</button>
     <label class="probate-toggle"><input type="checkbox" id="show-probate" />
       Show probate research targets (<span id="probate-count">0</span>)</label>
+    <label class="probate-toggle"><input type="checkbox" id="show-lists" />
+      Show DealMachine lists (<span id="list-count">0</span>)</label>
     <div class="counts"><strong id="shown">0</strong> of <span id="total">0</span> leads</div>
   </div>
   <div id="grid" class="grid"></div>
@@ -330,9 +361,10 @@ HTML_TEMPLATE = r"""<!doctype html>
 <script>
 const STATE = {
   filters: { distress_type:null, owner_type:null, recency:null,
-             residency:null, address_resolved:null },
+             residency:null, address_resolved:null, dm_list_type:null },
   search: "",
   showProbate: false,   // probate research targets hidden by default (§5)
+  showLists: false,     // DealMachine commercial lists hidden by default (distinct)
   rows: [],
 };
 
@@ -351,6 +383,8 @@ async function load() {
     });
     const probateN = STATE.rows.filter(r => r.is_probate).length;
     document.getElementById('probate-count').textContent = probateN.toLocaleString();
+    const listN = STATE.rows.filter(r => r.is_dealmachine_list).length;
+    document.getElementById('list-count').textContent = listN.toLocaleString();
     render();
   } catch (err) {
     document.getElementById('error-banner').style.display = 'block';
@@ -364,8 +398,11 @@ function toggleChip(filter, value) {
 
 function matches(row) {
   const f = STATE.filters;
-  // Probate research targets are hidden unless explicitly toggled on (§5).
+  // Probate research targets hidden unless toggled (§5); DealMachine commercial
+  // lists hidden unless toggled (kept distinct from source-of-record).
   if (row.is_probate && !STATE.showProbate) return false;
+  if (row.is_dealmachine_list && !STATE.showLists) return false;
+  if (f.dm_list_type && row.dm_list_type !== f.dm_list_type) return false;
   if (f.distress_type && row.signal_type !== f.distress_type) return false;
   if (f.owner_type && row.owner_type !== f.owner_type) return false;
   if (f.address_resolved !== null) {
@@ -406,7 +443,9 @@ function escape(s) {
 
 function renderCard(row) {
   const isProbate = row.signal_type === 'probate_filing_recent';
-  const cls = row.review_status === 'APPROVED_FOR_DASHBOARD' ? 'approved' : 'review-required';
+  const isList = row.is_dealmachine_list;
+  const cls = isList ? 'dm-list'
+    : (row.review_status === 'APPROVED_FOR_DASHBOARD' ? 'approved' : 'review-required');
   const addr = row.property_full_address
     ? `<div class="address">${escape(row.property_full_address)}</div>`
     : `<div class="address empty-addr">No street address (probate / unjoined)</div>`;
@@ -424,7 +463,8 @@ function renderCard(row) {
     badges.push('<span class="badge bad">Cancelled</span>');
   if (row.out_of_state) badges.push('<span class="badge warn">Out-of-state owner</span>');
   else if (row.absentee) badges.push('<span class="badge">Absentee owner</span>');
-  const sig = isProbate ? 'probate' : '';
+  if (isList) badges.unshift('<span class="badge dmlist">DealMachine list</span>');
+  const sig = isList ? 'dmlist' : (isProbate ? 'probate' : '');
 
   // Owner line (now DealMachine-enriched) + owner-type tag.
   const ownerName = row.owner_name
@@ -435,7 +475,9 @@ function renderCard(row) {
 
   // DealMachine contacts + provenance stamp (only on enriched leads).
   let contactsBlock = '';
-  if (row.dealmachine_matched && ((row.owner_phones||[]).length || (row.owner_emails||[]).length)) {
+  if (isList) {
+    contactsBlock = '<div class="src">source: <span class="dm">dealmachine</span> (commercial list — contacts gated; enrich to pull owner phones/emails)</div>';
+  } else if (row.dealmachine_matched && ((row.owner_phones||[]).length || (row.owner_emails||[]).length)) {
     const ph = (row.owner_phones||[]).slice(0,3).map(p =>
       `<span class="c">${escape(p)}</span>`).join(' · ');
     const em = (row.owner_emails||[]).slice(0,2).map(e =>
@@ -457,7 +499,15 @@ function renderCard(row) {
     ? `<div class="recency">Recorded ${escape(row.recorded_date)}</div>` : '';
 
   let body;
-  if (isProbate) {
+  if (isList) {
+    body = `
+      <div class="row"><span>List type</span><span class="v">${escape(row.distress_label)}</span></div>
+      <div class="row"><span>Est. value</span><span class="v">${escape(row.dm_property_value || '—')}</span></div>
+      <div class="row"><span>Property type</span><span class="v">${escape(row.property_type || '—')}</span></div>
+      <div class="row"><span>Year built</span><span class="v">${escape(row.year_built || '—')}</span></div>
+      <div class="row"><span>Town</span><span class="v">${escape(row.city)}</span></div>
+      <div class="row"><span>DM property</span><span class="v">${escape(row.lead_id.split(':')[2] || '')}</span></div>`;
+  } else if (isProbate) {
     body = `
       <div class="row"><span>Decedent</span><span class="v">${escape(row.decedent_name)}</span></div>
       <div class="row"><span>Case type</span><span class="v">${escape(row.probate_case_type)}</span></div>
@@ -492,12 +542,13 @@ function renderCard(row) {
 
 function render() {
   const filtered = STATE.rows.filter(matches);
-  // Total reflects the currently-visible universe (probate excluded unless toggled).
-  const universe = STATE.showProbate
-    ? STATE.rows.length
-    : STATE.rows.filter(r => !r.is_probate).length;
+  // Total reflects the currently-visible universe: source-of-record by default;
+  // probate and DealMachine lists are each excluded unless their toggle is on.
+  const universe = STATE.rows.filter(r =>
+    (STATE.showProbate || !r.is_probate) && (STATE.showLists || !r.is_dealmachine_list)).length;
   document.getElementById('shown').textContent = filtered.length;
   document.getElementById('total').textContent = universe;
+  document.getElementById('list-type-group').style.display = STATE.showLists ? '' : 'none';
   const grid = document.getElementById('grid');
   const empty = document.getElementById('empty');
   if (!filtered.length) { grid.innerHTML = ''; empty.style.display = 'block'; return; }
@@ -518,8 +569,10 @@ document.addEventListener('click', (e) => {
     Object.keys(STATE.filters).forEach(k => STATE.filters[k] = null);
     STATE.search = '';
     STATE.showProbate = false;
+    STATE.showLists = false;
     document.getElementById('search').value = '';
     document.getElementById('show-probate').checked = false;
+    document.getElementById('show-lists').checked = false;
   } else {
     toggleChip(t.dataset.filter, t.dataset.value);
   }
@@ -533,6 +586,11 @@ document.getElementById('search').addEventListener('input', (e) => {
 
 document.getElementById('show-probate').addEventListener('change', (e) => {
   STATE.showProbate = e.target.checked;
+  render();
+});
+
+document.getElementById('show-lists').addEventListener('change', (e) => {
+  STATE.showLists = e.target.checked;
   render();
 });
 
@@ -603,11 +661,21 @@ def main() -> int:
 
     DASH.mkdir(parents=True, exist_ok=True)
     src = json.loads(Path(args.inp).read_text(encoding="utf-8"))
-    rows = [_to_row(l) for l in src.get("leads", [])]
+    leads = list(src.get("leads", []))
+    # Merge Ocean-only DealMachine commercial list-pull leads (client-specific),
+    # kept in a separate file so county build_leads never wipes them.
+    listpull = REPO_ROOT / "data" / "enriched" / "dealmachine_listpull.json"
+    n_list = 0
+    if listpull.exists():
+        lp = json.loads(listpull.read_text(encoding="utf-8"))
+        leads += lp.get("leads", [])
+        n_list = len(lp.get("leads", []))
+    rows = [_to_row(l) for l in leads]
     dashboard_data = {
         "build_timestamp": src["build_timestamp"],
         "framework_version": src["framework_version"],
         "row_count": len(rows),
+        "dealmachine_list_count": n_list,
         "records": rows,
     }
     OUT_DATA.write_text(json.dumps(dashboard_data, indent=2) + "\n",
