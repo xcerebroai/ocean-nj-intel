@@ -137,10 +137,10 @@ def _to_row(lead: dict) -> dict:
         # OPTIONAL_DASHBOARD_FIELDS
         "address_resolved": bool((_full_address(lead) or "").strip()),
         "primary_parcel_id": lead.get("parcel_id") or "",
-        "assessed_value": lead.get("net_value"),
-        "last_sale_price": lead.get("last_sale_price"),
-        "last_sale_date": lead.get("last_sale_date") or "",
-        "year_built": lead.get("year_built"),
+        "assessed_value": lead.get("net_value") or _dmp(lead, "total_assessed_value"),
+        "last_sale_price": lead.get("last_sale_price") or _dmp(lead, "last_sale_price"),
+        "last_sale_date": lead.get("last_sale_date") or _dmp(lead, "last_sale_date") or "",
+        "year_built": lead.get("year_built") or _dmp(lead, "year_built"),
         "qualification_status": lead.get("qualification_status") or "",
         # Display-only extras
         "distress_label": (_LIST_TYPE_LABELS.get(lead.get("lead_type"), lead.get("lead_type"))
@@ -218,455 +218,406 @@ HTML_TEMPLATE = r"""<!doctype html>
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Ocean County NJ — Distress Lead Dashboard</title>
+<title>Ocean County NJ — Distress Lead Intelligence</title>
 <style>
-  :root {
-    --bg:#0e1116; --panel:#161b22; --text:#e6edf3; --muted:#8b949e;
-    --accent:#58a6ff; --warn:#d29922; --bad:#f85149; --good:#3fb950;
-    --border:#30363d;
+  :root{
+    --bg:#0b0e13; --panel:#141922; --panel2:#1b212c; --text:#e6edf3; --muted:#8b949e;
+    --accent:#58a6ff; --warn:#d29922; --bad:#f85149; --good:#3fb950; --purple:#a371f7;
+    --border:#262d38; --border2:#30384a;
   }
   *{box-sizing:border-box}
-  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-       background:var(--bg);color:var(--text);font-size:14px;line-height:1.4}
-  header{padding:18px 24px;border-bottom:1px solid var(--border);
-         display:flex;align-items:baseline;gap:18px;flex-wrap:wrap}
-  header h1{margin:0;font-size:20px;font-weight:600}
-  header .meta{color:var(--muted);font-size:13px}
-  #error-banner{display:none;background:var(--bad);color:#fff;padding:10px 24px}
-  main{padding:20px 24px;max-width:1600px;margin:0 auto}
-  .filters{display:flex;flex-wrap:wrap;gap:8px;align-items:center;
-           padding-bottom:16px;border-bottom:1px solid var(--border);margin-bottom:18px}
-  .filter-group{display:flex;flex-wrap:wrap;gap:6px;align-items:center;
-                margin-right:14px}
-  .filter-group .label{color:var(--muted);font-size:12px;margin-right:4px;
-                       text-transform:uppercase;letter-spacing:0.05em}
-  .chip{background:var(--panel);border:1px solid var(--border);color:var(--text);
-        padding:5px 11px;border-radius:999px;font-size:12.5px;cursor:pointer;
-        user-select:none;transition:background 0.1s}
-  .chip:hover{background:#1f2630}
-  .chip.active{background:var(--accent);color:#0a0d12;border-color:var(--accent);
-               font-weight:600}
-  input[type="search"]{background:var(--panel);border:1px solid var(--border);
-                       color:var(--text);padding:6px 12px;border-radius:6px;
-                       font-size:13px;min-width:260px}
-  button.reset{background:transparent;border:1px solid var(--border);color:var(--muted);
-               padding:5px 12px;border-radius:6px;cursor:pointer;font-size:12px}
-  button.reset:hover{color:var(--text);border-color:var(--text)}
-  button.export{background:var(--good);border:1px solid var(--good);color:#06210f;
-                padding:5px 12px;border-radius:6px;cursor:pointer;font-size:12px;
-                font-weight:600}
-  button.export:hover{filter:brightness(1.1)}
-  .probate-toggle{display:flex;align-items:center;gap:6px;color:var(--muted);
-                  font-size:12.5px;cursor:pointer;margin-left:6px}
-  .probate-toggle input{cursor:pointer}
-  .counts{margin-left:auto;color:var(--muted);font-size:13px}
-  .counts strong{color:var(--text)}
-  .card .owner{font-size:13.5px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-  .card .owner .name{font-weight:600;color:var(--text)}
-  .card .owner .otag{font-size:10.5px;text-transform:uppercase;letter-spacing:.04em;
-                     padding:1px 6px;border-radius:4px;background:#1f2630;
-                     border:1px solid var(--border);color:var(--muted)}
-  .card .contacts{font-size:12px;color:var(--muted);display:flex;flex-direction:column;gap:2px}
-  .card .contacts .c{color:var(--text)}
-  .card .src{font-size:10.5px;color:var(--muted)}
-  .card .src .dm{color:#d2a8ff}
-  .card .recency{font-size:11.5px;color:var(--muted)}
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(380px,1fr));gap:14px}
-  .card{background:var(--panel);border:1px solid var(--border);border-radius:8px;
-        padding:14px 16px;display:flex;flex-direction:column;gap:6px}
-  .card.review-required{border-left:3px solid var(--warn)}
-  .card.approved{border-left:3px solid var(--good)}
-  /* DealMachine commercial-list leads — visually distinct from source-of-record */
-  .card.dm-list{border-left:3px solid #8957e5;background:#17141f}
-  .card .signal.dmlist{color:#d2a8ff}
-  .card .badge.dmlist{background:#241a3d;color:#d2a8ff;border-color:#3d2f66}
-  .card .badge.motiv{background:#0c2f33;color:#56d4dd;border-color:#164b52}
-  .card .signal{font-weight:600;color:var(--accent);font-size:13px}
-  .card .signal.probate{color:#d2a8ff}
-  .card .address{font-weight:600;font-size:14.5px}
-  .card .empty-addr{color:var(--muted);font-style:italic}
-  .card .row{display:flex;justify-content:space-between;gap:10px;font-size:12.5px;
-             color:var(--muted)}
-  .card .row .v{color:var(--text)}
-  .card .badge{display:inline-block;padding:2px 8px;border-radius:4px;
-               font-size:11px;background:#1f2630;color:var(--muted);
-               border:1px solid var(--border);margin-right:4px}
-  .card .badge.warn{background:#3d2f0c;color:var(--warn);border-color:#5a4810}
-  .card .badge.good{background:#0f3a1d;color:var(--good);border-color:#1f5e30}
-  .card .badge.bad{background:#3d1010;color:var(--bad);border-color:#5a1a1a}
-  .empty-state{text-align:center;color:var(--muted);padding:60px 0;
-               font-size:14px}
-  footer{padding:18px 24px;color:var(--muted);font-size:12px;
-         border-top:1px solid var(--border);margin-top:30px}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+       background:var(--bg);color:var(--text);font-size:13.5px;line-height:1.45}
   a{color:var(--accent);text-decoration:none}
-  a:hover{text-decoration:underline}
+  /* ---- header ---- */
+  header{padding:18px 26px 0;border-bottom:1px solid var(--border);background:#0d1117}
+  header h1{margin:0 0 4px;font-size:19px;font-weight:650;letter-spacing:.2px}
+  header .summary{color:var(--muted);font-size:12.5px;margin-bottom:14px}
+  header .summary b{color:var(--text)}
+  /* ---- tabs ---- */
+  .tabs{display:flex;gap:4px;flex-wrap:wrap;overflow-x:auto}
+  .tab{padding:8px 14px;border:1px solid transparent;border-bottom:none;border-radius:8px 8px 0 0;
+       background:transparent;color:var(--muted);cursor:pointer;font-size:13px;white-space:nowrap;
+       display:flex;align-items:center;gap:7px}
+  .tab:hover{color:var(--text);background:var(--panel)}
+  .tab.active{background:var(--panel);color:var(--text);border-color:var(--border);font-weight:600}
+  .tab .n{font-size:11px;color:var(--muted);background:var(--panel2);padding:1px 7px;border-radius:10px}
+  .tab.active .n{color:var(--accent)}
+  .tab.t-probate.active{color:var(--purple)} .tab.t-probate.active .n{color:var(--purple)}
+  .tab.t-list.active{color:var(--purple)} .tab.t-list.active .n{color:var(--purple)}
+  /* ---- controls ---- */
+  main{padding:16px 26px 40px;max-width:1640px;margin:0 auto}
+  .controls{display:flex;flex-direction:column;gap:10px;padding-bottom:14px;
+            border-bottom:1px solid var(--border);margin-bottom:18px}
+  .row-ctrl{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+  .lbl{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.06em;margin-right:2px}
+  .pill,.chip{border:1px solid var(--border2);background:var(--panel);color:var(--text);
+        padding:5px 11px;border-radius:999px;font-size:12.5px;cursor:pointer;user-select:none;
+        transition:.1s}
+  .pill:hover,.chip:hover{background:var(--panel2)}
+  .pill.active{background:#0c2f33;border-color:#1f6b73;color:#56d4dd;font-weight:600}
+  .chip.active{background:var(--accent);border-color:var(--accent);color:#06121f;font-weight:600}
+  input[type=search]{background:var(--panel);border:1px solid var(--border2);color:var(--text);
+       padding:7px 12px;border-radius:8px;font-size:13px;min-width:240px}
+  .btn{background:transparent;border:1px solid var(--border2);color:var(--muted);padding:6px 12px;
+       border-radius:8px;cursor:pointer;font-size:12.5px}
+  .btn:hover{color:var(--text);border-color:var(--text)}
+  .btn.export{background:var(--good);border-color:var(--good);color:#06210f;font-weight:600}
+  .toggle{display:flex;align-items:center;gap:6px;color:var(--muted);font-size:12px;cursor:pointer}
+  .toggle input{cursor:pointer}
+  .count{margin-left:auto;color:var(--muted);font-size:13px}
+  .count b{color:var(--text);font-size:15px}
+  /* ---- grid + cards ---- */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:14px}
+  .card{background:var(--panel);border:1px solid var(--border);border-radius:10px;overflow:hidden;
+        display:flex;flex-direction:column}
+  .card.foreclosure{border-top:3px solid var(--warn)}
+  .card.tax{border-top:3px solid var(--accent)}
+  .card.probate{border-top:3px solid var(--purple)}
+  .card.list{border-top:3px solid var(--purple);background:#15131c}
+  .card-head{padding:12px 14px 10px;border-bottom:1px solid var(--border)}
+  .card-head .addr{font-weight:650;font-size:14px;line-height:1.3}
+  .card-head .addr.empty{color:var(--muted);font-style:italic;font-weight:500}
+  .card-head .sub{color:var(--muted);font-size:11.5px;margin-top:2px}
+  .hbadges{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+  .badge{font-size:10.5px;padding:2px 8px;border-radius:5px;background:var(--panel2);
+         color:var(--muted);border:1px solid var(--border2);text-transform:uppercase;letter-spacing:.03em}
+  .badge.type{background:#10243d;color:#79c0ff;border-color:#1f4870}
+  .badge.type.tax{background:#0c2f33;color:#56d4dd;border-color:#1f6b73}
+  .badge.type.list{background:#241a3d;color:#d2a8ff;border-color:#3d2f66}
+  .badge.type.probate{background:#241a3d;color:#d2a8ff;border-color:#3d2f66}
+  .badge.good{background:#0f3a1d;color:var(--good);border-color:#1f5e30}
+  .badge.warn{background:#3d2f0c;color:var(--warn);border-color:#5a4810}
+  .badge.bad{background:#3d1010;color:var(--bad);border-color:#5a1a1a}
+  .badge.motiv{background:#0c2f33;color:#56d4dd;border-color:#164b52}
+  .sec{padding:10px 14px;border-bottom:1px solid var(--border)}
+  .sec:last-child{border-bottom:none}
+  .sec-title{font-size:10px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);
+             margin-bottom:7px;font-weight:600}
+  .owner-name{font-size:14px;font-weight:600;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .owner-name.unres{color:var(--muted);font-weight:500;font-style:italic}
+  .otag{font-size:9.5px;text-transform:uppercase;letter-spacing:.04em;padding:1px 6px;border-radius:4px;
+        background:var(--panel2);border:1px solid var(--border2);color:var(--muted);font-style:normal}
+  .contact{font-size:12.5px;color:var(--text);margin-top:5px;word-break:break-word}
+  .contact .ic{color:var(--muted);margin-right:5px}
+  .facts{display:grid;grid-template-columns:1fr 1fr;gap:7px 14px}
+  .fact{display:flex;flex-direction:column}
+  .fact .k{font-size:10px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+  .fact .v{font-size:13px;color:var(--text);font-weight:500}
+  .prov{padding:9px 14px;font-size:10.5px;color:var(--muted);background:var(--panel2)}
+  .prov .dm{color:var(--purple)}
+  .empty-state{text-align:center;color:var(--muted);padding:70px 0;font-size:14px}
+  footer{padding:16px 26px;color:var(--muted);font-size:11.5px;border-top:1px solid var(--border);margin-top:30px}
+  #error-banner{display:none;background:var(--bad);color:#fff;padding:10px 26px}
 </style>
 </head>
 <body>
 <header>
-  <h1>Ocean County, NJ — Distress Lead Dashboard</h1>
-  <div class="meta">Last build: <span id="build-ts">—</span></div>
+  <h1>Ocean County, NJ — Distress Lead Intelligence</h1>
+  <div class="summary" id="summary">Loading…</div>
+  <nav class="tabs" id="tabs"></nav>
 </header>
 <div id="error-banner">Could not load lead data.</div>
 <main>
-  <div class="filters">
-    <div class="filter-group">
-      <span class="label">Distress</span>
-      <span class="chip" data-filter="distress_type" data-value="foreclosure_sale_scheduled">Sheriff foreclosure</span>
-      <span class="chip" data-filter="distress_type" data-value="foreclosure_notice_published">Foreclosure notice</span>
-      <span class="chip" data-filter="distress_type" data-value="tax_default_brick">Tax default (Brick)</span>
-      <span class="chip" data-filter="distress_type" data-value="probate_filing_recent">Probate filing</span>
+  <div class="controls">
+    <div class="row-ctrl">
+      <span class="lbl">Motivation</span>
+      <span class="pill" data-motiv="senior_owner_flag">Senior owner</span>
+      <span class="pill" data-motiv="tired_landlord_flag">Tired landlord</span>
+      <span class="pill" data-motiv="absentee">Absentee</span>
+      <span class="pill" data-motiv="out_of_state">Out-of-state</span>
     </div>
-    <div class="filter-group">
-      <span class="label">Owner type</span>
+    <div class="row-ctrl">
+      <span class="lbl">Owner</span>
       <span class="chip" data-filter="owner_type" data-value="Individual">Individual</span>
-      <span class="chip" data-filter="owner_type" data-value="Entity">Entity (LLC)</span>
+      <span class="chip" data-filter="owner_type" data-value="Entity">Entity</span>
       <span class="chip" data-filter="owner_type" data-value="Estate">Estate</span>
       <span class="chip" data-filter="owner_type" data-value="Unknown">Unknown</span>
-    </div>
-    <div class="filter-group">
-      <span class="label">Recency</span>
-      <span class="chip" data-filter="recency" data-value="last_30_days">Last 30 days</span>
-      <span class="chip" data-filter="recency" data-value="last_90_days">Last 90 days</span>
-    </div>
-    <div class="filter-group">
-      <span class="label">Owner residency</span>
-      <span class="chip" data-filter="residency" data-value="absentee">Absentee</span>
-      <span class="chip" data-filter="residency" data-value="out_of_state">Out-of-state</span>
-    </div>
-    <div class="filter-group">
-      <span class="label">Address</span>
+      <span class="lbl" style="margin-left:10px">Recency</span>
+      <span class="chip" data-filter="recency" data-value="last_30_days">30 days</span>
+      <span class="chip" data-filter="recency" data-value="last_90_days">90 days</span>
+      <span class="lbl" style="margin-left:10px">Address</span>
       <span class="chip" data-filter="address_resolved" data-value="true">Resolved</span>
       <span class="chip" data-filter="address_resolved" data-value="false">Unresolved</span>
     </div>
-    <div class="filter-group">
-      <span class="label">Motivation</span>
-      <span class="chip" data-filter="senior_owner_flag" data-value="1">Senior owner</span>
-      <span class="chip" data-filter="tired_landlord_flag" data-value="1">Tired landlord</span>
+    <div class="row-ctrl">
+      <input type="search" id="search" placeholder="Search address, owner, defendant, phone, docket…" />
+      <button class="btn" id="reset">Reset</button>
+      <button class="btn export" id="export-csv">⬇ Export CSV</button>
+      <label class="toggle"><input type="checkbox" id="show-probate" />Include probate in “All” (<span id="probate-count">0</span>)</label>
+      <label class="toggle"><input type="checkbox" id="show-lists" />Include DealMachine lists in “All” (<span id="list-count">0</span>)</label>
+      <div class="count"><b id="shown">0</b> of <span id="total">0</span> leads</div>
     </div>
-    <div class="filter-group" id="list-type-group" style="display:none">
-      <span class="label">DM list type</span>
-      <span class="chip" data-filter="dm_list_type" data-value="vacant">Vacant</span>
-      <span class="chip" data-filter="dm_list_type" data-value="hoa_lien">HOA lien</span>
-      <span class="chip" data-filter="dm_list_type" data-value="zombie">Zombie</span>
-      <span class="chip" data-filter="dm_list_type" data-value="expired_listing">Expired listing</span>
-    </div>
-    <input type="search" id="search" placeholder="Search address, owner, defendant, decedent, docket…" />
-    <button class="reset" data-filter="reset">Reset</button>
-    <button class="export" id="export-csv">⬇ Export CSV</button>
-    <label class="probate-toggle"><input type="checkbox" id="show-probate" />
-      Show probate research targets (<span id="probate-count">0</span>)</label>
-    <label class="probate-toggle"><input type="checkbox" id="show-lists" />
-      Show DealMachine lists (<span id="list-count">0</span>)</label>
-    <div class="counts"><strong id="shown">0</strong> of <span id="total">0</span> leads</div>
   </div>
   <div id="grid" class="grid"></div>
-  <div id="empty" class="empty-state" style="display:none">No leads match the current filters.</div>
+  <div id="empty" class="empty-state" style="display:none">No leads match the current tab + filters.</div>
 </main>
 <footer>
-  Built by the Xcerebro County Intelligence Harness (framework v5.5.0).
-  Data sources: Ocean County Sheriff foreclosure listings, Ocean County
-  Surrogate (Bluestone), NJ Office of GIS parcels + MOD-IV.
+  Xcerebro County Intelligence — Ocean County, NJ. Sources: Ocean County Sheriff foreclosures,
+  Ocean County Surrogate, NJ GIS parcels + MOD-IV; commercial enrichment + lists via DealMachine.
 </footer>
 <script>
+const TABS = [
+  {id:"all",      label:"All",               cls:""},
+  {id:"sheriff",  label:"Sheriff Foreclosure", cls:""},
+  {id:"tax",      label:"Tax Default",       cls:""},
+  {id:"vacant",   label:"Vacant",            cls:"t-list"},
+  {id:"expired",  label:"Expired Listing",   cls:"t-list"},
+  {id:"hoa",      label:"HOA Lien",          cls:"t-list"},
+  {id:"zombie",   label:"Zombie",            cls:"t-list"},
+  {id:"probate",  label:"Probate",           cls:"t-probate"},
+];
+
 const STATE = {
-  filters: { distress_type:null, owner_type:null, recency:null,
-             residency:null, address_resolved:null, dm_list_type:null,
-             senior_owner_flag:null, tired_landlord_flag:null },
-  search: "",
-  showProbate: false,   // probate research targets hidden by default (§5)
-  showLists: false,     // DealMachine commercial lists hidden by default (distinct)
-  rows: [],
+  tab:"all",
+  filters:{owner_type:null, recency:null, address_resolved:null},
+  motiv:{senior_owner_flag:false, tired_landlord_flag:false, absentee:false, out_of_state:false},
+  search:"",
+  showProbate:false,
+  showLists:false,
+  rows:[],
 };
 
-async function load() {
-  try {
-    const res = await fetch('dashboard_data.json', {cache:'no-store'});
-    if (!res.ok) throw new Error(res.statusText);
-    const data = await res.json();
-    document.getElementById('build-ts').textContent = data.build_timestamp || '—';
-    STATE.rows = (data.records || data.rows || []).slice().sort((a,b)=>{
-      // §5.3: address-resolved first, then recorded_date desc (neutral sort)
-      const aR = a.address_resolved ? 1 : 0;
-      const bR = b.address_resolved ? 1 : 0;
-      if (aR !== bR) return bR - aR;
-      return (b.recorded_date || '').localeCompare(a.recorded_date || '');
-    });
-    const probateN = STATE.rows.filter(r => r.is_probate).length;
-    document.getElementById('probate-count').textContent = probateN.toLocaleString();
-    const listN = STATE.rows.filter(r => r.is_dealmachine_list).length;
-    document.getElementById('list-count').textContent = listN.toLocaleString();
-    render();
-  } catch (err) {
-    document.getElementById('error-banner').style.display = 'block';
-    console.error(err);
+function inScope(r){
+  // which rows the "All" tab includes (toggles add probate/lists)
+  if(r.is_probate) return STATE.showProbate;
+  if(r.is_dealmachine_list) return STATE.showLists;
+  return true; // source-of-record
+}
+function tabPred(tab){
+  switch(tab){
+    case "all":     return r=>inScope(r);
+    case "sheriff": return r=>r.signal_type==="foreclosure_sale_scheduled";
+    case "tax":     return r=>r.signal_type==="tax_default_brick";
+    case "vacant":  return r=>r.is_dealmachine_list&&r.dm_list_type==="vacant";
+    case "expired": return r=>r.is_dealmachine_list&&r.dm_list_type==="expired_listing";
+    case "hoa":     return r=>r.is_dealmachine_list&&r.dm_list_type==="hoa_lien";
+    case "zombie":  return r=>r.is_dealmachine_list&&r.dm_list_type==="zombie";
+    case "probate": return r=>r.is_probate;
   }
+  return ()=>true;
 }
 
-function toggleChip(filter, value) {
-  STATE.filters[filter] = STATE.filters[filter] === value ? null : value;
-}
-
-function matches(row) {
-  const f = STATE.filters;
-  // Probate research targets hidden unless toggled (§5); DealMachine commercial
-  // lists hidden unless toggled (kept distinct from source-of-record).
-  if (row.is_probate && !STATE.showProbate) return false;
-  if (row.is_dealmachine_list && !STATE.showLists) return false;
-  if (f.dm_list_type && row.dm_list_type !== f.dm_list_type) return false;
-  if (f.senior_owner_flag && !row.senior_owner_flag) return false;
-  if (f.tired_landlord_flag && !row.tired_landlord_flag) return false;
-  if (f.distress_type && row.signal_type !== f.distress_type) return false;
-  if (f.owner_type && row.owner_type !== f.owner_type) return false;
-  if (f.address_resolved !== null) {
-    if (f.address_resolved === 'true' && !row.address_resolved) return false;
-    if (f.address_resolved === 'false' && row.address_resolved) return false;
+function matches(r){
+  if(!tabPred(STATE.tab)(r)) return false;
+  const f=STATE.filters;
+  if(f.owner_type && r.owner_type!==f.owner_type) return false;
+  if(f.address_resolved!==null){
+    if(f.address_resolved==="true" && !r.address_resolved) return false;
+    if(f.address_resolved==="false" && r.address_resolved) return false;
   }
-  if (f.residency) {
-    if (f.residency === 'absentee' && !row.absentee) return false;
-    if (f.residency === 'out_of_state' && !row.out_of_state) return false;
+  if(f.recency){
+    const c=new Date();
+    c.setDate(c.getDate() - (f.recency==="last_30_days"?30:90));
+    if(!r.recorded_date) return false;
+    if(r.recorded_date < c.toISOString().slice(0,10)) return false;
   }
-  if (f.recency) {
-    const cutoff = new Date();
-    if (f.recency === 'last_30_days') cutoff.setDate(cutoff.getDate() - 30);
-    else if (f.recency === 'last_90_days') cutoff.setDate(cutoff.getDate() - 90);
-    if (!row.recorded_date) return false;
-    if (row.recorded_date < cutoff.toISOString().slice(0,10)) return false;
-  }
-  if (STATE.search) {
-    const q = STATE.search.toLowerCase();
-    const hay = [row.property_full_address, row.owner_name, row.defendant,
-                 row.decedent_name, row.plaintiff, row.lead_id, row.muni,
-                 row.block, row.lot, (row.owner_phones||[]).join(' '),
-                 (row.owner_emails||[]).join(' ')].filter(Boolean).join(' ').toLowerCase();
-    if (!hay.includes(q)) return false;
+  for(const k of ["senior_owner_flag","tired_landlord_flag","absentee","out_of_state"])
+    if(STATE.motiv[k] && !r[k]) return false;
+  if(STATE.search){
+    const q=STATE.search.toLowerCase();
+    const hay=[r.property_full_address,r.owner_name,r.defendant,r.plaintiff,r.decedent_name,
+      r.lead_id,r.muni,r.block,r.lot,(r.owner_phones||[]).join(" "),(r.owner_emails||[]).join(" ")]
+      .filter(Boolean).join(" ").toLowerCase();
+    if(!hay.includes(q)) return false;
   }
   return true;
 }
 
-function fmtMoney(n) {
-  if (n === null || n === undefined || n === '') return '—';
-  return '$' + Number(n).toLocaleString();
+function esc(s){return (s==null?"":String(s)).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+function money(v){
+  if(v==null||v==="") return "";
+  if(typeof v==="string"){ return v.startsWith("$")?v:("$"+v); }
+  return "$"+Number(v).toLocaleString();
 }
+function fact(k,v){ return (v==null||v===""||v==="—")?"":`<div class="fact"><span class="k">${esc(k)}</span><span class="v">${esc(v)}</span></div>`; }
+function section(title,inner){ return inner.trim()?`<div class="sec"><div class="sec-title">${title}</div>${inner}</div>`:""; }
 
-function escape(s) {
-  return (s || '').toString().replace(/[&<>"']/g, c =>
-    ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-}
+function renderCard(r){
+  let variant="", typeBadge="", typeCls="";
+  if(r.is_dealmachine_list){ variant="list"; typeCls="list"; }
+  else if(r.is_probate){ variant="probate"; typeCls="probate"; }
+  else if(r.signal_type==="foreclosure_sale_scheduled"||r.signal_type==="foreclosure_notice_published"){ variant="foreclosure"; typeCls=""; }
+  else if(r.signal_type==="tax_default_brick"){ variant="tax"; typeCls="tax"; }
+  typeBadge=`<span class="badge type ${typeCls}">${esc(r.distress_label||r.lead_type||"")}</span>`;
 
-function renderCard(row) {
-  const isProbate = row.signal_type === 'probate_filing_recent';
-  const isList = row.is_dealmachine_list;
-  const cls = isList ? 'dm-list'
-    : (row.review_status === 'APPROVED_FOR_DASHBOARD' ? 'approved' : 'review-required');
-  const addr = row.property_full_address
-    ? `<div class="address">${escape(row.property_full_address)}</div>`
-    : `<div class="address empty-addr">No street address (probate / unjoined)</div>`;
-  const badges = [];
-  if (row.review_status === 'APPROVED_FOR_DASHBOARD')
-    badges.push('<span class="badge good">APPROVED</span>');
-  else badges.push('<span class="badge warn">REVIEW</span>');
-  if (row.enrichment_status === 'ENRICHED')
-    badges.push('<span class="badge">Parcel joined</span>');
-  if (row.sheriff_status === 'ADJOURNED UNTIL')
-    badges.push(`<span class="badge warn">Adjourned ${escape(row.adjournment_date || '')}</span>`);
-  if (row.sheriff_status === 'BANKRUPTCY')
-    badges.push('<span class="badge bad">Bankruptcy</span>');
-  if (row.sheriff_status === 'CANCELLATION')
-    badges.push('<span class="badge bad">Cancelled</span>');
-  if (row.out_of_state) badges.push('<span class="badge warn">Out-of-state owner</span>');
-  else if (row.absentee) badges.push('<span class="badge">Absentee owner</span>');
-  if (row.senior_owner_flag) badges.push('<span class="badge motiv">Senior owner</span>');
-  if (row.tired_landlord_flag) badges.push('<span class="badge motiv">Tired landlord</span>');
-  if (isList) badges.unshift('<span class="badge dmlist">DealMachine list</span>');
-  const sig = isList ? 'dmlist' : (isProbate ? 'probate' : '');
-
-  // Owner line (now DealMachine-enriched) + owner-type tag.
-  const ownerName = row.owner_name
-    ? `<span class="name">${escape(row.owner_name)}</span>`
-    : `<span class="name" style="color:var(--muted);font-style:italic">Owner not resolved</span>`;
-  const ownerBlock = isProbate ? '' : `<div class="owner">${ownerName}
-    <span class="otag">${escape(row.owner_type)}</span></div>`;
-
-  // DealMachine contacts + provenance stamp (only on enriched leads).
-  let contactsBlock = '';
-  if (isList) {
-    contactsBlock = '<div class="src">source: <span class="dm">dealmachine</span> (commercial list — contacts gated; enrich to pull owner phones/emails)</div>';
-  } else if (row.dealmachine_matched && ((row.owner_phones||[]).length || (row.owner_emails||[]).length)) {
-    const ph = (row.owner_phones||[]).slice(0,3).map(p =>
-      `<span class="c">${escape(p)}</span>`).join(' · ');
-    const em = (row.owner_emails||[]).slice(0,2).map(e =>
-      `<span class="c">${escape(e)}</span>`).join(' · ');
-    contactsBlock = `<div class="contacts">
-      ${ph ? `<div>📞 ${ph}</div>` : ''}
-      ${em ? `<div>✉ ${em}</div>` : ''}
-    </div><div class="src">source: <span class="dm">dealmachine</span>${
-      row.daniels_law_backfilled ? ' · owner backfilled (Daniel\'s Law)' : ''}</div>`;
-  } else if (row.dealmachine_matched) {
-    // Property matched but DealMachine returned no owner contact (skip-trace miss).
-    contactsBlock = '<div class="src">DealMachine: property matched — no owner contact on file</div>';
-  } else if (row.dm_enrichment_status === 'pending_retry') {
-    contactsBlock = '<div class="src">DealMachine: pending retry (API unavailable)</div>';
-  } else if (row.dm_enrichment_status === 'no_dm_record') {
-    contactsBlock = '<div class="src">DealMachine: no record</div>';
+  // header badges: type + status + sheriff status
+  let hb=[typeBadge];
+  if(!r.is_dealmachine_list){
+    if(r.review_status==="APPROVED_FOR_DASHBOARD") hb.push('<span class="badge good">Approved</span>');
+    else if(r.review_status&&r.review_status!=="DEALMACHINE_LIST") hb.push('<span class="badge warn">Review</span>');
   }
-  const recency = row.recorded_date
-    ? `<div class="recency">Recorded ${escape(row.recorded_date)}</div>` : '';
+  if(r.sheriff_status==="ADJOURNED UNTIL"&&r.adjournment_date) hb.push(`<span class="badge warn">Adj ${esc(r.adjournment_date)}</span>`);
+  if(r.sheriff_status==="BANKRUPTCY") hb.push('<span class="badge bad">Bankruptcy</span>');
+  if(r.sheriff_status==="CANCELLATION") hb.push('<span class="badge bad">Cancelled</span>');
+  if(r.out_of_state) hb.push('<span class="badge warn">Out-of-state</span>');
+  else if(r.absentee) hb.push('<span class="badge">Absentee</span>');
+  if(r.senior_owner_flag) hb.push('<span class="badge motiv">Senior owner</span>');
+  if(r.tired_landlord_flag) hb.push('<span class="badge motiv">Tired landlord</span>');
 
-  let body;
-  if (isList) {
-    body = `
-      <div class="row"><span>List type</span><span class="v">${escape(row.distress_label)}</span></div>
-      <div class="row"><span>Est. value</span><span class="v">${escape(row.dm_property_value || '—')}</span></div>
-      <div class="row"><span>Property type</span><span class="v">${escape(row.property_type || '—')}</span></div>
-      <div class="row"><span>Year built</span><span class="v">${escape(row.year_built || '—')}</span></div>
-      <div class="row"><span>Town</span><span class="v">${escape(row.city)}</span></div>
-      <div class="row"><span>DM property</span><span class="v">${escape(row.lead_id.split(':')[2] || '')}</span></div>`;
-  } else if (isProbate) {
-    body = `
-      <div class="row"><span>Decedent</span><span class="v">${escape(row.decedent_name)}</span></div>
-      <div class="row"><span>Case type</span><span class="v">${escape(row.probate_case_type)}</span></div>
-      <div class="row"><span>Date of death</span><span class="v">${escape(row.decedent_dod || '—')}</span></div>
-      <div class="row"><span>Town</span><span class="v">${escape(row.city)}</span></div>
-      <div class="row"><span>Filed</span><span class="v">${escape(row.recorded_date)}</span></div>
-      <div class="row"><span>Docket</span><span class="v">${escape(row.lead_id.split(':')[1])}</span></div>`;
-  } else {
-    body = `
-      <div class="row"><span>Defendant</span><span class="v">${escape(row.defendant)}</span></div>
-      <div class="row"><span>Plaintiff</span><span class="v">${escape(row.plaintiff)}</span></div>
-      <div class="row"><span>Upset amount</span><span class="v">${fmtMoney(row.upset_amount)}</span></div>
-      <div class="row"><span>Sale date</span><span class="v">${escape(row.sale_date)}</span></div>
-      ${row.adjournment_date ? `<div class="row"><span>Adjourned to</span><span class="v">${escape(row.adjournment_date)}</span></div>` : ''}
-      <div class="row"><span>Assessed value</span><span class="v">${fmtMoney(row.assessed_value)}</span></div>
-      <div class="row"><span>Year built</span><span class="v">${escape(row.year_built || '—')}</span></div>
-      <div class="row"><span>Last sale</span><span class="v">${fmtMoney(row.last_sale_price)} ${row.last_sale_date ? '(' + escape(row.last_sale_date) + ')' : ''}</span></div>
-      <div class="row"><span>Block / Lot</span><span class="v">${escape(row.block)} / ${escape(row.lot)}</span></div>
-      <div class="row"><span>Docket</span><span class="v">${escape(row.lead_id.split(':')[1].replace('_', ' '))}</span></div>
-      <div class="row"><span>Attorney</span><span class="v">${escape(row.attorney_firm)}</span></div>`;
+  const addr = r.property_full_address
+    ? `<div class="addr">${esc(r.property_full_address)}</div>`
+    : `<div class="addr empty">${r.is_probate?"No property address (probate research)":"Address unresolved"}</div>`;
+
+  // OWNER section (skip for probate which has decedent instead)
+  let ownerSec="";
+  if(!r.is_probate){
+    let inner="";
+    if(r.owner_name){
+      inner+=`<div class="owner-name">${esc(r.owner_name)}<span class="otag">${esc(r.owner_type)}</span></div>`;
+    } else {
+      inner+=`<div class="owner-name unres">${r.is_dealmachine_list?"Owner — contacts gated":"Owner not resolved"}</div>`;
+    }
+    const ph=(r.owner_phones||[]).slice(0,6);
+    const em=(r.owner_emails||[]).slice(0,3);
+    if(ph.length) inner+=`<div class="contact"><span class="ic">📞</span>${ph.map(esc).join(" · ")}</div>`;
+    if(em.length) inner+=`<div class="contact"><span class="ic">✉</span>${em.map(esc).join(" · ")}</div>`;
+    ownerSec=section("Owner", inner);
   }
-  return `<div class="card ${cls}">
-    <div class="signal ${sig}">${escape(row.distress_label)}</div>
-    ${addr}
-    ${ownerBlock}
-    <div>${badges.join('')}</div>
-    ${contactsBlock}
-    ${body}
-    ${recency}
+
+  // PROPERTY facts (omit empties)
+  let pf="";
+  pf+=fact("Est. value", money(r.dm_property_value||r.dm_estimated_value));
+  pf+=fact("Assessed", money(r.assessed_value));
+  if(r.property_type) pf+=fact("Type", r.property_type);
+  pf+=fact("Year built", r.year_built);
+  if(r.last_sale_price) pf+=fact("Last sale", money(r.last_sale_price)+(r.last_sale_date?` · ${r.last_sale_date}`:""));
+  if(r.block||r.lot) pf+=fact("Block / Lot", `${r.block||"?"} / ${r.lot||"?"}`);
+  const propSec = pf.trim()?`<div class="sec"><div class="sec-title">Property</div><div class="facts">${pf}</div></div>`:"";
+
+  // FORECLOSURE section (only foreclosure types)
+  let fcSec="";
+  if(r.signal_type==="foreclosure_sale_scheduled"||r.signal_type==="foreclosure_notice_published"){
+    let ff="";
+    ff+=fact("Defendant", r.defendant);
+    ff+=fact("Plaintiff", r.plaintiff);
+    ff+=fact("Upset amount", money(r.upset_amount));
+    ff+=fact("Sale date", r.sale_date);
+    ff+=fact("Docket", (r.lead_id||"").split(":")[1]?.replace("_"," "));
+    ff+=fact("Attorney", r.attorney_firm);
+    if(ff.trim()) fcSec=`<div class="sec"><div class="sec-title">Foreclosure</div><div class="facts">${ff}</div></div>`;
+  }
+  // PROBATE section
+  let pbSec="";
+  if(r.is_probate){
+    let pp="";
+    pp+=fact("Decedent", r.decedent_name);
+    pp+=fact("Case type", r.probate_case_type);
+    pp+=fact("Date of death", r.decedent_dod);
+    pp+=fact("Town", r.city);
+    pp+=fact("Filed", r.recorded_date);
+    pp+=fact("Docket", (r.lead_id||"").split(":")[1]);
+    if(pp.trim()) pbSec=`<div class="sec"><div class="sec-title">Probate filing</div><div class="facts">${pp}</div></div>`;
+  }
+
+  // PROVENANCE line
+  let prov="";
+  if(r.is_dealmachine_list) prov=`source: <span class="dm">dealmachine</span> · commercial list (${esc(r.distress_label)}) · contacts gated`;
+  else if(r.dealmachine_matched) prov=`owner/contacts via <span class="dm">dealmachine</span>${r.daniels_law_backfilled?" · owner backfilled (Daniel's Law)":""}`;
+  else if(r.dm_enrichment_status==="pending_retry") prov=`DealMachine: pending retry`;
+  else if(r.dm_enrichment_status==="no_dm_record") prov=`DealMachine: no record`;
+  else prov=`source: county (${esc(r.event_source||"")})`;
+  const provLine=`<div class="prov">${prov}</div>`;
+
+  return `<div class="card ${variant}">
+    <div class="card-head">${addr}<div class="hbadges">${hb.join("")}</div></div>
+    ${ownerSec}${propSec}${fcSec}${pbSec}${provLine}
   </div>`;
 }
 
-function render() {
-  const filtered = STATE.rows.filter(matches);
-  // Total reflects the currently-visible universe: source-of-record by default;
-  // probate and DealMachine lists are each excluded unless their toggle is on.
-  const universe = STATE.rows.filter(r =>
-    (STATE.showProbate || !r.is_probate) && (STATE.showLists || !r.is_dealmachine_list)).length;
-  document.getElementById('shown').textContent = filtered.length;
-  document.getElementById('total').textContent = universe;
-  document.getElementById('list-type-group').style.display = STATE.showLists ? '' : 'none';
-  const grid = document.getElementById('grid');
-  const empty = document.getElementById('empty');
-  if (!filtered.length) { grid.innerHTML = ''; empty.style.display = 'block'; return; }
-  empty.style.display = 'none';
-  grid.innerHTML = filtered.map(renderCard).join('');
-  // Refresh chip-active states
-  document.querySelectorAll('.chip').forEach(el => {
-    const f = el.dataset.filter, v = el.dataset.value;
-    if (f === 'reset') return;
-    el.classList.toggle('active', STATE.filters[f] === v);
-  });
+function renderTabs(){
+  const el=document.getElementById("tabs");
+  el.innerHTML = TABS.map(t=>{
+    const n=STATE.rows.filter(tabPred(t.id)).length;
+    return `<button class="tab ${t.cls} ${STATE.tab===t.id?"active":""}" data-tab="${t.id}">${esc(t.label)}<span class="n">${n.toLocaleString()}</span></button>`;
+  }).join("");
 }
 
-document.addEventListener('click', (e) => {
-  const t = e.target.closest('.chip, .reset');
-  if (!t) return;
-  if (t.dataset.filter === 'reset') {
-    Object.keys(STATE.filters).forEach(k => STATE.filters[k] = null);
-    STATE.search = '';
-    STATE.showProbate = false;
-    STATE.showLists = false;
-    document.getElementById('search').value = '';
-    document.getElementById('show-probate').checked = false;
-    document.getElementById('show-lists').checked = false;
-  } else {
-    toggleChip(t.dataset.filter, t.dataset.value);
+function render(){
+  const out=STATE.rows.filter(matches);
+  document.getElementById("shown").textContent=out.length.toLocaleString();
+  document.getElementById("total").textContent=STATE.rows.filter(tabPred(STATE.tab)).length.toLocaleString();
+  const grid=document.getElementById("grid"), empty=document.getElementById("empty");
+  if(!out.length){ grid.innerHTML=""; empty.style.display="block"; }
+  else { empty.style.display="none"; grid.innerHTML=out.map(renderCard).join(""); }
+  // active states
+  document.querySelectorAll(".tab").forEach(b=>b.classList.toggle("active", b.dataset.tab===STATE.tab));
+  document.querySelectorAll(".chip").forEach(c=>c.classList.toggle("active", STATE.filters[c.dataset.filter]===c.dataset.value));
+  document.querySelectorAll(".pill").forEach(p=>p.classList.toggle("active", !!STATE.motiv[p.dataset.motiv]));
+}
+
+async function load(){
+  try{
+    const res=await fetch("dashboard_data.json",{cache:"no-store"});
+    if(!res.ok) throw new Error(res.statusText);
+    const data=await res.json();
+    STATE.rows=(data.records||[]).slice().sort((a,b)=>{
+      const ar=a.address_resolved?1:0, br=b.address_resolved?1:0;
+      if(ar!==br) return br-ar;
+      return (b.recorded_date||"").localeCompare(a.recorded_date||"");
+    });
+    const sor=STATE.rows.filter(r=>!r.is_probate&&!r.is_dealmachine_list).length;
+    const prob=STATE.rows.filter(r=>r.is_probate).length;
+    const lists=STATE.rows.filter(r=>r.is_dealmachine_list).length;
+    document.getElementById("summary").innerHTML=
+      `<b>${sor.toLocaleString()}</b> source-of-record · <b>${prob.toLocaleString()}</b> probate · <b>${lists.toLocaleString()}</b> DealMachine lists &nbsp;·&nbsp; built ${esc((data.build_timestamp||"").slice(0,10))}`;
+    document.getElementById("probate-count").textContent=prob.toLocaleString();
+    document.getElementById("list-count").textContent=lists.toLocaleString();
+    renderTabs(); render();
+  }catch(err){ document.getElementById("error-banner").style.display="block"; console.error(err); }
+}
+
+// ---- events ----
+document.getElementById("tabs").addEventListener("click",e=>{
+  const t=e.target.closest(".tab"); if(!t) return;
+  STATE.tab=t.dataset.tab; render();
+});
+document.addEventListener("click",e=>{
+  const chip=e.target.closest(".chip");
+  if(chip){ const f=chip.dataset.filter,v=chip.dataset.value;
+    STATE.filters[f]=STATE.filters[f]===v?null:v; render(); return; }
+  const pill=e.target.closest(".pill");
+  if(pill){ const k=pill.dataset.motiv; STATE.motiv[k]=!STATE.motiv[k]; render(); return; }
+});
+document.getElementById("reset").addEventListener("click",()=>{
+  STATE.filters={owner_type:null,recency:null,address_resolved:null};
+  STATE.motiv={senior_owner_flag:false,tired_landlord_flag:false,absentee:false,out_of_state:false};
+  STATE.search=""; document.getElementById("search").value="";
+  render();
+});
+document.getElementById("search").addEventListener("input",e=>{ STATE.search=e.target.value.trim(); render(); });
+document.getElementById("show-probate").addEventListener("change",e=>{ STATE.showProbate=e.target.checked; renderTabs(); render(); });
+document.getElementById("show-lists").addEventListener("change",e=>{ STATE.showLists=e.target.checked; renderTabs(); render(); });
+
+// ---- CSV export (currently-filtered set; exact client column order) ----
+const EXPORT_COLUMNS=["lead_type","first_name_or_entity_name","last_name","property_address",
+  "property_city","property_state","property_zip","mailing_address","mailing_city","mailing_state",
+  "mailing_zip","phone_1","phone_2","phone_3","phone_4","phone_5","phone_6","email"];
+function csvCell(v){const s=v==null?"":String(v);return /[",\n]/.test(s)?'"'+s.replace(/"/g,'""')+'"':s;}
+function exportCSV(){
+  const rows=STATE.rows.filter(matches);
+  const lines=[EXPORT_COLUMNS.join(",")];
+  for(const r of rows){
+    const ph=r.owner_phones||[];
+    const e={lead_type:r.lead_type||r.distress_label||"",first_name_or_entity_name:r.export_first_name||"",
+      last_name:r.export_last_name||"",property_address:r.exp_prop_address||"",property_city:r.exp_prop_city||"",
+      property_state:r.exp_prop_state||"",property_zip:r.exp_prop_zip||"",mailing_address:r.exp_mail_address||"",
+      mailing_city:r.exp_mail_city||"",mailing_state:r.exp_mail_state||"",mailing_zip:r.exp_mail_zip||"",
+      phone_1:ph[0]||"",phone_2:ph[1]||"",phone_3:ph[2]||"",phone_4:ph[3]||"",phone_5:ph[4]||"",phone_6:ph[5]||"",
+      email:(r.owner_emails||[])[0]||""};
+    lines.push(EXPORT_COLUMNS.map(c=>csvCell(e[c])).join(","));
   }
-  render();
-});
-
-document.getElementById('search').addEventListener('input', (e) => {
-  STATE.search = e.target.value.trim();
-  render();
-});
-
-document.getElementById('show-probate').addEventListener('change', (e) => {
-  STATE.showProbate = e.target.checked;
-  render();
-});
-
-document.getElementById('show-lists').addEventListener('change', (e) => {
-  STATE.showLists = e.target.checked;
-  render();
-});
-
-// ── CSV export — exact client column order; exports the CURRENTLY-FILTERED set
-// (respects active filters AND the probate toggle). ──
-const EXPORT_COLUMNS = [
-  "lead_type", "first_name_or_entity_name", "last_name",
-  "property_address", "property_city", "property_state", "property_zip",
-  "mailing_address", "mailing_city", "mailing_state", "mailing_zip",
-  "phone_1", "phone_2", "phone_3", "phone_4", "phone_5", "phone_6", "email",
-];
-
-function csvCell(v) {
-  const s = (v === null || v === undefined) ? "" : String(v);
-  return /[",\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s;
+  const blob=new Blob([lines.join("\r\n")],{type:"text/csv;charset=utf-8"});
+  const url=URL.createObjectURL(blob),a=document.createElement("a");
+  a.href=url; a.download=`ocean_nj_${STATE.tab}_${rows.length}.csv`;
+  document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
 }
-
-function rowToExport(r) {
-  const ph = r.owner_phones || [];
-  return {
-    lead_type: r.lead_type || "",
-    first_name_or_entity_name: r.export_first_name || "",
-    last_name: r.export_last_name || "",
-    property_address: r.exp_prop_address || "",
-    property_city: r.exp_prop_city || "",
-    property_state: r.exp_prop_state || "",
-    property_zip: r.exp_prop_zip || "",
-    mailing_address: r.exp_mail_address || "",
-    mailing_city: r.exp_mail_city || "",
-    mailing_state: r.exp_mail_state || "",
-    mailing_zip: r.exp_mail_zip || "",
-    phone_1: ph[0] || "", phone_2: ph[1] || "", phone_3: ph[2] || "",
-    phone_4: ph[3] || "", phone_5: ph[4] || "", phone_6: ph[5] || "",
-    email: (r.owner_emails || [])[0] || "",
-  };
-}
-
-function exportCSV() {
-  const rows = STATE.rows.filter(matches);
-  const lines = [EXPORT_COLUMNS.join(",")];
-  for (const r of rows) {
-    const e = rowToExport(r);
-    lines.push(EXPORT_COLUMNS.map(c => csvCell(e[c])).join(","));
-  }
-  const blob = new Blob([lines.join("\r\n")], {type: "text/csv;charset=utf-8"});
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement("a");
-  const stamp = new Date().toISOString().slice(0,10);
-  a.href = url;
-  a.download = `ocean_nj_leads_${stamp}_${rows.length}.csv`;
-  document.body.appendChild(a); a.click(); a.remove();
-  URL.revokeObjectURL(url);
-}
-
-document.getElementById('export-csv').addEventListener('click', exportCSV);
+document.getElementById("export-csv").addEventListener("click",exportCSV);
 
 load();
 </script>
 </body>
-</html>
-"""
+</html>"""
 
 
 def main() -> int:

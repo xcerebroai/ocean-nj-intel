@@ -75,10 +75,15 @@ def count(filter_id: str) -> dict:
     return {"properties": d.get("total_properties"), "people": d.get("total_people")}
 
 
-# Motivation-flag fields stacked onto each pulled lead (returnable only via
-# `properties search` + a `fields` selection — NOT via enrich/get/ids). Riding the
-# pull we already do, so they cost nothing extra on already-pulled (deduplicated) rows.
-MOTIVATION_FIELDS = ["has_senior_owners", "has_tired_landlords"]
+# Fields requested per row. `properties search` returns a default identity set
+# PLUS whatever is named here. We request the property facts the dashboard shows
+# AND the motivation flags (the latter returnable ONLY via search + fields). Riding
+# the pull we already do, so this costs nothing extra on deduplicated rows.
+MOTIVATION_FIELDS = [
+    "estimated_value", "year_built", "last_sale_price", "last_sale_date",
+    "living_area_sqft", "property_type",
+    "has_senior_owners", "has_tired_landlords",
+]
 
 
 def _yn(v) -> bool:
