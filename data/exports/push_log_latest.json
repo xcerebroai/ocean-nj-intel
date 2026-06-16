@@ -1,15 +1,7 @@
 {
   "mode": "live",
-  "attempted": 1,
-  "pushed": 1,
-  "results": [
-    {
-      "key": "1501_114.49_26|CH780428",
-      "status": 201,
-      "contact_id": "ft2rF10Tp2hAmwLUvhEj",
-      "tags": [
-        "ocean-new-lead"
-      ]
-    }
-  ]
+  "run": "27651405971",
+  "note": "RECOVERED \u2014 full live run upserted net-new leads to GHL but its post-upsert ledger commit (2e4fec3) failed to push due to a runner network blip and was lost. GHL ground truth: 257 contacts tagged ocean-new-lead. Ledger rebuilt deterministically from the diff (259 keys). push_log per-lead results were in the lost commit and are not recoverable; GHL tag count is the authoritative success measure.",
+  "contacts_tagged_in_ghl": 257,
+  "ledger_keys": 259
 }

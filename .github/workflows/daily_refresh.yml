@@ -186,9 +186,13 @@ jobs:
           GHL_PUSH_DELAY_SEC: "1.0"   # ~1s/contact so the first batch doesn't burst rate limit
         run: python3 scrapers/ghl_push.py
 
+      # NOTE: this step is intentionally NOT continue-on-error. Once GHL upserts
+      # have happened, the ledger MUST reach remote — otherwise the next run sees
+      # those leads as net-new and re-pushes them (duplicate upserts / duplicate
+      # client SMS). A persistent push failure here is a REAL signal and should
+      # go red. Transient github.com blips are absorbed by the retry loop.
       - name: Commit GHL ledger + export (only on PUBLISH)
         if: steps.gate.outcome == 'success'
-        continue-on-error: true
         run: |
           git config user.email "ci-bot@xcerebro.local"
           git config user.name  "xcerebro-ci-bot"
@@ -196,10 +200,17 @@ jobs:
           # latest export/log are committed for provenance/visibility.
           git add data/exports/pushed_keys.json data/exports/new_leads_latest.json \
                   data/exports/push_log_latest.json 2>/dev/null || true
-          git diff --cached --quiet && exit 0
+          git diff --cached --quiet && { echo "ledger unchanged — nothing to commit"; exit 0; }
           git commit -m "GHL push ledger $(date -u +%Y-%m-%dT%H:%M:%SZ)"
-          git pull --rebase origin main 2>/dev/null || true
-          git push
+          for attempt in 1 2 3 4 5; do
+            if git pull --rebase origin main && git push; then
+              echo "ledger pushed (attempt $attempt)"; exit 0
+            fi
+            echo "::warning::ledger push attempt $attempt failed; retrying in 20s"
+            sleep 20
+          done
+          echo "::error title=GHL ledger push failed::Pushed leads are NOT ledgered — the next run will re-push them (duplicate SMS). Recover the ledger before the next run."
+          exit 1
 
       # NOTE: No actions/upload-pages-artifact + actions/deploy-pages steps here.
       # This repo uses LEGACY branch-based Pages (build_type: legacy, source =
