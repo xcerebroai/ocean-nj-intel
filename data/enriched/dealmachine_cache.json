@@ -47518,5 +47518,130 @@
     "people": 0
    }
   }
+ },
+ "sheriff_foreclosure:CH_778915": {
+  "hash": "7f3fcace8000bcb9",
+  "enriched_at": "2026-06-16T17:25:57.890366+00:00",
+  "block": {
+   "source": "dealmachine",
+   "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+   "matched": true,
+   "enrichment_status": "enriched",
+   "matched_by": "apn",
+   "enriched_at": "2026-06-16T17:25:57.890366+00:00",
+   "billing_cycle": "2026-06-06T18:30:15.000Z",
+   "owner_name": null,
+   "owner_names": [],
+   "phones": [],
+   "emails": [],
+   "contacts": [],
+   "mailing_address": null,
+   "property": {
+    "dm_property_id": "prop_86786569",
+    "full_address": "337 Church Rd Brick, NJ, 08723",
+    "address": "337 Church Rd",
+    "city": "Brick",
+    "state": "NJ",
+    "zip": "08723",
+    "latitude": 40.042878,
+    "longitude": -74.109224,
+    "estimated_value": 398000,
+    "estimated_equity_amount": 398000,
+    "estimated_equity_percentage": 100,
+    "year_built": 1950,
+    "living_area_sqft": 1104,
+    "lot_size_sqft": 6251,
+    "num_bedrooms": 3,
+    "num_bathrooms": 2,
+    "last_sale_date": null,
+    "last_sale_amount": null,
+    "total_assessed_value": 205100,
+    "annual_property_tax_amount": 5566,
+    "num_mortgages": 0,
+    "total_original_loan_amount": 267000,
+    "total_estimated_loan_balance": 0,
+    "owner_occupied": false,
+    "apn": "07-00645-01-00086"
+   },
+   "mortgages": [
+    {
+     "mortgage_number": 1,
+     "id": "2109137420",
+     "transaction_id": "2109137420",
+     "lender_name": "SECURITY ONE LENDING",
+     "is_private_lender": false,
+     "loan_type_id": 32,
+     "loan_type": "Reverse Mortgage",
+     "loan_financing_type_id": 1,
+     "loan_financing_type": "Adjustable Rate",
+     "loan_amount": 267000,
+     "loan_interest_rate": 2.45,
+     "loan_term_months": 999,
+     "loan_start_date": "2013-05-09T00:00:00.000Z",
+     "loan_recording_date": "2013-05-09T00:00:00.000Z",
+     "loan_due_date": "2068-06-12T00:00:00.000Z",
+     "has_adjustable_rate_rider": true,
+     "lien_position": 1,
+     "classification": "primary",
+     "classification_label": "Primary mortgage",
+     "classification_reason": "DataTree marks this mortgage as lien position 1."
+    }
+   ],
+   "credits": {
+    "properties": 1,
+    "people": 0
+   }
+  }
+ },
+ "sheriff_foreclosure:CH_780647": {
+  "hash": "92b6293ba289a5c3",
+  "enriched_at": "2026-06-16T17:25:57.890366+00:00",
+  "block": {
+   "source": "dealmachine",
+   "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+   "matched": true,
+   "enrichment_status": "enriched",
+   "matched_by": "apn",
+   "enriched_at": "2026-06-16T17:25:57.890366+00:00",
+   "billing_cycle": "2026-06-06T18:30:15.000Z",
+   "owner_name": null,
+   "owner_names": [],
+   "phones": [],
+   "emails": [],
+   "contacts": [],
+   "mailing_address": "835 Herbertsville Rd Brick, NJ, 08724",
+   "property": {
+    "dm_property_id": "prop_86722614",
+    "full_address": "835 Herbertsville Rd Brick, NJ, 08724",
+    "address": "835 Herbertsville Rd",
+    "city": "Brick",
+    "state": "NJ",
+    "zip": "08724",
+    "latitude": 40.123078,
+    "longitude": -74.121144,
+    "estimated_value": 681000,
+    "estimated_equity_amount": 681000,
+    "estimated_equity_percentage": 100,
+    "year_built": 1880,
+    "living_area_sqft": 1841,
+    "lot_size_sqft": 30000,
+    "num_bedrooms": 2,
+    "num_bathrooms": 2,
+    "last_sale_date": "2019-09-26T00:00:00.000Z",
+    "last_sale_amount": 250000,
+    "total_assessed_value": 307800,
+    "annual_property_tax_amount": 8465,
+    "num_mortgages": 0,
+    "total_original_loan_amount": 0,
+    "total_estimated_loan_balance": 0,
+    "owner_occupied": true,
+    "apn": "07-01425-0000-00011"
+   },
+   "mortgages": [],
+   "credits": {
+    "properties": 1,
+    "people": 0
+   }
+  }
  }
 }
