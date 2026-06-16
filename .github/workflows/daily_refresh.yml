@@ -164,16 +164,12 @@ jobs:
           git diff --cached --quiet || git commit -m "daily refresh $(date -u +%Y-%m-%dT%H:%M:%SZ)"
           git push
 
-      - name: Upload Pages artifact (only on PUBLISH)
-        if: steps.gate.outcome == 'success'
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: dashboard
-
-      - name: Deploy to GitHub Pages (only on PUBLISH)
-        if: steps.gate.outcome == 'success'
-        id: deployment
-        uses: actions/deploy-pages@v4
+      # NOTE: No actions/upload-pages-artifact + actions/deploy-pages steps here.
+      # This repo uses LEGACY branch-based Pages (build_type: legacy, source =
+      # main:/), so the `git push` above already deploys the refreshed dashboard
+      # to https://xcerebroai.github.io/ocean-nj-intel/dashboard/. The workflow
+      # deploy-pages action requires build_type: workflow and fails with
+      # "Missing environment" against legacy Pages — it was pure red noise.
 
       - name: Write failure report (DO_NOT_PUBLISH path)
         if: steps.gate.outcome != 'success'
