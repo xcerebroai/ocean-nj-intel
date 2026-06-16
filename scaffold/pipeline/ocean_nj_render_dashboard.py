@@ -112,6 +112,14 @@ def _enrichment_status(lead: dict) -> str:
     return "UNENRICHED"
 
 
+def _ymd(v) -> str:
+    """Normalize any date to YYYY-MM-DD. DealMachine returns ISO timestamps
+    (2025-09-29T00:00:00.000Z); county dates are already YYYY-MM-DD."""
+    if not v:
+        return ""
+    return str(v)[:10]
+
+
 def _full_address(lead: dict) -> str:
     a = (lead.get("property_address") or "").strip()
     if not a:
@@ -139,7 +147,7 @@ def _to_row(lead: dict) -> dict:
         "primary_parcel_id": lead.get("parcel_id") or "",
         "assessed_value": lead.get("net_value") or _dmp(lead, "total_assessed_value"),
         "last_sale_price": lead.get("last_sale_price") or _dmp(lead, "last_sale_price"),
-        "last_sale_date": lead.get("last_sale_date") or _dmp(lead, "last_sale_date") or "",
+        "last_sale_date": _ymd(lead.get("last_sale_date") or _dmp(lead, "last_sale_date")),
         "year_built": lead.get("year_built") or _dmp(lead, "year_built"),
         "qualification_status": lead.get("qualification_status") or "",
         # Display-only extras
