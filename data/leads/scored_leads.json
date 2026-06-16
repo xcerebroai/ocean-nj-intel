@@ -3,13 +3,13 @@
  "county_name": "Ocean County",
  "state_name": "New Jersey",
  "framework_version": "v5.5.0",
- "build_timestamp": "2026-06-16T17:25:36Z",
+ "build_timestamp": "2026-06-16T19:14:48Z",
  "build_mode": "PARTIAL_BUILD",
- "total_leads": 1905,
+ "total_leads": 1910,
  "lead_counts_by_signal": {
   "foreclosure_sale_scheduled": 34,
   "foreclosure_notice_published": 1,
-  "probate_filing_recent": 1366,
+  "probate_filing_recent": 1371,
   "tax_default_brick": 504
  },
  "hls_brick_status": {
@@ -30,8 +30,8 @@
  },
  "tax_board_detail_indexed": 10,
  "lead_counts_by_status": {
-  "APPROVED_FOR_DASHBOARD": 538,
-  "REVIEW_REQUIRED": 1367
+  "APPROVED_FOR_DASHBOARD": 537,
+  "REVIEW_REQUIRED": 1373
  },
  "parcel_join": {
   "hits": 24,
@@ -59,7 +59,7 @@
     "OWNER_STATUS"
    ],
    "source_role": "BLOCKED_SOURCE",
-   "reported_at": "2026-06-16T17:24:40Z",
+   "reported_at": "2026-06-16T19:14:01Z",
    "v5_5_0_recon_anchor": "runs/ocean_nj/recon/source_of_record_matrix.json#sources"
   },
   {
@@ -76,7 +76,7 @@
     "RECORDED_EVENT"
    ],
    "source_role": "BLOCKED_SOURCE",
-   "reported_at": "2026-06-16T17:24:40Z",
+   "reported_at": "2026-06-16T19:14:01Z",
    "v5_5_0_recon_anchor": "runs/ocean_nj/recon/source_of_record_matrix.json#sources"
   },
   {
@@ -94,7 +94,7 @@
     "TAX_DEFAULT"
    ],
    "source_role": "BLOCKED_SOURCE",
-   "reported_at": "2026-06-16T17:24:40Z",
+   "reported_at": "2026-06-16T19:14:01Z",
    "v5_5_0_recon_anchor": "runs/ocean_nj/recon/source_of_record_matrix.json#sources"
   },
   {
@@ -109,7 +109,7 @@
    ],
    "intended_lead_origins": [],
    "source_role": "BLOCKED_SOURCE",
-   "reported_at": "2026-06-16T17:24:40Z",
+   "reported_at": "2026-06-16T19:14:01Z",
    "v5_5_0_recon_anchor": "runs/ocean_nj/recon/source_of_record_matrix.json#sources"
   }
  ],
@@ -193,7 +193,7 @@
    "chancery_docket": "CH 778915",
    "plaintiff": "REVERSE MORTGAGE SOLUTIONS, INC.",
    "defendant_name": "PATRICIA MILLER, ETC, ET ALS",
-   "upset_amount": 251011.21,
+   "upset_amount": 251173.85,
    "sale_date": "2026-06-23",
    "adjournment_date": null,
    "sheriff_status": null,
@@ -958,7 +958,7 @@
    "chancery_docket": "CH 780500",
    "plaintiff": "SIERRA PACIFIC MORTGAGE COMPANY",
    "defendant_name": "URI SEGAL, ET ALS",
-   "upset_amount": 680572.73,
+   "upset_amount": 680813.49,
    "sale_date": "2026-06-23",
    "adjournment_date": null,
    "sheriff_status": null,
@@ -2984,9 +2984,9 @@
   {
    "lead_id": "sheriff_foreclosure:CH_780651",
    "lead_origin_type": "RECORDED_EVENT",
-   "primary_event_date": "2026-06-23",
+   "primary_event_date": "2026-07-21",
    "scheduled_event_category": "UPCOMING_SALE",
-   "qualification_status": "QUALIFIED",
+   "qualification_status": "REVIEW_REQUIRED",
    "source_ids": [
     "sheriff_foreclosure"
    ],
@@ -2999,10 +2999,10 @@
    "chancery_docket": "CH 780651",
    "plaintiff": "M&T BANK",
    "defendant_name": "MICHAEL JOHN RUHL JR., ET AL",
-   "upset_amount": 235711.3,
+   "upset_amount": 236793.35,
    "sale_date": "2026-06-23",
-   "adjournment_date": null,
-   "sheriff_status": null,
+   "adjournment_date": "2026-07-21",
+   "sheriff_status": "ADJOURNED UNTIL",
    "attorney_firm": "BROCK & SCOTT PLLC",
    "attorney_phone": "844-856-6646",
    "property_address": "418 BEACH BOULEVARD FORKED",
@@ -3125,7 +3125,7 @@
    "lead_id": "sheriff_foreclosure:CH_780661",
    "lead_origin_type": "RECORDED_EVENT",
    "primary_event_date": "2026-06-23",
-   "scheduled_event_category": "UPCOMING_SALE",
+   "scheduled_event_category": "HISTORICAL_CONTEXT_ONLY",
    "qualification_status": "QUALIFIED",
    "source_ids": [
     "sheriff_foreclosure",
@@ -3135,16 +3135,16 @@
     "sheriff_foreclosure:CH_780661",
     "njogis_parcels_modiv:1508_694.07_32"
    ],
-   "lead_status": "APPROVED_FOR_DASHBOARD",
+   "lead_status": "REVIEW_REQUIRED",
    "doc_type": "sheriff_sale_listing",
    "distress_signal": "foreclosure_sale_scheduled",
    "chancery_docket": "CH 780661",
    "plaintiff": "CITIZENS BANK, N.A.",
    "defendant_name": "FRANK P. AITORO JR., ET ALS",
-   "upset_amount": 35216.18,
+   "upset_amount": 33678.49,
    "sale_date": "2026-06-23",
    "adjournment_date": null,
-   "sheriff_status": null,
+   "sheriff_status": "CANCELLATION",
    "attorney_firm": "MCCABE, WEISBERG & CONWAY, LLC",
    "attorney_phone": "856-858-7080",
    "property_address": "675 COVENTRY DRIVE TOMS",
@@ -3409,9 +3409,9 @@
   {
    "lead_id": "sheriff_foreclosure:CH_780663",
    "lead_origin_type": "RECORDED_EVENT",
-   "primary_event_date": "2026-06-23",
+   "primary_event_date": "2026-07-21",
    "scheduled_event_category": "UPCOMING_SALE",
-   "qualification_status": "QUALIFIED",
+   "qualification_status": "REVIEW_REQUIRED",
    "source_ids": [
     "sheriff_foreclosure",
     "njogis_parcels_modiv"
@@ -3426,10 +3426,10 @@
    "chancery_docket": "CH 780663",
    "plaintiff": "WILMINGTON SAVINGS FUND SOCIETY, FS",
    "defendant_name": "JUDITH A. ZYWAN, ET ALS",
-   "upset_amount": 177375.54,
+   "upset_amount": 178227.88,
    "sale_date": "2026-06-23",
-   "adjournment_date": null,
-   "sheriff_status": null,
+   "adjournment_date": "2026-07-21",
+   "sheriff_status": "ADJOURNED UNTIL",
    "attorney_firm": "HILL WALLACK LLP",
    "attorney_phone": "609-924-0808",
    "property_address": "18 WEDGEPORT DRIVE",
@@ -34385,6 +34385,36 @@
    "enrichment_join_unavailable": true
   },
   {
+   "lead_id": "surrogate_probate:267887",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-05-19",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:267887"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "267887",
+   "probate_case_type": "Probate",
+   "filed_date": "2026-05-19",
+   "decedent_name": "Barnett Helen L.",
+   "decedent_date_of_birth": "1935-04-23",
+   "decedent_date_of_death": "2026-04-21",
+   "property_city": "Brick",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
    "lead_id": "surrogate_probate:267888",
    "lead_origin_type": "RECORDED_EVENT",
    "additional_lead_origin_types": [
@@ -38315,6 +38345,36 @@
    "enrichment_join_unavailable": true
   },
   {
+   "lead_id": "surrogate_probate:268035",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-05-28",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:268035"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "268035",
+   "probate_case_type": "Probate",
+   "filed_date": "2026-05-28",
+   "decedent_name": "Durante Michael A.",
+   "decedent_date_of_birth": "1962-06-04",
+   "decedent_date_of_death": "2026-05-11",
+   "property_city": "Jackson",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
    "lead_id": "surrogate_probate:268038",
    "lead_origin_type": "RECORDED_EVENT",
    "additional_lead_origin_types": [
@@ -40835,6 +40895,36 @@
    "enrichment_join_unavailable": true
   },
   {
+   "lead_id": "surrogate_probate:268116",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-06-03",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:268116"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "268116",
+   "probate_case_type": "Affidavit Next of Kin",
+   "filed_date": "2026-06-03",
+   "decedent_name": "Murphy Linda Catherine",
+   "decedent_date_of_birth": "1953-12-04",
+   "decedent_date_of_death": "2022-07-25",
+   "property_city": "Toms River",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
    "lead_id": "surrogate_probate:268117",
    "lead_origin_type": "RECORDED_EVENT",
    "additional_lead_origin_types": [
@@ -42268,6 +42358,36 @@
    "decedent_date_of_birth": "1924-11-16",
    "decedent_date_of_death": "2026-05-17",
    "property_city": "Manchester",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:268185",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-06-08",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:268185"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "268185",
+   "probate_case_type": "Probate",
+   "filed_date": "2026-06-08",
+   "decedent_name": "Rutigliano Yolanda",
+   "decedent_date_of_birth": "1929-09-03",
+   "decedent_date_of_death": "2026-05-17",
+   "property_city": "Jackson",
    "property_state": "NJ",
    "owner_name": null,
    "owner_resolved": false,
@@ -44878,6 +44998,36 @@
    "decedent_date_of_birth": "1933-03-02",
    "decedent_date_of_death": "2026-06-02",
    "property_city": "Toms River",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:268308",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-06-16",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:268308"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "268308",
+   "probate_case_type": "Probate",
+   "filed_date": "2026-06-16",
+   "decedent_name": "Starkey Thomas D.",
+   "decedent_date_of_birth": "1942-03-23",
+   "decedent_date_of_death": "2026-05-13",
+   "property_city": "Jackson",
    "property_state": "NJ",
    "owner_name": null,
    "owner_resolved": false,
@@ -51781,11 +51931,107 @@
    "net_value": 283300,
    "year_built": 2015,
    "last_sale_price": 1,
-   "dm_enrichment_status": "pending_retry",
+   "dealmachine": {
+    "source": "dealmachine",
+    "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+    "matched": true,
+    "enrichment_status": "enriched",
+    "matched_by": "apn",
+    "enriched_at": "2026-06-16T19:25:11.491984+00:00",
+    "billing_cycle": "2026-06-06T18:30:15.000Z",
+    "owner_name": "RICHARD STAINTON",
+    "owner_names": [
+     "RICHARD STAINTON"
+    ],
+    "phones": [
+     "9739023564"
+    ],
+    "emails": [
+     "RSTAINTNJ@HOTMAIL.COM"
+    ],
+    "contacts": [
+     {
+      "dm_person_id": "per_15028182243",
+      "full_name": "RICHARD STAINTON",
+      "first_name": "RICHARD",
+      "last_name": "STAINTON",
+      "contact_type": "owner",
+      "is_resident": true,
+      "phones": [
+       {
+        "number": "9739023564",
+        "type": "landline",
+        "do_not_call": false
+       }
+      ],
+      "emails": [
+       "RSTAINTNJ@HOTMAIL.COM"
+      ]
+     }
+    ],
+    "mailing_address": "5 Bahia Ct Brick, NJ, 08723",
+    "property": {
+     "dm_property_id": "prop_86747709",
+     "full_address": "5 Bahia Ct Brick, NJ, 08723",
+     "address": "5 Bahia Ct",
+     "city": "Brick",
+     "state": "NJ",
+     "zip": "08723",
+     "latitude": 40.023067,
+     "longitude": -74.095427,
+     "estimated_value": 629000,
+     "estimated_equity_amount": 427718,
+     "estimated_equity_percentage": 67,
+     "year_built": 2015,
+     "living_area_sqft": 1824,
+     "lot_size_sqft": 5001,
+     "num_bedrooms": 3,
+     "num_bathrooms": 3,
+     "last_sale_date": "2009-07-08T00:00:00.000Z",
+     "last_sale_amount": 285000,
+     "total_assessed_value": 283300,
+     "annual_property_tax_amount": 7689,
+     "num_mortgages": 1,
+     "total_original_loan_amount": 226300,
+     "total_estimated_loan_balance": 201282,
+     "owner_occupied": true,
+     "apn": "07-00210-45-00001"
+    },
+    "mortgages": [
+     {
+      "mortgage_number": 1,
+      "id": "21206946104",
+      "transaction_id": "21206946104",
+      "lender_name": "FAIRWAY INDEPENDENT MORTGAGE C",
+      "is_private_lender": false,
+      "loan_type_id": 20,
+      "loan_type": "New Conventional",
+      "loan_financing_type": "Unknown Financing Type",
+      "loan_amount": 226300,
+      "loan_balance": 201282,
+      "loan_interest_rate": 2.9,
+      "loan_term_months": 360,
+      "loan_start_date": "2021-04-12T00:00:00.000Z",
+      "loan_recording_date": "2021-04-12T00:00:00.000Z",
+      "loan_due_date": "2051-05-01T00:00:00.000Z",
+      "has_adjustable_rate_rider": false,
+      "lien_position": 1,
+      "estimated_payment_amount": 941.93,
+      "classification": "primary",
+      "classification_label": "Primary mortgage",
+      "classification_reason": "DataTree marks this mortgage as lien position 1."
+     }
+    ],
+    "credits": {
+     "properties": 1,
+     "people": 1
+    }
+   },
+   "dm_enrichment_status": "enriched",
    "enrichment_sources": [
     "dealmachine"
    ],
-   "owner_occupied": null,
+   "owner_occupied": true,
    "owner_mailing_address": "5 BAHIA COURT",
    "owner_mailing_city": "BRICK",
    "owner_mailing_state": "NJ",
@@ -51838,16 +52084,111 @@
    "net_value": 2706300,
    "year_built": 0,
    "last_sale_price": 0,
-   "dm_enrichment_status": "pending_retry",
+   "dealmachine": {
+    "source": "dealmachine",
+    "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+    "matched": true,
+    "enrichment_status": "enriched",
+    "matched_by": "apn",
+    "enriched_at": "2026-06-16T19:25:11.491984+00:00",
+    "billing_cycle": "2026-06-06T18:30:15.000Z",
+    "owner_name": null,
+    "owner_names": [],
+    "phones": [],
+    "emails": [],
+    "contacts": [],
+    "mailing_address": null,
+    "property": {
+     "dm_property_id": "prop_86747750",
+     "full_address": "63 Pilot Dr Brick, NJ, 08723",
+     "address": "63 Pilot Dr",
+     "city": "Brick",
+     "state": "NJ",
+     "zip": "08723",
+     "latitude": 40.026359,
+     "longitude": -74.093455,
+     "estimated_value": 2706300,
+     "estimated_equity_amount": 2426333,
+     "estimated_equity_percentage": null,
+     "year_built": null,
+     "living_area_sqft": 0,
+     "lot_size_sqft": 117403,
+     "num_bedrooms": 0,
+     "num_bathrooms": null,
+     "last_sale_date": "1994-04-22T00:00:00.000Z",
+     "last_sale_amount": 15000,
+     "total_assessed_value": 2706300,
+     "annual_property_tax_amount": 73449,
+     "num_mortgages": 2,
+     "total_original_loan_amount": 300000,
+     "total_estimated_loan_balance": 279967,
+     "owner_occupied": false,
+     "apn": "07-00210-47-00001"
+    },
+    "mortgages": [
+     {
+      "mortgage_number": 1,
+      "id": "21270010614",
+      "transaction_id": "21270010614",
+      "lender_name": "MANUFACTURERS & TRADERS TR CO",
+      "is_private_lender": false,
+      "loan_type_id": 20,
+      "loan_type": "New Conventional",
+      "loan_financing_type": "Unknown Financing Type",
+      "loan_amount": 250000,
+      "loan_balance": 249111,
+      "loan_interest_rate": 6.63,
+      "loan_term_months": 360,
+      "loan_start_date": "2025-10-20T00:00:00.000Z",
+      "loan_recording_date": "2025-10-20T00:00:00.000Z",
+      "loan_due_date": "2055-10-20T00:00:00.000Z",
+      "has_adjustable_rate_rider": false,
+      "lien_position": 1,
+      "estimated_payment_amount": 1601.6,
+      "classification": "primary",
+      "classification_label": "Primary mortgage",
+      "classification_reason": "DataTree marks this mortgage as lien position 1."
+     },
+     {
+      "mortgage_number": 2,
+      "id": "2108740998",
+      "transaction_id": "2108740998",
+      "lender_name": "OCEANFIRST BANK",
+      "is_private_lender": false,
+      "loan_type_id": 11,
+      "loan_type": "Credit Line",
+      "loan_financing_type_id": 7,
+      "loan_financing_type": "Variable",
+      "loan_amount": 50000,
+      "loan_balance": 30856,
+      "loan_interest_rate": 6.17,
+      "loan_term_months": 360,
+      "loan_start_date": "2008-01-14T00:00:00.000Z",
+      "loan_recording_date": "2008-01-14T00:00:00.000Z",
+      "loan_due_date": "2038-01-14T00:00:00.000Z",
+      "has_adjustable_rate_rider": false,
+      "lien_position": 2,
+      "estimated_payment_amount": 305.26,
+      "classification": "subordinate",
+      "classification_label": "Possible second lien",
+      "classification_reason": "DataTree marks this mortgage as lien position 2."
+     }
+    ],
+    "credits": {
+     "properties": 1,
+     "people": 0
+    }
+   },
+   "dm_enrichment_status": "enriched",
    "enrichment_sources": [
     "dealmachine"
    ],
-   "owner_occupied": null,
+   "owner_occupied": false,
    "owner_mailing_address": "63 PILOT DR",
    "owner_mailing_city": "BRICK,",
    "owner_mailing_state": "NJ",
    "owner_mailing_zip": "08723",
-   "absentee": false,
+   "absentee": true,
    "out_of_state": false
   },
   {
@@ -116358,20 +116699,20 @@
   }
  ],
  "dealmachine_enrichment": {
-  "enriched_at": "2026-06-16T17:25:57.890366+00:00",
+  "enriched_at": "2026-06-16T19:25:11.491984+00:00",
   "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
   "source": "dealmachine",
   "actionable_targets": 538,
-  "api_calls_this_run": 65,
-  "reattached_from_cache": 473,
-  "enriched": 405,
+  "api_calls_this_run": 63,
+  "reattached_from_cache": 475,
+  "enriched": 407,
   "genuine_no_match": 70,
-  "pending_retry": 63,
-  "owner_names_recovered": 276,
+  "pending_retry": 61,
+  "owner_names_recovered": 277,
   "daniels_law_backfilled": 9,
-  "contacts_attached": 392,
-  "phones_attached": 695,
-  "emails_attached": 666,
+  "contacts_attached": 393,
+  "phones_attached": 696,
+  "emails_attached": 667,
   "credits_before": {
    "included": 100000,
    "total_available": 110000,
@@ -116379,16 +116720,16 @@
    "monthly_credit_grant_cap": 0,
    "monthly_included": 100000,
    "additional_credit_balance": 10000,
-   "used": 9054,
-   "remaining": 100946,
-   "monthly_remaining": 90946,
+   "used": 8934,
+   "remaining": 101066,
+   "monthly_remaining": 91066,
    "additional_remaining": 10000,
    "overage": 0,
    "pools": {
     "monthly": {
      "included": 100000,
-     "used": 9054,
-     "remaining": 90946
+     "used": 8934,
+     "remaining": 91066
     },
     "additional": {
      "available": 10000,
