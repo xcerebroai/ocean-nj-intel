@@ -117,6 +117,11 @@ def main() -> int:
         print(f"::warning title=GHL push skipped::{NEW_LEADS.name} not found — run ghl_diff_new_leads.py first")
         return 0
     leads = json.loads(NEW_LEADS.read_text())
+    # Optional cap (e.g. GHL_PUSH_LIMIT=1 for a single WAF/mapping smoke test).
+    limit = os.environ.get("GHL_PUSH_LIMIT")
+    if limit:
+        leads = leads[: int(limit)]
+        print(f"GHL_PUSH_LIMIT={limit} — capped to first {len(leads)} lead(s)")
     print(f"net-new leads to push: {len(leads)} | mode: {'LIVE' if live else 'DRY-RUN'}")
 
     if not leads:
@@ -169,12 +174,14 @@ def main() -> int:
             with urllib.request.urlopen(req, timeout=30) as resp:
                 status = resp.getcode()
                 rbody = resp.read().decode("utf-8", "replace")
-            contact_id = ""
+            contact_id, tags = "", None
             try:
-                contact_id = (json.loads(rbody).get("contact") or {}).get("id", "")
+                contact = json.loads(rbody).get("contact") or {}
+                contact_id = contact.get("id", "")
+                tags = contact.get("tags")
             except json.JSONDecodeError:
                 pass
-            results.append({"key": key, "status": status, "contact_id": contact_id})
+            results.append({"key": key, "status": status, "contact_id": contact_id, "tags": tags})
             if 200 <= status < 300:
                 ok += 1
                 pushed.add(key)  # ledger ONLY on success
