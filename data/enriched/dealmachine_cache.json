@@ -48095,5 +48095,173 @@
     "people": 1
    }
   }
+ },
+ "hls_brick_taxsale:204317": {
+  "hash": "dafb71c539635a00",
+  "enriched_at": "2026-06-16T22:21:21.047239+00:00",
+  "block": {
+   "source": "dealmachine",
+   "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+   "matched": true,
+   "enrichment_status": "enriched",
+   "matched_by": "apn",
+   "enriched_at": "2026-06-16T22:21:21.047239+00:00",
+   "billing_cycle": "2026-06-06T18:30:15.000Z",
+   "owner_name": "MICHAEL COLOMBINO",
+   "owner_names": [
+    "MICHAEL COLOMBINO"
+   ],
+   "phones": [
+    "2019331210",
+    "9734276347",
+    "5616244230"
+   ],
+   "emails": [
+    "MCOLOMBINO19@GMAIL.COM",
+    "ACOLOMBINO5@GMAIL.COM",
+    "MCS90Z@AOL.COM"
+   ],
+   "contacts": [
+    {
+     "dm_person_id": "per_150399897465",
+     "full_name": "MICHAEL COLOMBINO",
+     "first_name": "MICHAEL",
+     "last_name": "COLOMBINO",
+     "contact_type": "owner",
+     "is_resident": true,
+     "phones": [
+      {
+       "number": "2019331210",
+       "type": "wireless",
+       "do_not_call": false
+      },
+      {
+       "number": "9734276347",
+       "type": "wireless",
+       "do_not_call": false
+      },
+      {
+       "number": "5616244230",
+       "type": "wireless",
+       "do_not_call": false
+      }
+     ],
+     "emails": [
+      "MCOLOMBINO19@GMAIL.COM",
+      "ACOLOMBINO5@GMAIL.COM",
+      "MCS90Z@AOL.COM"
+     ]
+    }
+   ],
+   "mailing_address": "140 Valencia Dr Brick, NJ, 08723",
+   "property": {
+    "dm_property_id": "prop_86714217",
+    "full_address": "140 Valencia Dr Brick, NJ, 08723",
+    "address": "140 Valencia Dr",
+    "city": "Brick",
+    "state": "NJ",
+    "zip": "08723",
+    "latitude": 40.019744,
+    "longitude": -74.081385,
+    "estimated_value": 1504000,
+    "estimated_equity_amount": 1258979,
+    "estimated_equity_percentage": 82,
+    "year_built": 1987,
+    "living_area_sqft": 2981,
+    "lot_size_sqft": 5001,
+    "num_bedrooms": 4,
+    "num_bathrooms": 3,
+    "last_sale_date": "2017-06-20T00:00:00.000Z",
+    "last_sale_amount": 735000,
+    "total_assessed_value": 608900,
+    "annual_property_tax_amount": 16526,
+    "num_mortgages": 1,
+    "total_original_loan_amount": 450000,
+    "total_estimated_loan_balance": 245021,
+    "owner_occupied": true,
+    "apn": "07-00211-29-00013"
+   },
+   "mortgages": [
+    {
+     "mortgage_number": 1,
+     "id": "2100663384",
+     "transaction_id": "2100663384",
+     "lender_name": "ARGENT MORTGAGE COMPANY LLC",
+     "is_private_lender": false,
+     "loan_type_id": 13,
+     "loan_type": "Fannie Mae/Freddie Mac",
+     "loan_financing_type_id": 1,
+     "loan_financing_type": "Adjustable Rate",
+     "loan_amount": 450000,
+     "loan_balance": 245021,
+     "loan_interest_rate": 7.85,
+     "loan_term_months": 360,
+     "loan_start_date": "2004-10-18T00:00:00.000Z",
+     "loan_recording_date": "2004-10-18T00:00:00.000Z",
+     "loan_due_date": "2034-10-01T00:00:00.000Z",
+     "has_adjustable_rate_rider": true,
+     "lien_position": 1,
+     "estimated_payment_amount": 3255.01,
+     "classification": "primary",
+     "classification_label": "Primary mortgage",
+     "classification_reason": "DataTree marks this mortgage as lien position 1."
+    }
+   ],
+   "credits": {
+    "properties": 1,
+    "people": 1
+   }
+  }
+ },
+ "hls_brick_taxsale:204357": {
+  "hash": "69d77c8662657fd5",
+  "enriched_at": "2026-06-16T22:21:21.047239+00:00",
+  "block": {
+   "source": "dealmachine",
+   "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+   "matched": true,
+   "enrichment_status": "enriched",
+   "matched_by": "apn",
+   "enriched_at": "2026-06-16T22:21:21.047239+00:00",
+   "billing_cycle": "2026-06-06T18:30:15.000Z",
+   "owner_name": null,
+   "owner_names": [],
+   "phones": [],
+   "emails": [],
+   "contacts": [],
+   "mailing_address": null,
+   "property": {
+    "dm_property_id": "prop_86714415",
+    "full_address": "APN: 07-00211-32-00014 Brick, NJ, 08723",
+    "address": "204 Cartagena Dr",
+    "city": "Brick",
+    "state": "NJ",
+    "zip": "08723",
+    "latitude": 40.019250432,
+    "longitude": -74.07918602,
+    "estimated_value": 1220000,
+    "estimated_equity_amount": 1220000,
+    "estimated_equity_percentage": 100,
+    "year_built": 1950,
+    "living_area_sqft": 1716,
+    "lot_size_sqft": 4630,
+    "num_bedrooms": 3,
+    "num_bathrooms": null,
+    "last_sale_date": null,
+    "last_sale_amount": null,
+    "total_assessed_value": 455400,
+    "annual_property_tax_amount": 12360,
+    "num_mortgages": 0,
+    "total_original_loan_amount": 0,
+    "total_estimated_loan_balance": 0,
+    "owner_occupied": false,
+    "apn": "07-00211-32-00014"
+   },
+   "mortgages": [],
+   "credits": {
+    "properties": 1,
+    "people": 0
+   }
+  }
  }
 }
