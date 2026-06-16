@@ -182,7 +182,8 @@ jobs:
         env:
           GHL_TOKEN: ${{ secrets.GHL_TOKEN }}
           GHL_LOCATION_ID: ${{ secrets.GHL_LOCATION_ID }}
-          # GHL_PUSH_LIVE: "1"   # ← uncomment to push live (default: dry-run)
+          GHL_PUSH_LIVE: "1"          # LIVE — upserts net-new leads to client GHL
+          GHL_PUSH_DELAY_SEC: "1.0"   # ~1s/contact so the first batch doesn't burst rate limit
         run: python3 scrapers/ghl_push.py
 
       - name: Commit GHL ledger + export (only on PUBLISH)

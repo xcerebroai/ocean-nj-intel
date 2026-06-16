@@ -137,8 +137,13 @@ def main() -> int:
         print("::warning title=GHL push skipped::GHL_TOKEN / GHL_LOCATION_ID not set — leads staged, not pushed")
         return 0
 
+    import time
     import urllib.error
     import urllib.request
+
+    # Pace upserts so a large first batch (empty ledger -> all leads at once)
+    # doesn't burst GHL's rate limit and get throttled/dropped. ~1s/contact.
+    delay = float(os.environ.get("GHL_PUSH_DELAY_SEC", "1.0"))
 
     ledger = load_ledger()
     pushed = set(ledger["pushed_keys"])
@@ -146,7 +151,9 @@ def main() -> int:
                "Content-Type": "application/json"}
     results = []
     ok = 0
-    for lead in leads:
+    for i, lead in enumerate(leads):
+        if i:  # pace between pushes; no delay before the first
+            time.sleep(delay)
         key = lead.get("key")
         payload = build_payload(lead, location_id)
         try:
