@@ -47842,5 +47842,258 @@
     "people": 0
    }
   }
+ },
+ "hls_brick_taxsale:103853": {
+  "hash": "9823067a5724457a",
+  "enriched_at": "2026-06-16T21:30:43.710790+00:00",
+  "block": {
+   "source": "dealmachine",
+   "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+   "matched": true,
+   "enrichment_status": "enriched",
+   "matched_by": "apn",
+   "enriched_at": "2026-06-16T21:30:43.710790+00:00",
+   "billing_cycle": "2026-06-06T18:30:15.000Z",
+   "owner_name": "RALPH DEBLASIO",
+   "owner_names": [
+    "RALPH DEBLASIO",
+    "CRYSTAL DEBLASIO"
+   ],
+   "phones": [
+    "8458204025",
+    "8453136539"
+   ],
+   "emails": [
+    "DEBLASIO51079@YAHOO.COM",
+    "SMILEY2712000@YAHOO.COM"
+   ],
+   "contacts": [
+    {
+     "dm_person_id": "per_15077543569",
+     "full_name": "RALPH DEBLASIO",
+     "first_name": "RALPH",
+     "last_name": "DEBLASIO",
+     "contact_type": "owner",
+     "is_resident": true,
+     "phones": [
+      {
+       "number": "8458204025",
+       "type": "landline",
+       "do_not_call": false
+      }
+     ],
+     "emails": [
+      "DEBLASIO51079@YAHOO.COM"
+     ]
+    },
+    {
+     "dm_person_id": "per_150291580927",
+     "full_name": "CRYSTAL DEBLASIO",
+     "first_name": "CRYSTAL",
+     "last_name": "DEBLASIO",
+     "contact_type": "owner",
+     "is_resident": true,
+     "phones": [
+      {
+       "number": "8453136539",
+       "type": "landline",
+       "do_not_call": false
+      }
+     ],
+     "emails": [
+      "SMILEY2712000@YAHOO.COM"
+     ]
+    }
+   ],
+   "mailing_address": "3 Rochester Dr Brick, NJ, 08723",
+   "property": {
+    "dm_property_id": "prop_86747807",
+    "full_address": "3 Rochester Dr Brick, NJ, 08723",
+    "address": "3 Rochester Dr",
+    "city": "Brick",
+    "state": "NJ",
+    "zip": "08723",
+    "latitude": 40.015519,
+    "longitude": -74.089714,
+    "estimated_value": 713000,
+    "estimated_equity_amount": 497618,
+    "estimated_equity_percentage": 71,
+    "year_built": 1980,
+    "living_area_sqft": 1902,
+    "lot_size_sqft": 5001,
+    "num_bedrooms": 3,
+    "num_bathrooms": 3,
+    "last_sale_date": "2016-01-20T00:00:00.000Z",
+    "last_sale_amount": 271000,
+    "total_assessed_value": 318400,
+    "annual_property_tax_amount": 8641,
+    "num_mortgages": 2,
+    "total_original_loan_amount": 323000,
+    "total_estimated_loan_balance": 215382,
+    "owner_occupied": true,
+    "apn": "07-00211-01-00017"
+   },
+   "mortgages": [
+    {
+     "mortgage_number": 1,
+     "id": "1165703555",
+     "transaction_id": "1165703555",
+     "lender_name": "HUDSON CITY SAVINGS BANK",
+     "is_private_lender": false,
+     "loan_type_id": 22,
+     "loan_type": "Purchase Money Mortgage",
+     "loan_financing_type": "Unknown Financing Type",
+     "loan_amount": 273000,
+     "loan_balance": 171873,
+     "loan_interest_rate": 6.11,
+     "loan_term_months": 360,
+     "loan_start_date": "2008-06-10T00:00:00.000Z",
+     "loan_recording_date": "2008-06-10T00:00:00.000Z",
+     "loan_due_date": "2038-07-01T00:00:00.000Z",
+     "has_adjustable_rate_rider": false,
+     "lien_position": 1,
+     "estimated_payment_amount": 1656.13,
+     "classification": "primary",
+     "classification_label": "Primary mortgage",
+     "classification_reason": "DataTree marks this mortgage as lien position 1."
+    },
+    {
+     "mortgage_number": 2,
+     "id": "21132685714",
+     "transaction_id": "21132685714",
+     "lender_name": "WELLS FARGO BANK NA",
+     "is_private_lender": false,
+     "loan_type_id": 29,
+     "loan_type": "Future Advance Clause / Open End Mortgage",
+     "loan_financing_type": "Unknown Financing Type",
+     "loan_amount": 50000,
+     "loan_balance": 43509,
+     "loan_interest_rate": 4.4,
+     "loan_term_months": 360,
+     "loan_start_date": "2019-03-18T00:00:00.000Z",
+     "loan_recording_date": "2019-03-18T00:00:00.000Z",
+     "loan_due_date": "2049-04-05T00:00:00.000Z",
+     "has_adjustable_rate_rider": false,
+     "lien_position": 2,
+     "estimated_payment_amount": 250.38,
+     "classification": "subordinate",
+     "classification_label": "Possible second lien",
+     "classification_reason": "DataTree marks this mortgage as lien position 2."
+    }
+   ],
+   "credits": {
+    "properties": 1,
+    "people": 2
+   }
+  }
+ },
+ "hls_brick_taxsale:103889": {
+  "hash": "a6e1602c0cb930e0",
+  "enriched_at": "2026-06-16T21:30:43.710790+00:00",
+  "block": {
+   "source": "dealmachine",
+   "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+   "matched": true,
+   "enrichment_status": "enriched",
+   "matched_by": "apn",
+   "enriched_at": "2026-06-16T21:30:43.710790+00:00",
+   "billing_cycle": "2026-06-06T18:30:15.000Z",
+   "owner_name": "MARK STEINFIELD",
+   "owner_names": [
+    "MARK STEINFIELD"
+   ],
+   "phones": [
+    "7323103950",
+    "7324773999"
+   ],
+   "emails": [
+    "MARKSFILE@AOL.COM",
+    "MARKSTEINFIELD@AOL.COM"
+   ],
+   "contacts": [
+    {
+     "dm_person_id": "per_1505697842",
+     "full_name": "MARK STEINFIELD",
+     "first_name": "MARK",
+     "last_name": "STEINFIELD",
+     "contact_type": "owner",
+     "is_resident": true,
+     "phones": [
+      {
+       "number": "7323103950",
+       "type": "landline",
+       "do_not_call": false
+      },
+      {
+       "number": "7324773999",
+       "type": "wireless",
+       "do_not_call": false
+      }
+     ],
+     "emails": [
+      "MARKSFILE@AOL.COM",
+      "MARKSTEINFIELD@AOL.COM"
+     ]
+    }
+   ],
+   "mailing_address": "101 Rochester Dr Brick, NJ, 08723",
+   "property": {
+    "dm_property_id": "prop_86747882",
+    "full_address": "101 Rochester Dr Brick, NJ, 08723",
+    "address": "101 Rochester Dr",
+    "city": "Brick",
+    "state": "NJ",
+    "zip": "08723",
+    "latitude": 40.014576,
+    "longitude": -74.084859,
+    "estimated_value": 1399000,
+    "estimated_equity_amount": 979074,
+    "estimated_equity_percentage": 68,
+    "year_built": 2005,
+    "living_area_sqft": 3412,
+    "lot_size_sqft": 5149,
+    "num_bedrooms": 2,
+    "num_bathrooms": 4,
+    "last_sale_date": "2004-07-08T00:00:00.000Z",
+    "last_sale_amount": 550000,
+    "total_assessed_value": 615000,
+    "annual_property_tax_amount": 16691,
+    "num_mortgages": 1,
+    "total_original_loan_amount": 458000,
+    "total_estimated_loan_balance": 419926,
+    "owner_occupied": true,
+    "apn": "07-00211-02-00034"
+   },
+   "mortgages": [
+    {
+     "mortgage_number": 1,
+     "id": "21236742577",
+     "transaction_id": "21236742577",
+     "lender_name": "OCEANFIRST BANK NA",
+     "is_private_lender": false,
+     "loan_type_id": 20,
+     "loan_type": "New Conventional",
+     "loan_financing_type_id": 1,
+     "loan_financing_type": "Adjustable Rate",
+     "loan_amount": 458000,
+     "loan_balance": 419926,
+     "loan_interest_rate": 2.88,
+     "loan_term_months": 360,
+     "loan_start_date": "2022-06-01T00:00:00.000Z",
+     "loan_recording_date": "2022-06-01T00:00:00.000Z",
+     "loan_due_date": "2052-06-01T00:00:00.000Z",
+     "has_adjustable_rate_rider": false,
+     "lien_position": 1,
+     "estimated_payment_amount": 1901.43,
+     "classification": "primary",
+     "classification_label": "Primary mortgage",
+     "classification_reason": "DataTree marks this mortgage as lien position 1."
+    }
+   ],
+   "credits": {
+    "properties": 1,
+    "people": 1
+   }
+  }
  }
 }

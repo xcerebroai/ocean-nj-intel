@@ -3,13 +3,13 @@
  "county_name": "Ocean County",
  "state_name": "New Jersey",
  "framework_version": "v5.5.0",
- "build_timestamp": "2026-06-16T19:14:48Z",
+ "build_timestamp": "2026-06-16T21:20:21Z",
  "build_mode": "PARTIAL_BUILD",
- "total_leads": 1910,
+ "total_leads": 1918,
  "lead_counts_by_signal": {
   "foreclosure_sale_scheduled": 34,
   "foreclosure_notice_published": 1,
-  "probate_filing_recent": 1371,
+  "probate_filing_recent": 1379,
   "tax_default_brick": 504
  },
  "hls_brick_status": {
@@ -31,7 +31,7 @@
  "tax_board_detail_indexed": 10,
  "lead_counts_by_status": {
   "APPROVED_FOR_DASHBOARD": 537,
-  "REVIEW_REQUIRED": 1373
+  "REVIEW_REQUIRED": 1381
  },
  "parcel_join": {
   "hits": 24,
@@ -59,7 +59,7 @@
     "OWNER_STATUS"
    ],
    "source_role": "BLOCKED_SOURCE",
-   "reported_at": "2026-06-16T19:14:01Z",
+   "reported_at": "2026-06-16T21:18:35Z",
    "v5_5_0_recon_anchor": "runs/ocean_nj/recon/source_of_record_matrix.json#sources"
   },
   {
@@ -76,7 +76,7 @@
     "RECORDED_EVENT"
    ],
    "source_role": "BLOCKED_SOURCE",
-   "reported_at": "2026-06-16T19:14:01Z",
+   "reported_at": "2026-06-16T21:18:35Z",
    "v5_5_0_recon_anchor": "runs/ocean_nj/recon/source_of_record_matrix.json#sources"
   },
   {
@@ -94,7 +94,7 @@
     "TAX_DEFAULT"
    ],
    "source_role": "BLOCKED_SOURCE",
-   "reported_at": "2026-06-16T19:14:01Z",
+   "reported_at": "2026-06-16T21:18:35Z",
    "v5_5_0_recon_anchor": "runs/ocean_nj/recon/source_of_record_matrix.json#sources"
   },
   {
@@ -109,7 +109,7 @@
    ],
    "intended_lead_origins": [],
    "source_role": "BLOCKED_SOURCE",
-   "reported_at": "2026-06-16T19:14:01Z",
+   "reported_at": "2026-06-16T21:18:35Z",
    "v5_5_0_recon_anchor": "runs/ocean_nj/recon/source_of_record_matrix.json#sources"
   }
  ],
@@ -23975,6 +23975,36 @@
    "enrichment_join_unavailable": true
   },
   {
+   "lead_id": "surrogate_probate:267546",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-04-23",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:267546"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "267546",
+   "probate_case_type": "Intervivos Trust",
+   "filed_date": "2026-04-23",
+   "decedent_name": "Kramer Declaration Of Trust As Amended And Restated On August 15, 2019 Jean H",
+   "decedent_date_of_birth": null,
+   "decedent_date_of_death": null,
+   "property_city": "Manchester",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
    "lead_id": "surrogate_probate:267547",
    "lead_origin_type": "RECORDED_EVENT",
    "additional_lead_origin_types": [
@@ -38885,6 +38915,36 @@
    "enrichment_join_unavailable": true
   },
   {
+   "lead_id": "surrogate_probate:268053",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-05-29",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:268053"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "268053",
+   "probate_case_type": "Administration",
+   "filed_date": "2026-05-29",
+   "decedent_name": "Courvoisier Linda  Marie",
+   "decedent_date_of_birth": "1949-07-23",
+   "decedent_date_of_death": "2026-05-04",
+   "property_city": "Point Pleasant",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
    "lead_id": "surrogate_probate:268054",
    "lead_origin_type": "RECORDED_EVENT",
    "additional_lead_origin_types": [
@@ -42305,6 +42365,66 @@
    "enrichment_join_unavailable": true
   },
   {
+   "lead_id": "surrogate_probate:268175",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-06-08",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:268175"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "268175",
+   "probate_case_type": "Guardianship of Minor Property",
+   "filed_date": "2026-06-08",
+   "decedent_name": "Trotter Tyson Alexander",
+   "decedent_date_of_birth": "2021-11-02",
+   "decedent_date_of_death": null,
+   "property_city": "Manahawkin",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:268176",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-06-08",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:268176"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "268176",
+   "probate_case_type": "Guardianship of Minor Property",
+   "filed_date": "2026-06-08",
+   "decedent_name": "Trotter Aleiah Faith",
+   "decedent_date_of_birth": "2025-07-12",
+   "decedent_date_of_death": null,
+   "property_city": "Manahawkin",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
    "lead_id": "surrogate_probate:268177",
    "lead_origin_type": "RECORDED_EVENT",
    "additional_lead_origin_types": [
@@ -42328,6 +42448,66 @@
    "decedent_date_of_birth": "1949-12-27",
    "decedent_date_of_death": "2026-05-25",
    "property_city": "Stafford Township",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:268180",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-06-08",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:268180"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "268180",
+   "probate_case_type": "Guardianship of Minor Property",
+   "filed_date": "2026-06-08",
+   "decedent_name": "Trotter Giovanni Vincent",
+   "decedent_date_of_birth": "2016-03-22",
+   "decedent_date_of_death": null,
+   "property_city": "Manahawkin",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:268181",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-06-08",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:268181"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "268181",
+   "probate_case_type": "Guardianship of Minor Property",
+   "filed_date": "2026-06-08",
+   "decedent_name": "Trotter Landon Michael",
+   "decedent_date_of_birth": "2017-05-04",
+   "decedent_date_of_death": null,
+   "property_city": "Manahawkin",
    "property_state": "NJ",
    "owner_name": null,
    "owner_resolved": false,
@@ -45028,6 +45208,66 @@
    "decedent_date_of_birth": "1942-03-23",
    "decedent_date_of_death": "2026-05-13",
    "property_city": "Jackson",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:268309",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-06-16",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:268309"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "268309",
+   "probate_case_type": "Probate",
+   "filed_date": "2026-06-16",
+   "decedent_name": "Giroward John H.",
+   "decedent_date_of_birth": "1954-03-05",
+   "decedent_date_of_death": "2026-06-05",
+   "property_city": "Plumsted Township",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:268313",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-06-16",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:268313"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "268313",
+   "probate_case_type": "Affidavit Next of Kin",
+   "filed_date": "2026-06-16",
+   "decedent_name": "Stefanik John M.",
+   "decedent_date_of_birth": "1955-08-16",
+   "decedent_date_of_death": "2024-08-26",
+   "property_city": "Toms River",
    "property_state": "NJ",
    "owner_name": null,
    "owner_resolved": false,
@@ -52293,11 +52533,151 @@
    "net_value": 318400,
    "year_built": 1980,
    "last_sale_price": 271000,
-   "dm_enrichment_status": "pending_retry",
+   "dealmachine": {
+    "source": "dealmachine",
+    "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+    "matched": true,
+    "enrichment_status": "enriched",
+    "matched_by": "apn",
+    "enriched_at": "2026-06-16T21:30:43.710790+00:00",
+    "billing_cycle": "2026-06-06T18:30:15.000Z",
+    "owner_name": "RALPH DEBLASIO",
+    "owner_names": [
+     "RALPH DEBLASIO",
+     "CRYSTAL DEBLASIO"
+    ],
+    "phones": [
+     "8458204025",
+     "8453136539"
+    ],
+    "emails": [
+     "DEBLASIO51079@YAHOO.COM",
+     "SMILEY2712000@YAHOO.COM"
+    ],
+    "contacts": [
+     {
+      "dm_person_id": "per_15077543569",
+      "full_name": "RALPH DEBLASIO",
+      "first_name": "RALPH",
+      "last_name": "DEBLASIO",
+      "contact_type": "owner",
+      "is_resident": true,
+      "phones": [
+       {
+        "number": "8458204025",
+        "type": "landline",
+        "do_not_call": false
+       }
+      ],
+      "emails": [
+       "DEBLASIO51079@YAHOO.COM"
+      ]
+     },
+     {
+      "dm_person_id": "per_150291580927",
+      "full_name": "CRYSTAL DEBLASIO",
+      "first_name": "CRYSTAL",
+      "last_name": "DEBLASIO",
+      "contact_type": "owner",
+      "is_resident": true,
+      "phones": [
+       {
+        "number": "8453136539",
+        "type": "landline",
+        "do_not_call": false
+       }
+      ],
+      "emails": [
+       "SMILEY2712000@YAHOO.COM"
+      ]
+     }
+    ],
+    "mailing_address": "3 Rochester Dr Brick, NJ, 08723",
+    "property": {
+     "dm_property_id": "prop_86747807",
+     "full_address": "3 Rochester Dr Brick, NJ, 08723",
+     "address": "3 Rochester Dr",
+     "city": "Brick",
+     "state": "NJ",
+     "zip": "08723",
+     "latitude": 40.015519,
+     "longitude": -74.089714,
+     "estimated_value": 713000,
+     "estimated_equity_amount": 497618,
+     "estimated_equity_percentage": 71,
+     "year_built": 1980,
+     "living_area_sqft": 1902,
+     "lot_size_sqft": 5001,
+     "num_bedrooms": 3,
+     "num_bathrooms": 3,
+     "last_sale_date": "2016-01-20T00:00:00.000Z",
+     "last_sale_amount": 271000,
+     "total_assessed_value": 318400,
+     "annual_property_tax_amount": 8641,
+     "num_mortgages": 2,
+     "total_original_loan_amount": 323000,
+     "total_estimated_loan_balance": 215382,
+     "owner_occupied": true,
+     "apn": "07-00211-01-00017"
+    },
+    "mortgages": [
+     {
+      "mortgage_number": 1,
+      "id": "1165703555",
+      "transaction_id": "1165703555",
+      "lender_name": "HUDSON CITY SAVINGS BANK",
+      "is_private_lender": false,
+      "loan_type_id": 22,
+      "loan_type": "Purchase Money Mortgage",
+      "loan_financing_type": "Unknown Financing Type",
+      "loan_amount": 273000,
+      "loan_balance": 171873,
+      "loan_interest_rate": 6.11,
+      "loan_term_months": 360,
+      "loan_start_date": "2008-06-10T00:00:00.000Z",
+      "loan_recording_date": "2008-06-10T00:00:00.000Z",
+      "loan_due_date": "2038-07-01T00:00:00.000Z",
+      "has_adjustable_rate_rider": false,
+      "lien_position": 1,
+      "estimated_payment_amount": 1656.13,
+      "classification": "primary",
+      "classification_label": "Primary mortgage",
+      "classification_reason": "DataTree marks this mortgage as lien position 1."
+     },
+     {
+      "mortgage_number": 2,
+      "id": "21132685714",
+      "transaction_id": "21132685714",
+      "lender_name": "WELLS FARGO BANK NA",
+      "is_private_lender": false,
+      "loan_type_id": 29,
+      "loan_type": "Future Advance Clause / Open End Mortgage",
+      "loan_financing_type": "Unknown Financing Type",
+      "loan_amount": 50000,
+      "loan_balance": 43509,
+      "loan_interest_rate": 4.4,
+      "loan_term_months": 360,
+      "loan_start_date": "2019-03-18T00:00:00.000Z",
+      "loan_recording_date": "2019-03-18T00:00:00.000Z",
+      "loan_due_date": "2049-04-05T00:00:00.000Z",
+      "has_adjustable_rate_rider": false,
+      "lien_position": 2,
+      "estimated_payment_amount": 250.38,
+      "classification": "subordinate",
+      "classification_label": "Possible second lien",
+      "classification_reason": "DataTree marks this mortgage as lien position 2."
+     }
+    ],
+    "credits": {
+     "properties": 1,
+     "people": 2
+    }
+   },
+   "dm_enrichment_status": "enriched",
    "enrichment_sources": [
     "dealmachine"
    ],
-   "owner_occupied": null,
+   "owner_occupied": true,
    "owner_mailing_address": "3 ROCHESTER DR",
    "owner_mailing_city": "BRICK",
    "owner_mailing_state": "NJ",
@@ -52350,11 +52730,116 @@
    "net_value": 615000,
    "year_built": 2005,
    "last_sale_price": 1,
-   "dm_enrichment_status": "pending_retry",
+   "dealmachine": {
+    "source": "dealmachine",
+    "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+    "matched": true,
+    "enrichment_status": "enriched",
+    "matched_by": "apn",
+    "enriched_at": "2026-06-16T21:30:43.710790+00:00",
+    "billing_cycle": "2026-06-06T18:30:15.000Z",
+    "owner_name": "MARK STEINFIELD",
+    "owner_names": [
+     "MARK STEINFIELD"
+    ],
+    "phones": [
+     "7323103950",
+     "7324773999"
+    ],
+    "emails": [
+     "MARKSFILE@AOL.COM",
+     "MARKSTEINFIELD@AOL.COM"
+    ],
+    "contacts": [
+     {
+      "dm_person_id": "per_1505697842",
+      "full_name": "MARK STEINFIELD",
+      "first_name": "MARK",
+      "last_name": "STEINFIELD",
+      "contact_type": "owner",
+      "is_resident": true,
+      "phones": [
+       {
+        "number": "7323103950",
+        "type": "landline",
+        "do_not_call": false
+       },
+       {
+        "number": "7324773999",
+        "type": "wireless",
+        "do_not_call": false
+       }
+      ],
+      "emails": [
+       "MARKSFILE@AOL.COM",
+       "MARKSTEINFIELD@AOL.COM"
+      ]
+     }
+    ],
+    "mailing_address": "101 Rochester Dr Brick, NJ, 08723",
+    "property": {
+     "dm_property_id": "prop_86747882",
+     "full_address": "101 Rochester Dr Brick, NJ, 08723",
+     "address": "101 Rochester Dr",
+     "city": "Brick",
+     "state": "NJ",
+     "zip": "08723",
+     "latitude": 40.014576,
+     "longitude": -74.084859,
+     "estimated_value": 1399000,
+     "estimated_equity_amount": 979074,
+     "estimated_equity_percentage": 68,
+     "year_built": 2005,
+     "living_area_sqft": 3412,
+     "lot_size_sqft": 5149,
+     "num_bedrooms": 2,
+     "num_bathrooms": 4,
+     "last_sale_date": "2004-07-08T00:00:00.000Z",
+     "last_sale_amount": 550000,
+     "total_assessed_value": 615000,
+     "annual_property_tax_amount": 16691,
+     "num_mortgages": 1,
+     "total_original_loan_amount": 458000,
+     "total_estimated_loan_balance": 419926,
+     "owner_occupied": true,
+     "apn": "07-00211-02-00034"
+    },
+    "mortgages": [
+     {
+      "mortgage_number": 1,
+      "id": "21236742577",
+      "transaction_id": "21236742577",
+      "lender_name": "OCEANFIRST BANK NA",
+      "is_private_lender": false,
+      "loan_type_id": 20,
+      "loan_type": "New Conventional",
+      "loan_financing_type_id": 1,
+      "loan_financing_type": "Adjustable Rate",
+      "loan_amount": 458000,
+      "loan_balance": 419926,
+      "loan_interest_rate": 2.88,
+      "loan_term_months": 360,
+      "loan_start_date": "2022-06-01T00:00:00.000Z",
+      "loan_recording_date": "2022-06-01T00:00:00.000Z",
+      "loan_due_date": "2052-06-01T00:00:00.000Z",
+      "has_adjustable_rate_rider": false,
+      "lien_position": 1,
+      "estimated_payment_amount": 1901.43,
+      "classification": "primary",
+      "classification_label": "Primary mortgage",
+      "classification_reason": "DataTree marks this mortgage as lien position 1."
+     }
+    ],
+    "credits": {
+     "properties": 1,
+     "people": 1
+    }
+   },
+   "dm_enrichment_status": "enriched",
    "enrichment_sources": [
     "dealmachine"
    ],
-   "owner_occupied": null,
+   "owner_occupied": true,
    "owner_mailing_address": "101 ROCHESTER DR",
    "owner_mailing_city": "BRICK",
    "owner_mailing_state": "NJ",
@@ -116699,20 +117184,20 @@
   }
  ],
  "dealmachine_enrichment": {
-  "enriched_at": "2026-06-16T19:25:11.491984+00:00",
+  "enriched_at": "2026-06-16T21:30:43.710790+00:00",
   "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
   "source": "dealmachine",
   "actionable_targets": 538,
-  "api_calls_this_run": 63,
-  "reattached_from_cache": 475,
-  "enriched": 407,
+  "api_calls_this_run": 61,
+  "reattached_from_cache": 477,
+  "enriched": 409,
   "genuine_no_match": 70,
-  "pending_retry": 61,
-  "owner_names_recovered": 277,
+  "pending_retry": 59,
+  "owner_names_recovered": 279,
   "daniels_law_backfilled": 9,
-  "contacts_attached": 393,
-  "phones_attached": 696,
-  "emails_attached": 667,
+  "contacts_attached": 396,
+  "phones_attached": 700,
+  "emails_attached": 671,
   "credits_before": {
    "included": 100000,
    "total_available": 110000,
@@ -116750,16 +117235,16 @@
    "monthly_credit_grant_cap": 0,
    "monthly_included": 100000,
    "additional_credit_balance": 10000,
-   "used": 9054,
-   "remaining": 100946,
-   "monthly_remaining": 90946,
+   "used": 9078,
+   "remaining": 100922,
+   "monthly_remaining": 90922,
    "additional_remaining": 10000,
    "overage": 0,
    "pools": {
     "monthly": {
      "included": 100000,
-     "used": 9054,
-     "remaining": 90946
+     "used": 9078,
+     "remaining": 90922
     },
     "additional": {
      "available": 10000,
