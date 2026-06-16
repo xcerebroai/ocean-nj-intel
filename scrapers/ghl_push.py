@@ -41,6 +41,10 @@ PUSH_LOG = EXPORT_DIR / "push_log_latest.json"
 GHL_URL = "https://services.leadconnectorhq.com/contacts/upsert"
 GHL_VERSION = "2021-07-28"
 TAGS = ["ocean-new-lead"]
+# GHL sits behind Cloudflare, which blocks urllib's default "Python-urllib/x.y"
+# User-Agent with HTTP 403 "error code: 1010" (browser-signature ban) BEFORE the
+# request ever reaches GHL's auth layer. A normal UA gets us past the WAF.
+USER_AGENT = "ocean-nj-daily-refresh/1.0 (+https://github.com/xcerebroai/ocean-nj-intel)"
 
 
 def build_payload(lead: dict, location_id: str) -> dict:
@@ -86,6 +90,8 @@ def redact_headers(token: str) -> dict:
         "Authorization": f"Bearer {token[:4]}…REDACTED" if token else "Bearer ***REDACTED***",
         "Version": GHL_VERSION,
         "Content-Type": "application/json",
+        "Accept": "application/json",
+        "User-Agent": USER_AGENT,
     }
 
 
@@ -148,7 +154,8 @@ def main() -> int:
     ledger = load_ledger()
     pushed = set(ledger["pushed_keys"])
     headers = {"Authorization": f"Bearer {token}", "Version": GHL_VERSION,
-               "Content-Type": "application/json"}
+               "Content-Type": "application/json", "Accept": "application/json",
+               "User-Agent": USER_AGENT}
     results = []
     ok = 0
     for i, lead in enumerate(leads):
