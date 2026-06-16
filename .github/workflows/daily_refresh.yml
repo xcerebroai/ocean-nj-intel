@@ -155,9 +155,12 @@ jobs:
         run: |
           git config user.email "ci-bot@xcerebro.local"
           git config user.name  "xcerebro-ci-bot"
-          git add dashboard/ data/leads/scored_leads.json data/leads/build_manifest.json data/raw/_blocked_sources.jsonl
+          # Stage only tracked/committable artifacts; tolerate ignored/missing paths
+          # (data/raw/ is gitignored — never commit raw scrape output).
+          git add dashboard/ data/leads/scored_leads.json data/leads/build_manifest.json 2>/dev/null || true
           # DealMachine enrichment cache (incremental gate) + provenance ledger
-          git add data/enriched/dealmachine_cache.json data/enriched/dealmachine_enrichment.jsonl 2>/dev/null || true
+          git add data/enriched/dealmachine_cache.json data/enriched/dealmachine_results.json \
+                  data/enriched/dealmachine_enrichment.jsonl 2>/dev/null || true
           git diff --cached --quiet || git commit -m "daily refresh $(date -u +%Y-%m-%dT%H:%M:%SZ)"
           git push
 
