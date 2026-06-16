@@ -164,6 +164,42 @@ jobs:
           git diff --cached --quiet || git commit -m "daily refresh $(date -u +%Y-%m-%dT%H:%M:%SZ)"
           git push
 
+      # ── GoHighLevel direct push (CLIENT-SPECIFIC, Ocean-only, no middleware) ──
+      # Diff today's actionable leads against data/exports/pushed_keys.json and
+      # upsert only net-new contactable leads to the client's GHL. Probate is
+      # gated out (actionable = sheriff + HLS Brick tax-default). SAFETY: the
+      # push runs in DRY-RUN by default — it only POSTs to GHL when GHL_PUSH_LIVE
+      # is "1". Uncomment that env line below to go live after mapping is signed
+      # off. Every step is continue-on-error so GHL never blocks the refresh.
+      - name: GHL diff — net-new contactable leads (Ocean-only)
+        if: steps.gate.outcome == 'success'
+        run: python3 scrapers/ghl_diff_new_leads.py
+        continue-on-error: true
+
+      - name: GHL push — upsert net-new leads to client GHL (Ocean-only)
+        if: steps.gate.outcome == 'success'
+        continue-on-error: true
+        env:
+          GHL_TOKEN: ${{ secrets.GHL_TOKEN }}
+          GHL_LOCATION_ID: ${{ secrets.GHL_LOCATION_ID }}
+          # GHL_PUSH_LIVE: "1"   # ← uncomment to push live (default: dry-run)
+        run: python3 scrapers/ghl_push.py
+
+      - name: Commit GHL ledger + export (only on PUBLISH)
+        if: steps.gate.outcome == 'success'
+        continue-on-error: true
+        run: |
+          git config user.email "ci-bot@xcerebro.local"
+          git config user.name  "xcerebro-ci-bot"
+          # pushed_keys.json is the source of truth for "already pushed"; the
+          # latest export/log are committed for provenance/visibility.
+          git add data/exports/pushed_keys.json data/exports/new_leads_latest.json \
+                  data/exports/push_log_latest.json 2>/dev/null || true
+          git diff --cached --quiet && exit 0
+          git commit -m "GHL push ledger $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          git pull --rebase origin main 2>/dev/null || true
+          git push
+
       # NOTE: No actions/upload-pages-artifact + actions/deploy-pages steps here.
       # This repo uses LEGACY branch-based Pages (build_type: legacy, source =
       # main:/), so the `git push` above already deploys the refreshed dashboard

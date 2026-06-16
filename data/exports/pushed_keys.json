@@ -1,0 +1,4 @@
+{
+  "pushed_keys": [],
+  "note": "Keys (parcel|docket) that have been successfully (2xx) upserted to the client's GHL. Updated ONLY by scrapers/ghl_push.py after a 2xx. Failed pushes stay OUT and retry next run."
+}
