@@ -3,13 +3,13 @@
  "county_name": "Ocean County",
  "state_name": "New Jersey",
  "framework_version": "v5.5.0",
- "build_timestamp": "2026-06-17T11:12:50Z",
+ "build_timestamp": "2026-06-18T10:43:44Z",
  "build_mode": "PARTIAL_BUILD",
- "total_leads": 1891,
+ "total_leads": 1877,
  "lead_counts_by_signal": {
   "foreclosure_sale_scheduled": 34,
   "foreclosure_notice_published": 1,
-  "probate_filing_recent": 1352,
+  "probate_filing_recent": 1338,
   "tax_default_brick": 504
  },
  "hls_brick_status": {
@@ -30,8 +30,8 @@
  },
  "tax_board_detail_indexed": 10,
  "lead_counts_by_status": {
-  "APPROVED_FOR_DASHBOARD": 537,
-  "REVIEW_REQUIRED": 1354
+  "APPROVED_FOR_DASHBOARD": 535,
+  "REVIEW_REQUIRED": 1342
  },
  "parcel_join": {
   "hits": 24,
@@ -59,7 +59,7 @@
     "OWNER_STATUS"
    ],
    "source_role": "BLOCKED_SOURCE",
-   "reported_at": "2026-06-17T11:11:58Z",
+   "reported_at": "2026-06-18T10:42:51Z",
    "v5_5_0_recon_anchor": "runs/ocean_nj/recon/source_of_record_matrix.json#sources"
   },
   {
@@ -76,7 +76,7 @@
     "RECORDED_EVENT"
    ],
    "source_role": "BLOCKED_SOURCE",
-   "reported_at": "2026-06-17T11:11:58Z",
+   "reported_at": "2026-06-18T10:42:51Z",
    "v5_5_0_recon_anchor": "runs/ocean_nj/recon/source_of_record_matrix.json#sources"
   },
   {
@@ -94,7 +94,7 @@
     "TAX_DEFAULT"
    ],
    "source_role": "BLOCKED_SOURCE",
-   "reported_at": "2026-06-17T11:11:58Z",
+   "reported_at": "2026-06-18T10:42:51Z",
    "v5_5_0_recon_anchor": "runs/ocean_nj/recon/source_of_record_matrix.json#sources"
   },
   {
@@ -109,7 +109,7 @@
    ],
    "intended_lead_origins": [],
    "source_role": "BLOCKED_SOURCE",
-   "reported_at": "2026-06-17T11:11:58Z",
+   "reported_at": "2026-06-18T10:42:51Z",
    "v5_5_0_recon_anchor": "runs/ocean_nj/recon/source_of_record_matrix.json#sources"
   }
  ],
@@ -364,7 +364,7 @@
    "lead_origin_type": "RECORDED_EVENT",
    "primary_event_date": "2026-06-23",
    "scheduled_event_category": "UPCOMING_SALE",
-   "qualification_status": "QUALIFIED",
+   "qualification_status": "REVIEW_REQUIRED",
    "source_ids": [
     "sheriff_foreclosure",
     "njogis_parcels_modiv"
@@ -373,16 +373,16 @@
     "sheriff_foreclosure:CH_779655",
     "njogis_parcels_modiv:1517_326.05_17"
    ],
-   "lead_status": "APPROVED_FOR_DASHBOARD",
+   "lead_status": "REVIEW_REQUIRED",
    "doc_type": "sheriff_sale_listing",
    "distress_signal": "foreclosure_sale_scheduled",
    "chancery_docket": "CH 779655",
    "plaintiff": "NEW JERSEY HOUSING AND MORTGAGE FIN",
    "defendant_name": "JOSEPH WILTSEY, ET ALS",
-   "upset_amount": 327438.63,
+   "upset_amount": 314710.99,
    "sale_date": "2026-06-23",
    "adjournment_date": null,
-   "sheriff_status": null,
+   "sheriff_status": "BANKRUPTCY",
    "attorney_firm": "PLUESE, BECKER, SALTZMAN & THOMAS, LLC.",
    "attorney_phone": "856-813-1700",
    "property_address": "80 HOLLYBROOK DRIVE LITTLE EGG",
@@ -438,7 +438,7 @@
    "chancery_docket": "CH 779941",
    "plaintiff": "METROPOLITAN LIFE INSURANCE COMPANY",
    "defendant_name": "DAVID GOMEZ, ET ALS",
-   "upset_amount": 197792.29,
+   "upset_amount": 227871.94,
    "sale_date": "2026-06-23",
    "adjournment_date": null,
    "sheriff_status": null,
@@ -1311,7 +1311,7 @@
    "chancery_docket": "CH 780600",
    "plaintiff": "U.S. BANK TRUST NATIONAL ASSOCIATIO",
    "defendant_name": "STEVEN RUNNE, ET AL",
-   "upset_amount": 361776.96,
+   "upset_amount": 366771.98,
    "sale_date": "2026-06-23",
    "adjournment_date": null,
    "sheriff_status": null,
@@ -1370,7 +1370,7 @@
    "chancery_docket": "CH 780608",
    "plaintiff": "NEWREZ LLC D/B/A SHELLPOINT MORTGAG",
    "defendant_name": "YITZCHOK LEBOVITS, ET AL",
-   "upset_amount": 580065.17,
+   "upset_amount": 580561.09,
    "sale_date": "2026-06-23",
    "adjournment_date": null,
    "sheriff_status": null,
@@ -2315,7 +2315,7 @@
    "chancery_docket": "CH 780642",
    "plaintiff": "US BANK TRUST NATIONAL ASSOCIATION,",
    "defendant_name": "BRETT J. LOESCH, ET ALS",
-   "upset_amount": 333007.79,
+   "upset_amount": 378183.99,
    "sale_date": "2026-06-23",
    "adjournment_date": null,
    "sheriff_status": null,
@@ -3054,9 +3054,9 @@
   {
    "lead_id": "sheriff_foreclosure:CH_780660",
    "lead_origin_type": "RECORDED_EVENT",
-   "primary_event_date": "2026-06-23",
+   "primary_event_date": "2026-07-21",
    "scheduled_event_category": "UPCOMING_SALE",
-   "qualification_status": "QUALIFIED",
+   "qualification_status": "REVIEW_REQUIRED",
    "source_ids": [
     "sheriff_foreclosure"
    ],
@@ -3069,10 +3069,10 @@
    "chancery_docket": "CH 780660",
    "plaintiff": "NEWREZ LLC DBA SHELLPOINT MORTGAGE",
    "defendant_name": "LORRAINE KIPILA, ETC., ET ALS",
-   "upset_amount": 222859.14,
+   "upset_amount": 223934.25,
    "sale_date": "2026-06-23",
-   "adjournment_date": null,
-   "sheriff_status": null,
+   "adjournment_date": "2026-07-21",
+   "sheriff_status": "ADJOURNED UNTIL",
    "attorney_firm": "STERN & EISENBERG, PC",
    "attorney_phone": "609-397-9200",
    "property_address": "200 SPRAY RD STAFFORD",
@@ -3562,7 +3562,7 @@
    "lead_id": "sheriff_foreclosure:CH_780671",
    "lead_origin_type": "RECORDED_EVENT",
    "primary_event_date": "2026-06-23",
-   "scheduled_event_category": "UPCOMING_SALE",
+   "scheduled_event_category": "HISTORICAL_CONTEXT_ONLY",
    "qualification_status": "QUALIFIED",
    "source_ids": [
     "sheriff_foreclosure",
@@ -3572,16 +3572,16 @@
     "sheriff_foreclosure:CH_780671",
     "njogis_parcels_modiv:1531_59_2"
    ],
-   "lead_status": "APPROVED_FOR_DASHBOARD",
+   "lead_status": "REVIEW_REQUIRED",
    "doc_type": "sheriff_sale_listing",
    "distress_signal": "foreclosure_sale_scheduled",
    "chancery_docket": "CH 780671",
    "plaintiff": "OCEANFIRST BANK N.A.",
    "defendant_name": "182 N. MAIN STREET, LLC, ET ALS",
-   "upset_amount": 236843.85,
+   "upset_amount": 232076.51,
    "sale_date": "2026-06-23",
    "adjournment_date": null,
-   "sheriff_status": null,
+   "sheriff_status": "CANCELLATION",
    "attorney_firm": "NEAL M. RUBEN, ESQ.",
    "attorney_phone": "732-460-0007",
    "property_address": "182 N. MAIN STREET",
@@ -3903,876 +3903,6 @@
    "owner_mailing_zip": null,
    "absentee": false,
    "out_of_state": false
-  },
-  {
-   "lead_id": "surrogate_probate:266917",
-   "lead_origin_type": "RECORDED_EVENT",
-   "additional_lead_origin_types": [
-    "OWNER_STATUS"
-   ],
-   "primary_event_date": "2026-03-19",
-   "qualification_status": "REVIEW_REQUIRED",
-   "source_ids": [
-    "surrogate_probate"
-   ],
-   "evidence_ids": [
-    "surrogate_probate:266917"
-   ],
-   "lead_status": "REVIEW_REQUIRED",
-   "doc_type": "probate_filing",
-   "distress_signal": "probate_filing_recent",
-   "probate_docket": "266917",
-   "probate_case_type": "Probate",
-   "filed_date": "2026-03-19",
-   "decedent_name": "Corrigan Marianne",
-   "decedent_date_of_birth": "1945-03-01",
-   "decedent_date_of_death": "2026-03-13",
-   "property_city": "Bayville",
-   "property_state": "NJ",
-   "owner_name": null,
-   "owner_resolved": false,
-   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
-   "enrichment_join_unavailable": true
-  },
-  {
-   "lead_id": "surrogate_probate:266918",
-   "lead_origin_type": "RECORDED_EVENT",
-   "additional_lead_origin_types": [
-    "OWNER_STATUS"
-   ],
-   "primary_event_date": "2026-03-19",
-   "qualification_status": "REVIEW_REQUIRED",
-   "source_ids": [
-    "surrogate_probate"
-   ],
-   "evidence_ids": [
-    "surrogate_probate:266918"
-   ],
-   "lead_status": "REVIEW_REQUIRED",
-   "doc_type": "probate_filing",
-   "distress_signal": "probate_filing_recent",
-   "probate_docket": "266918",
-   "probate_case_type": "Probate",
-   "filed_date": "2026-03-19",
-   "decedent_name": "Bocchicchio Asunta",
-   "decedent_date_of_birth": "1926-08-14",
-   "decedent_date_of_death": "2026-02-13",
-   "property_city": "Jackson",
-   "property_state": "NJ",
-   "owner_name": null,
-   "owner_resolved": false,
-   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
-   "enrichment_join_unavailable": true
-  },
-  {
-   "lead_id": "surrogate_probate:266919",
-   "lead_origin_type": "RECORDED_EVENT",
-   "additional_lead_origin_types": [
-    "OWNER_STATUS"
-   ],
-   "primary_event_date": "2026-03-19",
-   "qualification_status": "REVIEW_REQUIRED",
-   "source_ids": [
-    "surrogate_probate"
-   ],
-   "evidence_ids": [
-    "surrogate_probate:266919"
-   ],
-   "lead_status": "REVIEW_REQUIRED",
-   "doc_type": "probate_filing",
-   "distress_signal": "probate_filing_recent",
-   "probate_docket": "266919",
-   "probate_case_type": "Affidavit Next of Kin",
-   "filed_date": "2026-03-19",
-   "decedent_name": "Tull Mary Lucille",
-   "decedent_date_of_birth": "1939-06-29",
-   "decedent_date_of_death": "2026-01-29",
-   "property_city": "Toms River Township",
-   "property_state": "NJ",
-   "owner_name": null,
-   "owner_resolved": false,
-   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
-   "enrichment_join_unavailable": true
-  },
-  {
-   "lead_id": "surrogate_probate:266920",
-   "lead_origin_type": "RECORDED_EVENT",
-   "additional_lead_origin_types": [
-    "OWNER_STATUS"
-   ],
-   "primary_event_date": "2026-03-19",
-   "qualification_status": "REVIEW_REQUIRED",
-   "source_ids": [
-    "surrogate_probate"
-   ],
-   "evidence_ids": [
-    "surrogate_probate:266920"
-   ],
-   "lead_status": "REVIEW_REQUIRED",
-   "doc_type": "probate_filing",
-   "distress_signal": "probate_filing_recent",
-   "probate_docket": "266920",
-   "probate_case_type": "Probate",
-   "filed_date": "2026-03-19",
-   "decedent_name": "Plis John J.",
-   "decedent_date_of_birth": "1931-08-27",
-   "decedent_date_of_death": "2026-03-01",
-   "property_city": "Lakewood",
-   "property_state": "NJ",
-   "owner_name": null,
-   "owner_resolved": false,
-   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
-   "enrichment_join_unavailable": true
-  },
-  {
-   "lead_id": "surrogate_probate:266921",
-   "lead_origin_type": "RECORDED_EVENT",
-   "additional_lead_origin_types": [
-    "OWNER_STATUS"
-   ],
-   "primary_event_date": "2026-03-19",
-   "qualification_status": "REVIEW_REQUIRED",
-   "source_ids": [
-    "surrogate_probate"
-   ],
-   "evidence_ids": [
-    "surrogate_probate:266921"
-   ],
-   "lead_status": "REVIEW_REQUIRED",
-   "doc_type": "probate_filing",
-   "distress_signal": "probate_filing_recent",
-   "probate_docket": "266921",
-   "probate_case_type": "Affidavit of Surviving Spouse or Domestic Partner",
-   "filed_date": "2026-03-19",
-   "decedent_name": "Smith Alvin Morton",
-   "decedent_date_of_birth": "1946-08-08",
-   "decedent_date_of_death": "2026-03-02",
-   "property_city": "Toms River",
-   "property_state": "NJ",
-   "owner_name": null,
-   "owner_resolved": false,
-   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
-   "enrichment_join_unavailable": true
-  },
-  {
-   "lead_id": "surrogate_probate:266922",
-   "lead_origin_type": "RECORDED_EVENT",
-   "additional_lead_origin_types": [
-    "OWNER_STATUS"
-   ],
-   "primary_event_date": "2026-03-19",
-   "qualification_status": "REVIEW_REQUIRED",
-   "source_ids": [
-    "surrogate_probate"
-   ],
-   "evidence_ids": [
-    "surrogate_probate:266922"
-   ],
-   "lead_status": "REVIEW_REQUIRED",
-   "doc_type": "probate_filing",
-   "distress_signal": "probate_filing_recent",
-   "probate_docket": "266922",
-   "probate_case_type": "Guardianship of Incapacitated",
-   "filed_date": "2026-03-19",
-   "decedent_name": "Dweck Janet C.",
-   "decedent_date_of_birth": "1944-07-14",
-   "decedent_date_of_death": null,
-   "property_city": "Lakewood",
-   "property_state": "NJ",
-   "owner_name": null,
-   "owner_resolved": false,
-   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
-   "enrichment_join_unavailable": true
-  },
-  {
-   "lead_id": "surrogate_probate:266923",
-   "lead_origin_type": "RECORDED_EVENT",
-   "additional_lead_origin_types": [
-    "OWNER_STATUS"
-   ],
-   "primary_event_date": "2026-03-19",
-   "qualification_status": "REVIEW_REQUIRED",
-   "source_ids": [
-    "surrogate_probate"
-   ],
-   "evidence_ids": [
-    "surrogate_probate:266923"
-   ],
-   "lead_status": "REVIEW_REQUIRED",
-   "doc_type": "probate_filing",
-   "distress_signal": "probate_filing_recent",
-   "probate_docket": "266923",
-   "probate_case_type": "Probate",
-   "filed_date": "2026-03-19",
-   "decedent_name": "Giordano John J. Sr.",
-   "decedent_date_of_birth": "1947-05-07",
-   "decedent_date_of_death": "2026-01-31",
-   "property_city": "Lacey",
-   "property_state": "NJ",
-   "owner_name": null,
-   "owner_resolved": false,
-   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
-   "enrichment_join_unavailable": true
-  },
-  {
-   "lead_id": "surrogate_probate:266924",
-   "lead_origin_type": "RECORDED_EVENT",
-   "additional_lead_origin_types": [
-    "OWNER_STATUS"
-   ],
-   "primary_event_date": "2026-03-19",
-   "qualification_status": "REVIEW_REQUIRED",
-   "source_ids": [
-    "surrogate_probate"
-   ],
-   "evidence_ids": [
-    "surrogate_probate:266924"
-   ],
-   "lead_status": "REVIEW_REQUIRED",
-   "doc_type": "probate_filing",
-   "distress_signal": "probate_filing_recent",
-   "probate_docket": "266924",
-   "probate_case_type": "Probate",
-   "filed_date": "2026-03-19",
-   "decedent_name": "Magdosko Paul",
-   "decedent_date_of_birth": "1936-04-18",
-   "decedent_date_of_death": "2026-03-09",
-   "property_city": "Brick",
-   "property_state": "NJ",
-   "owner_name": null,
-   "owner_resolved": false,
-   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
-   "enrichment_join_unavailable": true
-  },
-  {
-   "lead_id": "surrogate_probate:196940",
-   "lead_origin_type": "RECORDED_EVENT",
-   "additional_lead_origin_types": [
-    "OWNER_STATUS"
-   ],
-   "primary_event_date": "2026-03-19",
-   "qualification_status": "REVIEW_REQUIRED",
-   "source_ids": [
-    "surrogate_probate"
-   ],
-   "evidence_ids": [
-    "surrogate_probate:196940"
-   ],
-   "lead_status": "REVIEW_REQUIRED",
-   "doc_type": "probate_filing",
-   "distress_signal": "probate_filing_recent",
-   "probate_docket": "196940",
-   "probate_case_type": "Ad Prosequendum",
-   "filed_date": "2026-03-19",
-   "decedent_name": "Lupo Michael Anthony",
-   "decedent_date_of_birth": "1994-06-08",
-   "decedent_date_of_death": "2025-12-12",
-   "property_city": "Toms River",
-   "property_state": "NJ",
-   "owner_name": null,
-   "owner_resolved": false,
-   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
-   "enrichment_join_unavailable": true
-  },
-  {
-   "lead_id": "surrogate_probate:266925",
-   "lead_origin_type": "RECORDED_EVENT",
-   "additional_lead_origin_types": [
-    "OWNER_STATUS"
-   ],
-   "primary_event_date": "2026-03-19",
-   "qualification_status": "REVIEW_REQUIRED",
-   "source_ids": [
-    "surrogate_probate"
-   ],
-   "evidence_ids": [
-    "surrogate_probate:266925"
-   ],
-   "lead_status": "REVIEW_REQUIRED",
-   "doc_type": "probate_filing",
-   "distress_signal": "probate_filing_recent",
-   "probate_docket": "266925",
-   "probate_case_type": "Administration",
-   "filed_date": "2026-03-19",
-   "decedent_name": "Ray Thomas",
-   "decedent_date_of_birth": "1964-11-02",
-   "decedent_date_of_death": "2026-03-04",
-   "property_city": "Manchester",
-   "property_state": "NJ",
-   "owner_name": null,
-   "owner_resolved": false,
-   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
-   "enrichment_join_unavailable": true
-  },
-  {
-   "lead_id": "surrogate_probate:266926",
-   "lead_origin_type": "RECORDED_EVENT",
-   "additional_lead_origin_types": [
-    "OWNER_STATUS"
-   ],
-   "primary_event_date": "2026-03-19",
-   "qualification_status": "REVIEW_REQUIRED",
-   "source_ids": [
-    "surrogate_probate"
-   ],
-   "evidence_ids": [
-    "surrogate_probate:266926"
-   ],
-   "lead_status": "REVIEW_REQUIRED",
-   "doc_type": "probate_filing",
-   "distress_signal": "probate_filing_recent",
-   "probate_docket": "266926",
-   "probate_case_type": "Administration",
-   "filed_date": "2026-03-19",
-   "decedent_name": "Bolcato Michael F.",
-   "decedent_date_of_birth": "1967-07-02",
-   "decedent_date_of_death": "2026-01-30",
-   "property_city": "Plumsted Township",
-   "property_state": "NJ",
-   "owner_name": null,
-   "owner_resolved": false,
-   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
-   "enrichment_join_unavailable": true
-  },
-  {
-   "lead_id": "surrogate_probate:266927",
-   "lead_origin_type": "RECORDED_EVENT",
-   "additional_lead_origin_types": [
-    "OWNER_STATUS"
-   ],
-   "primary_event_date": "2026-03-19",
-   "qualification_status": "REVIEW_REQUIRED",
-   "source_ids": [
-    "surrogate_probate"
-   ],
-   "evidence_ids": [
-    "surrogate_probate:266927"
-   ],
-   "lead_status": "REVIEW_REQUIRED",
-   "doc_type": "probate_filing",
-   "distress_signal": "probate_filing_recent",
-   "probate_docket": "266927",
-   "probate_case_type": "Probate",
-   "filed_date": "2026-03-19",
-   "decedent_name": "Ivers Ruth E.",
-   "decedent_date_of_birth": "1939-11-30",
-   "decedent_date_of_death": "2026-02-26",
-   "property_city": "Manchester",
-   "property_state": "NJ",
-   "owner_name": null,
-   "owner_resolved": false,
-   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
-   "enrichment_join_unavailable": true
-  },
-  {
-   "lead_id": "surrogate_probate:266928",
-   "lead_origin_type": "RECORDED_EVENT",
-   "additional_lead_origin_types": [
-    "OWNER_STATUS"
-   ],
-   "primary_event_date": "2026-03-19",
-   "qualification_status": "REVIEW_REQUIRED",
-   "source_ids": [
-    "surrogate_probate"
-   ],
-   "evidence_ids": [
-    "surrogate_probate:266928"
-   ],
-   "lead_status": "REVIEW_REQUIRED",
-   "doc_type": "probate_filing",
-   "distress_signal": "probate_filing_recent",
-   "probate_docket": "266928",
-   "probate_case_type": "Affidavit of Surviving Spouse or Domestic Partner",
-   "filed_date": "2026-03-19",
-   "decedent_name": "Leahy Thomas Raymond",
-   "decedent_date_of_birth": "1950-12-05",
-   "decedent_date_of_death": "2025-12-15",
-   "property_city": "Lacey Township",
-   "property_state": "NJ",
-   "owner_name": null,
-   "owner_resolved": false,
-   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
-   "enrichment_join_unavailable": true
-  },
-  {
-   "lead_id": "surrogate_probate:266681",
-   "lead_origin_type": "RECORDED_EVENT",
-   "additional_lead_origin_types": [
-    "OWNER_STATUS"
-   ],
-   "primary_event_date": "2026-03-19",
-   "qualification_status": "REVIEW_REQUIRED",
-   "source_ids": [
-    "surrogate_probate"
-   ],
-   "evidence_ids": [
-    "surrogate_probate:266681"
-   ],
-   "lead_status": "REVIEW_REQUIRED",
-   "doc_type": "probate_filing",
-   "distress_signal": "probate_filing_recent",
-   "probate_docket": "266681",
-   "probate_case_type": "Probate",
-   "filed_date": "2026-03-19",
-   "decedent_name": "Bauer Sarah Anne",
-   "decedent_date_of_birth": "1947-08-21",
-   "decedent_date_of_death": "2025-12-29",
-   "property_city": "Lacey",
-   "property_state": "NJ",
-   "owner_name": null,
-   "owner_resolved": false,
-   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
-   "enrichment_join_unavailable": true
-  },
-  {
-   "lead_id": "surrogate_probate:266929",
-   "lead_origin_type": "RECORDED_EVENT",
-   "additional_lead_origin_types": [
-    "OWNER_STATUS"
-   ],
-   "primary_event_date": "2026-03-19",
-   "qualification_status": "REVIEW_REQUIRED",
-   "source_ids": [
-    "surrogate_probate"
-   ],
-   "evidence_ids": [
-    "surrogate_probate:266929"
-   ],
-   "lead_status": "REVIEW_REQUIRED",
-   "doc_type": "probate_filing",
-   "distress_signal": "probate_filing_recent",
-   "probate_docket": "266929",
-   "probate_case_type": "Affidavit Next of Kin",
-   "filed_date": "2026-03-19",
-   "decedent_name": "Jankowski Laurie  A.",
-   "decedent_date_of_birth": "1965-04-08",
-   "decedent_date_of_death": "2026-02-28",
-   "property_city": "Lacey",
-   "property_state": "NJ",
-   "owner_name": null,
-   "owner_resolved": false,
-   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
-   "enrichment_join_unavailable": true
-  },
-  {
-   "lead_id": "surrogate_probate:266930",
-   "lead_origin_type": "RECORDED_EVENT",
-   "additional_lead_origin_types": [
-    "OWNER_STATUS"
-   ],
-   "primary_event_date": "2026-03-19",
-   "qualification_status": "REVIEW_REQUIRED",
-   "source_ids": [
-    "surrogate_probate"
-   ],
-   "evidence_ids": [
-    "surrogate_probate:266930"
-   ],
-   "lead_status": "REVIEW_REQUIRED",
-   "doc_type": "probate_filing",
-   "distress_signal": "probate_filing_recent",
-   "probate_docket": "266930",
-   "probate_case_type": "Probate",
-   "filed_date": "2026-03-19",
-   "decedent_name": "Gorka Christine G.",
-   "decedent_date_of_birth": "1933-10-30",
-   "decedent_date_of_death": "2025-12-11",
-   "property_city": "Stafford Township",
-   "property_state": "NJ",
-   "owner_name": null,
-   "owner_resolved": false,
-   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
-   "enrichment_join_unavailable": true
-  },
-  {
-   "lead_id": "surrogate_probate:266931",
-   "lead_origin_type": "RECORDED_EVENT",
-   "additional_lead_origin_types": [
-    "OWNER_STATUS"
-   ],
-   "primary_event_date": "2026-03-19",
-   "qualification_status": "REVIEW_REQUIRED",
-   "source_ids": [
-    "surrogate_probate"
-   ],
-   "evidence_ids": [
-    "surrogate_probate:266931"
-   ],
-   "lead_status": "REVIEW_REQUIRED",
-   "doc_type": "probate_filing",
-   "distress_signal": "probate_filing_recent",
-   "probate_docket": "266931",
-   "probate_case_type": "Probate",
-   "filed_date": "2026-03-19",
-   "decedent_name": "Wubbe John D. Jr.",
-   "decedent_date_of_birth": "1946-11-05",
-   "decedent_date_of_death": "2025-09-21",
-   "property_city": "Lakewood",
-   "property_state": "NJ",
-   "owner_name": null,
-   "owner_resolved": false,
-   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
-   "enrichment_join_unavailable": true
-  },
-  {
-   "lead_id": "surrogate_probate:266932",
-   "lead_origin_type": "RECORDED_EVENT",
-   "additional_lead_origin_types": [
-    "OWNER_STATUS"
-   ],
-   "primary_event_date": "2026-03-19",
-   "qualification_status": "REVIEW_REQUIRED",
-   "source_ids": [
-    "surrogate_probate"
-   ],
-   "evidence_ids": [
-    "surrogate_probate:266932"
-   ],
-   "lead_status": "REVIEW_REQUIRED",
-   "doc_type": "probate_filing",
-   "distress_signal": "probate_filing_recent",
-   "probate_docket": "266932",
-   "probate_case_type": "Probate",
-   "filed_date": "2026-03-19",
-   "decedent_name": "Kennedy Marjorie",
-   "decedent_date_of_birth": "1945-02-07",
-   "decedent_date_of_death": "2026-03-12",
-   "property_city": "Brick",
-   "property_state": "NJ",
-   "owner_name": null,
-   "owner_resolved": false,
-   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
-   "enrichment_join_unavailable": true
-  },
-  {
-   "lead_id": "surrogate_probate:266933",
-   "lead_origin_type": "RECORDED_EVENT",
-   "additional_lead_origin_types": [
-    "OWNER_STATUS"
-   ],
-   "primary_event_date": "2026-03-19",
-   "qualification_status": "REVIEW_REQUIRED",
-   "source_ids": [
-    "surrogate_probate"
-   ],
-   "evidence_ids": [
-    "surrogate_probate:266933"
-   ],
-   "lead_status": "REVIEW_REQUIRED",
-   "doc_type": "probate_filing",
-   "distress_signal": "probate_filing_recent",
-   "probate_docket": "266933",
-   "probate_case_type": "Probate",
-   "filed_date": "2026-03-19",
-   "decedent_name": "Cooper Geraldine",
-   "decedent_date_of_birth": "1948-03-16",
-   "decedent_date_of_death": "2026-03-14",
-   "property_city": "Berkeley",
-   "property_state": "NJ",
-   "owner_name": null,
-   "owner_resolved": false,
-   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
-   "enrichment_join_unavailable": true
-  },
-  {
-   "lead_id": "surrogate_probate:266934",
-   "lead_origin_type": "RECORDED_EVENT",
-   "additional_lead_origin_types": [
-    "OWNER_STATUS"
-   ],
-   "primary_event_date": "2026-03-19",
-   "qualification_status": "REVIEW_REQUIRED",
-   "source_ids": [
-    "surrogate_probate"
-   ],
-   "evidence_ids": [
-    "surrogate_probate:266934"
-   ],
-   "lead_status": "REVIEW_REQUIRED",
-   "doc_type": "probate_filing",
-   "distress_signal": "probate_filing_recent",
-   "probate_docket": "266934",
-   "probate_case_type": "Probate",
-   "filed_date": "2026-03-19",
-   "decedent_name": "Friebely John D.",
-   "decedent_date_of_birth": "1942-12-05",
-   "decedent_date_of_death": "2026-02-22",
-   "property_city": "Brick",
-   "property_state": "NJ",
-   "owner_name": null,
-   "owner_resolved": false,
-   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
-   "enrichment_join_unavailable": true
-  },
-  {
-   "lead_id": "surrogate_probate:266935",
-   "lead_origin_type": "RECORDED_EVENT",
-   "additional_lead_origin_types": [
-    "OWNER_STATUS"
-   ],
-   "primary_event_date": "2026-03-19",
-   "qualification_status": "REVIEW_REQUIRED",
-   "source_ids": [
-    "surrogate_probate"
-   ],
-   "evidence_ids": [
-    "surrogate_probate:266935"
-   ],
-   "lead_status": "REVIEW_REQUIRED",
-   "doc_type": "probate_filing",
-   "distress_signal": "probate_filing_recent",
-   "probate_docket": "266935",
-   "probate_case_type": "Probate",
-   "filed_date": "2026-03-19",
-   "decedent_name": "Schoenleber  Kenneth  E.",
-   "decedent_date_of_birth": "1962-11-08",
-   "decedent_date_of_death": "2026-03-07",
-   "property_city": "Manchester",
-   "property_state": "NJ",
-   "owner_name": null,
-   "owner_resolved": false,
-   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
-   "enrichment_join_unavailable": true
-  },
-  {
-   "lead_id": "surrogate_probate:266936",
-   "lead_origin_type": "RECORDED_EVENT",
-   "additional_lead_origin_types": [
-    "OWNER_STATUS"
-   ],
-   "primary_event_date": "2026-03-19",
-   "qualification_status": "REVIEW_REQUIRED",
-   "source_ids": [
-    "surrogate_probate"
-   ],
-   "evidence_ids": [
-    "surrogate_probate:266936"
-   ],
-   "lead_status": "REVIEW_REQUIRED",
-   "doc_type": "probate_filing",
-   "distress_signal": "probate_filing_recent",
-   "probate_docket": "266936",
-   "probate_case_type": "Probate",
-   "filed_date": "2026-03-19",
-   "decedent_name": "Gutkes Jeanne",
-   "decedent_date_of_birth": "1933-08-03",
-   "decedent_date_of_death": "2026-02-26",
-   "property_city": "Toms River",
-   "property_state": "NJ",
-   "owner_name": null,
-   "owner_resolved": false,
-   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
-   "enrichment_join_unavailable": true
-  },
-  {
-   "lead_id": "surrogate_probate:225731",
-   "lead_origin_type": "RECORDED_EVENT",
-   "additional_lead_origin_types": [
-    "OWNER_STATUS"
-   ],
-   "primary_event_date": "2026-03-19",
-   "qualification_status": "REVIEW_REQUIRED",
-   "source_ids": [
-    "surrogate_probate"
-   ],
-   "evidence_ids": [
-    "surrogate_probate:225731"
-   ],
-   "lead_status": "REVIEW_REQUIRED",
-   "doc_type": "probate_filing",
-   "distress_signal": "probate_filing_recent",
-   "probate_docket": "225731",
-   "probate_case_type": "Substitute Administration CTA",
-   "filed_date": "2026-03-19",
-   "decedent_name": "Wheeler George M",
-   "decedent_date_of_birth": "1926-03-07",
-   "decedent_date_of_death": "2018-06-15",
-   "property_city": "Brick",
-   "property_state": "NJ",
-   "owner_name": null,
-   "owner_resolved": false,
-   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
-   "enrichment_join_unavailable": true
-  },
-  {
-   "lead_id": "surrogate_probate:266938",
-   "lead_origin_type": "RECORDED_EVENT",
-   "additional_lead_origin_types": [
-    "OWNER_STATUS"
-   ],
-   "primary_event_date": "2026-03-19",
-   "qualification_status": "REVIEW_REQUIRED",
-   "source_ids": [
-    "surrogate_probate"
-   ],
-   "evidence_ids": [
-    "surrogate_probate:266938"
-   ],
-   "lead_status": "REVIEW_REQUIRED",
-   "doc_type": "probate_filing",
-   "distress_signal": "probate_filing_recent",
-   "probate_docket": "266938",
-   "probate_case_type": "Probate",
-   "filed_date": "2026-03-19",
-   "decedent_name": "Quinton  Noelene  F.",
-   "decedent_date_of_birth": "1926-07-30",
-   "decedent_date_of_death": "2026-02-27",
-   "property_city": "Toms River",
-   "property_state": "NJ",
-   "owner_name": null,
-   "owner_resolved": false,
-   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
-   "enrichment_join_unavailable": true
-  },
-  {
-   "lead_id": "surrogate_probate:266939",
-   "lead_origin_type": "RECORDED_EVENT",
-   "additional_lead_origin_types": [
-    "OWNER_STATUS"
-   ],
-   "primary_event_date": "2026-03-19",
-   "qualification_status": "REVIEW_REQUIRED",
-   "source_ids": [
-    "surrogate_probate"
-   ],
-   "evidence_ids": [
-    "surrogate_probate:266939"
-   ],
-   "lead_status": "REVIEW_REQUIRED",
-   "doc_type": "probate_filing",
-   "distress_signal": "probate_filing_recent",
-   "probate_docket": "266939",
-   "probate_case_type": "Probate",
-   "filed_date": "2026-03-19",
-   "decedent_name": "Dericks Paul J. Jr.",
-   "decedent_date_of_birth": "1949-05-18",
-   "decedent_date_of_death": "2026-02-14",
-   "property_city": "Berkeley Township",
-   "property_state": "NJ",
-   "owner_name": null,
-   "owner_resolved": false,
-   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
-   "enrichment_join_unavailable": true
-  },
-  {
-   "lead_id": "surrogate_probate:266940",
-   "lead_origin_type": "RECORDED_EVENT",
-   "additional_lead_origin_types": [
-    "OWNER_STATUS"
-   ],
-   "primary_event_date": "2026-03-19",
-   "qualification_status": "REVIEW_REQUIRED",
-   "source_ids": [
-    "surrogate_probate"
-   ],
-   "evidence_ids": [
-    "surrogate_probate:266940"
-   ],
-   "lead_status": "REVIEW_REQUIRED",
-   "doc_type": "probate_filing",
-   "distress_signal": "probate_filing_recent",
-   "probate_docket": "266940",
-   "probate_case_type": "Administration",
-   "filed_date": "2026-03-19",
-   "decedent_name": "Durante Toni Lynn",
-   "decedent_date_of_birth": "1959-07-12",
-   "decedent_date_of_death": "2026-02-09",
-   "property_city": "Toms River",
-   "property_state": "NJ",
-   "owner_name": null,
-   "owner_resolved": false,
-   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
-   "enrichment_join_unavailable": true
-  },
-  {
-   "lead_id": "surrogate_probate:266941",
-   "lead_origin_type": "RECORDED_EVENT",
-   "additional_lead_origin_types": [
-    "OWNER_STATUS"
-   ],
-   "primary_event_date": "2026-03-19",
-   "qualification_status": "REVIEW_REQUIRED",
-   "source_ids": [
-    "surrogate_probate"
-   ],
-   "evidence_ids": [
-    "surrogate_probate:266941"
-   ],
-   "lead_status": "REVIEW_REQUIRED",
-   "doc_type": "probate_filing",
-   "distress_signal": "probate_filing_recent",
-   "probate_docket": "266941",
-   "probate_case_type": "Probate",
-   "filed_date": "2026-03-19",
-   "decedent_name": "Levy Sandra L.",
-   "decedent_date_of_birth": "1958-05-21",
-   "decedent_date_of_death": "2025-12-11",
-   "property_city": "Manchester",
-   "property_state": "NJ",
-   "owner_name": null,
-   "owner_resolved": false,
-   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
-   "enrichment_join_unavailable": true
-  },
-  {
-   "lead_id": "surrogate_probate:266942",
-   "lead_origin_type": "RECORDED_EVENT",
-   "additional_lead_origin_types": [
-    "OWNER_STATUS"
-   ],
-   "primary_event_date": "2026-03-19",
-   "qualification_status": "REVIEW_REQUIRED",
-   "source_ids": [
-    "surrogate_probate"
-   ],
-   "evidence_ids": [
-    "surrogate_probate:266942"
-   ],
-   "lead_status": "REVIEW_REQUIRED",
-   "doc_type": "probate_filing",
-   "distress_signal": "probate_filing_recent",
-   "probate_docket": "266942",
-   "probate_case_type": "Administration",
-   "filed_date": "2026-03-19",
-   "decedent_name": "Amin Daxesh S.",
-   "decedent_date_of_birth": "1963-06-16",
-   "decedent_date_of_death": "2024-10-19",
-   "property_city": "Bayville",
-   "property_state": "NJ",
-   "owner_name": null,
-   "owner_resolved": false,
-   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
-   "enrichment_join_unavailable": true
-  },
-  {
-   "lead_id": "surrogate_probate:266944",
-   "lead_origin_type": "RECORDED_EVENT",
-   "additional_lead_origin_types": [
-    "OWNER_STATUS"
-   ],
-   "primary_event_date": "2026-03-19",
-   "qualification_status": "REVIEW_REQUIRED",
-   "source_ids": [
-    "surrogate_probate"
-   ],
-   "evidence_ids": [
-    "surrogate_probate:266944"
-   ],
-   "lead_status": "REVIEW_REQUIRED",
-   "doc_type": "probate_filing",
-   "distress_signal": "probate_filing_recent",
-   "probate_docket": "266944",
-   "probate_case_type": "Probate",
-   "filed_date": "2026-03-19",
-   "decedent_name": "Thomas Coral A.",
-   "decedent_date_of_birth": "1949-06-18",
-   "decedent_date_of_death": "2026-01-04",
-   "property_city": "Seaside Park",
-   "property_state": "NJ",
-   "owner_name": null,
-   "owner_resolved": false,
-   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
-   "enrichment_join_unavailable": true
   },
   {
    "lead_id": "surrogate_probate:266945",
@@ -11248,6 +10378,36 @@
    "decedent_date_of_birth": "1935-08-15",
    "decedent_date_of_death": "2023-12-03",
    "property_city": "Toms River",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:249685",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-03-31",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:249685"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "249685",
+   "probate_case_type": "Administration CTA",
+   "filed_date": "2026-03-31",
+   "decedent_name": "Palumbo Robert L.",
+   "decedent_date_of_birth": "1933-03-26",
+   "decedent_date_of_death": "2018-02-28",
+   "property_city": "Lakewood",
    "property_state": "NJ",
    "owner_name": null,
    "owner_resolved": false,
@@ -21028,6 +20188,36 @@
    "decedent_date_of_birth": "1949-12-26",
    "decedent_date_of_death": "2026-02-26",
    "property_city": "Ocean Township",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:267475",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-04-20",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:267475"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "267475",
+   "probate_case_type": "Probate",
+   "filed_date": "2026-04-20",
+   "decedent_name": "Fitler  Nathan  Myers III",
+   "decedent_date_of_birth": "1940-03-18",
+   "decedent_date_of_death": "2026-02-27",
+   "property_city": "Lanoka Harbor",
    "property_state": "NJ",
    "owner_name": null,
    "owner_resolved": false,
@@ -41645,6 +40835,36 @@
    "enrichment_join_unavailable": true
   },
   {
+   "lead_id": "surrogate_probate:268179",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-06-08",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:268179"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "268179",
+   "probate_case_type": "Probate",
+   "filed_date": "2026-06-08",
+   "decedent_name": "Janowski  Edward",
+   "decedent_date_of_birth": "1957-07-31",
+   "decedent_date_of_death": "2026-04-10",
+   "property_city": "Manchester",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
    "lead_id": "surrogate_probate:268180",
    "lead_origin_type": "RECORDED_EVENT",
    "additional_lead_origin_types": [
@@ -43985,6 +43205,36 @@
    "enrichment_join_unavailable": true
   },
   {
+   "lead_id": "surrogate_probate:268283",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-06-15",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:268283"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "268283",
+   "probate_case_type": "Probate",
+   "filed_date": "2026-06-15",
+   "decedent_name": "Swift Nancy",
+   "decedent_date_of_birth": "1936-04-07",
+   "decedent_date_of_death": "2026-06-06",
+   "property_city": "Toms River Township",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
    "lead_id": "surrogate_probate:268284",
    "lead_origin_type": "RECORDED_EVENT",
    "additional_lead_origin_types": [
@@ -44008,6 +43258,36 @@
    "decedent_date_of_birth": "1935-07-26",
    "decedent_date_of_death": "2026-05-29",
    "property_city": "Lavallette",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:268285",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-06-15",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:268285"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "268285",
+   "probate_case_type": "Administration",
+   "filed_date": "2026-06-15",
+   "decedent_name": "Blackwell Sandra Elizabeth",
+   "decedent_date_of_birth": "1967-09-17",
+   "decedent_date_of_death": "2024-04-28",
+   "property_city": "Stafford Township",
    "property_state": "NJ",
    "owner_name": null,
    "owner_resolved": false,
@@ -44068,6 +43348,36 @@
    "decedent_date_of_birth": "1948-04-03",
    "decedent_date_of_death": "2026-05-23",
    "property_city": "Barnegat",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:268290",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-06-15",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:268290"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "268290",
+   "probate_case_type": "Administration",
+   "filed_date": "2026-06-15",
+   "decedent_name": "Pearson Gunnar H.",
+   "decedent_date_of_birth": "1998-01-19",
+   "decedent_date_of_death": "2026-05-26",
+   "property_city": "Lacey Township",
    "property_state": "NJ",
    "owner_name": null,
    "owner_resolved": false,
@@ -44458,6 +43768,276 @@
    "decedent_date_of_birth": "1955-08-16",
    "decedent_date_of_death": "2024-08-26",
    "property_city": "Toms River",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:268316",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-06-16",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:268316"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "268316",
+   "probate_case_type": "Ad Prosequendum",
+   "filed_date": "2026-06-16",
+   "decedent_name": "Trotter Vincent Michael",
+   "decedent_date_of_birth": "1991-10-21",
+   "decedent_date_of_death": "2026-04-13",
+   "property_city": "Stafford Township",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:268318",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-06-17",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:268318"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "268318",
+   "probate_case_type": "Probate",
+   "filed_date": "2026-06-17",
+   "decedent_name": "Antico Ignacious",
+   "decedent_date_of_birth": "1946-05-25",
+   "decedent_date_of_death": "2026-05-19",
+   "property_city": "Jackson",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:268319",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-06-17",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:268319"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "268319",
+   "probate_case_type": "Probate",
+   "filed_date": "2026-06-17",
+   "decedent_name": "Napolitano Joseph John",
+   "decedent_date_of_birth": "1954-03-23",
+   "decedent_date_of_death": "2026-06-04",
+   "property_city": "Brick Township",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:268321",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-06-17",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:268321"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "268321",
+   "probate_case_type": "Probate",
+   "filed_date": "2026-06-17",
+   "decedent_name": "Dwyer Maureen H.",
+   "decedent_date_of_birth": "1942-11-06",
+   "decedent_date_of_death": "2026-06-06",
+   "property_city": "Little Egg Harbor",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:268324",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-06-17",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:268324"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "268324",
+   "probate_case_type": "Probate",
+   "filed_date": "2026-06-17",
+   "decedent_name": "Minucci Christine",
+   "decedent_date_of_birth": "1950-05-02",
+   "decedent_date_of_death": "2026-05-19",
+   "property_city": "Manchester Township",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:268325",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-06-17",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:268325"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "268325",
+   "probate_case_type": "Affidavit Next of Kin",
+   "filed_date": "2026-06-17",
+   "decedent_name": "Peruggia Mary",
+   "decedent_date_of_birth": "1957-04-23",
+   "decedent_date_of_death": "2020-12-23",
+   "property_city": "Little Egg Harbor",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:268326",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-06-17",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:268326"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "268326",
+   "probate_case_type": "Administration",
+   "filed_date": "2026-06-17",
+   "decedent_name": "Vitale Christopher R.",
+   "decedent_date_of_birth": "1977-11-15",
+   "decedent_date_of_death": "2026-06-08",
+   "property_city": "Manahawkin",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:268331",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-06-17",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:268331"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "268331",
+   "probate_case_type": "Probate",
+   "filed_date": "2026-06-17",
+   "decedent_name": "Votta Elizabeth",
+   "decedent_date_of_birth": "1935-11-10",
+   "decedent_date_of_death": "2026-06-01",
+   "property_city": "Berkeley Township",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:268333",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-06-17",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:268333"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "268333",
+   "probate_case_type": "Probate",
+   "filed_date": "2026-06-17",
+   "decedent_name": "Ilberg John",
+   "decedent_date_of_birth": "1945-08-15",
+   "decedent_date_of_death": "2026-06-04",
+   "property_city": "Lakewood",
    "property_state": "NJ",
    "owner_name": null,
    "owner_resolved": false,
@@ -116534,7 +116114,7 @@
   }
  ],
  "dealmachine_enrichment": {
-  "enriched_at": "2026-06-17T11:23:09.917575+00:00",
+  "enriched_at": "2026-06-18T10:54:04.865740+00:00",
   "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
   "source": "dealmachine",
   "actionable_targets": 538,
