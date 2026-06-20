@@ -87,10 +87,14 @@ jobs:
         run: |
           git config user.email "ci-bot@xcerebro.local"
           git config user.name  "xcerebro-ci-bot"
-          git add data/enriched/ocean_county_results.json \
-                  data/exports/ocean_county_all_leads.json \
-                  data/exports/ocean_county_pushed_keys.json \
-                  data/exports/ocean_county_push_log.json 2>/dev/null || true
+          # Stage only files that exist — a single `git add` with one missing
+          # pathspec stages NOTHING, which would silently drop the ledger.
+          for f in data/enriched/ocean_county_results.json \
+                   data/exports/ocean_county_all_leads.json \
+                   data/exports/ocean_county_pushed_keys.json \
+                   data/exports/ocean_county_push_log.json; do
+            [ -f "$f" ] && git add "$f"
+          done
           git diff --cached --quiet && { echo "nothing to commit"; exit 0; }
           git commit -m "Ocean County bulk: enrich + push $(date -u +%Y-%m-%dT%H:%M:%SZ)"
           for attempt in 1 2 3 4 5; do
