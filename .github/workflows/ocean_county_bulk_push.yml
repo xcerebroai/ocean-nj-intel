@@ -1,0 +1,103 @@
+# Ocean County — ONE-TIME bulk: DealMachine-enrich ALL dashboard leads, then
+# upsert every contactable lead to GHL tagged "Ocean County".
+#
+# CLIENT-SPECIFIC, OCEAN-ONLY. Manual dispatch only (no schedule) — this is a
+# bulk operation, not part of the daily refresh. SAFETY: push is DRY-RUN unless
+# push_live=true; "Ocean County" tag is deliberately NOT "ocean-new-lead", so it
+# does not trigger the client's live SMS workflow. Run with a small `limit` first
+# to validate, then re-run with no limit + push_live=true for the full batch.
+
+name: ocean-county-bulk-push
+
+on:
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: "Cap leads to enrich+push (blank = ALL). Use a small number to validate first."
+        required: false
+        default: ""
+      push_live:
+        description: "Push live to GHL? false = dry-run (prints payloads, no writes)."
+        required: false
+        default: "false"
+        type: choice
+        options: ["false", "true"]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ocean-county-bulk-push
+  cancel-in-progress: false
+
+jobs:
+  bulk:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180   # enrichment of thousands of leads is slow; resumable on re-run
+    env:
+      PYTHONPATH: ${{ github.workspace }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Python deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests beautifulsoup4 lxml pdfplumber dbfread pyshp jsonschema
+
+      - name: Set up Node + DealMachine CLI
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: DealMachine login
+        env:
+          DEALMACHINE_API_KEY: ${{ secrets.DEALMACHINE_API_KEY }}
+        run: |
+          if [ -z "$DEALMACHINE_API_KEY" ]; then
+            echo "::error title=Missing secret::DEALMACHINE_API_KEY not set"; exit 1
+          fi
+          npm install -g @dealmachine/cli >/dev/null 2>&1
+          dm login --key "$DEALMACHINE_API_KEY" --quiet
+
+      - name: Bulk enrich ALL dashboard leads (DealMachine)
+        env:
+          DEALMACHINE_API_KEY: ${{ secrets.DEALMACHINE_API_KEY }}
+        run: |
+          python3 scrapers/ocean_county_bulk_enrich.py ${{ github.event.inputs.limit && format('--limit {0}', github.event.inputs.limit) || '' }}
+
+      - name: Bulk push to GHL (tag "Ocean County")
+        env:
+          GHL_TOKEN: ${{ secrets.GHL_TOKEN }}
+          GHL_LOCATION_ID: ${{ secrets.GHL_LOCATION_ID }}
+          GHL_PUSH_LIVE: ${{ github.event.inputs.push_live == 'true' && '1' || '0' }}
+          GHL_PUSH_LIMIT: ${{ github.event.inputs.limit }}
+          GHL_PUSH_DELAY_SEC: "1.0"
+        run: python3 scrapers/ghl_bulk_push_ocean_county.py
+
+      - name: Commit enrichment checkpoint + ledger + exports
+        run: |
+          git config user.email "ci-bot@xcerebro.local"
+          git config user.name  "xcerebro-ci-bot"
+          git add data/enriched/ocean_county_results.json \
+                  data/exports/ocean_county_all_leads.json \
+                  data/exports/ocean_county_pushed_keys.json \
+                  data/exports/ocean_county_push_log.json 2>/dev/null || true
+          git diff --cached --quiet && { echo "nothing to commit"; exit 0; }
+          git commit -m "Ocean County bulk: enrich + push $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          for attempt in 1 2 3 4 5; do
+            if git pull --rebase origin main && git push; then
+              echo "pushed (attempt $attempt)"; exit 0
+            fi
+            echo "::warning::commit push attempt $attempt failed; retrying in 20s"; sleep 20
+          done
+          echo "::error::ledger/export commit failed to reach remote — recover before re-running"
+          exit 1
