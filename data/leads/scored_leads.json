@@ -3,12 +3,12 @@
  "county_name": "Ocean County",
  "state_name": "New Jersey",
  "framework_version": "v5.5.0",
- "build_timestamp": "2026-06-20T09:32:34Z",
+ "build_timestamp": "2026-06-21T10:02:41Z",
  "build_mode": "PARTIAL_BUILD",
- "total_leads": 1858,
+ "total_leads": 1859,
  "lead_counts_by_signal": {
   "foreclosure_sale_scheduled": 34,
-  "foreclosure_notice_published": 0,
+  "foreclosure_notice_published": 1,
   "probate_filing_recent": 1320,
   "tax_default_brick": 504
  },
@@ -31,7 +31,7 @@
  "tax_board_detail_indexed": 10,
  "lead_counts_by_status": {
   "APPROVED_FOR_DASHBOARD": 535,
-  "REVIEW_REQUIRED": 1323
+  "REVIEW_REQUIRED": 1324
  },
  "parcel_join": {
   "hits": 24,
@@ -59,7 +59,7 @@
     "OWNER_STATUS"
    ],
    "source_role": "BLOCKED_SOURCE",
-   "reported_at": "2026-06-20T09:31:14Z",
+   "reported_at": "2026-06-21T10:01:50Z",
    "v5_5_0_recon_anchor": "runs/ocean_nj/recon/source_of_record_matrix.json#sources"
   },
   {
@@ -76,7 +76,7 @@
     "RECORDED_EVENT"
    ],
    "source_role": "BLOCKED_SOURCE",
-   "reported_at": "2026-06-20T09:31:14Z",
+   "reported_at": "2026-06-21T10:01:50Z",
    "v5_5_0_recon_anchor": "runs/ocean_nj/recon/source_of_record_matrix.json#sources"
   },
   {
@@ -94,7 +94,7 @@
     "TAX_DEFAULT"
    ],
    "source_role": "BLOCKED_SOURCE",
-   "reported_at": "2026-06-20T09:31:14Z",
+   "reported_at": "2026-06-21T10:01:50Z",
    "v5_5_0_recon_anchor": "runs/ocean_nj/recon/source_of_record_matrix.json#sources"
   },
   {
@@ -109,7 +109,7 @@
    ],
    "intended_lead_origins": [],
    "source_role": "BLOCKED_SOURCE",
-   "reported_at": "2026-06-20T09:31:14Z",
+   "reported_at": "2026-06-21T10:01:50Z",
    "v5_5_0_recon_anchor": "runs/ocean_nj/recon/source_of_record_matrix.json#sources"
   }
  ],
@@ -43502,6 +43502,33 @@
    "owner_name": null,
    "owner_resolved": false,
    "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "njpa_legal_notices:F01307125_2026-07-07",
+   "lead_origin_type": "RECORDED_EVENT",
+   "primary_event_date": "2026-07-07",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "njpa_legal_notices"
+   ],
+   "evidence_ids": [
+    "njpa_legal_notices:F01307125_2026-07-07"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "sheriff_sale_notice",
+   "distress_signal": "foreclosure_notice_published",
+   "chancery_docket": "F01307125",
+   "publication_date": null,
+   "sale_date": "2026-07-07",
+   "notice_type": "sheriff_sale_notice",
+   "publication_source": null,
+   "property_address": null,
+   "property_city": null,
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "NOTICE_TEXT_ONLY",
    "enrichment_join_unavailable": true
   },
   {
@@ -115547,7 +115574,7 @@
   }
  ],
  "dealmachine_enrichment": {
-  "enriched_at": "2026-06-20T09:42:52.676707+00:00",
+  "enriched_at": "2026-06-21T10:13:02.015890+00:00",
   "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
   "source": "dealmachine",
   "actionable_targets": 538,
@@ -115568,16 +115595,16 @@
    "monthly_credit_grant_cap": 0,
    "monthly_included": 100000,
    "additional_credit_balance": 10000,
-   "used": 8940,
-   "remaining": 101060,
-   "monthly_remaining": 91060,
+   "used": 8963,
+   "remaining": 101037,
+   "monthly_remaining": 91037,
    "additional_remaining": 10000,
    "overage": 0,
    "pools": {
     "monthly": {
      "included": 100000,
-     "used": 8940,
-     "remaining": 91060
+     "used": 8963,
+     "remaining": 91037
     },
     "additional": {
      "available": 10000,
@@ -115598,16 +115625,16 @@
    "monthly_credit_grant_cap": 0,
    "monthly_included": 100000,
    "additional_credit_balance": 10000,
-   "used": 9060,
-   "remaining": 100940,
-   "monthly_remaining": 90940,
+   "used": 9083,
+   "remaining": 100917,
+   "monthly_remaining": 90917,
    "additional_remaining": 10000,
    "overage": 0,
    "pools": {
     "monthly": {
      "included": 100000,
-     "used": 9060,
-     "remaining": 90940
+     "used": 9083,
+     "remaining": 90917
     },
     "additional": {
      "available": 10000,
@@ -115616,8 +115643,8 @@
     }
    },
    "breakdown": {
-    "properties": 4310,
-    "people": 4630,
+    "properties": 4320,
+    "people": 4643,
     "companies": 0
    }
   }
