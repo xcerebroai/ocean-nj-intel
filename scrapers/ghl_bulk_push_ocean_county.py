@@ -35,9 +35,26 @@ TAG = "Ocean County"   # segmentation tag — NOT the SMS-triggering ocean-new-l
 
 def payload_for(lead: dict, location_id: str) -> dict:
     body = build_payload(lead, location_id)
-    body["tags"] = [TAG]                       # override: Ocean County only
+    # CRITICAL: GHL's /contacts/upsert REPLACES the tags array, so sending tags
+    # here would wipe any existing tags (e.g. ocean-new-lead — the SMS-campaign
+    # tag). Omit tags from the upsert; add "Ocean County" additively afterward
+    # via the /contacts/{id}/tags endpoint, which appends without removing.
+    body.pop("tags", None)
     body["source"] = "ocean-county-bulk"
     return body
+
+
+def add_tag(contact_id: str, token: str) -> None:
+    """Additively add the segmentation tag (does NOT remove existing tags)."""
+    import urllib.request
+    req = urllib.request.Request(
+        f"https://services.leadconnectorhq.com/contacts/{contact_id}/tags",
+        data=json.dumps({"tags": [TAG]}).encode(),
+        headers={"Authorization": f"Bearer {token}", "Version": GHL_VERSION,
+                 "Content-Type": "application/json", "Accept": "application/json",
+                 "User-Agent": USER_AGENT},
+        method="POST")
+    urllib.request.urlopen(req, timeout=30).read()
 
 
 def load_ledger() -> dict:
@@ -82,7 +99,9 @@ def main() -> int:
 
     # ---- DRY RUN: first 3 payloads (token redacted), no network ----
     if not live:
-        print(f"\n=== DRY RUN — first 3 payloads (tag '{TAG}', token redacted) ===")
+        print(f"\n=== DRY RUN — first 3 upsert payloads (token redacted) ===")
+        print(f"(tag '{TAG}' is NOT in the upsert body — it is added afterward via "
+              f"POST /contacts/{{id}}/tags so existing tags are preserved)")
         print(f"POST {GHL_URL}\nHeaders: {json.dumps(redact_headers(token))}")
         for i, lead in enumerate(leads[:3], 1):
             print(f"\n--- payload {i} (key={lead.get('key')}) ---")
@@ -122,7 +141,15 @@ def main() -> int:
                 contact_id = (json.loads(rbody).get("contact") or {}).get("id", "")
             except json.JSONDecodeError:
                 pass
-            results.append({"key": key, "status": status, "contact_id": contact_id})
+            tag_ok = None
+            if 200 <= status < 300 and contact_id:
+                try:
+                    add_tag(contact_id, token)      # additive — preserves existing tags
+                    tag_ok = True
+                except Exception as te:  # noqa: BLE001
+                    tag_ok = False
+                    print(f"::warning title=Tag add failed::{key} ({contact_id}) -> {te}")
+            results.append({"key": key, "status": status, "contact_id": contact_id, "tagged": tag_ok})
             if 200 <= status < 300:
                 ok += 1
                 pushed.add(key)
