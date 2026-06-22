@@ -30,8 +30,9 @@ REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO))
 
 from scrapers.dealmachine_enrich import (  # noqa: E402  (path set above)
-    APIDownError, api_healthy, build_block, derive_apn, dm_usage,
-    enrich_addresses, enrich_apns, ensure_cli, load_parcel_situs, situs_address,
+    APIDownError, CONTACT_AUDIENCE, _dm_enrich, api_healthy, build_block,
+    derive_apn, dm_usage, enrich_addresses, enrich_apns, ensure_cli,
+    load_parcel_situs, situs_address,
 )
 from scrapers.ghl_diff_new_leads import (  # noqa: E402
     collect_emails, collect_phones, pick_address, pick_name,
@@ -79,7 +80,31 @@ def main() -> int:
     ap = argparse.ArgumentParser(description="Bulk DealMachine enrichment of ALL Ocean dashboard leads")
     ap.add_argument("--limit", type=int, default=0, help="Cap leads to enrich (validation)")
     ap.add_argument("--dry-run", action="store_true", help="Plan only; no API calls")
+    ap.add_argument("--probe", action="store_true",
+                    help="One lightweight test enrich call; report status and exit "
+                         "(0=API healthy/2xx, 3=down/504/timeout). No other work.")
     args = ap.parse_args()
+
+    if args.probe:
+        ensure_cli()
+        cr = dm_usage().get("credits", {})
+        print("credits:", json.dumps(cr.get("breakdown", cr)))
+        lp = json.loads(LISTPULL.read_text()).get("leads", [])
+        first = lp[0]
+        addr = ((first.get("dealmachine") or {}).get("property") or {}).get("full_address") \
+            or f"{first.get('property_address')}, {first.get('property_city')}, NJ {first.get('property_zip')}"
+        print(f"PROBE: single address skip-trace enrich -> {addr}")
+        try:
+            resp = _dm_enrich("address", {"data": [{"full_address": addr}],
+                                          "include_contacts": True,
+                                          "contact_audience": CONTACT_AUDIENCE})
+            rec = (resp.get("data") or [{}])[0]
+            print(f"PROBE RESULT: HTTP 2xx OK | matched={rec.get('matched')} | "
+                  f"contacts={len(rec.get('contacts') or [])}")
+            return 0
+        except Exception as exc:  # noqa: BLE001
+            print(f"PROBE RESULT: FAILED (API down/degraded) -> {str(exc)[:220]}")
+            return 3
 
     OUT.parent.mkdir(parents=True, exist_ok=True)
     leads = load_all_leads()

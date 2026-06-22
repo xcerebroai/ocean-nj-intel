@@ -22,6 +22,12 @@ on:
         default: "false"
         type: choice
         options: ["false", "true"]
+      probe_only:
+        description: "Health probe only: one test enrich call, report status, then stop."
+        required: false
+        default: "false"
+        type: choice
+        options: ["false", "true"]
 
 permissions:
   contents: write
@@ -68,13 +74,21 @@ jobs:
           npm install -g @dealmachine/cli >/dev/null 2>&1
           dm login --key "$DEALMACHINE_API_KEY" --quiet
 
+      - name: DealMachine health probe (one test enrich call)
+        if: github.event.inputs.probe_only == 'true'
+        env:
+          DEALMACHINE_API_KEY: ${{ secrets.DEALMACHINE_API_KEY }}
+        run: python3 scrapers/ocean_county_bulk_enrich.py --probe
+
       - name: Bulk enrich ALL dashboard leads (DealMachine)
+        if: github.event.inputs.probe_only != 'true'
         env:
           DEALMACHINE_API_KEY: ${{ secrets.DEALMACHINE_API_KEY }}
         run: |
           python3 scrapers/ocean_county_bulk_enrich.py ${{ github.event.inputs.limit && format('--limit {0}', github.event.inputs.limit) || '' }}
 
       - name: Bulk push to GHL (tag "Ocean County")
+        if: github.event.inputs.probe_only != 'true'
         env:
           GHL_TOKEN: ${{ secrets.GHL_TOKEN }}
           GHL_LOCATION_ID: ${{ secrets.GHL_LOCATION_ID }}
@@ -84,6 +98,7 @@ jobs:
         run: python3 scrapers/ghl_bulk_push_ocean_county.py
 
       - name: Commit enrichment checkpoint + ledger + exports
+        if: github.event.inputs.probe_only != 'true'
         run: |
           git config user.email "ci-bot@xcerebro.local"
           git config user.name  "xcerebro-ci-bot"
