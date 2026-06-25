@@ -48263,5 +48263,410 @@
     "people": 0
    }
   }
+ },
+ "sheriff_foreclosure:CH_774173": {
+  "hash": "99012b6b56269b3c",
+  "enriched_at": "2026-06-25T04:53:18.903784+00:00",
+  "block": {
+   "source": "dealmachine",
+   "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+   "matched": true,
+   "enrichment_status": "enriched",
+   "matched_by": "apn",
+   "enriched_at": "2026-06-25T04:53:18.903784+00:00",
+   "billing_cycle": "2026-06-06T18:30:15.000Z",
+   "owner_name": "JOHN NAGY",
+   "owner_names": [
+    "JOHN NAGY"
+   ],
+   "phones": [
+    "8483334677",
+    "5706632218",
+    "9736619177"
+   ],
+   "emails": [
+    "ALEXBROOKE182@GMAIL.COM",
+    "JOHNM5794@YAHOO.COM",
+    "JNAGY415@GMAIL.COM"
+   ],
+   "contacts": [
+    {
+     "dm_person_id": "per_1501233260473",
+     "full_name": "JOHN NAGY",
+     "first_name": "JOHN",
+     "last_name": "NAGY",
+     "contact_type": "owner",
+     "is_resident": true,
+     "phones": [
+      {
+       "number": "8483334677",
+       "type": "landline",
+       "do_not_call": false
+      },
+      {
+       "number": "5706632218",
+       "type": "wireless",
+       "do_not_call": false
+      },
+      {
+       "number": "9736619177",
+       "type": "wireless",
+       "do_not_call": false
+      }
+     ],
+     "emails": [
+      "ALEXBROOKE182@GMAIL.COM",
+      "JOHNM5794@YAHOO.COM",
+      "JNAGY415@GMAIL.COM"
+     ]
+    }
+   ],
+   "mailing_address": "14 Cumberland Dr Brick, NJ, 08723",
+   "property": {
+    "dm_property_id": "prop_86735611",
+    "full_address": "14 Cumberland Dr Brick, NJ, 08723",
+    "address": "14 Cumberland Dr",
+    "city": "Brick",
+    "state": "NJ",
+    "zip": "08723",
+    "latitude": 40.025994,
+    "longitude": -74.100968,
+    "estimated_value": 505000,
+    "estimated_equity_amount": 472023,
+    "estimated_equity_percentage": 94,
+    "year_built": 1995,
+    "living_area_sqft": 1458,
+    "lot_size_sqft": 11705,
+    "num_bedrooms": 3,
+    "num_bathrooms": 2,
+    "last_sale_date": "1999-04-07T00:00:00.000Z",
+    "last_sale_amount": 136500,
+    "total_assessed_value": 267100,
+    "annual_property_tax_amount": 7249,
+    "num_mortgages": 1,
+    "total_original_loan_amount": 442300,
+    "total_estimated_loan_balance": 32977,
+    "owner_occupied": true,
+    "apn": "07-00210-05-00013"
+   },
+   "mortgages": [
+    {
+     "mortgage_number": 1,
+     "id": "1165703510",
+     "transaction_id": "1165703510",
+     "lender_name": "GENERATION MORTGAGE CO",
+     "is_private_lender": false,
+     "loan_type_id": 32,
+     "loan_type": "Reverse Mortgage",
+     "loan_financing_type_id": 1,
+     "loan_financing_type": "Adjustable Rate",
+     "loan_amount": 385500,
+     "loan_interest_rate": 2.92,
+     "loan_term_months": 999,
+     "loan_start_date": "2013-11-27T00:00:00.000Z",
+     "loan_recording_date": "2013-11-27T00:00:00.000Z",
+     "loan_due_date": "2043-11-27T00:00:00.000Z",
+     "has_adjustable_rate_rider": true,
+     "lien_position": 1,
+     "classification": "primary",
+     "classification_label": "Primary mortgage",
+     "classification_reason": "DataTree marks this mortgage as lien position 1."
+    },
+    {
+     "mortgage_number": 2,
+     "id": "1165703511",
+     "transaction_id": "1165703511",
+     "lender_name": "SELECT MORTGAGE CORP",
+     "is_private_lender": false,
+     "loan_type_id": 12,
+     "loan_type": "FHA",
+     "loan_financing_type": "Unknown Financing Type",
+     "loan_amount": 56800,
+     "loan_balance": 32977,
+     "loan_interest_rate": 6.16,
+     "loan_term_months": 360,
+     "loan_start_date": "2007-02-06T00:00:00.000Z",
+     "loan_recording_date": "2007-02-06T00:00:00.000Z",
+     "loan_due_date": "2037-02-01T00:00:00.000Z",
+     "has_adjustable_rate_rider": false,
+     "lien_position": 2,
+     "estimated_payment_amount": 346.41,
+     "classification": "subordinate",
+     "classification_label": "Possible second lien",
+     "classification_reason": "DataTree marks this mortgage as lien position 2."
+    }
+   ],
+   "credits": {
+    "properties": 1,
+    "people": 1
+   }
+  }
+ },
+ "sheriff_foreclosure:CH_779706": {
+  "hash": "f93618369ab12cd9",
+  "enriched_at": "2026-06-25T04:53:18.903784+00:00",
+  "block": {
+   "source": "dealmachine",
+   "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+   "matched": true,
+   "enrichment_status": "enriched",
+   "matched_by": "apn",
+   "enriched_at": "2026-06-25T04:53:18.903784+00:00",
+   "billing_cycle": "2026-06-06T18:30:15.000Z",
+   "owner_name": null,
+   "owner_names": [],
+   "phones": [],
+   "emails": [],
+   "contacts": [],
+   "mailing_address": "34 Eastland Rd Brick, NJ, 08723",
+   "property": {
+    "dm_property_id": "prop_86718422",
+    "full_address": "34 Eastland Rd Brick, NJ, 08723",
+    "address": "34 Eastland Rd",
+    "city": "Brick",
+    "state": "NJ",
+    "zip": "08723",
+    "latitude": 40.024346,
+    "longitude": -74.140899,
+    "estimated_value": 517000,
+    "estimated_equity_amount": 348460,
+    "estimated_equity_percentage": 62,
+    "year_built": 1984,
+    "living_area_sqft": 1304,
+    "lot_size_sqft": 11108,
+    "num_bedrooms": 3,
+    "num_bathrooms": 2,
+    "last_sale_date": "2007-12-11T00:00:00.000Z",
+    "last_sale_amount": 271500,
+    "total_assessed_value": 230200,
+    "annual_property_tax_amount": 6248,
+    "num_mortgages": 1,
+    "total_original_loan_amount": 271500,
+    "total_estimated_loan_balance": 168540,
+    "owner_occupied": true,
+    "apn": "07-00378-36-00007"
+   },
+   "mortgages": [
+    {
+     "mortgage_number": 1,
+     "id": "1108945842",
+     "transaction_id": "1108945842",
+     "lender_name": "WEICHERT FINANCIAL SERVICES",
+     "is_private_lender": false,
+     "loan_type_id": 22,
+     "loan_type": "Purchase Money Mortgage",
+     "loan_financing_type": "Unknown Financing Type",
+     "loan_amount": 271500,
+     "loan_balance": 168540,
+     "loan_interest_rate": 6.37,
+     "loan_term_months": 360,
+     "loan_start_date": "2007-12-11T00:00:00.000Z",
+     "loan_recording_date": "2007-12-11T00:00:00.000Z",
+     "loan_due_date": "2038-01-01T00:00:00.000Z",
+     "has_adjustable_rate_rider": false,
+     "lien_position": 1,
+     "estimated_payment_amount": 1692.92,
+     "classification": "primary",
+     "classification_label": "Primary mortgage",
+     "classification_reason": "DataTree marks this mortgage as lien position 1."
+    }
+   ],
+   "credits": {
+    "properties": 1,
+    "people": 0
+   }
+  }
+ },
+ "sheriff_foreclosure:CH_780667": {
+  "hash": "8bfebe0676349247",
+  "enriched_at": "2026-06-25T04:53:18.903784+00:00",
+  "block": {
+   "source": "dealmachine",
+   "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+   "matched": false,
+   "enrichment_status": "no_dm_record",
+   "matched_by": "apn",
+   "enriched_at": "2026-06-25T04:53:18.903784+00:00",
+   "billing_cycle": "2026-06-06T18:30:15.000Z",
+   "match_failure": {
+    "code": "wrong_county",
+    "reason": "APN resolved outside Ocean County (Cape May Court House, 08210)"
+   }
+  }
+ },
+ "sheriff_foreclosure:CH_780679": {
+  "hash": "9df082187aa1299c",
+  "enriched_at": "2026-06-25T04:53:18.903784+00:00",
+  "block": {
+   "source": "dealmachine",
+   "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+   "matched": true,
+   "enrichment_status": "enriched",
+   "matched_by": "apn",
+   "enriched_at": "2026-06-25T04:53:18.903784+00:00",
+   "billing_cycle": "2026-06-06T18:30:15.000Z",
+   "owner_name": "JESSE GEORGAKLIS",
+   "owner_names": [
+    "JESSE GEORGAKLIS",
+    "STACY PROEBSTLE"
+   ],
+   "phones": [
+    "7323304821",
+    "8482100666",
+    "3864276767",
+    "8569051161",
+    "8568294071"
+   ],
+   "emails": [
+    "JESSEG1178@AOL.COM",
+    "JESSE1178@HOTMAIL.COM",
+    "JESSE.GEORGAKLIS@GMAIL.COM",
+    "STACYPROEBSTLE@GMAIL.COM",
+    "SPROEBSTLE@NETZERO.NET",
+    "6SPROEBSTLE9@NETZERO.NET"
+   ],
+   "contacts": [
+    {
+     "dm_person_id": "per_1509056106",
+     "full_name": "JESSE GEORGAKLIS",
+     "first_name": "JESSE",
+     "last_name": "GEORGAKLIS",
+     "contact_type": "owner",
+     "is_resident": true,
+     "phones": [
+      {
+       "number": "7323304821",
+       "type": "landline",
+       "do_not_call": false
+      },
+      {
+       "number": "8482100666",
+       "type": "landline",
+       "do_not_call": false
+      },
+      {
+       "number": "3864276767",
+       "type": "wireless",
+       "do_not_call": false
+      }
+     ],
+     "emails": [
+      "JESSEG1178@AOL.COM",
+      "JESSE1178@HOTMAIL.COM",
+      "JESSE.GEORGAKLIS@GMAIL.COM"
+     ]
+    },
+    {
+     "dm_person_id": "per_150160644937",
+     "full_name": "STACY PROEBSTLE",
+     "first_name": "STACY",
+     "last_name": "PROEBSTLE",
+     "contact_type": "owner",
+     "is_resident": true,
+     "phones": [
+      {
+       "number": "8569051161",
+       "type": "landline",
+       "do_not_call": false
+      },
+      {
+       "number": "8482100666",
+       "type": "landline",
+       "do_not_call": false
+      },
+      {
+       "number": "8568294071",
+       "type": "wireless",
+       "do_not_call": false
+      }
+     ],
+     "emails": [
+      "STACYPROEBSTLE@GMAIL.COM",
+      "SPROEBSTLE@NETZERO.NET",
+      "6SPROEBSTLE9@NETZERO.NET"
+     ]
+    }
+   ],
+   "mailing_address": "54 Timberline Rd Bayville, NJ, 08721",
+   "property": {
+    "dm_property_id": "prop_86699087",
+    "full_address": "54 Timberline Rd Bayville, NJ, 08721",
+    "address": "54 Timberline Rd",
+    "city": "Bayville",
+    "state": "NJ",
+    "zip": "08721",
+    "latitude": 39.906349,
+    "longitude": -74.171138,
+    "estimated_value": 643000,
+    "estimated_equity_amount": 325583,
+    "estimated_equity_percentage": 54,
+    "year_built": 2002,
+    "living_area_sqft": 2466,
+    "lot_size_sqft": 8002,
+    "num_bedrooms": 4,
+    "num_bathrooms": 4,
+    "last_sale_date": "2019-09-19T00:00:00.000Z",
+    "last_sale_amount": 355000,
+    "total_assessed_value": 358100,
+    "annual_property_tax_amount": 9275,
+    "num_mortgages": 2,
+    "total_original_loan_amount": 364402,
+    "total_estimated_loan_balance": 317417,
+    "owner_occupied": true,
+    "apn": "06-00939-05-00007"
+   },
+   "mortgages": [
+    {
+     "mortgage_number": 1,
+     "id": "11657062021",
+     "transaction_id": "11657062021",
+     "lender_name": "FAIRWAY INDEPENDENT MORTGAGE C",
+     "is_private_lender": false,
+     "loan_type_id": 12,
+     "loan_type": "FHA",
+     "loan_financing_type": "Unknown Financing Type",
+     "loan_amount": 348750,
+     "loan_balance": 302112,
+     "loan_interest_rate": 3.6,
+     "loan_term_months": 360,
+     "loan_start_date": "2019-09-19T00:00:00.000Z",
+     "loan_recording_date": "2019-09-19T00:00:00.000Z",
+     "loan_due_date": "2049-10-01T00:00:00.000Z",
+     "has_adjustable_rate_rider": false,
+     "lien_position": 1,
+     "estimated_payment_amount": 1585.58,
+     "classification": "primary",
+     "classification_label": "Primary mortgage",
+     "classification_reason": "DataTree marks this mortgage as lien position 1."
+    },
+    {
+     "mortgage_number": 2,
+     "id": "21254247777",
+     "transaction_id": "21254247777",
+     "lender_name": "SECRETARY/HOUSING & URBAN DEV",
+     "is_private_lender": false,
+     "loan_type_id": 12,
+     "loan_type": "FHA",
+     "loan_financing_type": "Unknown Financing Type",
+     "loan_amount": 15652,
+     "loan_balance": 15305,
+     "loan_interest_rate": 6.95,
+     "loan_term_months": 300,
+     "loan_start_date": "2024-09-09T00:00:00.000Z",
+     "loan_recording_date": "2024-09-09T00:00:00.000Z",
+     "loan_due_date": "2049-10-01T00:00:00.000Z",
+     "has_adjustable_rate_rider": false,
+     "lien_position": 2,
+     "estimated_payment_amount": 110.13,
+     "classification": "subordinate",
+     "classification_label": "Possible second lien",
+     "classification_reason": "DataTree marks this mortgage as lien position 2."
+    }
+   ],
+   "credits": {
+    "properties": 1,
+    "people": 2
+   }
+  }
  }
 }
