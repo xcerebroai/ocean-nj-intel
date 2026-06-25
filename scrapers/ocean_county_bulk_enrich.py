@@ -151,13 +151,22 @@ def main() -> int:
             print("::warning:: DealMachine API health probe FAILED — applying checkpoint only "
                   "(resumable; re-run when healthy).", file=sys.stderr)
         else:
+            # ADDRESS phase FIRST: the list leads (vacant/expired/HOA/zombie) — the
+            # bulk target — route by address, and the address endpoint is the one
+            # the health probe confirms healthy. The /enrichment/apn endpoint has
+            # been intermittently 504-ing; isolate each phase so an APN-endpoint
+            # outage can't trip the breaker and abort the address phase before it
+            # even starts (which is exactly what kept happening).
             try:
-                if uniq_apns:
-                    enrich_apns(uniq_apns, results, save)
                 if uniq_addrs:
                     enrich_addresses(uniq_addrs, results, save)
             except APIDownError as exc:
-                print(f"::warning:: {exc}", file=sys.stderr)
+                print(f"::warning:: address phase aborted (resumable): {exc}", file=sys.stderr)
+            try:
+                if uniq_apns:
+                    enrich_apns(uniq_apns, results, save)
+            except APIDownError as exc:
+                print(f"::warning:: APN phase aborted (resumable): {exc}", file=sys.stderr)
         save()
 
         when = datetime.now(timezone.utc).isoformat()

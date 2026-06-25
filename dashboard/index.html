@@ -129,8 +129,8 @@
       <input type="search" id="search" placeholder="Search address, owner, defendant, phone, docket…" />
       <button class="btn" id="reset">Reset</button>
       <button class="btn export" id="export-csv">⬇ Export CSV</button>
-      <label class="toggle"><input type="checkbox" id="show-probate" />Include probate in “All” (<span id="probate-count">0</span>)</label>
-      <label class="toggle"><input type="checkbox" id="show-lists" />Include DealMachine lists in “All” (<span id="list-count">0</span>)</label>
+      <label class="toggle"><input type="checkbox" id="show-probate" checked />Include probate (<span id="probate-count">0</span>)</label>
+      <label class="toggle"><input type="checkbox" id="show-lists" checked />Include commercial lists (<span id="list-count">0</span>)</label>
       <div class="count"><b id="shown">0</b> of <span id="total">0</span> leads</div>
     </div>
   </div>
@@ -139,7 +139,7 @@
 </main>
 <footer>
   Xcerebro County Intelligence — Ocean County, NJ. Sources: Ocean County Sheriff foreclosures,
-  Ocean County Surrogate, NJ GIS parcels + MOD-IV; commercial enrichment + lists via DealMachine.
+  Ocean County Surrogate, NJ GIS parcels + MOD-IV; owner/contact skip-trace enrichment.
 </footer>
 <script>
 const TABS = [
@@ -158,8 +158,8 @@ const STATE = {
   filters:{owner_type:null, recency:null, address_resolved:null},
   motiv:{senior_owner_flag:false, tired_landlord_flag:false, absentee:false, out_of_state:false},
   search:"",
-  showProbate:false,
-  showLists:false,
+  showProbate:true,
+  showLists:true,
   rows:[],
 };
 
@@ -251,7 +251,7 @@ function renderCard(r){
     if(r.owner_name){
       inner+=`<div class="owner-name">${esc(r.owner_name)}<span class="otag">${esc(r.owner_type)}</span></div>`;
     } else {
-      inner+=`<div class="owner-name unres">${r.is_dealmachine_list?"Owner — contacts gated":"Owner not resolved"}</div>`;
+      inner+=`<div class="owner-name unres">${r.is_dealmachine_list?"Owner — pending skip-trace":"Owner not resolved"}</div>`;
     }
     const ph=(r.owner_phones||[]).slice(0,6);
     const em=(r.owner_emails||[]).slice(0,3);
@@ -297,11 +297,11 @@ function renderCard(r){
 
   // PROVENANCE line
   let prov="";
-  if(r.is_dealmachine_list) prov=`source: <span class="dm">dealmachine</span> · commercial list (${esc(r.distress_label)}) · contacts gated`;
-  else if(r.dealmachine_matched) prov=`owner/contacts via <span class="dm">dealmachine</span>${r.daniels_law_backfilled?" · owner backfilled (Daniel's Law)":""}`;
-  else if(r.dm_enrichment_status==="pending_retry") prov=`DealMachine: pending retry`;
-  else if(r.dm_enrichment_status==="no_dm_record") prov=`DealMachine: no record`;
-  else prov=`source: county (${esc(r.event_source||"")})`;
+  if(r.is_dealmachine_list) prov=`Ocean County · ${esc(r.distress_label)}`;
+  else if(r.dealmachine_matched) prov=`Ocean County · owner/contacts via skip-trace${r.daniels_law_backfilled?" · owner backfilled (Daniel's Law)":""}`;
+  else if(r.dm_enrichment_status==="pending_retry") prov=`Ocean County · skip-trace pending`;
+  else if(r.dm_enrichment_status==="no_dm_record") prov=`Ocean County · no skip-trace match`;
+  else prov=`Ocean County${r.event_source?` · ${esc(r.event_source)}`:""}`;
   const provLine=`<div class="prov">${prov}</div>`;
 
   return `<div class="card ${variant}">
@@ -345,7 +345,7 @@ async function load(){
     const prob=STATE.rows.filter(r=>r.is_probate).length;
     const lists=STATE.rows.filter(r=>r.is_dealmachine_list).length;
     document.getElementById("summary").innerHTML=
-      `<b>${sor.toLocaleString()}</b> source-of-record · <b>${prob.toLocaleString()}</b> probate · <b>${lists.toLocaleString()}</b> DealMachine lists &nbsp;·&nbsp; built ${esc((data.build_timestamp||"").slice(0,10))}`;
+      `<b>${(sor+prob+lists).toLocaleString()}</b> Ocean County leads &nbsp;·&nbsp; <b>${sor.toLocaleString()}</b> foreclosure/tax · <b>${prob.toLocaleString()}</b> probate · <b>${lists.toLocaleString()}</b> commercial &nbsp;·&nbsp; built ${esc((data.build_timestamp||"").slice(0,10))}`;
     document.getElementById("probate-count").textContent=prob.toLocaleString();
     document.getElementById("list-count").textContent=lists.toLocaleString();
     renderTabs(); render();
