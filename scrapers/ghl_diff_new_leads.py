@@ -135,12 +135,19 @@ def pick_address(lead: dict) -> tuple[str, str, str, str]:
 
 
 def collect_phones(lead: dict) -> list[str]:
+    """WIRELESS/mobile phones only — landlines are EXCLUDED so they are never
+    pushed to GHL or texted. DealMachine types every phone (wireless|landline);
+    we read the typed per-contact phones and drop landlines. (The dashboard
+    still shows all phones via dealmachine.phones so the client can CALL them.)"""
     dm = lead.get("dealmachine") or {}
     out: list[str] = []
-    for raw in (dm.get("phones") or []):
-        p = normalize_phone(raw)
-        if p and p not in out:
-            out.append(p)
+    for c in (dm.get("contacts") or []):
+        for ph in (c.get("phones") or []):
+            if (ph.get("type") or "").lower() == "landline":
+                continue
+            p = normalize_phone(ph.get("number"))
+            if p and p not in out:
+                out.append(p)
     return out
 
 
