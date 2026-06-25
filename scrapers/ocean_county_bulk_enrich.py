@@ -147,9 +147,23 @@ def main() -> int:
         def save():
             RESULTS.write_text(json.dumps(results))
 
-        if not api_healthy():
-            print("::warning:: DealMachine API health probe FAILED — applying checkpoint only "
-                  "(resumable; re-run when healthy).", file=sys.stderr)
+        # Gate on the ADDRESS endpoint, NOT the stock api_healthy() APN probe:
+        # the APN endpoint is the degraded one, so an APN-based health check fails
+        # and skips enrichment entirely (incl. the address-routed list leads).
+        def address_healthy() -> bool:
+            try:
+                r = _dm_enrich("address", {"data": [{"full_address": addr_probe}],
+                                           "include_contacts": True,
+                                           "contact_audience": CONTACT_AUDIENCE})
+                return bool(r.get("data"))
+            except Exception:  # noqa: BLE001
+                return False
+
+        addr_probe = uniq_addrs[0] if uniq_addrs else \
+            "827 N GREEN ST, LITTLE EGG HARBOR TWP, NJ 08087"
+        if not address_healthy():
+            print("::warning:: DealMachine ADDRESS endpoint health probe FAILED — applying "
+                  "checkpoint only (resumable; re-run when healthy).", file=sys.stderr)
         else:
             # ADDRESS phase FIRST: the list leads (vacant/expired/HOA/zombie) — the
             # bulk target — route by address, and the address endpoint is the one
