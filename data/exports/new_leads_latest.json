@@ -1,1 +1,34 @@
-[]
+[
+  {
+    "first_name": "John",
+    "last_name": "Nagy",
+    "property_address": "14 Cumberland Dr",
+    "property_city": "Brick",
+    "property_state": "NJ",
+    "property_zip": "08723",
+    "phone_1": "+18483334677",
+    "phone_2": "+15706632218",
+    "phone_3": "+19736619177",
+    "email_1": "alexbrooke182@gmail.com",
+    "email_2": "johnm5794@yahoo.com",
+    "lead_type": "Sheriff Foreclosure",
+    "docket": "CH 774173",
+    "key": "1507_210.05_13|CH774173"
+  },
+  {
+    "first_name": "Jesse",
+    "last_name": "Georgaklis",
+    "property_address": "54 Timberline Rd",
+    "property_city": "Bayville",
+    "property_state": "NJ",
+    "property_zip": "08721",
+    "phone_1": "+17323304821",
+    "phone_2": "+18482100666",
+    "phone_3": "+13864276767",
+    "email_1": "jesseg1178@aol.com",
+    "email_2": "jesse1178@hotmail.com",
+    "lead_type": "Sheriff Foreclosure",
+    "docket": "CH 780679",
+    "key": "1506_939.05_7|CH780679"
+  }
+]
