@@ -628,6 +628,43 @@ load();
 </html>"""
 
 
+def attach_skiptrace(leads: list[dict]) -> int:
+    """Attach bulk skip-trace contacts (data/enriched/ocean_county_results.json,
+    keyed by APN/address) onto every lead lacking contacts, so the dashboard
+    shows phones/emails/owner. Mirrors the routing in ocean_county_bulk_enrich."""
+    import sys
+    results_path = REPO_ROOT / "data" / "enriched" / "ocean_county_results.json"
+    if not results_path.exists():
+        return 0
+    try:
+        results = json.loads(results_path.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        return 0
+    sys.path.insert(0, str(REPO_ROOT))
+    from scrapers.dealmachine_enrich import (  # noqa: E402
+        build_block, derive_apn, load_parcel_situs, situs_address,
+    )
+    need = [l for l in leads
+            if not ((l.get("dealmachine") or {}).get("phones")
+                    or (l.get("dealmachine") or {}).get("emails"))]
+    situs = load_parcel_situs({l.get("parcel_id") for l in need if l.get("parcel_id")})
+    attached = 0
+    for l in need:
+        apn = derive_apn(l.get("parcel_id"))
+        key = apn or situs_address(l, situs)
+        if not key:
+            continue
+        rec = results.get(key)
+        if rec and rec.get("matched") and (rec.get("contacts") or rec.get("phones")):
+            block = build_block(rec, "apn" if apn else "address", "", "")
+            l["dealmachine"] = block
+            if block.get("owner_name") and not l.get("owner_name"):
+                l["owner_name"] = block["owner_name"]
+                l["owner_name_source"] = "dealmachine"
+            attached += 1
+    return attached
+
+
 def main() -> int:
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--in", dest="inp", default=str(SCORED))
@@ -644,6 +681,7 @@ def main() -> int:
         lp = json.loads(listpull.read_text(encoding="utf-8"))
         leads += lp.get("leads", [])
         n_list = len(lp.get("leads", []))
+    n_attached = attach_skiptrace(leads)
     rows = [_to_row(l) for l in leads]
     dashboard_data = {
         "build_timestamp": src["build_timestamp"],
