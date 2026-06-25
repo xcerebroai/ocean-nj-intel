@@ -183,6 +183,9 @@ def _to_row(lead: dict) -> dict:
         "decedent_name": lead.get("decedent_name") or "",
         "decedent_dod": lead.get("decedent_date_of_death") or "",
         "probate_case_type": lead.get("probate_case_type") or "",
+        "probate_docket": lead.get("probate_docket")
+            or ((lead.get("lead_id") or "").split(":")[1]
+                if lead.get("distress_signal") == "probate_filing_recent" else ""),
         "block": lead.get("block") or "",
         "lot": lead.get("lot") or "",
         "muni": lead.get("parcel_muni") or lead.get("property_city") or "",
@@ -395,6 +398,10 @@ const TABS = [
   {id:"probate",  label:"Probate",           cls:"t-probate"},
 ];
 
+// Ocean County Surrogate (Bluestone) portal. No per-docket deep link exists
+// (ASP.NET postback navigation), so the docket links to the searchable portal.
+const SURROGATE_URL = "https://surrogateweb.co.ocean.nj.us/BluestoneWeb/default.aspx?FROM_MSG=99";
+
 const STATE = {
   tab:"all",
   filters:{owner_type:null, recency:null, address_resolved:null},
@@ -533,7 +540,10 @@ function renderCard(r){
     pp+=fact("Date of death", r.decedent_dod);
     pp+=fact("Town", r.city);
     pp+=fact("Filed", r.recorded_date);
-    pp+=fact("Docket", (r.lead_id||"").split(":")[1]);
+    const docket=r.probate_docket||(r.lead_id||"").split(":")[1]||"";
+    if(docket){
+      pp+=`<div class="fact"><span class="k">Docket</span><span class="v"><a href="${SURROGATE_URL}" target="_blank" rel="noopener">${esc(docket)} — review on Surrogate portal ↗</a></span></div>`;
+    }
     if(pp.trim()) pbSec=`<div class="sec"><div class="sec-title">Probate filing</div><div class="facts">${pp}</div></div>`;
   }
 
