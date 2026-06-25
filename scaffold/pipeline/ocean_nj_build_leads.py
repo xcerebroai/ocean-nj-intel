@@ -507,6 +507,34 @@ def main() -> int:
     print(f"[build_leads] blocked sources: {len(blocked)}")
 
     all_leads = sheriff_leads + surrogate_leads + njpa_leads + hls_leads
+
+    # ── Accumulation: never let a county lead drop off when a source stops
+    # listing it. Union this build with a persistent archive (keyed by lead_id);
+    # the freshly-built lead wins on collision, archive-only leads are retained.
+    # Fail-safe: any archive error falls back to the current build unchanged.
+    archive_path = out_leads.parent / "lead_archive.json"
+    try:
+        archived: dict = {}
+        if archive_path.exists():
+            for l in json.loads(archive_path.read_text(encoding="utf-8")).get("leads", []):
+                if l.get("lead_id"):
+                    archived[l["lead_id"]] = l
+        n_prev = len(archived)
+        for l in all_leads:
+            if l.get("lead_id"):
+                archived[l["lead_id"]] = l          # current build wins
+        all_leads = list(archived.values())
+        archive_path.write_text(
+            json.dumps({"updated": _now_iso(), "leads": all_leads}, ensure_ascii=False) + "\n",
+            encoding="utf-8")
+        print(f"[build_leads] accumulation: {n_prev} archived + this build "
+              f"-> {len(all_leads)} total (no drop-off)")
+    except (json.JSONDecodeError, OSError) as exc:
+        print(f"[build_leads] archive accumulation skipped ({exc}); using current build")
+
+    def _sig(s: str) -> int:
+        return sum(1 for l in all_leads if l.get("distress_signal") == s)
+
     payload = {
         "county_slug": "ocean_nj",
         "county_name": "Ocean County",
@@ -516,10 +544,10 @@ def main() -> int:
         "build_mode": "PARTIAL_BUILD",
         "total_leads": len(all_leads),
         "lead_counts_by_signal": {
-            "foreclosure_sale_scheduled": len(sheriff_leads),
-            "foreclosure_notice_published": len(njpa_leads),
-            "probate_filing_recent": len(surrogate_leads),
-            "tax_default_brick": len(hls_leads),
+            "foreclosure_sale_scheduled": _sig("foreclosure_sale_scheduled"),
+            "foreclosure_notice_published": _sig("foreclosure_notice_published"),
+            "probate_filing_recent": _sig("probate_filing_recent"),
+            "tax_default_brick": _sig("tax_default_brick"),
         },
         "hls_brick_status": hls_status,
         "civilview_status": civilview_status,
