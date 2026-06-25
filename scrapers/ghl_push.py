@@ -40,7 +40,11 @@ PUSH_LOG = EXPORT_DIR / "push_log_latest.json"
 
 GHL_URL = "https://services.leadconnectorhq.com/contacts/upsert"
 GHL_VERSION = "2021-07-28"
-TAGS = ["ocean-new-lead"]
+# "ocean-new-lead" drives the client's SMS workflow (county actionable leads);
+# "Ocean County" is the county-wide segmentation tag applied to EVERY GHL contact
+# (county + DealMachine). These are net-new contacts, so the upsert sets both
+# cleanly. GHL lowercases tags -> stored as "ocean county".
+TAGS = ["ocean-new-lead", "Ocean County"]
 # GHL sits behind Cloudflare, which blocks urllib's default "Python-urllib/x.y"
 # User-Agent with HTTP 403 "error code: 1010" (browser-signature ban) BEFORE the
 # request ever reaches GHL's auth layer. A normal UA gets us past the WAF.
