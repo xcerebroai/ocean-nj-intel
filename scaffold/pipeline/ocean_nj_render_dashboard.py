@@ -94,9 +94,28 @@ def _owner_first_last(lead: dict, owner_type: str) -> tuple[str, str]:
     return " ".join(parts[:-1]), parts[-1]
 
 
+def _resolved_owner(lead: dict) -> str:
+    """The owner name to DISPLAY. Falls back to the legal party when the parcel
+    owner_name is redacted (Daniel's Law): for a foreclosure the DEFENDANT is the
+    owner; for a probate the DECEDENT is the estate owner. Trims legal suffixes."""
+    n = (lead.get("owner_name") or "").strip()
+    if n:
+        return n
+    cand = (lead.get("defendant_name") or lead.get("decedent_name") or "").strip()
+    if not cand:
+        return ""
+    up = cand.upper()
+    for suf in (", ET ALS", ", ET AL", ", ETC", " ET ALS", " ET AL", ", A/K/A", ", AKA"):
+        i = up.find(suf)
+        if i != -1:
+            cand = cand[:i]
+            break
+    return cand.strip()
+
+
 def _owner_type(lead: dict) -> str:
     """Owner-type tag from the (now DealMachine-enriched) owner name."""
-    name = (lead.get("owner_name") or "").upper().strip()
+    name = _resolved_owner(lead).upper().strip()
     if not name:
         return "Unknown"
     if "ESTATE" in name or name.endswith(" EST"):
@@ -133,7 +152,7 @@ def _to_row(lead: dict) -> dict:
     return {
         # REQUIRED_DASHBOARD_FIELDS (10)
         "lead_id": lead["lead_id"],
-        "owner_name": lead.get("owner_name") or "",
+        "owner_name": _resolved_owner(lead),
         "owner_type": _owner_type(lead),
         "signal_type": lead.get("distress_signal") or "",
         "property_full_address": _full_address(lead),
