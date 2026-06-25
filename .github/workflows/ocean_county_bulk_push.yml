@@ -10,6 +10,11 @@
 name: ocean-county-bulk-push
 
 on:
+  schedule:
+    # 08:00 America/New_York. GitHub cron is UTC with no DST: 12:00 UTC == 8am EDT
+    # (summer). In winter (EST) this fires at 7am ET — adjust to "0 13 * * *" if
+    # year-round 8am is required. Scheduled runs push to GHL LIVE (tag Ocean County).
+    - cron: "0 12 * * *"
   workflow_dispatch:
     inputs:
       limit:
@@ -92,7 +97,7 @@ jobs:
         env:
           GHL_TOKEN: ${{ secrets.GHL_TOKEN }}
           GHL_LOCATION_ID: ${{ secrets.GHL_LOCATION_ID }}
-          GHL_PUSH_LIVE: ${{ github.event.inputs.push_live == 'true' && '1' || '0' }}
+          GHL_PUSH_LIVE: ${{ (github.event.inputs.push_live == 'true' || github.event_name == 'schedule') && '1' || '0' }}
           GHL_PUSH_LIMIT: ${{ github.event.inputs.limit }}
           GHL_PUSH_DELAY_SEC: "1.0"
         run: python3 scrapers/ghl_bulk_push_ocean_county.py
