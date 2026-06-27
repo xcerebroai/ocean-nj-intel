@@ -1,14 +1,4 @@
 {
   "mode": "live",
-  "tag": "Ocean County",
-  "attempted": 1,
-  "pushed": 1,
-  "results": [
-    {
-      "key": "dealmachine_list:expired_listing:prop_86756564",
-      "status": 201,
-      "contact_id": "dWxN7epRIK8V7SSyxflc",
-      "tagged": true
-    }
-  ]
+  "pushed": 0
 }
