@@ -1,5 +1,214 @@
 {
   "mode": "live",
-  "pushed": 0,
-  "results": []
+  "attempted": 23,
+  "pushed": 23,
+  "results": [
+    {
+      "key": "1507_869.06_13|CH780683",
+      "status": 201,
+      "contact_id": "58n5iuV61s7usbjaO6oR",
+      "tags": [
+        "ocean-new-lead",
+        "ocean county"
+      ]
+    },
+    {
+      "key": "1507_253.15_21|",
+      "status": 201,
+      "contact_id": "H05n5Y7uw079lmPeevNq",
+      "tags": [
+        "ocean-new-lead",
+        "ocean county"
+      ]
+    },
+    {
+      "key": "1507_284_52.02|",
+      "status": 201,
+      "contact_id": "dtmHyO0sCMScivoHT4qL",
+      "tags": [
+        "ocean-new-lead",
+        "ocean county"
+      ]
+    },
+    {
+      "key": "1507_857_7.01|",
+      "status": 201,
+      "contact_id": "LCzXbP2i2KU1qBNwHl86",
+      "tags": [
+        "ocean-new-lead",
+        "ocean county"
+      ]
+    },
+    {
+      "key": "1507_864_1.05|",
+      "status": 201,
+      "contact_id": "M1uk7UpvzjmndUjfSYHL",
+      "tags": [
+        "ocean-new-lead",
+        "ocean county"
+      ]
+    },
+    {
+      "key": "1507_864_13|",
+      "status": 201,
+      "contact_id": "hhVBM7937FpGSncusebj",
+      "tags": [
+        "ocean-new-lead",
+        "ocean county"
+      ]
+    },
+    {
+      "key": "1507_867_6.01|",
+      "status": 201,
+      "contact_id": "Yu95cWzm6Knt8p5iJ0Er",
+      "tags": [
+        "ocean-new-lead",
+        "ocean county"
+      ]
+    },
+    {
+      "key": "1507_869.44_9|",
+      "status": 201,
+      "contact_id": "gkvswYFjDiZ84Jg3Ojec",
+      "tags": [
+        "ocean-new-lead",
+        "ocean county"
+      ]
+    },
+    {
+      "key": "1507_870.04_8|",
+      "status": 201,
+      "contact_id": "Yy2jNIeetn7L2I3fmGeT",
+      "tags": [
+        "ocean-new-lead",
+        "ocean county"
+      ]
+    },
+    {
+      "key": "1507_871_3.01|",
+      "status": 201,
+      "contact_id": "kidcgvqf1Qd8TW3RVusX",
+      "tags": [
+        "ocean-new-lead",
+        "ocean county"
+      ]
+    },
+    {
+      "key": "1507_878_3|",
+      "status": 201,
+      "contact_id": "5L7xGN0zpeNVLfupQVHg",
+      "tags": [
+        "ocean-new-lead",
+        "ocean county"
+      ]
+    },
+    {
+      "key": "1507_895_9|",
+      "status": 201,
+      "contact_id": "G3TrkPeXBqLkYPTyemOQ",
+      "tags": [
+        "ocean-new-lead",
+        "ocean county"
+      ]
+    },
+    {
+      "key": "1507_895_25.01|",
+      "status": 201,
+      "contact_id": "Uf82K4RQc2iDIh78F2kp",
+      "tags": [
+        "ocean-new-lead",
+        "ocean county"
+      ]
+    },
+    {
+      "key": "1507_895_29.01|",
+      "status": 201,
+      "contact_id": "nECJByoUvsIAbm8p7cEh",
+      "tags": [
+        "ocean-new-lead",
+        "ocean county"
+      ]
+    },
+    {
+      "key": "1507_902.45_12|",
+      "status": 201,
+      "contact_id": "oSoFhKeMhWJNXJWo49qX",
+      "tags": [
+        "ocean-new-lead",
+        "ocean county"
+      ]
+    },
+    {
+      "key": "1507_903.02_8|",
+      "status": 201,
+      "contact_id": "PYsIlO4u2Z7s5kjYjx0a",
+      "tags": [
+        "ocean-new-lead",
+        "ocean county"
+      ]
+    },
+    {
+      "key": "1507_903.22_4|",
+      "status": 201,
+      "contact_id": "PqG3Kivq95fMVwru8288",
+      "tags": [
+        "ocean-new-lead",
+        "ocean county"
+      ]
+    },
+    {
+      "key": "1507_903.22_21|",
+      "status": 201,
+      "contact_id": "hvuXuNgtga6AIgjYRrTP",
+      "tags": [
+        "ocean-new-lead",
+        "ocean county"
+      ]
+    },
+    {
+      "key": "1507_914_28|",
+      "status": 201,
+      "contact_id": "3F0cp2xc9SIC9fbZRdVz",
+      "tags": [
+        "ocean-new-lead",
+        "ocean county"
+      ]
+    },
+    {
+      "key": "1507_916_40|",
+      "status": 201,
+      "contact_id": "5L7xGN0zpeNVLfupQVHg",
+      "tags": [
+        "ocean-new-lead",
+        "ocean county"
+      ]
+    },
+    {
+      "key": "1507_916_42|",
+      "status": 201,
+      "contact_id": "5L7xGN0zpeNVLfupQVHg",
+      "tags": [
+        "ocean-new-lead",
+        "ocean county"
+      ]
+    },
+    {
+      "key": "1507_934_23.02|",
+      "status": 201,
+      "contact_id": "3dqOZYWO1dPlwKw2N1zl",
+      "tags": [
+        "ocean-new-lead",
+        "ocean county"
+      ]
+    },
+    {
+      "key": "1507_938_66|",
+      "status": 201,
+      "contact_id": "0p9SF5MkiV5JganNufbE",
+      "tags": [
+        "ocean-new-lead",
+        "ocean county"
+      ]
+    }
+  ]
 }
