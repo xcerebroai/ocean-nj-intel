@@ -1,4 +1,146 @@
 {
   "mode": "live",
-  "pushed": 0
+  "tag": "Ocean County",
+  "attempted": 23,
+  "pushed": 23,
+  "results": [
+    {
+      "key": "sheriff_foreclosure:CH_780683",
+      "status": 201,
+      "contact_id": "58n5iuV61s7usbjaO6oR",
+      "tagged": true
+    },
+    {
+      "key": "hls_brick_taxsale:204893",
+      "status": 201,
+      "contact_id": "H05n5Y7uw079lmPeevNq",
+      "tagged": true
+    },
+    {
+      "key": "hls_brick_taxsale:209573",
+      "status": 201,
+      "contact_id": "dtmHyO0sCMScivoHT4qL",
+      "tagged": true
+    },
+    {
+      "key": "hls_brick_taxsale:415010",
+      "status": 201,
+      "contact_id": "LCzXbP2i2KU1qBNwHl86",
+      "tagged": true
+    },
+    {
+      "key": "hls_brick_taxsale:417442",
+      "status": 201,
+      "contact_id": "M1uk7UpvzjmndUjfSYHL",
+      "tagged": true
+    },
+    {
+      "key": "hls_brick_taxsale:415094",
+      "status": 201,
+      "contact_id": "hhVBM7937FpGSncusebj",
+      "tagged": true
+    },
+    {
+      "key": "hls_brick_taxsale:415137",
+      "status": 201,
+      "contact_id": "Yu95cWzm6Knt8p5iJ0Er",
+      "tagged": true
+    },
+    {
+      "key": "hls_brick_taxsale:415658",
+      "status": 201,
+      "contact_id": "gkvswYFjDiZ84Jg3Ojec",
+      "tagged": true
+    },
+    {
+      "key": "hls_brick_taxsale:417033",
+      "status": 201,
+      "contact_id": "Yy2jNIeetn7L2I3fmGeT",
+      "tagged": true
+    },
+    {
+      "key": "hls_brick_taxsale:417539",
+      "status": 201,
+      "contact_id": "kidcgvqf1Qd8TW3RVusX",
+      "tagged": true
+    },
+    {
+      "key": "hls_brick_taxsale:415791",
+      "status": 201,
+      "contact_id": "5L7xGN0zpeNVLfupQVHg",
+      "tagged": true
+    },
+    {
+      "key": "hls_brick_taxsale:416014",
+      "status": 201,
+      "contact_id": "G3TrkPeXBqLkYPTyemOQ",
+      "tagged": true
+    },
+    {
+      "key": "hls_brick_taxsale:416027",
+      "status": 201,
+      "contact_id": "Uf82K4RQc2iDIh78F2kp",
+      "tagged": true
+    },
+    {
+      "key": "hls_brick_taxsale:416029",
+      "status": 201,
+      "contact_id": "nECJByoUvsIAbm8p7cEh",
+      "tagged": true
+    },
+    {
+      "key": "hls_brick_taxsale:416511",
+      "status": 201,
+      "contact_id": "oSoFhKeMhWJNXJWo49qX",
+      "tagged": true
+    },
+    {
+      "key": "hls_brick_taxsale:516852",
+      "status": 201,
+      "contact_id": "PYsIlO4u2Z7s5kjYjx0a",
+      "tagged": true
+    },
+    {
+      "key": "hls_brick_taxsale:517083",
+      "status": 201,
+      "contact_id": "PqG3Kivq95fMVwru8288",
+      "tagged": true
+    },
+    {
+      "key": "hls_brick_taxsale:517100",
+      "status": 201,
+      "contact_id": "hvuXuNgtga6AIgjYRrTP",
+      "tagged": true
+    },
+    {
+      "key": "hls_brick_taxsale:517215",
+      "status": 201,
+      "contact_id": "3F0cp2xc9SIC9fbZRdVz",
+      "tagged": true
+    },
+    {
+      "key": "hls_brick_taxsale:517230",
+      "status": 201,
+      "contact_id": "5L7xGN0zpeNVLfupQVHg",
+      "tagged": true
+    },
+    {
+      "key": "hls_brick_taxsale:517231",
+      "status": 201,
+      "contact_id": "5L7xGN0zpeNVLfupQVHg",
+      "tagged": true
+    },
+    {
+      "key": "hls_brick_taxsale:517458",
+      "status": 201,
+      "contact_id": "3dqOZYWO1dPlwKw2N1zl",
+      "tagged": true
+    },
+    {
+      "key": "hls_brick_taxsale:517492",
+      "status": 201,
+      "contact_id": "0p9SF5MkiV5JganNufbE",
+      "tagged": true
+    }
+  ]
 }
