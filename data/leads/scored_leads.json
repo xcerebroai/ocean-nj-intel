@@ -3,13 +3,13 @@
  "county_name": "Ocean County",
  "state_name": "New Jersey",
  "framework_version": "v5.5.0",
- "build_timestamp": "2026-07-01T07:48:40Z",
+ "build_timestamp": "2026-07-02T07:23:15Z",
  "build_mode": "PARTIAL_BUILD",
- "total_leads": 1913,
+ "total_leads": 1933,
  "lead_counts_by_signal": {
   "foreclosure_sale_scheduled": 28,
   "foreclosure_notice_published": 2,
-  "probate_filing_recent": 1379,
+  "probate_filing_recent": 1399,
   "tax_default_brick": 504
  },
  "hls_brick_status": {
@@ -30,8 +30,8 @@
  },
  "tax_board_detail_indexed": 10,
  "lead_counts_by_status": {
-  "APPROVED_FOR_DASHBOARD": 528,
-  "REVIEW_REQUIRED": 1385
+  "APPROVED_FOR_DASHBOARD": 525,
+  "REVIEW_REQUIRED": 1408
  },
  "parcel_join": {
   "hits": 19,
@@ -59,7 +59,7 @@
     "OWNER_STATUS"
    ],
    "source_role": "BLOCKED_SOURCE",
-   "reported_at": "2026-07-01T07:46:58Z",
+   "reported_at": "2026-07-02T07:21:13Z",
    "v5_5_0_recon_anchor": "runs/ocean_nj/recon/source_of_record_matrix.json#sources"
   },
   {
@@ -76,7 +76,7 @@
     "RECORDED_EVENT"
    ],
    "source_role": "BLOCKED_SOURCE",
-   "reported_at": "2026-07-01T07:46:58Z",
+   "reported_at": "2026-07-02T07:21:13Z",
    "v5_5_0_recon_anchor": "runs/ocean_nj/recon/source_of_record_matrix.json#sources"
   },
   {
@@ -94,7 +94,7 @@
     "TAX_DEFAULT"
    ],
    "source_role": "BLOCKED_SOURCE",
-   "reported_at": "2026-07-01T07:46:58Z",
+   "reported_at": "2026-07-02T07:21:13Z",
    "v5_5_0_recon_anchor": "runs/ocean_nj/recon/source_of_record_matrix.json#sources"
   },
   {
@@ -109,7 +109,7 @@
    ],
    "intended_lead_origins": [],
    "source_role": "BLOCKED_SOURCE",
-   "reported_at": "2026-07-01T07:46:58Z",
+   "reported_at": "2026-07-02T07:21:13Z",
    "v5_5_0_recon_anchor": "runs/ocean_nj/recon/source_of_record_matrix.json#sources"
   }
  ],
@@ -314,7 +314,7 @@
    "lead_id": "sheriff_foreclosure:CH_774347",
    "lead_origin_type": "RECORDED_EVENT",
    "primary_event_date": "2026-07-07",
-   "scheduled_event_category": "UPCOMING_SALE",
+   "scheduled_event_category": "HISTORICAL_CONTEXT_ONLY",
    "qualification_status": "QUALIFIED",
    "source_ids": [
     "sheriff_foreclosure",
@@ -324,16 +324,16 @@
     "sheriff_foreclosure:CH_774347",
     "njogis_parcels_modiv:1515_1051_17"
    ],
-   "lead_status": "APPROVED_FOR_DASHBOARD",
+   "lead_status": "REVIEW_REQUIRED",
    "doc_type": "sheriff_sale_listing",
    "distress_signal": "foreclosure_sale_scheduled",
    "chancery_docket": "CH 774347",
    "plaintiff": "HSBC BANK, N.A., AS TRUSTEE, FOR TH",
    "defendant_name": "LUDMILA AGIVAIVE, ET ALS",
-   "upset_amount": 1248379.34,
+   "upset_amount": 1197988.61,
    "sale_date": "2026-07-07",
    "adjournment_date": null,
-   "sheriff_status": null,
+   "sheriff_status": "CANCELLATION",
    "attorney_firm": "FRENKEL LAMBERT WEISS WEISMAN & GORDON, LLP",
    "attorney_phone": "973-325-8800",
    "property_address": "1156 TIFFANY LANE",
@@ -389,7 +389,7 @@
    "chancery_docket": "CH 779706",
    "plaintiff": "MAGERICK, LLC",
    "defendant_name": "DENLEY CHARLES, ET UX, ET AL",
-   "upset_amount": 618015.66,
+   "upset_amount": 618189.46,
    "sale_date": "2026-07-07",
    "adjournment_date": null,
    "sheriff_status": null,
@@ -544,7 +544,20 @@
    "last_sale_price": null,
    "last_sale_date": null,
    "prop_class": null,
-   "dm_enrichment_status": "pending_retry",
+   "dealmachine": {
+    "source": "dealmachine",
+    "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+    "matched": false,
+    "enrichment_status": "no_dm_record",
+    "matched_by": "address",
+    "enriched_at": "2026-07-02T07:33:59.910803+00:00",
+    "billing_cycle": "2026-06-06T18:30:15.000Z",
+    "match_failure": {
+     "code": "service_error",
+     "reason": "Database query failed"
+    }
+   },
+   "dm_enrichment_status": "no_dm_record",
    "enrichment_sources": [
     "dealmachine"
    ],
@@ -719,7 +732,20 @@
    "last_sale_price": null,
    "last_sale_date": null,
    "prop_class": null,
-   "dm_enrichment_status": "pending_retry",
+   "dealmachine": {
+    "source": "dealmachine",
+    "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+    "matched": false,
+    "enrichment_status": "no_dm_record",
+    "matched_by": "address",
+    "enriched_at": "2026-07-02T07:33:59.910803+00:00",
+    "billing_cycle": "2026-06-06T18:30:15.000Z",
+    "match_failure": {
+     "code": "service_error",
+     "reason": "Database query failed"
+    }
+   },
+   "dm_enrichment_status": "no_dm_record",
    "enrichment_sources": [
     "dealmachine"
    ],
@@ -735,7 +761,7 @@
    "lead_id": "sheriff_foreclosure:CH_780576",
    "lead_origin_type": "RECORDED_EVENT",
    "primary_event_date": "2026-07-07",
-   "scheduled_event_category": "UPCOMING_SALE",
+   "scheduled_event_category": "HISTORICAL_CONTEXT_ONLY",
    "qualification_status": "QUALIFIED",
    "source_ids": [
     "sheriff_foreclosure"
@@ -743,16 +769,16 @@
    "evidence_ids": [
     "sheriff_foreclosure:CH_780576"
    ],
-   "lead_status": "APPROVED_FOR_DASHBOARD",
+   "lead_status": "REVIEW_REQUIRED",
    "doc_type": "sheriff_sale_listing",
    "distress_signal": "foreclosure_sale_scheduled",
    "chancery_docket": "CH 780576",
    "plaintiff": "PENNYMAC LOAN SERVICES, LLC",
    "defendant_name": "ARTHUR STANLEY",
-   "upset_amount": 194222.78,
+   "upset_amount": 186420.79,
    "sale_date": "2026-07-07",
    "adjournment_date": null,
-   "sheriff_status": null,
+   "sheriff_status": "CANCELLATION",
    "attorney_firm": "FRENKEL LAMBERT WEISS WEISMAN & GORDON, LLP",
    "attorney_phone": "973-325-8800",
    "property_address": "1631 GREEN GROVE ROAD",
@@ -776,7 +802,20 @@
    "last_sale_price": null,
    "last_sale_date": null,
    "prop_class": null,
-   "dm_enrichment_status": "pending_retry",
+   "dealmachine": {
+    "source": "dealmachine",
+    "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+    "matched": false,
+    "enrichment_status": "no_dm_record",
+    "matched_by": "address",
+    "enriched_at": "2026-07-02T07:33:59.910803+00:00",
+    "billing_cycle": "2026-06-06T18:30:15.000Z",
+    "match_failure": {
+     "code": "service_error",
+     "reason": "Database query failed"
+    }
+   },
+   "dm_enrichment_status": "no_dm_record",
    "enrichment_sources": [
     "dealmachine"
    ],
@@ -792,7 +831,7 @@
    "lead_id": "sheriff_foreclosure:CH_780589",
    "lead_origin_type": "RECORDED_EVENT",
    "primary_event_date": "2026-07-07",
-   "scheduled_event_category": "UPCOMING_SALE",
+   "scheduled_event_category": "HISTORICAL_CONTEXT_ONLY",
    "qualification_status": "QUALIFIED",
    "source_ids": [
     "sheriff_foreclosure",
@@ -802,16 +841,16 @@
     "sheriff_foreclosure:CH_780589",
     "njogis_parcels_modiv:1519_98.05_30"
    ],
-   "lead_status": "APPROVED_FOR_DASHBOARD",
+   "lead_status": "REVIEW_REQUIRED",
    "doc_type": "sheriff_sale_listing",
    "distress_signal": "foreclosure_sale_scheduled",
    "chancery_docket": "CH 780589",
    "plaintiff": "OCEANFIRST BANK, NATIONAL ASSOCIATI",
    "defendant_name": "MARK A. PERNA, ET ALS",
-   "upset_amount": 88341.65,
+   "upset_amount": 84623.52,
    "sale_date": "2026-07-07",
    "adjournment_date": null,
-   "sheriff_status": null,
+   "sheriff_status": "CANCELLATION",
    "attorney_firm": "KML LAW GROUP, P.C.",
    "attorney_phone": "215-627-1322",
    "property_address": "11 MORNING GLORY LANE",
@@ -892,7 +931,20 @@
    "last_sale_price": null,
    "last_sale_date": null,
    "prop_class": null,
-   "dm_enrichment_status": "pending_retry",
+   "dealmachine": {
+    "source": "dealmachine",
+    "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+    "matched": false,
+    "enrichment_status": "no_dm_record",
+    "matched_by": "address",
+    "enriched_at": "2026-07-02T07:33:59.910803+00:00",
+    "billing_cycle": "2026-06-06T18:30:15.000Z",
+    "match_failure": {
+     "code": "service_error",
+     "reason": "Database query failed"
+    }
+   },
+   "dm_enrichment_status": "no_dm_record",
    "enrichment_sources": [
     "dealmachine"
    ],
@@ -949,7 +1001,20 @@
    "last_sale_price": null,
    "last_sale_date": null,
    "prop_class": null,
-   "dm_enrichment_status": "pending_retry",
+   "dealmachine": {
+    "source": "dealmachine",
+    "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+    "matched": false,
+    "enrichment_status": "no_dm_record",
+    "matched_by": "address",
+    "enriched_at": "2026-07-02T07:33:59.910803+00:00",
+    "billing_cycle": "2026-06-06T18:30:15.000Z",
+    "match_failure": {
+     "code": "service_error",
+     "reason": "Database query failed"
+    }
+   },
+   "dm_enrichment_status": "no_dm_record",
    "enrichment_sources": [
     "dealmachine"
    ],
@@ -1006,7 +1071,20 @@
    "last_sale_price": null,
    "last_sale_date": null,
    "prop_class": null,
-   "dm_enrichment_status": "pending_retry",
+   "dealmachine": {
+    "source": "dealmachine",
+    "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+    "matched": false,
+    "enrichment_status": "no_dm_record",
+    "matched_by": "address",
+    "enriched_at": "2026-07-02T07:33:59.910803+00:00",
+    "billing_cycle": "2026-06-06T18:30:15.000Z",
+    "match_failure": {
+     "code": "service_error",
+     "reason": "Database query failed"
+    }
+   },
+   "dm_enrichment_status": "no_dm_record",
    "enrichment_sources": [
     "dealmachine"
    ],
@@ -1181,7 +1259,20 @@
    "last_sale_price": null,
    "last_sale_date": null,
    "prop_class": null,
-   "dm_enrichment_status": "pending_retry",
+   "dealmachine": {
+    "source": "dealmachine",
+    "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+    "matched": false,
+    "enrichment_status": "no_dm_record",
+    "matched_by": "address",
+    "enriched_at": "2026-07-02T07:33:59.910803+00:00",
+    "billing_cycle": "2026-06-06T18:30:15.000Z",
+    "match_failure": {
+     "code": "service_error",
+     "reason": "Database query failed"
+    }
+   },
+   "dm_enrichment_status": "no_dm_record",
    "enrichment_sources": [
     "dealmachine"
    ],
@@ -1213,7 +1304,7 @@
    "chancery_docket": "CH 780667",
    "plaintiff": "AMERICAN NEIGHBORHOOD MORTGAGE ACCE",
    "defendant_name": "MATTHEW STERN, ET ALS",
-   "upset_amount": 562504.46,
+   "upset_amount": 570624.83,
    "sale_date": "2026-07-07",
    "adjournment_date": null,
    "sheriff_status": null,
@@ -1344,7 +1435,7 @@
    "chancery_docket": "CH 780678",
    "plaintiff": "CITIBANK, N.A., NOT IN ITS INDIVIDU",
    "defendant_name": "YOEL A. BERKOVIC, ET ALS",
-   "upset_amount": 233332.86,
+   "upset_amount": 233506.66,
    "sale_date": "2026-07-07",
    "adjournment_date": null,
    "sheriff_status": null,
@@ -1695,7 +1786,7 @@
    "chancery_docket": "CH 780681",
    "plaintiff": "US BANK TRUST NATIONAL ASSOCIATION,",
    "defendant_name": "ANNE BETTE CHAMBERLAIN, ETC., ET ALS",
-   "upset_amount": 473707.37,
+   "upset_amount": 473853.89,
    "sale_date": "2026-07-07",
    "adjournment_date": null,
    "sheriff_status": null,
@@ -1813,7 +1904,7 @@
    "chancery_docket": "CH 780683",
    "plaintiff": "U.S. BANK TRUST NATIONAL ASSOCIATIO",
    "defendant_name": "MARK NALDUCCI, ET ALS",
-   "upset_amount": 388448.84,
+   "upset_amount": 388616.44,
    "sale_date": "2026-07-07",
    "adjournment_date": null,
    "sheriff_status": null,
@@ -1825,9 +1916,9 @@
    "property_zip": "08724",
    "block": "869.06",
    "lot": "13,14",
-   "owner_name": null,
-   "owner_resolved": false,
-   "owner_resolution_status": "DANIELS_LAW_REDACTED",
+   "owner_name": "MARK NALDUCCI",
+   "owner_resolved": true,
+   "owner_resolution_status": "DEALMACHINE_RESOLVED",
    "parcel_id": "1507_869.06_13",
    "parcel_muni": "BRICK TWP",
    "parcel_address": "122 TAYLOR BLVD.",
@@ -1840,11 +1931,119 @@
    "last_sale_price": 1,
    "last_sale_date": "2023-12-14",
    "prop_class": "2",
-   "dm_enrichment_status": "pending_retry",
+   "dealmachine": {
+    "source": "dealmachine",
+    "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+    "matched": true,
+    "enrichment_status": "enriched",
+    "matched_by": "apn",
+    "enriched_at": "2026-07-02T07:33:59.910803+00:00",
+    "billing_cycle": "2026-06-06T18:30:15.000Z",
+    "owner_name": "MARK NALDUCCI",
+    "owner_names": [
+     "MARK NALDUCCI"
+    ],
+    "phones": [
+     "7328189641",
+     "9419799098"
+    ],
+    "emails": [
+     "MARKDUCCI@COMCAST.NET",
+     "MLNALDUCCI@COMCAST.NET"
+    ],
+    "contacts": [
+     {
+      "dm_person_id": "per_15052031724",
+      "full_name": "MARK NALDUCCI",
+      "first_name": "MARK",
+      "last_name": "NALDUCCI",
+      "contact_type": "owner",
+      "is_resident": true,
+      "phones": [
+       {
+        "number": "7328189641",
+        "type": "wireless",
+        "do_not_call": false
+       },
+       {
+        "number": "9419799098",
+        "type": "wireless",
+        "do_not_call": false
+       }
+      ],
+      "emails": [
+       "MARKDUCCI@COMCAST.NET",
+       "MLNALDUCCI@COMCAST.NET"
+      ]
+     }
+    ],
+    "mailing_address": "122 Taylor Blvd Brick, NJ, 08724",
+    "property": {
+     "dm_property_id": "prop_86757016",
+     "full_address": "122 Taylor Blvd Brick, NJ, 08724",
+     "address": "122 Taylor Blvd",
+     "city": "Brick",
+     "state": "NJ",
+     "zip": "08724",
+     "latitude": 40.071049,
+     "longitude": -74.117431,
+     "estimated_value": 714000,
+     "estimated_equity_amount": 475858,
+     "estimated_equity_percentage": 65,
+     "year_built": 2003,
+     "living_area_sqft": 1991,
+     "lot_size_sqft": 10001,
+     "num_bedrooms": 4,
+     "num_bathrooms": 3,
+     "last_sale_date": "2003-12-04T00:00:00.000Z",
+     "last_sale_amount": 309000,
+     "total_assessed_value": 331200,
+     "annual_property_tax_amount": 9082,
+     "num_mortgages": 1,
+     "total_original_loan_amount": 304000,
+     "total_estimated_loan_balance": 238142,
+     "owner_occupied": true,
+     "apn": "07-00869-06-00013"
+    },
+    "mortgages": [
+     {
+      "mortgage_number": 1,
+      "id": "2650314621",
+      "transaction_id": "2650314621",
+      "lender_name": "QUICKEN LOANS INC",
+      "is_private_lender": false,
+      "loan_type_id": 20,
+      "loan_type": "New Conventional",
+      "loan_financing_type_id": 2,
+      "loan_financing_type": "Fixed Rate",
+      "loan_amount": 304000,
+      "loan_balance": 238142,
+      "loan_interest_rate": 3.59,
+      "loan_term_months": 360,
+      "loan_start_date": "2016-05-25T00:00:00.000Z",
+      "loan_recording_date": "2016-05-25T00:00:00.000Z",
+      "loan_due_date": "2046-06-01T00:00:00.000Z",
+      "has_adjustable_rate_rider": false,
+      "lien_position": 1,
+      "estimated_payment_amount": 1380.41,
+      "classification": "primary",
+      "classification_label": "Primary mortgage",
+      "classification_reason": "DataTree marks this mortgage as lien position 1."
+     }
+    ],
+    "credits": {
+     "properties": 1,
+     "people": 1
+    }
+   },
+   "dm_enrichment_status": "enriched",
    "enrichment_sources": [
     "dealmachine"
    ],
-   "owner_occupied": null,
+   "owner_name_source": "dealmachine",
+   "owner_resolution_status_prior": "DANIELS_LAW_REDACTED",
+   "daniels_law_backfilled": true,
+   "owner_occupied": true,
    "owner_mailing_address": "122 TAYLOR BLVD",
    "owner_mailing_city": "BRICK",
    "owner_mailing_state": "NJ",
@@ -1897,7 +2096,20 @@
    "last_sale_price": null,
    "last_sale_date": null,
    "prop_class": null,
-   "dm_enrichment_status": "pending_retry",
+   "dealmachine": {
+    "source": "dealmachine",
+    "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+    "matched": false,
+    "enrichment_status": "no_dm_record",
+    "matched_by": "address",
+    "enriched_at": "2026-07-02T07:33:59.910803+00:00",
+    "billing_cycle": "2026-06-06T18:30:15.000Z",
+    "match_failure": {
+     "code": "service_error",
+     "reason": "Database query failed"
+    }
+   },
+   "dm_enrichment_status": "no_dm_record",
    "enrichment_sources": [
     "dealmachine"
    ],
@@ -1971,9 +2183,9 @@
   {
    "lead_id": "sheriff_foreclosure:CH_780686",
    "lead_origin_type": "RECORDED_EVENT",
-   "primary_event_date": "2026-07-07",
+   "primary_event_date": "2026-08-11",
    "scheduled_event_category": "UPCOMING_SALE",
-   "qualification_status": "QUALIFIED",
+   "qualification_status": "REVIEW_REQUIRED",
    "source_ids": [
     "sheriff_foreclosure"
    ],
@@ -1986,10 +2198,10 @@
    "chancery_docket": "CH 780686",
    "plaintiff": "LOANDEPOT.COM, LLC",
    "defendant_name": "NICOLE PAJEWSKI, ET ALS",
-   "upset_amount": 396744.66,
+   "upset_amount": 399169.6,
    "sale_date": "2026-07-07",
-   "adjournment_date": null,
-   "sheriff_status": null,
+   "adjournment_date": "2026-08-11",
+   "sheriff_status": "ADJOURNED UNTIL",
    "attorney_firm": "FRENKEL LAMBERT WEISS WEISMAN & GORDON, LLP",
    "attorney_phone": "973-325-8800",
    "property_address": "1324 LEGUENE AVENUE LACEY",
@@ -2013,7 +2225,20 @@
    "last_sale_price": null,
    "last_sale_date": null,
    "prop_class": null,
-   "dm_enrichment_status": "pending_retry",
+   "dealmachine": {
+    "source": "dealmachine",
+    "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+    "matched": false,
+    "enrichment_status": "no_dm_record",
+    "matched_by": "address",
+    "enriched_at": "2026-07-02T07:33:59.910803+00:00",
+    "billing_cycle": "2026-06-06T18:30:15.000Z",
+    "match_failure": {
+     "code": "service_error",
+     "reason": "Database query failed"
+    }
+   },
+   "dm_enrichment_status": "no_dm_record",
    "enrichment_sources": [
     "dealmachine"
    ],
@@ -2028,9 +2253,9 @@
   {
    "lead_id": "sheriff_foreclosure:CH_780687",
    "lead_origin_type": "RECORDED_EVENT",
-   "primary_event_date": "2026-07-07",
+   "primary_event_date": "2026-08-11",
    "scheduled_event_category": "UPCOMING_SALE",
-   "qualification_status": "QUALIFIED",
+   "qualification_status": "REVIEW_REQUIRED",
    "source_ids": [
     "sheriff_foreclosure",
     "njogis_parcels_modiv"
@@ -2045,10 +2270,10 @@
    "chancery_docket": "CH 780687",
    "plaintiff": "FREEDOM MORTGAGE CORPORATION",
    "defendant_name": "JONATHAN SPEAR, ET ALS",
-   "upset_amount": 269833.72,
+   "upset_amount": 271496.81,
    "sale_date": "2026-07-07",
-   "adjournment_date": null,
-   "sheriff_status": null,
+   "adjournment_date": "2026-08-11",
+   "sheriff_status": "ADJOURNED UNTIL",
    "attorney_firm": "PARKER, MC CAY",
    "attorney_phone": "856-596-8900",
    "property_address": "503 MAPLE STREET",
@@ -25833,7 +26058,7 @@
    "probate_docket": "267845",
    "probate_case_type": "Probate",
    "filed_date": "2026-05-15",
-   "decedent_name": "Mungin Chalres  L.",
+   "decedent_name": "Mungin Charles  L.",
    "decedent_date_of_birth": "1944-09-20",
    "decedent_date_of_death": "2025-08-31",
    "property_city": "Little Egg Harbor",
@@ -48939,11 +49164,83 @@
    "net_value": 488500,
    "year_built": 0,
    "last_sale_price": 800000,
-   "dm_enrichment_status": "pending_retry",
+   "dealmachine": {
+    "source": "dealmachine",
+    "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+    "matched": true,
+    "enrichment_status": "enriched",
+    "matched_by": "apn",
+    "enriched_at": "2026-07-02T07:33:59.910803+00:00",
+    "billing_cycle": "2026-06-06T18:30:15.000Z",
+    "owner_name": null,
+    "owner_names": [],
+    "phones": [],
+    "emails": [],
+    "contacts": [],
+    "mailing_address": "APN: 07-00252-20-00015 Brick, NJ, 08723",
+    "property": {
+     "dm_property_id": "prop_86782430",
+     "full_address": "APN: 07-00252-20-00015 Brick, NJ, 08723",
+     "address": "231 Cedar Island Dr",
+     "city": "Brick",
+     "state": "NJ",
+     "zip": "08723",
+     "latitude": 40.015778971,
+     "longitude": -74.10104805,
+     "estimated_value": 2543000,
+     "estimated_equity_amount": 1013856,
+     "estimated_equity_percentage": null,
+     "year_built": null,
+     "living_area_sqft": 0,
+     "lot_size_sqft": 5998,
+     "num_bedrooms": 0,
+     "num_bathrooms": null,
+     "last_sale_date": "2025-10-09T00:00:00.000Z",
+     "last_sale_amount": 2050000,
+     "total_assessed_value": 488500,
+     "annual_property_tax_amount": 13258,
+     "num_mortgages": 1,
+     "total_original_loan_amount": 1537500,
+     "total_estimated_loan_balance": 1529144,
+     "owner_occupied": true,
+     "apn": "07-00252-20-00015"
+    },
+    "mortgages": [
+     {
+      "mortgage_number": 1,
+      "id": "11993532390",
+      "transaction_id": "11993532390",
+      "lender_name": "CITIBANK NA",
+      "is_private_lender": false,
+      "loan_type_id": 20,
+      "loan_type": "New Conventional",
+      "loan_financing_type_id": 2,
+      "loan_financing_type": "Fixed Rate",
+      "loan_amount": 1537500,
+      "loan_balance": 1529144,
+      "loan_interest_rate": 6.56,
+      "loan_term_months": 360,
+      "loan_start_date": "2025-10-09T00:00:00.000Z",
+      "loan_recording_date": "2025-10-09T00:00:00.000Z",
+      "loan_due_date": "2055-10-01T00:00:00.000Z",
+      "has_adjustable_rate_rider": false,
+      "lien_position": 1,
+      "estimated_payment_amount": 9778.79,
+      "classification": "primary",
+      "classification_label": "Primary mortgage",
+      "classification_reason": "DataTree marks this mortgage as lien position 1."
+     }
+    ],
+    "credits": {
+     "properties": 1,
+     "people": 0
+    }
+   },
+   "dm_enrichment_status": "enriched",
    "enrichment_sources": [
     "dealmachine"
    ],
-   "owner_occupied": null,
+   "owner_occupied": true,
    "owner_mailing_address": "2055 RIVER RD",
    "owner_mailing_city": "BEDMINSTER",
    "owner_mailing_state": "NJ",
@@ -48996,16 +49293,88 @@
    "net_value": 18900,
    "year_built": 0,
    "last_sale_price": 800000,
-   "dm_enrichment_status": "pending_retry",
+   "dealmachine": {
+    "source": "dealmachine",
+    "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+    "matched": true,
+    "enrichment_status": "enriched",
+    "matched_by": "apn",
+    "enriched_at": "2026-07-02T07:33:59.910803+00:00",
+    "billing_cycle": "2026-06-06T18:30:15.000Z",
+    "owner_name": null,
+    "owner_names": [],
+    "phones": [],
+    "emails": [],
+    "contacts": [],
+    "mailing_address": null,
+    "property": {
+     "dm_property_id": "prop_86782527",
+     "full_address": "APN: 07-00252-21-00015 Brick, NJ, 08723",
+     "address": "221 Cedar Island Dr",
+     "city": "Brick",
+     "state": "NJ",
+     "zip": "08723",
+     "latitude": 40.016036099,
+     "longitude": -74.1007148,
+     "estimated_value": 309000,
+     "estimated_equity_amount": -1220144,
+     "estimated_equity_percentage": null,
+     "year_built": null,
+     "living_area_sqft": 0,
+     "lot_size_sqft": 488,
+     "num_bedrooms": 0,
+     "num_bathrooms": null,
+     "last_sale_date": "2025-10-09T00:00:00.000Z",
+     "last_sale_amount": 2050000,
+     "total_assessed_value": 18900,
+     "annual_property_tax_amount": 513,
+     "num_mortgages": 1,
+     "total_original_loan_amount": 1537500,
+     "total_estimated_loan_balance": 1529144,
+     "owner_occupied": false,
+     "apn": "07-00252-21-00015"
+    },
+    "mortgages": [
+     {
+      "mortgage_number": 1,
+      "id": "11993532389",
+      "transaction_id": "11993532389",
+      "lender_name": "CITIBANK NA",
+      "is_private_lender": false,
+      "loan_type_id": 20,
+      "loan_type": "New Conventional",
+      "loan_financing_type_id": 2,
+      "loan_financing_type": "Fixed Rate",
+      "loan_amount": 1537500,
+      "loan_balance": 1529144,
+      "loan_interest_rate": 6.56,
+      "loan_term_months": 360,
+      "loan_start_date": "2025-10-09T00:00:00.000Z",
+      "loan_recording_date": "2025-10-09T00:00:00.000Z",
+      "loan_due_date": "2055-10-01T00:00:00.000Z",
+      "has_adjustable_rate_rider": false,
+      "lien_position": 1,
+      "estimated_payment_amount": 9778.79,
+      "classification": "primary",
+      "classification_label": "Primary mortgage",
+      "classification_reason": "DataTree marks this mortgage as lien position 1."
+     }
+    ],
+    "credits": {
+     "properties": 1,
+     "people": 0
+    }
+   },
+   "dm_enrichment_status": "enriched",
    "enrichment_sources": [
     "dealmachine"
    ],
-   "owner_occupied": null,
+   "owner_occupied": false,
    "owner_mailing_address": "2055 RIVER RD",
    "owner_mailing_city": "BEDMINSTER",
    "owner_mailing_state": "NJ",
    "owner_mailing_zip": "07921",
-   "absentee": false,
+   "absentee": true,
    "out_of_state": false
   },
   {
@@ -49053,11 +49422,113 @@
    "net_value": 493500,
    "year_built": 1988,
    "last_sale_price": 975000,
-   "dm_enrichment_status": "pending_retry",
+   "dealmachine": {
+    "source": "dealmachine",
+    "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+    "matched": true,
+    "enrichment_status": "enriched",
+    "matched_by": "apn",
+    "enriched_at": "2026-07-02T07:33:59.910803+00:00",
+    "billing_cycle": "2026-06-06T18:30:15.000Z",
+    "owner_name": "JEFFREY PANTANO",
+    "owner_names": [
+     "JEFFREY PANTANO"
+    ],
+    "phones": [
+     "8452221233",
+     "8455484297"
+    ],
+    "emails": [
+     "JIFFYJEFF64@MSN.COM"
+    ],
+    "contacts": [
+     {
+      "dm_person_id": "per_1504458156146",
+      "full_name": "JEFFREY PANTANO",
+      "first_name": "JEFFREY",
+      "last_name": "PANTANO",
+      "contact_type": "owner",
+      "is_resident": true,
+      "phones": [
+       {
+        "number": "8452221233",
+        "type": "landline",
+        "do_not_call": false
+       },
+       {
+        "number": "8455484297",
+        "type": "landline",
+        "do_not_call": false
+       }
+      ],
+      "emails": [
+       "JIFFYJEFF64@MSN.COM"
+      ]
+     }
+    ],
+    "mailing_address": "10 Halsey Dr Brick, NJ, 08723",
+    "property": {
+     "dm_property_id": "prop_86782644",
+     "full_address": "10 Halsey Dr Brick, NJ, 08723",
+     "address": "10 Halsey Dr",
+     "city": "Brick",
+     "state": "NJ",
+     "zip": "08723",
+     "latitude": 40.020961,
+     "longitude": -74.102436,
+     "estimated_value": 1154000,
+     "estimated_equity_amount": 490590,
+     "estimated_equity_percentage": 37,
+     "year_built": 1988,
+     "living_area_sqft": 2460,
+     "lot_size_sqft": 5031,
+     "num_bedrooms": 4,
+     "num_bathrooms": 3,
+     "last_sale_date": "2023-09-25T00:00:00.000Z",
+     "last_sale_amount": 975000,
+     "total_assessed_value": 493500,
+     "annual_property_tax_amount": 13394,
+     "num_mortgages": 1,
+     "total_original_loan_amount": 682500,
+     "total_estimated_loan_balance": 663410,
+     "owner_occupied": true,
+     "apn": "07-00253-15-00021"
+    },
+    "mortgages": [
+     {
+      "mortgage_number": 1,
+      "id": "11913688522",
+      "transaction_id": "11913688522",
+      "lender_name": "ABSOLUTE HOME MORTGAGE CORP",
+      "is_private_lender": false,
+      "loan_type_id": 20,
+      "loan_type": "New Conventional",
+      "loan_financing_type": "Unknown Financing Type",
+      "loan_amount": 682500,
+      "loan_balance": 663410,
+      "loan_interest_rate": 6.96,
+      "loan_term_months": 360,
+      "loan_start_date": "2023-09-25T00:00:00.000Z",
+      "loan_recording_date": "2023-09-25T00:00:00.000Z",
+      "loan_due_date": "2053-10-01T00:00:00.000Z",
+      "has_adjustable_rate_rider": false,
+      "lien_position": 1,
+      "estimated_payment_amount": 4522.37,
+      "classification": "primary",
+      "classification_label": "Primary mortgage",
+      "classification_reason": "DataTree marks this mortgage as lien position 1."
+     }
+    ],
+    "credits": {
+     "properties": 1,
+     "people": 1
+    }
+   },
+   "dm_enrichment_status": "enriched",
    "enrichment_sources": [
     "dealmachine"
    ],
-   "owner_occupied": null,
+   "owner_occupied": true,
    "owner_mailing_address": "10 HALSEY DRIVE",
    "owner_mailing_city": "BRICK",
    "owner_mailing_state": "NJ",
@@ -49110,7 +49581,20 @@
    "net_value": 741600,
    "year_built": 2003,
    "last_sale_price": 950000,
-   "dm_enrichment_status": "pending_retry",
+   "dealmachine": {
+    "source": "dealmachine",
+    "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+    "matched": false,
+    "enrichment_status": "no_dm_record",
+    "matched_by": "apn",
+    "enriched_at": "2026-07-02T07:33:59.910803+00:00",
+    "billing_cycle": "2026-06-06T18:30:15.000Z",
+    "match_failure": {
+     "code": "wrong_county",
+     "reason": "APN resolved outside Ocean County (Kearny, 07032)"
+    }
+   },
+   "dm_enrichment_status": "no_dm_record",
    "enrichment_sources": [
     "dealmachine"
    ],
@@ -49167,16 +49651,63 @@
    "net_value": 337700,
    "year_built": 1950,
    "last_sale_price": 300000,
-   "dm_enrichment_status": "pending_retry",
+   "dealmachine": {
+    "source": "dealmachine",
+    "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+    "matched": true,
+    "enrichment_status": "enriched",
+    "matched_by": "apn",
+    "enriched_at": "2026-07-02T07:33:59.910803+00:00",
+    "billing_cycle": "2026-06-06T18:30:15.000Z",
+    "owner_name": null,
+    "owner_names": [],
+    "phones": [],
+    "emails": [],
+    "contacts": [],
+    "mailing_address": null,
+    "property": {
+     "dm_property_id": "prop_86749142",
+     "full_address": "40 Paul Jones Dr Brick, NJ, 08723",
+     "address": "40 Paul Jones Dr",
+     "city": "Brick",
+     "state": "NJ",
+     "zip": "08723",
+     "latitude": 40.019669737,
+     "longitude": -74.10575453,
+     "estimated_value": 426000,
+     "estimated_equity_amount": 426000,
+     "estimated_equity_percentage": 100,
+     "year_built": 1950,
+     "living_area_sqft": 1204,
+     "lot_size_sqft": 7362,
+     "num_bedrooms": 3,
+     "num_bathrooms": 2,
+     "last_sale_date": "2022-03-25T00:00:00.000Z",
+     "last_sale_amount": 300000,
+     "total_assessed_value": 337700,
+     "annual_property_tax_amount": 9165,
+     "num_mortgages": 0,
+     "total_original_loan_amount": 0,
+     "total_estimated_loan_balance": 0,
+     "owner_occupied": false,
+     "apn": "07-00260-0000-00043-01"
+    },
+    "mortgages": [],
+    "credits": {
+     "properties": 1,
+     "people": 0
+    }
+   },
+   "dm_enrichment_status": "enriched",
    "enrichment_sources": [
     "dealmachine"
    ],
-   "owner_occupied": null,
+   "owner_occupied": false,
    "owner_mailing_address": "40 PAUL JONES DRIVE",
    "owner_mailing_city": "BRICK",
    "owner_mailing_state": "NJ",
    "owner_mailing_zip": "08723",
-   "absentee": false,
+   "absentee": true,
    "out_of_state": false
   },
   {
@@ -49224,16 +49755,87 @@
    "net_value": 45900,
    "year_built": 0,
    "last_sale_price": 950000,
-   "dm_enrichment_status": "pending_retry",
+   "dealmachine": {
+    "source": "dealmachine",
+    "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+    "matched": true,
+    "enrichment_status": "enriched",
+    "matched_by": "apn",
+    "enriched_at": "2026-07-02T07:33:59.910803+00:00",
+    "billing_cycle": "2026-06-06T18:30:15.000Z",
+    "owner_name": null,
+    "owner_names": [],
+    "phones": [],
+    "emails": [],
+    "contacts": [],
+    "mailing_address": null,
+    "property": {
+     "dm_property_id": "prop_86749170",
+     "full_address": "APN: 07-00260-0000-00046-01 Brick, NJ, 08723",
+     "address": "Paul Jones Dr",
+     "city": "Brick",
+     "state": "NJ",
+     "zip": "08723",
+     "latitude": 40.019313,
+     "longitude": -74.105776,
+     "estimated_value": 257000,
+     "estimated_equity_amount": -409542,
+     "estimated_equity_percentage": null,
+     "year_built": null,
+     "living_area_sqft": 0,
+     "lot_size_sqft": 1982,
+     "num_bedrooms": 0,
+     "num_bathrooms": null,
+     "last_sale_date": "2020-08-17T00:00:00.000Z",
+     "last_sale_amount": 950000,
+     "total_assessed_value": 45900,
+     "annual_property_tax_amount": 1246,
+     "num_mortgages": 1,
+     "total_original_loan_amount": 760000,
+     "total_estimated_loan_balance": 666542,
+     "owner_occupied": false,
+     "apn": "07-00260-0000-00046-01"
+    },
+    "mortgages": [
+     {
+      "mortgage_number": 1,
+      "id": "11781484042",
+      "transaction_id": "11781484042",
+      "lender_name": "ADVISORS MORTGAGE GROUP INC",
+      "is_private_lender": false,
+      "loan_type_id": 20,
+      "loan_type": "New Conventional",
+      "loan_financing_type": "Unknown Financing Type",
+      "loan_amount": 760000,
+      "loan_balance": 666542,
+      "loan_interest_rate": 3,
+      "loan_term_months": 360,
+      "loan_start_date": "2020-08-17T00:00:00.000Z",
+      "loan_recording_date": "2020-08-17T00:00:00.000Z",
+      "loan_due_date": "2050-09-01T00:00:00.000Z",
+      "has_adjustable_rate_rider": false,
+      "lien_position": 1,
+      "estimated_payment_amount": 3204.19,
+      "classification": "primary",
+      "classification_label": "Primary mortgage",
+      "classification_reason": "DataTree marks this mortgage as lien position 1."
+     }
+    ],
+    "credits": {
+     "properties": 1,
+     "people": 0
+    }
+   },
+   "dm_enrichment_status": "enriched",
    "enrichment_sources": [
     "dealmachine"
    ],
-   "owner_occupied": null,
+   "owner_occupied": false,
    "owner_mailing_address": "37 PAUL JONES DRIVE",
    "owner_mailing_city": "BRICK",
    "owner_mailing_state": "NJ",
    "owner_mailing_zip": "08723",
-   "absentee": false,
+   "absentee": true,
    "out_of_state": false
   },
   {
@@ -49338,7 +49940,20 @@
    "net_value": 279000,
    "year_built": 1938,
    "last_sale_price": 150000,
-   "dm_enrichment_status": "pending_retry",
+   "dealmachine": {
+    "source": "dealmachine",
+    "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+    "matched": false,
+    "enrichment_status": "no_dm_record",
+    "matched_by": "apn",
+    "enriched_at": "2026-07-02T07:33:59.910803+00:00",
+    "billing_cycle": "2026-06-06T18:30:15.000Z",
+    "match_failure": {
+     "code": "wrong_county",
+     "reason": "APN resolved outside Ocean County (Wildwood, 08260)"
+    }
+   },
+   "dm_enrichment_status": "no_dm_record",
    "enrichment_sources": [
     "dealmachine"
    ],
@@ -49395,7 +50010,20 @@
    "net_value": 448200,
    "year_built": 1987,
    "last_sale_price": 605500,
-   "dm_enrichment_status": "pending_retry",
+   "dealmachine": {
+    "source": "dealmachine",
+    "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+    "matched": false,
+    "enrichment_status": "no_dm_record",
+    "matched_by": "apn",
+    "enriched_at": "2026-07-02T07:33:59.910803+00:00",
+    "billing_cycle": "2026-06-06T18:30:15.000Z",
+    "match_failure": {
+     "code": "wrong_county",
+     "reason": "APN resolved outside Ocean County (Kearny, 07032)"
+    }
+   },
+   "dm_enrichment_status": "no_dm_record",
    "enrichment_sources": [
     "dealmachine"
    ],
@@ -49452,11 +50080,112 @@
    "net_value": 268900,
    "year_built": 2001,
    "last_sale_price": 125000,
-   "dm_enrichment_status": "pending_retry",
+   "dealmachine": {
+    "source": "dealmachine",
+    "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+    "matched": true,
+    "enrichment_status": "enriched",
+    "matched_by": "apn",
+    "enriched_at": "2026-07-02T07:33:59.910803+00:00",
+    "billing_cycle": "2026-06-06T18:30:15.000Z",
+    "owner_name": "MARI TINNIRELLA",
+    "owner_names": [
+     "MARI TINNIRELLA",
+     "STEPHEN TINNIRELLA"
+    ],
+    "phones": [
+     "7324774648",
+     "9089104663",
+     "7325512408"
+    ],
+    "emails": [
+     "SMT2KIDS@COMCAST.NET",
+     "STEPHENTINNIRELLA@COMCAST.NET",
+     "STEPHENTINNIRELLA@WEBTV.NET"
+    ],
+    "contacts": [
+     {
+      "dm_person_id": "per_150102000593",
+      "full_name": "MARI TINNIRELLA",
+      "first_name": "MARI",
+      "last_name": "TINNIRELLA",
+      "contact_type": "owner",
+      "is_resident": true,
+      "phones": [
+       {
+        "number": "7324774648",
+        "type": "wireless",
+        "do_not_call": false
+       }
+      ],
+      "emails": [
+       "SMT2KIDS@COMCAST.NET"
+      ]
+     },
+     {
+      "dm_person_id": "per_150606914171",
+      "full_name": "STEPHEN TINNIRELLA",
+      "first_name": "STEPHEN",
+      "last_name": "TINNIRELLA",
+      "contact_type": "owner",
+      "is_resident": true,
+      "phones": [
+       {
+        "number": "9089104663",
+        "type": "landline",
+        "do_not_call": false
+       },
+       {
+        "number": "7325512408",
+        "type": "wireless",
+        "do_not_call": false
+       }
+      ],
+      "emails": [
+       "STEPHENTINNIRELLA@COMCAST.NET",
+       "STEPHENTINNIRELLA@WEBTV.NET"
+      ]
+     }
+    ],
+    "mailing_address": "59 Bayview Dr Brick, NJ, 08723",
+    "property": {
+     "dm_property_id": "prop_86736426",
+     "full_address": "59 Bayview Dr Brick, NJ, 08723",
+     "address": "59 Bayview Dr",
+     "city": "Brick",
+     "state": "NJ",
+     "zip": "08723",
+     "latitude": 40.026349,
+     "longitude": -74.104003,
+     "estimated_value": 437000,
+     "estimated_equity_amount": 437000,
+     "estimated_equity_percentage": 100,
+     "year_built": 2001,
+     "living_area_sqft": 1550,
+     "lot_size_sqft": 5014,
+     "num_bedrooms": 3,
+     "num_bathrooms": 2,
+     "last_sale_date": "2001-09-05T00:00:00.000Z",
+     "last_sale_amount": 125000,
+     "total_assessed_value": 268900,
+     "annual_property_tax_amount": 7298,
+     "num_mortgages": 0,
+     "total_original_loan_amount": 0,
+     "total_estimated_loan_balance": 0,
+     "owner_occupied": true,
+     "apn": "07-00284-0000-00052-02"
+    },
+    "mortgages": [],
+    "credits": {
+     "properties": 1,
+     "people": 2
+    }
+   },
+   "dm_enrichment_status": "enriched",
    "enrichment_sources": [
     "dealmachine"
    ],
-   "owner_occupied": null,
+   "owner_occupied": true,
    "owner_mailing_address": "59 BAYVIEW DR",
    "owner_mailing_city": "BRICK",
    "owner_mailing_state": "NJ",
@@ -49509,16 +50238,87 @@
    "net_value": 210700,
    "year_built": 1950,
    "last_sale_price": 1,
-   "dm_enrichment_status": "pending_retry",
+   "dealmachine": {
+    "source": "dealmachine",
+    "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+    "matched": true,
+    "enrichment_status": "enriched",
+    "matched_by": "apn",
+    "enriched_at": "2026-07-02T07:33:59.910803+00:00",
+    "billing_cycle": "2026-06-06T18:30:15.000Z",
+    "owner_name": null,
+    "owner_names": [],
+    "phones": [],
+    "emails": [],
+    "contacts": [],
+    "mailing_address": null,
+    "property": {
+     "dm_property_id": "prop_86736456",
+     "full_address": "12 Fullerton Dr Brick, NJ, 08723",
+     "address": "12 Fullerton Dr",
+     "city": "Brick",
+     "state": "NJ",
+     "zip": "08723",
+     "latitude": 40.026953868,
+     "longitude": -74.10264317,
+     "estimated_value": 452000,
+     "estimated_equity_amount": 266823,
+     "estimated_equity_percentage": 59,
+     "year_built": 1950,
+     "living_area_sqft": 1292,
+     "lot_size_sqft": 4400,
+     "num_bedrooms": 2,
+     "num_bathrooms": 1,
+     "last_sale_date": "2018-07-03T00:00:00.000Z",
+     "last_sale_amount": 9600,
+     "total_assessed_value": 210700,
+     "annual_property_tax_amount": 5718,
+     "num_mortgages": 1,
+     "total_original_loan_amount": 200000,
+     "total_estimated_loan_balance": 185177,
+     "owner_occupied": false,
+     "apn": "07-00285-0000-00027"
+    },
+    "mortgages": [
+     {
+      "mortgage_number": 1,
+      "id": "21233908166",
+      "transaction_id": "21233908166",
+      "lender_name": "ICE LENDER HOLDINGS LLC",
+      "is_private_lender": false,
+      "loan_type_id": 20,
+      "loan_type": "New Conventional",
+      "loan_financing_type": "Unknown Financing Type",
+      "loan_amount": 200000,
+      "loan_balance": 185177,
+      "loan_interest_rate": 3.92,
+      "loan_term_months": 360,
+      "loan_start_date": "2022-03-29T00:00:00.000Z",
+      "loan_recording_date": "2022-03-29T00:00:00.000Z",
+      "loan_due_date": "2052-03-29T00:00:00.000Z",
+      "has_adjustable_rate_rider": false,
+      "lien_position": 1,
+      "estimated_payment_amount": 945.63,
+      "classification": "primary",
+      "classification_label": "Primary mortgage",
+      "classification_reason": "DataTree marks this mortgage as lien position 1."
+     }
+    ],
+    "credits": {
+     "properties": 1,
+     "people": 0
+    }
+   },
+   "dm_enrichment_status": "enriched",
    "enrichment_sources": [
     "dealmachine"
    ],
-   "owner_occupied": null,
+   "owner_occupied": false,
    "owner_mailing_address": "5314 16TH AVE STE 136",
    "owner_mailing_city": "BROOKLYN",
    "owner_mailing_state": "NY",
    "owner_mailing_zip": "11218",
-   "absentee": false,
+   "absentee": true,
    "out_of_state": true
   },
   {
@@ -79666,16 +80466,151 @@
    "net_value": 300000,
    "year_built": 2000,
    "last_sale_price": 338000,
-   "dm_enrichment_status": "pending_retry",
+   "dealmachine": {
+    "source": "dealmachine",
+    "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+    "matched": true,
+    "enrichment_status": "enriched",
+    "matched_by": "apn",
+    "enriched_at": "2026-07-02T07:33:59.910803+00:00",
+    "billing_cycle": "2026-06-06T18:30:15.000Z",
+    "owner_name": "THOMAS LAVECCHIA",
+    "owner_names": [
+     "THOMAS LAVECCHIA"
+    ],
+    "phones": [
+     "7187860519",
+     "7183585335",
+     "5164100200"
+    ],
+    "emails": [
+     "TJLPROPERTY@GMAIL.COM",
+     "THOMAS_LAVECCHIA@SPE.SONY.COM",
+     "TLAVECCHIA@SONYPICTURES.COM"
+    ],
+    "contacts": [
+     {
+      "dm_person_id": "per_150228141701",
+      "full_name": "THOMAS LAVECCHIA",
+      "first_name": "THOMAS",
+      "last_name": "LAVECCHIA",
+      "contact_type": "owner",
+      "is_resident": true,
+      "phones": [
+       {
+        "number": "7187860519",
+        "type": "wireless",
+        "do_not_call": false
+       },
+       {
+        "number": "7183585335",
+        "type": "wireless",
+        "do_not_call": false
+       },
+       {
+        "number": "5164100200",
+        "type": "landline",
+        "do_not_call": false
+       }
+      ],
+      "emails": [
+       "TJLPROPERTY@GMAIL.COM",
+       "THOMAS_LAVECCHIA@SPE.SONY.COM",
+       "TLAVECCHIA@SONYPICTURES.COM"
+      ]
+     }
+    ],
+    "mailing_address": null,
+    "property": {
+     "dm_property_id": "prop_86726005",
+     "full_address": "5 Division St Brick, NJ, 08724",
+     "address": "5 Division St",
+     "city": "Brick",
+     "state": "NJ",
+     "zip": "08724",
+     "latitude": 40.066997,
+     "longitude": -74.127602,
+     "estimated_value": 807000,
+     "estimated_equity_amount": 556502,
+     "estimated_equity_percentage": 64,
+     "year_built": 2000,
+     "living_area_sqft": 1736,
+     "lot_size_sqft": 24999,
+     "num_bedrooms": 3,
+     "num_bathrooms": 2,
+     "last_sale_date": "2012-08-15T00:00:00.000Z",
+     "last_sale_amount": 338000,
+     "total_assessed_value": 300000,
+     "annual_property_tax_amount": 8226,
+     "num_mortgages": 2,
+     "total_original_loan_amount": 340400,
+     "total_estimated_loan_balance": 250498,
+     "owner_occupied": false,
+     "apn": "07-00857-0000-00007-01"
+    },
+    "mortgages": [
+     {
+      "mortgage_number": 1,
+      "id": "1165712636",
+      "transaction_id": "1165712636",
+      "lender_name": "OCEANFIRST BANK",
+      "is_private_lender": false,
+      "loan_type_id": 1,
+      "loan_type": "Stand Alone First",
+      "loan_financing_type": "Unknown Financing Type",
+      "loan_amount": 270400,
+      "loan_balance": 181243,
+      "loan_interest_rate": 3.67,
+      "loan_term_months": 360,
+      "loan_start_date": "2012-08-15T00:00:00.000Z",
+      "loan_recording_date": "2012-08-15T00:00:00.000Z",
+      "loan_due_date": "2042-09-01T00:00:00.000Z",
+      "has_adjustable_rate_rider": false,
+      "lien_position": 1,
+      "estimated_payment_amount": 1240.02,
+      "classification": "primary",
+      "classification_label": "Primary mortgage",
+      "classification_reason": "DataTree marks this mortgage as lien position 1."
+     },
+     {
+      "mortgage_number": 2,
+      "id": "21262920230",
+      "transaction_id": "21262920230",
+      "lender_name": "POINT DIGITAL FINANCE, INC.",
+      "is_private_lender": false,
+      "loan_type_id": 20,
+      "loan_type": "New Conventional",
+      "loan_financing_type": "Unknown Financing Type",
+      "loan_amount": 70000,
+      "loan_balance": 69255,
+      "loan_interest_rate": 6.76,
+      "loan_term_months": 360,
+      "loan_start_date": "2025-06-12T00:00:00.000Z",
+      "loan_recording_date": "2025-06-12T00:00:00.000Z",
+      "loan_due_date": "2055-05-31T00:00:00.000Z",
+      "has_adjustable_rate_rider": false,
+      "lien_position": 2,
+      "estimated_payment_amount": 454.48,
+      "classification": "subordinate",
+      "classification_label": "Possible second lien",
+      "classification_reason": "DataTree marks this mortgage as lien position 2."
+     }
+    ],
+    "credits": {
+     "properties": 1,
+     "people": 1
+    }
+   },
+   "dm_enrichment_status": "enriched",
    "enrichment_sources": [
     "dealmachine"
    ],
-   "owner_occupied": null,
+   "owner_occupied": false,
    "owner_mailing_address": "11-15 129TH ST",
    "owner_mailing_city": "COLLEGE PT",
    "owner_mailing_state": "NY",
    "owner_mailing_zip": "11356",
-   "absentee": false,
+   "absentee": true,
    "out_of_state": true
   },
   {
@@ -79723,16 +80658,133 @@
    "net_value": 1279700,
    "year_built": 2003,
    "last_sale_price": 1999999,
-   "dm_enrichment_status": "pending_retry",
+   "dealmachine": {
+    "source": "dealmachine",
+    "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+    "matched": true,
+    "enrichment_status": "enriched",
+    "matched_by": "apn",
+    "enriched_at": "2026-07-02T07:33:59.910803+00:00",
+    "billing_cycle": "2026-06-06T18:30:15.000Z",
+    "owner_name": "RONALD DIMAGGIO",
+    "owner_names": [
+     "RONALD DIMAGGIO",
+     "RONALD DIMAGGIO"
+    ],
+    "phones": [
+     "9733861473",
+     "9733860782",
+     "9735600703",
+     "7327140420"
+    ],
+    "emails": [
+     "RAD4TH@AOL.COM",
+     "RADTH@HOTMAIL.COM"
+    ],
+    "contacts": [
+     {
+      "dm_person_id": "per_150478004391",
+      "full_name": "RONALD DIMAGGIO",
+      "first_name": "RONALD",
+      "last_name": "DIMAGGIO",
+      "contact_type": "owner",
+      "is_resident": false,
+      "phones": [
+       {
+        "number": "9733861473",
+        "type": "wireless",
+        "do_not_call": false
+       },
+       {
+        "number": "9733860782",
+        "type": "wireless",
+        "do_not_call": false
+       },
+       {
+        "number": "9735600703",
+        "type": "wireless",
+        "do_not_call": false
+       }
+      ],
+      "emails": [
+       "RAD4TH@AOL.COM",
+       "RADTH@HOTMAIL.COM"
+      ]
+     },
+     {
+      "dm_person_id": "per_1504468753833",
+      "full_name": "RONALD DIMAGGIO",
+      "first_name": "RONALD",
+      "last_name": "DIMAGGIO",
+      "contact_type": "owner",
+      "is_resident": false,
+      "phones": [
+       {
+        "number": "7327140420",
+        "type": "wireless",
+        "do_not_call": false
+       },
+       {
+        "number": "9733860782",
+        "type": "wireless",
+        "do_not_call": false
+       },
+       {
+        "number": "9733861473",
+        "type": "wireless",
+        "do_not_call": false
+       }
+      ],
+      "emails": [
+       "RAD4TH@AOL.COM",
+       "RADTH@HOTMAIL.COM"
+      ]
+     }
+    ],
+    "mailing_address": null,
+    "property": {
+     "dm_property_id": "prop_86726467",
+     "full_address": "75 Fairview Ave Brick, NJ, 08724",
+     "address": "75 Fairview Ave",
+     "city": "Brick",
+     "state": "NJ",
+     "zip": "08724",
+     "latitude": 40.060496,
+     "longitude": -74.117284,
+     "estimated_value": 1472000,
+     "estimated_equity_amount": 1472000,
+     "estimated_equity_percentage": 100,
+     "year_built": 2003,
+     "living_area_sqft": 4175,
+     "lot_size_sqft": 10855,
+     "num_bedrooms": 5,
+     "num_bathrooms": 5,
+     "last_sale_date": "2005-02-22T00:00:00.000Z",
+     "last_sale_amount": 1999999,
+     "total_assessed_value": 1279700,
+     "annual_property_tax_amount": 35089,
+     "num_mortgages": 0,
+     "total_original_loan_amount": 0,
+     "total_estimated_loan_balance": 0,
+     "owner_occupied": false,
+     "apn": "07-00864-0000-00001-05"
+    },
+    "mortgages": [],
+    "credits": {
+     "properties": 1,
+     "people": 2
+    }
+   },
+   "dm_enrichment_status": "enriched",
    "enrichment_sources": [
     "dealmachine"
    ],
-   "owner_occupied": null,
+   "owner_occupied": false,
    "owner_mailing_address": "95 PARSIPPANY ROAD",
    "owner_mailing_city": "PARSIPPANY,",
    "owner_mailing_state": "NJ",
    "owner_mailing_zip": "07054",
-   "absentee": false,
+   "absentee": true,
    "out_of_state": false
   },
   {
@@ -79780,16 +80832,173 @@
    "net_value": 575500,
    "year_built": 1970,
    "last_sale_price": 1810000,
-   "dm_enrichment_status": "pending_retry",
+   "dealmachine": {
+    "source": "dealmachine",
+    "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+    "matched": true,
+    "enrichment_status": "enriched",
+    "matched_by": "apn",
+    "enriched_at": "2026-07-02T07:33:59.910803+00:00",
+    "billing_cycle": "2026-06-06T18:30:15.000Z",
+    "owner_name": "DONNA ROETTGER",
+    "owner_names": [
+     "DONNA ROETTGER",
+     "ROBERT ROETTGER",
+     "KEIDON ROETTGER",
+     "KEITH ROETTGER",
+     "KARINA ROETTGER"
+    ],
+    "phones": [
+     "7328991550",
+     "2018199375",
+     "7329480820",
+     "9738390355"
+    ],
+    "emails": [
+     "KEIDONROET@GMAIL.COM",
+     "KEITH@24-7BUILDERS.COM",
+     "KEITH@247BUILDERS.COM",
+     "KEITHROETTGER@GMAIL.COM",
+     "KARINAROETTGER123@GMAIL.COM",
+     "KEITHROET@GMAIL.COM"
+    ],
+    "contacts": [
+     {
+      "dm_person_id": "per_150155161999",
+      "full_name": "DONNA ROETTGER",
+      "first_name": "DONNA",
+      "last_name": "ROETTGER",
+      "contact_type": "owner",
+      "is_resident": true,
+      "phones": [
+       {
+        "number": "7328991550",
+        "type": "wireless",
+        "do_not_call": false
+       },
+       {
+        "number": "2018199375",
+        "type": "landline",
+        "do_not_call": false
+       },
+       {
+        "number": "7329480820",
+        "type": "landline",
+        "do_not_call": false
+       }
+      ],
+      "emails": []
+     },
+     {
+      "dm_person_id": "per_1504417997047",
+      "full_name": "ROBERT ROETTGER",
+      "first_name": "ROBERT",
+      "last_name": "ROETTGER",
+      "contact_type": "owner",
+      "is_resident": true,
+      "phones": [],
+      "emails": []
+     },
+     {
+      "dm_person_id": "per_1504567897809",
+      "full_name": "KEIDON ROETTGER",
+      "first_name": "KEIDON",
+      "last_name": "ROETTGER",
+      "contact_type": "owner",
+      "is_resident": true,
+      "phones": [],
+      "emails": [
+       "KEIDONROET@GMAIL.COM"
+      ]
+     },
+     {
+      "dm_person_id": "per_1504756839908",
+      "full_name": "KEITH ROETTGER",
+      "first_name": "KEITH",
+      "last_name": "ROETTGER",
+      "contact_type": "owner",
+      "is_resident": true,
+      "phones": [
+       {
+        "number": "7329480820",
+        "type": "landline",
+        "do_not_call": false
+       },
+       {
+        "number": "9738390355",
+        "type": "wireless",
+        "do_not_call": false
+       },
+       {
+        "number": "2018199375",
+        "type": "landline",
+        "do_not_call": false
+       }
+      ],
+      "emails": [
+       "KEITH@24-7BUILDERS.COM",
+       "KEITH@247BUILDERS.COM",
+       "KEITHROETTGER@GMAIL.COM"
+      ]
+     },
+     {
+      "dm_person_id": "per_1506546893596",
+      "full_name": "KARINA ROETTGER",
+      "first_name": "KARINA",
+      "last_name": "ROETTGER",
+      "contact_type": "owner",
+      "is_resident": true,
+      "phones": [],
+      "emails": [
+       "KARINAROETTGER123@GMAIL.COM",
+       "KEITHROET@GMAIL.COM"
+      ]
+     }
+    ],
+    "mailing_address": null,
+    "property": {
+     "dm_property_id": "prop_86726590",
+     "full_address": "18 Fairview Ave Brick, NJ, 08724",
+     "address": "18 Fairview Ave",
+     "city": "Brick",
+     "state": "NJ",
+     "zip": "08724",
+     "latitude": 40.063132,
+     "longitude": -74.119327,
+     "estimated_value": 783000,
+     "estimated_equity_amount": 783000,
+     "estimated_equity_percentage": 100,
+     "year_built": 1970,
+     "living_area_sqft": 1858,
+     "lot_size_sqft": 35998,
+     "num_bedrooms": 3,
+     "num_bathrooms": 3,
+     "last_sale_date": "2003-01-28T00:00:00.000Z",
+     "last_sale_amount": 1810000,
+     "total_assessed_value": 575500,
+     "annual_property_tax_amount": 15780,
+     "num_mortgages": 0,
+     "total_original_loan_amount": 0,
+     "total_estimated_loan_balance": 0,
+     "owner_occupied": false,
+     "apn": "07-00864-0000-00013"
+    },
+    "mortgages": [],
+    "credits": {
+     "properties": 1,
+     "people": 5
+    }
+   },
+   "dm_enrichment_status": "enriched",
    "enrichment_sources": [
     "dealmachine"
    ],
-   "owner_occupied": null,
+   "owner_occupied": false,
    "owner_mailing_address": "18 FAIRVIEW AVE",
    "owner_mailing_city": "BRICK",
    "owner_mailing_state": "NJ",
    "owner_mailing_zip": "08724",
-   "absentee": false,
+   "absentee": true,
    "out_of_state": false
   },
   {
@@ -79837,16 +81046,204 @@
    "net_value": 1516100,
    "year_built": 0,
    "last_sale_price": 1237500,
-   "dm_enrichment_status": "pending_retry",
+   "dealmachine": {
+    "source": "dealmachine",
+    "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+    "matched": true,
+    "enrichment_status": "enriched",
+    "matched_by": "apn",
+    "enriched_at": "2026-07-02T07:33:59.910803+00:00",
+    "billing_cycle": "2026-06-06T18:30:15.000Z",
+    "owner_name": "DIVYESH PATEL",
+    "owner_names": [
+     "DIVYESH PATEL",
+     "JALPA PATEL",
+     "VISHNU PATEL",
+     "VANSHANI PATEL",
+     "DHRUV PATEL"
+    ],
+    "phones": [
+     "7326425540",
+     "7326884050",
+     "9087562477",
+     "7326881708"
+    ],
+    "emails": [
+     "DIVYESH@HOTMAIL.COM",
+     "DIVYESHP@GMAIL.COM",
+     "DVP2695@YAHOO.COM",
+     "VISHNUPATEL1@YAHOO.COM",
+     "VISHNUPATEL1@HOTMAIL.COM",
+     "VISHNUPATEL12@GMAIL.COM"
+    ],
+    "contacts": [
+     {
+      "dm_person_id": "per_15043587206",
+      "full_name": "DIVYESH PATEL",
+      "first_name": "DIVYESH",
+      "last_name": "PATEL",
+      "contact_type": "owner",
+      "is_resident": false,
+      "phones": [
+       {
+        "number": "7326425540",
+        "type": "landline",
+        "do_not_call": false
+       },
+       {
+        "number": "7326884050",
+        "type": "landline",
+        "do_not_call": false
+       },
+       {
+        "number": "9087562477",
+        "type": "wireless",
+        "do_not_call": false
+       }
+      ],
+      "emails": [
+       "DIVYESH@HOTMAIL.COM",
+       "DIVYESHP@GMAIL.COM",
+       "DVP2695@YAHOO.COM"
+      ]
+     },
+     {
+      "dm_person_id": "per_15048944107",
+      "full_name": "JALPA PATEL",
+      "first_name": "JALPA",
+      "last_name": "PATEL",
+      "contact_type": "owner",
+      "is_resident": false,
+      "phones": [
+       {
+        "number": "7326881708",
+        "type": "landline",
+        "do_not_call": false
+       },
+       {
+        "number": "9087562477",
+        "type": "wireless",
+        "do_not_call": false
+       },
+       {
+        "number": "7326425540",
+        "type": "landline",
+        "do_not_call": false
+       }
+      ],
+      "emails": [
+       "VISHNUPATEL1@YAHOO.COM"
+      ]
+     },
+     {
+      "dm_person_id": "per_150719884306",
+      "full_name": "VISHNU PATEL",
+      "first_name": "VISHNU",
+      "last_name": "PATEL",
+      "contact_type": "owner",
+      "is_resident": false,
+      "phones": [
+       {
+        "number": "7326884050",
+        "type": "landline",
+        "do_not_call": false
+       }
+      ],
+      "emails": [
+       "VISHNUPATEL1@HOTMAIL.COM",
+       "VISHNUPATEL1@YAHOO.COM",
+       "VISHNUPATEL12@GMAIL.COM"
+      ]
+     },
+     {
+      "dm_person_id": "per_1503132305781",
+      "full_name": "VANSHANI PATEL",
+      "first_name": "VANSHANI",
+      "last_name": "PATEL",
+      "contact_type": "owner",
+      "is_resident": false,
+      "phones": [],
+      "emails": []
+     },
+     {
+      "dm_person_id": "per_1507333144659",
+      "full_name": "DHRUV PATEL",
+      "first_name": "DHRUV",
+      "last_name": "PATEL",
+      "contact_type": "owner",
+      "is_resident": false,
+      "phones": [],
+      "emails": []
+     }
+    ],
+    "mailing_address": null,
+    "property": {
+     "dm_property_id": "prop_86726877",
+     "full_address": "1811 Route 88 Brick, NJ, 08724",
+     "address": "1811 Route 88",
+     "city": "Brick",
+     "state": "NJ",
+     "zip": "08724",
+     "latitude": 40.069161,
+     "longitude": -74.127871,
+     "estimated_value": 1516100,
+     "estimated_equity_amount": 441235,
+     "estimated_equity_percentage": null,
+     "year_built": null,
+     "living_area_sqft": 6000,
+     "lot_size_sqft": 87120,
+     "num_bedrooms": 0,
+     "num_bathrooms": null,
+     "last_sale_date": "2022-08-04T00:00:00.000Z",
+     "last_sale_amount": 1237500,
+     "total_assessed_value": 1516100,
+     "annual_property_tax_amount": 41571,
+     "num_mortgages": 1,
+     "total_original_loan_amount": 1130500,
+     "total_estimated_loan_balance": 1074865,
+     "owner_occupied": false,
+     "apn": "07-00867-0000-00006-01"
+    },
+    "mortgages": [
+     {
+      "mortgage_number": 1,
+      "id": "11893857961",
+      "transaction_id": "11893857961",
+      "lender_name": "COLUMBIA BANK",
+      "is_private_lender": false,
+      "loan_type_id": 20,
+      "loan_type": "New Conventional",
+      "loan_financing_type": "Unknown Financing Type",
+      "loan_amount": 1130500,
+      "loan_balance": 1074865,
+      "loan_interest_rate": 5.81,
+      "loan_term_months": 360,
+      "loan_start_date": "2022-08-04T00:00:00.000Z",
+      "loan_recording_date": "2022-08-04T00:00:00.000Z",
+      "loan_due_date": "2052-08-04T00:00:00.000Z",
+      "has_adjustable_rate_rider": false,
+      "lien_position": 1,
+      "estimated_payment_amount": 6640.44,
+      "classification": "primary",
+      "classification_label": "Primary mortgage",
+      "classification_reason": "DataTree marks this mortgage as lien position 1."
+     }
+    ],
+    "credits": {
+     "properties": 1,
+     "people": 5
+    }
+   },
+   "dm_enrichment_status": "enriched",
    "enrichment_sources": [
     "dealmachine"
    ],
-   "owner_occupied": null,
+   "owner_occupied": false,
    "owner_mailing_address": "1781 WOODLAND AVENUE",
    "owner_mailing_city": "EDISON",
    "owner_mailing_state": "NJ",
    "owner_mailing_zip": "08820",
-   "absentee": false,
+   "absentee": true,
    "out_of_state": false
   },
   {
@@ -79951,16 +81348,119 @@
    "net_value": 290400,
    "year_built": 1960,
    "last_sale_price": 369000,
-   "dm_enrichment_status": "pending_retry",
+   "dealmachine": {
+    "source": "dealmachine",
+    "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+    "matched": true,
+    "enrichment_status": "enriched",
+    "matched_by": "apn",
+    "enriched_at": "2026-07-02T07:33:59.910803+00:00",
+    "billing_cycle": "2026-06-06T18:30:15.000Z",
+    "owner_name": "MANDIE RIZZO",
+    "owner_names": [
+     "MANDIE RIZZO"
+    ],
+    "phones": [
+     "2016795542",
+     "2019911471"
+    ],
+    "emails": [
+     "MANDIESANCHEZ13@YAHOO.COM"
+    ],
+    "contacts": [
+     {
+      "dm_person_id": "per_1501320210692",
+      "full_name": "MANDIE RIZZO",
+      "first_name": "MANDIE",
+      "last_name": "RIZZO",
+      "contact_type": "owner",
+      "is_resident": true,
+      "phones": [
+       {
+        "number": "2016795542",
+        "type": "landline",
+        "do_not_call": false
+       },
+       {
+        "number": "2019911471",
+        "type": "wireless",
+        "do_not_call": false
+       }
+      ],
+      "emails": [
+       "MANDIESANCHEZ13@YAHOO.COM"
+      ]
+     }
+    ],
+    "mailing_address": null,
+    "property": {
+     "dm_property_id": "prop_86751999",
+     "full_address": "80 Taylor Blvd Brick, NJ, 08724",
+     "address": "80 Taylor Blvd",
+     "city": "Brick",
+     "state": "NJ",
+     "zip": "08724",
+     "latitude": 40.070053,
+     "longitude": -74.121321,
+     "estimated_value": 781000,
+     "estimated_equity_amount": 500058,
+     "estimated_equity_percentage": 54,
+     "year_built": 1960,
+     "living_area_sqft": 1857,
+     "lot_size_sqft": 32705,
+     "num_bedrooms": 3,
+     "num_bathrooms": 3,
+     "last_sale_date": "2016-12-15T00:00:00.000Z",
+     "last_sale_amount": 0,
+     "total_assessed_value": 290400,
+     "annual_property_tax_amount": 7963,
+     "num_mortgages": 1,
+     "total_original_loan_amount": 350550,
+     "total_estimated_loan_balance": 280942,
+     "owner_occupied": false,
+     "apn": "07-00869-44-00009"
+    },
+    "mortgages": [
+     {
+      "mortgage_number": 1,
+      "id": "2762716275",
+      "transaction_id": "2762716275",
+      "lender_name": "WELLS FARGO BANK",
+      "is_private_lender": false,
+      "loan_type_id": 20,
+      "loan_type": "New Conventional",
+      "loan_financing_type_id": 2,
+      "loan_financing_type": "Fixed Rate",
+      "loan_amount": 350550,
+      "loan_balance": 280942,
+      "loan_interest_rate": 3.45,
+      "loan_term_months": 360,
+      "loan_start_date": "2017-03-20T00:00:00.000Z",
+      "loan_recording_date": "2017-03-20T00:00:00.000Z",
+      "loan_due_date": "2046-09-01T00:00:00.000Z",
+      "has_adjustable_rate_rider": false,
+      "lien_position": 1,
+      "estimated_payment_amount": 1564.36,
+      "classification": "primary",
+      "classification_label": "Primary mortgage",
+      "classification_reason": "DataTree marks this mortgage as lien position 1."
+     }
+    ],
+    "credits": {
+     "properties": 1,
+     "people": 1
+    }
+   },
+   "dm_enrichment_status": "enriched",
    "enrichment_sources": [
     "dealmachine"
    ],
-   "owner_occupied": null,
+   "owner_occupied": false,
    "owner_mailing_address": "80 TAYLOR BLVD",
    "owner_mailing_city": "BRICK",
    "owner_mailing_state": "NJ",
    "owner_mailing_zip": "08724",
-   "absentee": false,
+   "absentee": true,
    "out_of_state": false
   },
   {
@@ -80008,16 +81508,104 @@
    "net_value": 235000,
    "year_built": 1989,
    "last_sale_price": 1,
-   "dm_enrichment_status": "pending_retry",
+   "dealmachine": {
+    "source": "dealmachine",
+    "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+    "matched": true,
+    "enrichment_status": "enriched",
+    "matched_by": "apn",
+    "enriched_at": "2026-07-02T07:33:59.910803+00:00",
+    "billing_cycle": "2026-06-06T18:30:15.000Z",
+    "owner_name": "HAROLD SCHROEDER",
+    "owner_names": [
+     "HAROLD SCHROEDER"
+    ],
+    "phones": [
+     "9047240557",
+     "9045532265",
+     "7328929837"
+    ],
+    "emails": [
+     "JAXJAYHAWK59@HOTMAIL.COM",
+     "ESCHROEDER25@COMCAST.NET",
+     "SCHROEDER82ABN@AOL.COM"
+    ],
+    "contacts": [
+     {
+      "dm_person_id": "per_150132609047",
+      "full_name": "HAROLD SCHROEDER",
+      "first_name": "HAROLD",
+      "last_name": "SCHROEDER",
+      "contact_type": "owner",
+      "is_resident": true,
+      "phones": [
+       {
+        "number": "9047240557",
+        "type": "landline",
+        "do_not_call": false
+       },
+       {
+        "number": "9045532265",
+        "type": "landline",
+        "do_not_call": false
+       },
+       {
+        "number": "7328929837",
+        "type": "wireless",
+        "do_not_call": false
+       }
+      ],
+      "emails": [
+       "JAXJAYHAWK59@HOTMAIL.COM",
+       "ESCHROEDER25@COMCAST.NET",
+       "SCHROEDER82ABN@AOL.COM"
+      ]
+     }
+    ],
+    "mailing_address": null,
+    "property": {
+     "dm_property_id": "prop_86752892",
+     "full_address": "25 Mallard Dr Brick, NJ, 08724",
+     "address": "25 Mallard Dr",
+     "city": "Brick",
+     "state": "NJ",
+     "zip": "08724",
+     "latitude": 40.065804,
+     "longitude": -74.111072,
+     "estimated_value": 563000,
+     "estimated_equity_amount": 563000,
+     "estimated_equity_percentage": 100,
+     "year_built": 1989,
+     "living_area_sqft": 1607,
+     "lot_size_sqft": 9757,
+     "num_bedrooms": 2,
+     "num_bathrooms": 2,
+     "last_sale_date": "2002-09-03T00:00:00.000Z",
+     "last_sale_amount": 215000,
+     "total_assessed_value": 235000,
+     "annual_property_tax_amount": 6444,
+     "num_mortgages": 0,
+     "total_original_loan_amount": 0,
+     "total_estimated_loan_balance": 0,
+     "owner_occupied": false,
+     "apn": "07-00870-04-00008"
+    },
+    "mortgages": [],
+    "credits": {
+     "properties": 1,
+     "people": 1
+    }
+   },
+   "dm_enrichment_status": "enriched",
    "enrichment_sources": [
     "dealmachine"
    ],
-   "owner_occupied": null,
+   "owner_occupied": false,
    "owner_mailing_address": "5940 SNOWY EGRET DRIVE",
    "owner_mailing_city": "SARASOTA",
    "owner_mailing_state": "FL",
    "owner_mailing_zip": "34238",
-   "absentee": false,
+   "absentee": true,
    "out_of_state": true
   },
   {
@@ -80065,11 +81653,123 @@
    "net_value": 716100,
    "year_built": 2009,
    "last_sale_price": 900000,
-   "dm_enrichment_status": "pending_retry",
+   "dealmachine": {
+    "source": "dealmachine",
+    "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+    "matched": true,
+    "enrichment_status": "enriched",
+    "matched_by": "apn",
+    "enriched_at": "2026-07-02T07:33:59.910803+00:00",
+    "billing_cycle": "2026-06-06T18:30:15.000Z",
+    "owner_name": "JONATHAN CRUZ",
+    "owner_names": [
+     "JONATHAN CRUZ"
+    ],
+    "phones": [
+     "9732701096",
+     "9738099387",
+     "9734323094"
+    ],
+    "emails": [
+     "JOHNNY@EMTSOLAR.COM",
+     "JCRUZ128@ME.COM",
+     "JONATHANC@YAHOO.COM"
+    ],
+    "contacts": [
+     {
+      "dm_person_id": "per_150771230833",
+      "full_name": "JONATHAN CRUZ",
+      "first_name": "JONATHAN",
+      "last_name": "CRUZ",
+      "contact_type": "owner",
+      "is_resident": true,
+      "phones": [
+       {
+        "number": "9732701096",
+        "type": "landline",
+        "do_not_call": false
+       },
+       {
+        "number": "9738099387",
+        "type": "landline",
+        "do_not_call": false
+       },
+       {
+        "number": "9734323094",
+        "type": "landline",
+        "do_not_call": false
+       }
+      ],
+      "emails": [
+       "JOHNNY@EMTSOLAR.COM",
+       "JCRUZ128@ME.COM",
+       "JONATHANC@YAHOO.COM"
+      ]
+     }
+    ],
+    "mailing_address": "190 Fairview Ave Brick, NJ, 08724",
+    "property": {
+     "dm_property_id": "prop_86788478",
+     "full_address": "190 Fairview Ave Brick, NJ, 08724",
+     "address": "190 Fairview Ave",
+     "city": "Brick",
+     "state": "NJ",
+     "zip": "08724",
+     "latitude": 40.06101,
+     "longitude": -74.116328,
+     "estimated_value": 1027000,
+     "estimated_equity_amount": 312705,
+     "estimated_equity_percentage": 41,
+     "year_built": 2009,
+     "living_area_sqft": 3667,
+     "lot_size_sqft": 12301,
+     "num_bedrooms": 4,
+     "num_bathrooms": 4,
+     "last_sale_date": "2024-03-21T00:00:00.000Z",
+     "last_sale_amount": 900000,
+     "total_assessed_value": 716100,
+     "annual_property_tax_amount": 19635,
+     "num_mortgages": 1,
+     "total_original_loan_amount": 730000,
+     "total_estimated_loan_balance": 714295,
+     "owner_occupied": true,
+     "apn": "07-00871-0000-00003-01"
+    },
+    "mortgages": [
+     {
+      "mortgage_number": 1,
+      "id": "11923111565",
+      "transaction_id": "11923111565",
+      "lender_name": "IPPOLITO SAMUEL",
+      "is_private_lender": false,
+      "loan_type_id": 11,
+      "loan_type": "Credit Line",
+      "loan_financing_type": "Unknown Financing Type",
+      "loan_amount": 730000,
+      "loan_balance": 714295,
+      "loan_interest_rate": 6.64,
+      "loan_term_months": 360,
+      "loan_start_date": "2024-03-21T00:00:00.000Z",
+      "loan_recording_date": "2024-03-21T00:00:00.000Z",
+      "loan_due_date": "2054-04-01T00:00:00.000Z",
+      "has_adjustable_rate_rider": false,
+      "lien_position": 1,
+      "estimated_payment_amount": 4681.51,
+      "classification": "primary",
+      "classification_label": "Primary mortgage",
+      "classification_reason": "DataTree marks this mortgage as lien position 1."
+     }
+    ],
+    "credits": {
+     "properties": 1,
+     "people": 1
+    }
+   },
+   "dm_enrichment_status": "enriched",
    "enrichment_sources": [
     "dealmachine"
    ],
-   "owner_occupied": null,
+   "owner_occupied": true,
    "owner_mailing_address": "190 FAIRVIEW AVENUE",
    "owner_mailing_city": "BRICK",
    "owner_mailing_state": "NJ",
@@ -80122,16 +81822,100 @@
    "net_value": 443900,
    "year_built": 0,
    "last_sale_price": 1,
-   "dm_enrichment_status": "pending_retry",
+   "dealmachine": {
+    "source": "dealmachine",
+    "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+    "matched": true,
+    "enrichment_status": "enriched",
+    "matched_by": "apn",
+    "enriched_at": "2026-07-02T07:33:59.910803+00:00",
+    "billing_cycle": "2026-06-06T18:30:15.000Z",
+    "owner_name": "GEORGE MIKSIS",
+    "owner_names": [
+     "GEORGE MIKSIS"
+    ],
+    "phones": [
+     "7328925233",
+     "9179229944",
+     "7328990048"
+    ],
+    "emails": [
+     "TYELAND@HOTMAIL.COM"
+    ],
+    "contacts": [
+     {
+      "dm_person_id": "per_150699253560",
+      "full_name": "GEORGE MIKSIS",
+      "first_name": "GEORGE",
+      "last_name": "MIKSIS",
+      "contact_type": "owner",
+      "is_resident": false,
+      "phones": [
+       {
+        "number": "7328925233",
+        "type": "wireless",
+        "do_not_call": false
+       },
+       {
+        "number": "9179229944",
+        "type": "landline",
+        "do_not_call": false
+       },
+       {
+        "number": "7328990048",
+        "type": "wireless",
+        "do_not_call": false
+       }
+      ],
+      "emails": [
+       "TYELAND@HOTMAIL.COM"
+      ]
+     }
+    ],
+    "mailing_address": null,
+    "property": {
+     "dm_property_id": "prop_86788662",
+     "full_address": "APN: 07-00878-0000-00003 Brick, NJ, 08724",
+     "address": "305 Princeton Ave",
+     "city": "Brick",
+     "state": "NJ",
+     "zip": "08724",
+     "latitude": 39.902906,
+     "longitude": -74.175603,
+     "estimated_value": 904000,
+     "estimated_equity_amount": 904000,
+     "estimated_equity_percentage": 100,
+     "year_built": null,
+     "living_area_sqft": 0,
+     "lot_size_sqft": 335848,
+     "num_bedrooms": 0,
+     "num_bathrooms": null,
+     "last_sale_date": "2001-04-27T00:00:00.000Z",
+     "last_sale_amount": 550000,
+     "total_assessed_value": 443900,
+     "annual_property_tax_amount": 12172,
+     "num_mortgages": 0,
+     "total_original_loan_amount": 0,
+     "total_estimated_loan_balance": 0,
+     "owner_occupied": false,
+     "apn": "07-00878-0000-00003"
+    },
+    "mortgages": [],
+    "credits": {
+     "properties": 1,
+     "people": 1
+    }
+   },
+   "dm_enrichment_status": "enriched",
    "enrichment_sources": [
     "dealmachine"
    ],
-   "owner_occupied": null,
+   "owner_occupied": false,
    "owner_mailing_address": "290 FOREST DRIVE SOUTH",
    "owner_mailing_city": "SHORT HILLS",
    "owner_mailing_state": "NJ",
    "owner_mailing_zip": "07078",
-   "absentee": false,
+   "absentee": true,
    "out_of_state": false
   },
   {
@@ -80179,16 +81963,209 @@
    "net_value": 381800,
    "year_built": 1972,
    "last_sale_price": 290000,
-   "dm_enrichment_status": "pending_retry",
+   "dealmachine": {
+    "source": "dealmachine",
+    "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+    "matched": true,
+    "enrichment_status": "enriched",
+    "matched_by": "apn",
+    "enriched_at": "2026-07-02T07:33:59.910803+00:00",
+    "billing_cycle": "2026-06-06T18:30:15.000Z",
+    "owner_name": "TODD GROSSMAN",
+    "owner_names": [
+     "TODD GROSSMAN",
+     "LILLIAN GALVIN",
+     "NICOLE GROSSMAN"
+    ],
+    "phones": [
+     "7322375100",
+     "7329487637",
+     "7189838859",
+     "7323306548",
+     "7328405280",
+     "8484691788"
+    ],
+    "emails": [
+     "BKMARINE3@GMAIL.COM",
+     "BKMATINE3@GMAIL.COM",
+     "BUDMAN308@HOTMAIL.COM",
+     "LILLIANG@IVL.COM",
+     "NIC032791@GMAIL.COM",
+     "BIGRALPH85@GMAIL.COM",
+     "LILSOUTHPARKBABE@AOL.COM"
+    ],
+    "contacts": [
+     {
+      "dm_person_id": "per_15037044027",
+      "full_name": "TODD GROSSMAN",
+      "first_name": "TODD",
+      "last_name": "GROSSMAN",
+      "contact_type": "owner",
+      "is_resident": true,
+      "phones": [
+       {
+        "number": "7322375100",
+        "type": "landline",
+        "do_not_call": false
+       },
+       {
+        "number": "7329487637",
+        "type": "landline",
+        "do_not_call": false
+       },
+       {
+        "number": "7189838859",
+        "type": "wireless",
+        "do_not_call": false
+       }
+      ],
+      "emails": [
+       "BKMARINE3@GMAIL.COM",
+       "BKMATINE3@GMAIL.COM"
+      ]
+     },
+     {
+      "dm_person_id": "per_150335751259",
+      "full_name": "LILLIAN GALVIN",
+      "first_name": "LILLIAN",
+      "last_name": "GALVIN",
+      "contact_type": "owner",
+      "is_resident": true,
+      "phones": [
+       {
+        "number": "7323306548",
+        "type": "landline",
+        "do_not_call": false
+       },
+       {
+        "number": "7328405280",
+        "type": "wireless",
+        "do_not_call": false
+       }
+      ],
+      "emails": [
+       "BUDMAN308@HOTMAIL.COM",
+       "LILLIANG@IVL.COM"
+      ]
+     },
+     {
+      "dm_person_id": "per_1503352149735",
+      "full_name": "NICOLE GROSSMAN",
+      "first_name": "NICOLE",
+      "last_name": "GROSSMAN",
+      "contact_type": "owner",
+      "is_resident": true,
+      "phones": [
+       {
+        "number": "7189838859",
+        "type": "wireless",
+        "do_not_call": false
+       },
+       {
+        "number": "8484691788",
+        "type": "landline",
+        "do_not_call": false
+       }
+      ],
+      "emails": [
+       "NIC032791@GMAIL.COM",
+       "BIGRALPH85@GMAIL.COM",
+       "LILSOUTHPARKBABE@AOL.COM"
+      ]
+     }
+    ],
+    "mailing_address": null,
+    "property": {
+     "dm_property_id": "prop_86758726",
+     "full_address": "336 Rancocas Dr Brick, NJ, 08724",
+     "address": "336 Rancocas Dr",
+     "city": "Brick",
+     "state": "NJ",
+     "zip": "08724",
+     "latitude": 40.058123,
+     "longitude": -74.102924,
+     "estimated_value": 770000,
+     "estimated_equity_amount": 470114,
+     "estimated_equity_percentage": 60,
+     "year_built": 1972,
+     "living_area_sqft": 1759,
+     "lot_size_sqft": 7501,
+     "num_bedrooms": 4,
+     "num_bathrooms": 2,
+     "last_sale_date": "2017-05-01T00:00:00.000Z",
+     "last_sale_amount": 290000,
+     "total_assessed_value": 381800,
+     "annual_property_tax_amount": 10469,
+     "num_mortgages": 2,
+     "total_original_loan_amount": 356528,
+     "total_estimated_loan_balance": 299886,
+     "owner_occupied": false,
+     "apn": "07-00895-0000-00009"
+    },
+    "mortgages": [
+     {
+      "mortgage_number": 1,
+      "id": "1589714026",
+      "transaction_id": "1589714026",
+      "lender_name": "FBC MORTGAGE LLC",
+      "is_private_lender": false,
+      "loan_type_id": 12,
+      "loan_type": "FHA",
+      "loan_financing_type_id": 2,
+      "loan_financing_type": "Fixed Rate",
+      "loan_amount": 284747,
+      "loan_balance": 235391,
+      "loan_interest_rate": 4.4,
+      "loan_term_months": 360,
+      "loan_start_date": "2017-05-01T00:00:00.000Z",
+      "loan_recording_date": "2017-05-01T00:00:00.000Z",
+      "loan_due_date": "2047-05-01T00:00:00.000Z",
+      "has_adjustable_rate_rider": false,
+      "lien_position": 1,
+      "estimated_payment_amount": 1425.9,
+      "classification": "primary",
+      "classification_label": "Primary mortgage",
+      "classification_reason": "DataTree marks this mortgage as lien position 1."
+     },
+     {
+      "mortgage_number": 2,
+      "id": "21211803194",
+      "transaction_id": "21211803194",
+      "lender_name": "PENNYMAC LOAN SERVICES LLC",
+      "is_private_lender": false,
+      "loan_type_id": 12,
+      "loan_type": "FHA",
+      "loan_financing_type": "Unknown Financing Type",
+      "loan_amount": 71781,
+      "loan_balance": 64495,
+      "loan_interest_rate": 3.1,
+      "loan_term_months": 360,
+      "loan_start_date": "2021-06-14T00:00:00.000Z",
+      "loan_recording_date": "2021-06-14T00:00:00.000Z",
+      "loan_due_date": "2051-05-01T00:00:00.000Z",
+      "has_adjustable_rate_rider": false,
+      "lien_position": 2,
+      "estimated_payment_amount": 306.52,
+      "classification": "subordinate",
+      "classification_label": "Possible second lien",
+      "classification_reason": "DataTree marks this mortgage as lien position 2."
+     }
+    ],
+    "credits": {
+     "properties": 1,
+     "people": 3
+    }
+   },
+   "dm_enrichment_status": "enriched",
    "enrichment_sources": [
     "dealmachine"
    ],
-   "owner_occupied": null,
+   "owner_occupied": false,
    "owner_mailing_address": "336 RANCOCAS DRIVE",
    "owner_mailing_city": "BRICK",
    "owner_mailing_state": "NJ",
    "owner_mailing_zip": "08724",
-   "absentee": false,
+   "absentee": true,
    "out_of_state": false
   },
   {
@@ -80236,11 +82213,113 @@
    "net_value": 368800,
    "year_built": 1960,
    "last_sale_price": 875000,
-   "dm_enrichment_status": "pending_retry",
+   "dealmachine": {
+    "source": "dealmachine",
+    "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+    "matched": true,
+    "enrichment_status": "enriched",
+    "matched_by": "apn",
+    "enriched_at": "2026-07-02T07:33:59.910803+00:00",
+    "billing_cycle": "2026-06-06T18:30:15.000Z",
+    "owner_name": "DAVID LEE",
+    "owner_names": [
+     "DAVID LEE"
+    ],
+    "phones": [
+     "9145767887",
+     "9142373720"
+    ],
+    "emails": [
+     "JACKIIELEE@GMAIL.COM"
+    ],
+    "contacts": [
+     {
+      "dm_person_id": "per_150165084011",
+      "full_name": "DAVID LEE",
+      "first_name": "DAVID",
+      "last_name": "LEE",
+      "contact_type": "owner",
+      "is_resident": true,
+      "phones": [
+       {
+        "number": "9145767887",
+        "type": "wireless",
+        "do_not_call": false
+       },
+       {
+        "number": "9142373720",
+        "type": "wireless",
+        "do_not_call": false
+       }
+      ],
+      "emails": [
+       "JACKIIELEE@GMAIL.COM"
+      ]
+     }
+    ],
+    "mailing_address": "372 Rancocas Dr Brick, NJ, 08724",
+    "property": {
+     "dm_property_id": "prop_86758746",
+     "full_address": "372 Rancocas Dr Brick, NJ, 08724",
+     "address": "372 Rancocas Dr",
+     "city": "Brick",
+     "state": "NJ",
+     "zip": "08724",
+     "latitude": 40.058557,
+     "longitude": -74.1002,
+     "estimated_value": 963000,
+     "estimated_equity_amount": 259386,
+     "estimated_equity_percentage": 10,
+     "year_built": 1960,
+     "living_area_sqft": 1063,
+     "lot_size_sqft": 15002,
+     "num_bedrooms": 3,
+     "num_bathrooms": 2,
+     "last_sale_date": "2023-08-07T00:00:00.000Z",
+     "last_sale_amount": 875000,
+     "total_assessed_value": 368800,
+     "annual_property_tax_amount": 10113,
+     "num_mortgages": 1,
+     "total_original_loan_amount": 725000,
+     "total_estimated_loan_balance": 703614,
+     "owner_occupied": true,
+     "apn": "07-00895-0000-00025-01"
+    },
+    "mortgages": [
+     {
+      "mortgage_number": 1,
+      "id": "11910700582",
+      "transaction_id": "11910700582",
+      "lender_name": "UNITED WHOLESALE MORTGAGE LLC",
+      "is_private_lender": false,
+      "loan_type_id": 20,
+      "loan_type": "New Conventional",
+      "loan_financing_type": "Unknown Financing Type",
+      "loan_amount": 725000,
+      "loan_balance": 703614,
+      "loan_interest_rate": 6.67,
+      "loan_term_months": 360,
+      "loan_start_date": "2023-08-07T00:00:00.000Z",
+      "loan_recording_date": "2023-08-07T00:00:00.000Z",
+      "loan_due_date": "2053-09-01T00:00:00.000Z",
+      "has_adjustable_rate_rider": false,
+      "lien_position": 1,
+      "estimated_payment_amount": 4663.85,
+      "classification": "primary",
+      "classification_label": "Primary mortgage",
+      "classification_reason": "DataTree marks this mortgage as lien position 1."
+     }
+    ],
+    "credits": {
+     "properties": 1,
+     "people": 1
+    }
+   },
+   "dm_enrichment_status": "enriched",
    "enrichment_sources": [
     "dealmachine"
    ],
-   "owner_occupied": null,
+   "owner_occupied": true,
    "owner_mailing_address": "372 RANCOCAS DRIVE",
    "owner_mailing_city": "BRICK",
    "owner_mailing_state": "NJ",
@@ -80293,16 +82372,128 @@
    "net_value": 418700,
    "year_built": 1940,
    "last_sale_price": 615000,
-   "dm_enrichment_status": "pending_retry",
+   "dealmachine": {
+    "source": "dealmachine",
+    "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+    "matched": true,
+    "enrichment_status": "enriched",
+    "matched_by": "apn",
+    "enriched_at": "2026-07-02T07:33:59.910803+00:00",
+    "billing_cycle": "2026-06-06T18:30:15.000Z",
+    "owner_name": "JOHN SANTAMARIA",
+    "owner_names": [
+     "JOHN SANTAMARIA"
+    ],
+    "phones": [
+     "7329041345",
+     "9086707338",
+     "7327852815"
+    ],
+    "emails": [
+     "JOHN.SANTAMARIA93@OUTLOOK.COM",
+     "SANTAJOHNMARIA21@GMAIL.COM",
+     "SANTAMARIANR@YAHOO.COM"
+    ],
+    "contacts": [
+     {
+      "dm_person_id": "per_1503230690",
+      "full_name": "JOHN SANTAMARIA",
+      "first_name": "JOHN",
+      "last_name": "SANTAMARIA",
+      "contact_type": "owner",
+      "is_resident": true,
+      "phones": [
+       {
+        "number": "7329041345",
+        "type": "landline",
+        "do_not_call": false
+       },
+       {
+        "number": "9086707338",
+        "type": "landline",
+        "do_not_call": false
+       },
+       {
+        "number": "7327852815",
+        "type": "wireless",
+        "do_not_call": false
+       }
+      ],
+      "emails": [
+       "JOHN.SANTAMARIA93@OUTLOOK.COM",
+       "SANTAJOHNMARIA21@GMAIL.COM",
+       "SANTAMARIANR@YAHOO.COM"
+      ]
+     }
+    ],
+    "mailing_address": null,
+    "property": {
+     "dm_property_id": "prop_86758751",
+     "full_address": "380 Rancocas Dr Brick, NJ, 08724",
+     "address": "380 Rancocas Dr",
+     "city": "Brick",
+     "state": "NJ",
+     "zip": "08724",
+     "latitude": 40.058369,
+     "longitude": -74.099573,
+     "estimated_value": 698750,
+     "estimated_equity_amount": 226443,
+     "estimated_equity_percentage": 32,
+     "year_built": 1940,
+     "living_area_sqft": 1735,
+     "lot_size_sqft": 15002,
+     "num_bedrooms": 3,
+     "num_bathrooms": 3,
+     "last_sale_date": "2023-05-04T00:00:00.000Z",
+     "last_sale_amount": 615000,
+     "total_assessed_value": 418700,
+     "annual_property_tax_amount": null,
+     "num_mortgages": 1,
+     "total_original_loan_amount": 489000,
+     "total_estimated_loan_balance": 472307,
+     "owner_occupied": false,
+     "apn": "07-00895-0000-00029-01"
+    },
+    "mortgages": [
+     {
+      "mortgage_number": 1,
+      "id": "11906215999",
+      "transaction_id": "11906215999",
+      "lender_name": "FREEDOM MORTGAGE CORPORATION",
+      "is_private_lender": false,
+      "loan_type_id": 28,
+      "loan_type": "VA",
+      "loan_financing_type": "Unknown Financing Type",
+      "loan_amount": 489000,
+      "loan_balance": 472307,
+      "loan_interest_rate": 6.42,
+      "loan_term_months": 360,
+      "loan_start_date": "2023-05-04T00:00:00.000Z",
+      "loan_recording_date": "2023-05-04T00:00:00.000Z",
+      "loan_due_date": "2053-05-01T00:00:00.000Z",
+      "has_adjustable_rate_rider": false,
+      "lien_position": 1,
+      "estimated_payment_amount": 3065.13,
+      "classification": "primary",
+      "classification_label": "Primary mortgage",
+      "classification_reason": "DataTree marks this mortgage as lien position 1."
+     }
+    ],
+    "credits": {
+     "properties": 1,
+     "people": 1
+    }
+   },
+   "dm_enrichment_status": "enriched",
    "enrichment_sources": [
     "dealmachine"
    ],
-   "owner_occupied": null,
+   "owner_occupied": false,
    "owner_mailing_address": "380 RANCOCAS DRIVE",
    "owner_mailing_city": "BRICK",
    "owner_mailing_state": "NJ",
    "owner_mailing_zip": "08724",
-   "absentee": false,
+   "absentee": true,
    "out_of_state": false
   },
   {
@@ -82439,11 +84630,132 @@
    "net_value": 231400,
    "year_built": 1957,
    "last_sale_price": 240000,
-   "dm_enrichment_status": "pending_retry",
+   "dealmachine": {
+    "source": "dealmachine",
+    "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+    "matched": true,
+    "enrichment_status": "enriched",
+    "matched_by": "apn",
+    "enriched_at": "2026-07-02T07:33:59.910803+00:00",
+    "billing_cycle": "2026-06-06T18:30:15.000Z",
+    "owner_name": "GERALD CECE",
+    "owner_names": [
+     "GERALD CECE"
+    ],
+    "phones": [
+     "7328294679"
+    ],
+    "emails": [
+     "GERALD.CECE@YAHOO.COM",
+     "GERALD.CECE@HEARTLAND.US",
+     "GERALD@HEARTLANDPAYMENTSYSTEMS.COM"
+    ],
+    "contacts": [
+     {
+      "dm_person_id": "per_1504424862464",
+      "full_name": "GERALD CECE",
+      "first_name": "GERALD",
+      "last_name": "CECE",
+      "contact_type": "owner",
+      "is_resident": true,
+      "phones": [
+       {
+        "number": "7328294679",
+        "type": "landline",
+        "do_not_call": false
+       }
+      ],
+      "emails": [
+       "GERALD.CECE@YAHOO.COM",
+       "GERALD.CECE@HEARTLAND.US",
+       "GERALD@HEARTLANDPAYMENTSYSTEMS.COM"
+      ]
+     }
+    ],
+    "mailing_address": "140 Meridian Dr Brick, NJ, 08724",
+    "property": {
+     "dm_property_id": "prop_86728137",
+     "full_address": "140 Meridian Dr Brick, NJ, 08724",
+     "address": "140 Meridian Dr",
+     "city": "Brick",
+     "state": "NJ",
+     "zip": "08724",
+     "latitude": 40.063427041,
+     "longitude": -74.10253749,
+     "estimated_value": 434000,
+     "estimated_equity_amount": 106000,
+     "estimated_equity_percentage": 17,
+     "year_built": 1957,
+     "living_area_sqft": 1012,
+     "lot_size_sqft": 8634,
+     "num_bedrooms": 3,
+     "num_bathrooms": 1,
+     "last_sale_date": "2026-05-05T00:00:00.000Z",
+     "last_sale_amount": 410000,
+     "total_assessed_value": 231400,
+     "annual_property_tax_amount": 6345,
+     "num_mortgages": 1,
+     "total_original_loan_amount": 563653,
+     "total_estimated_loan_balance": 328000,
+     "owner_occupied": true,
+     "apn": "07-00902-45-00012"
+    },
+    "mortgages": [
+     {
+      "mortgage_number": 1,
+      "id": "12029892689",
+      "transaction_id": "12029892689",
+      "lender_name": "AMERICAN HOME MORTGAGE ACCEPTA",
+      "is_private_lender": false,
+      "loan_type_id": 20,
+      "loan_type": "New Conventional",
+      "loan_financing_type_id": 2,
+      "loan_financing_type": "Fixed Rate",
+      "loan_amount": 328000,
+      "loan_balance": 328000,
+      "loan_interest_rate": 6.22,
+      "loan_term_months": 360,
+      "loan_start_date": "2026-05-05T00:00:00.000Z",
+      "loan_recording_date": "2026-05-05T00:00:00.000Z",
+      "loan_due_date": "2056-05-01T00:00:00.000Z",
+      "has_adjustable_rate_rider": false,
+      "lien_position": 1,
+      "estimated_payment_amount": 2013.16,
+      "classification": "primary",
+      "classification_label": "Primary mortgage",
+      "classification_reason": "DataTree marks this mortgage as lien position 1."
+     },
+     {
+      "mortgage_number": 2,
+      "id": "240786782",
+      "transaction_id": "240786782",
+      "lender_name": "PENNYMAC LOAN SERVICES LLC",
+      "is_private_lender": false,
+      "loan_type_id": 19,
+      "loan_type": "Mortgage Modification",
+      "loan_financing_type": "Unknown Financing Type",
+      "loan_amount": 235653,
+      "loan_term_months": 479,
+      "loan_start_date": "2023-10-19T00:00:00.000Z",
+      "loan_recording_date": "2023-10-19T00:00:00.000Z",
+      "loan_due_date": "2063-10-01T00:00:00.000Z",
+      "has_adjustable_rate_rider": false,
+      "lien_position": 2,
+      "classification": "subordinate",
+      "classification_label": "Possible second lien",
+      "classification_reason": "DataTree marks this mortgage as lien position 2."
+     }
+    ],
+    "credits": {
+     "properties": 1,
+     "people": 1
+    }
+   },
+   "dm_enrichment_status": "enriched",
    "enrichment_sources": [
     "dealmachine"
    ],
-   "owner_occupied": null,
+   "owner_occupied": true,
    "owner_mailing_address": "140 MERIDIAN DRIVE",
    "owner_mailing_city": "BRICK",
    "owner_mailing_state": "NJ",
@@ -82496,11 +84808,154 @@
    "net_value": 308300,
    "year_built": 1968,
    "last_sale_price": 297000,
-   "dm_enrichment_status": "pending_retry",
+   "dealmachine": {
+    "source": "dealmachine",
+    "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+    "matched": true,
+    "enrichment_status": "enriched",
+    "matched_by": "apn",
+    "enriched_at": "2026-07-02T07:33:59.910803+00:00",
+    "billing_cycle": "2026-06-06T18:30:15.000Z",
+    "owner_name": "JACQUELYN LEVINE",
+    "owner_names": [
+     "JACQUELYN LEVINE",
+     "MICHAEL SALUM"
+    ],
+    "phones": [
+     "7329883690",
+     "7327788928",
+     "7329523057",
+     "7327274458",
+     "7327547064"
+    ],
+    "emails": [
+     "LEVINEJACQUELYN@GMAIL.COM",
+     "LEVINEJ@TWPOCEANNJ.GOV",
+     "KARENLYNNLEVINE@GMAIL.COM",
+     "MICHAEL.SALUM@SAYREVILLEK12.NET",
+     "MICHAELSALUM@CHASE.COM",
+     "BERN223@AOL.COM"
+    ],
+    "contacts": [
+     {
+      "dm_person_id": "per_150456663561",
+      "full_name": "JACQUELYN LEVINE",
+      "first_name": "JACQUELYN",
+      "last_name": "LEVINE",
+      "contact_type": "owner",
+      "is_resident": true,
+      "phones": [
+       {
+        "number": "7329883690",
+        "type": "wireless",
+        "do_not_call": false
+       },
+       {
+        "number": "7327788928",
+        "type": "landline",
+        "do_not_call": false
+       }
+      ],
+      "emails": [
+       "LEVINEJACQUELYN@GMAIL.COM",
+       "LEVINEJ@TWPOCEANNJ.GOV",
+       "KARENLYNNLEVINE@GMAIL.COM"
+      ]
+     },
+     {
+      "dm_person_id": "per_150817047982",
+      "full_name": "MICHAEL SALUM",
+      "first_name": "MICHAEL",
+      "last_name": "SALUM",
+      "contact_type": "owner",
+      "is_resident": true,
+      "phones": [
+       {
+        "number": "7329523057",
+        "type": "wireless",
+        "do_not_call": false
+       },
+       {
+        "number": "7327274458",
+        "type": "wireless",
+        "do_not_call": false
+       },
+       {
+        "number": "7327547064",
+        "type": "landline",
+        "do_not_call": false
+       }
+      ],
+      "emails": [
+       "MICHAEL.SALUM@SAYREVILLEK12.NET",
+       "MICHAELSALUM@CHASE.COM",
+       "BERN223@AOL.COM"
+      ]
+     }
+    ],
+    "mailing_address": "117 Charleson Rd Brick, NJ, 08724",
+    "property": {
+     "dm_property_id": "prop_86728392",
+     "full_address": "117 Charleson Rd Brick, NJ, 08724",
+     "address": "117 Charleson Rd",
+     "city": "Brick",
+     "state": "NJ",
+     "zip": "08724",
+     "latitude": 40.065785,
+     "longitude": -74.092412,
+     "estimated_value": 719000,
+     "estimated_equity_amount": 448193,
+     "estimated_equity_percentage": 58,
+     "year_built": 1968,
+     "living_area_sqft": 1632,
+     "lot_size_sqft": 10001,
+     "num_bedrooms": 4,
+     "num_bathrooms": 3,
+     "last_sale_date": "2012-04-11T00:00:00.000Z",
+     "last_sale_amount": 297000,
+     "total_assessed_value": 308300,
+     "annual_property_tax_amount": 8454,
+     "num_mortgages": 1,
+     "total_original_loan_amount": 304500,
+     "total_estimated_loan_balance": 270807,
+     "owner_occupied": true,
+     "apn": "07-00903-02-00008"
+    },
+    "mortgages": [
+     {
+      "mortgage_number": 1,
+      "id": "21220000074",
+      "transaction_id": "21220000074",
+      "lender_name": "WELLS FARGO BANK NA",
+      "is_private_lender": false,
+      "loan_type_id": 20,
+      "loan_type": "New Conventional",
+      "loan_financing_type": "Unknown Financing Type",
+      "loan_amount": 304500,
+      "loan_balance": 270807,
+      "loan_interest_rate": 2.8,
+      "loan_term_months": 336,
+      "loan_start_date": "2021-09-14T00:00:00.000Z",
+      "loan_recording_date": "2021-09-14T00:00:00.000Z",
+      "loan_due_date": "2049-10-01T00:00:00.000Z",
+      "has_adjustable_rate_rider": false,
+      "lien_position": 1,
+      "estimated_payment_amount": 1308.46,
+      "classification": "primary",
+      "classification_label": "Primary mortgage",
+      "classification_reason": "DataTree marks this mortgage as lien position 1."
+     }
+    ],
+    "credits": {
+     "properties": 1,
+     "people": 2
+    }
+   },
+   "dm_enrichment_status": "enriched",
    "enrichment_sources": [
     "dealmachine"
    ],
-   "owner_occupied": null,
+   "owner_occupied": true,
    "owner_mailing_address": "117 CHARLESON RD",
    "owner_mailing_city": "BRICK",
    "owner_mailing_state": "NJ",
@@ -82553,16 +85008,145 @@
    "net_value": 242000,
    "year_built": 1956,
    "last_sale_price": 1,
-   "dm_enrichment_status": "pending_retry",
+   "dealmachine": {
+    "source": "dealmachine",
+    "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+    "matched": true,
+    "enrichment_status": "enriched",
+    "matched_by": "apn",
+    "enriched_at": "2026-07-02T07:33:59.910803+00:00",
+    "billing_cycle": "2026-06-06T18:30:15.000Z",
+    "owner_name": "ERON PAULIN",
+    "owner_names": [
+     "ERON PAULIN",
+     "JOHN ROBERTS"
+    ],
+    "phones": [
+     "7326062429",
+     "7327011781",
+     "8452139420"
+    ],
+    "emails": [
+     "ERON1025@MSN.COM",
+     "ERONMPAULIN@GMAIL.COM",
+     "SCRUBS882@AOL.COM",
+     "JROBERTS014@YAHOO.COM",
+     "DIESELMCH@AOL.COM"
+    ],
+    "contacts": [
+     {
+      "dm_person_id": "per_150412369352",
+      "full_name": "ERON PAULIN",
+      "first_name": "ERON",
+      "last_name": "PAULIN",
+      "contact_type": "owner",
+      "is_resident": true,
+      "phones": [
+       {
+        "number": "7326062429",
+        "type": "landline",
+        "do_not_call": false
+       }
+      ],
+      "emails": [
+       "ERON1025@MSN.COM",
+       "ERONMPAULIN@GMAIL.COM",
+       "SCRUBS882@AOL.COM"
+      ]
+     },
+     {
+      "dm_person_id": "per_150540037119",
+      "full_name": "JOHN ROBERTS",
+      "first_name": "JOHN",
+      "last_name": "ROBERTS",
+      "contact_type": "owner",
+      "is_resident": true,
+      "phones": [
+       {
+        "number": "7327011781",
+        "type": "wireless",
+        "do_not_call": false
+       },
+       {
+        "number": "8452139420",
+        "type": "landline",
+        "do_not_call": false
+       }
+      ],
+      "emails": [
+       "JROBERTS014@YAHOO.COM",
+       "DIESELMCH@AOL.COM"
+      ]
+     }
+    ],
+    "mailing_address": null,
+    "property": {
+     "dm_property_id": "prop_86754907",
+     "full_address": "27 Stratford Dr Brick, NJ, 08724",
+     "address": "27 Stratford Dr",
+     "city": "Brick",
+     "state": "NJ",
+     "zip": "08724",
+     "latitude": 40.06953,
+     "longitude": -74.096117,
+     "estimated_value": 476000,
+     "estimated_equity_amount": 371204,
+     "estimated_equity_percentage": 80,
+     "year_built": 1956,
+     "living_area_sqft": 1196,
+     "lot_size_sqft": 8198,
+     "num_bedrooms": 3,
+     "num_bathrooms": 1,
+     "last_sale_date": "1999-04-05T00:00:00.000Z",
+     "last_sale_amount": 105500,
+     "total_assessed_value": 242000,
+     "annual_property_tax_amount": 6636,
+     "num_mortgages": 1,
+     "total_original_loan_amount": 208750,
+     "total_estimated_loan_balance": 104796,
+     "owner_occupied": false,
+     "apn": "07-00903-22-00004"
+    },
+    "mortgages": [
+     {
+      "mortgage_number": 1,
+      "id": "1062338544",
+      "transaction_id": "1062338544",
+      "lender_name": "GMAC MORTGAGE CORP",
+      "is_private_lender": false,
+      "loan_type_id": 20,
+      "loan_type": "New Conventional",
+      "loan_financing_type": "Unknown Financing Type",
+      "loan_amount": 208750,
+      "loan_balance": 104796,
+      "loan_interest_rate": 5.87,
+      "loan_term_months": 360,
+      "loan_start_date": "2005-04-21T00:00:00.000Z",
+      "loan_recording_date": "2005-04-21T00:00:00.000Z",
+      "loan_due_date": "2035-02-01T00:00:00.000Z",
+      "has_adjustable_rate_rider": false,
+      "lien_position": 1,
+      "estimated_payment_amount": 1234.17,
+      "classification": "primary",
+      "classification_label": "Primary mortgage",
+      "classification_reason": "DataTree marks this mortgage as lien position 1."
+     }
+    ],
+    "credits": {
+     "properties": 1,
+     "people": 2
+    }
+   },
+   "dm_enrichment_status": "enriched",
    "enrichment_sources": [
     "dealmachine"
    ],
-   "owner_occupied": null,
+   "owner_occupied": false,
    "owner_mailing_address": "27 STRATFORD DR",
    "owner_mailing_city": "BRICK",
    "owner_mailing_state": "NJ",
    "owner_mailing_zip": "08724",
-   "absentee": false,
+   "absentee": true,
    "out_of_state": false
   },
   {
@@ -82610,16 +85194,149 @@
    "net_value": 268100,
    "year_built": 1970,
    "last_sale_price": 0,
-   "dm_enrichment_status": "pending_retry",
+   "dealmachine": {
+    "source": "dealmachine",
+    "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+    "matched": true,
+    "enrichment_status": "enriched",
+    "matched_by": "apn",
+    "enriched_at": "2026-07-02T07:33:59.910803+00:00",
+    "billing_cycle": "2026-06-06T18:30:15.000Z",
+    "owner_name": "JAMES SAMBADE",
+    "owner_names": [
+     "JAMES SAMBADE",
+     "GINO DEPINTO",
+     "LESLIE DUGAN"
+    ],
+    "phones": [
+     "7325527215",
+     "7328922422"
+    ],
+    "emails": [
+     "GINODEPINTO@COMCAST.NET",
+     "GINODEPINTO@GMAIL.COM",
+     "GINODEPINTO789@GMAIL.COM",
+     "JEANII528@GMAIL.COM",
+     "LESLIEDUGAN@GMAIL.COM"
+    ],
+    "contacts": [
+     {
+      "dm_person_id": "per_150939367665",
+      "full_name": "JAMES SAMBADE",
+      "first_name": "JAMES",
+      "last_name": "SAMBADE",
+      "contact_type": "owner",
+      "is_resident": true,
+      "phones": [],
+      "emails": []
+     },
+     {
+      "dm_person_id": "per_1501208760369",
+      "full_name": "GINO DEPINTO",
+      "first_name": "GINO",
+      "last_name": "DEPINTO",
+      "contact_type": "owner",
+      "is_resident": true,
+      "phones": [
+       {
+        "number": "7325527215",
+        "type": "landline",
+        "do_not_call": false
+       }
+      ],
+      "emails": [
+       "GINODEPINTO@COMCAST.NET",
+       "GINODEPINTO@GMAIL.COM",
+       "GINODEPINTO789@GMAIL.COM"
+      ]
+     },
+     {
+      "dm_person_id": "per_1501216405653",
+      "full_name": "LESLIE DUGAN",
+      "first_name": "LESLIE",
+      "last_name": "DUGAN",
+      "contact_type": "owner",
+      "is_resident": true,
+      "phones": [
+       {
+        "number": "7328922422",
+        "type": "wireless",
+        "do_not_call": false
+       }
+      ],
+      "emails": [
+       "JEANII528@GMAIL.COM",
+       "LESLIEDUGAN@GMAIL.COM"
+      ]
+     }
+    ],
+    "mailing_address": null,
+    "property": {
+     "dm_property_id": "prop_86755025",
+     "full_address": "155 Natick Trl Brick, NJ, 08724",
+     "address": "155 Natick Trl",
+     "city": "Brick",
+     "state": "NJ",
+     "zip": "08724",
+     "latitude": 40.069747,
+     "longitude": -74.095141,
+     "estimated_value": 689000,
+     "estimated_equity_amount": 689000,
+     "estimated_equity_percentage": 100,
+     "year_built": 1970,
+     "living_area_sqft": 1446,
+     "lot_size_sqft": 10498,
+     "num_bedrooms": 3,
+     "num_bathrooms": 2,
+     "last_sale_date": null,
+     "last_sale_amount": null,
+     "total_assessed_value": 268100,
+     "annual_property_tax_amount": 7351,
+     "num_mortgages": 0,
+     "total_original_loan_amount": 435000,
+     "total_estimated_loan_balance": 0,
+     "owner_occupied": false,
+     "apn": "07-00903-22-00021"
+    },
+    "mortgages": [
+     {
+      "mortgage_number": 1,
+      "id": "2109145816",
+      "transaction_id": "2109145816",
+      "lender_name": "METLIFE HOME LOANS",
+      "is_private_lender": false,
+      "loan_type_id": 32,
+      "loan_type": "Reverse Mortgage",
+      "loan_financing_type_id": 2,
+      "loan_financing_type": "Fixed Rate",
+      "loan_amount": 435000,
+      "loan_interest_rate": 4.86,
+      "loan_term_months": 999,
+      "loan_start_date": "2009-12-03T00:00:00.000Z",
+      "loan_recording_date": "2009-12-03T00:00:00.000Z",
+      "loan_due_date": "2086-12-08T00:00:00.000Z",
+      "has_adjustable_rate_rider": false,
+      "lien_position": 1,
+      "classification": "primary",
+      "classification_label": "Primary mortgage",
+      "classification_reason": "DataTree marks this mortgage as lien position 1."
+     }
+    ],
+    "credits": {
+     "properties": 1,
+     "people": 3
+    }
+   },
+   "dm_enrichment_status": "enriched",
    "enrichment_sources": [
     "dealmachine"
    ],
-   "owner_occupied": null,
+   "owner_occupied": false,
    "owner_mailing_address": "155 NATICK TRAIL",
    "owner_mailing_city": "BRICK",
    "owner_mailing_state": "NJ",
    "owner_mailing_zip": "08724",
-   "absentee": false,
+   "absentee": true,
    "out_of_state": false
   },
   {
@@ -82667,11 +85384,99 @@
    "net_value": 921800,
    "year_built": 2003,
    "last_sale_price": 1350000,
-   "dm_enrichment_status": "pending_retry",
+   "dealmachine": {
+    "source": "dealmachine",
+    "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+    "matched": true,
+    "enrichment_status": "enriched",
+    "matched_by": "apn",
+    "enriched_at": "2026-07-02T07:33:59.910803+00:00",
+    "billing_cycle": "2026-06-06T18:30:15.000Z",
+    "owner_name": "SHARON BRACKEN",
+    "owner_names": [
+     "SHARON BRACKEN"
+    ],
+    "phones": [
+     "8484821137",
+     "8484696629",
+     "8484590138"
+    ],
+    "emails": [
+     "SHARON.BRACKEN@ABBOTT.COM",
+     "SHARON.BRACKEN@SIEMENS-HEALTHINEERS.COM",
+     "SBRACKEN@MSN.COM"
+    ],
+    "contacts": [
+     {
+      "dm_person_id": "per_1506534445856",
+      "full_name": "SHARON BRACKEN",
+      "first_name": "SHARON",
+      "last_name": "BRACKEN",
+      "contact_type": "owner",
+      "is_resident": true,
+      "phones": [
+       {
+        "number": "8484821137",
+        "type": "landline",
+        "do_not_call": false
+       },
+       {
+        "number": "8484696629",
+        "type": "landline",
+        "do_not_call": false
+       },
+       {
+        "number": "8484590138",
+        "type": "landline",
+        "do_not_call": false
+       }
+      ],
+      "emails": [
+       "SHARON.BRACKEN@ABBOTT.COM",
+       "SHARON.BRACKEN@SIEMENS-HEALTHINEERS.COM",
+       "SBRACKEN@MSN.COM"
+      ]
+     }
+    ],
+    "mailing_address": "470 Princeton Ave Brick, NJ, 08724",
+    "property": {
+     "dm_property_id": "prop_86756079",
+     "full_address": "470 Princeton Ave Brick, NJ, 08724",
+     "address": "470 Princeton Ave",
+     "city": "Brick",
+     "state": "NJ",
+     "zip": "08724",
+     "latitude": 40.057762,
+     "longitude": -74.092053,
+     "estimated_value": 2070000,
+     "estimated_equity_amount": 2070000,
+     "estimated_equity_percentage": 100,
+     "year_built": 2003,
+     "living_area_sqft": 3473,
+     "lot_size_sqft": 18199,
+     "num_bedrooms": 3,
+     "num_bathrooms": 4,
+     "last_sale_date": "2022-12-06T00:00:00.000Z",
+     "last_sale_amount": 1350000,
+     "total_assessed_value": 921800,
+     "annual_property_tax_amount": 25276,
+     "num_mortgages": 0,
+     "total_original_loan_amount": 0,
+     "total_estimated_loan_balance": 0,
+     "owner_occupied": true,
+     "apn": "07-00914-0000-00028"
+    },
+    "mortgages": [],
+    "credits": {
+     "properties": 1,
+     "people": 1
+    }
+   },
+   "dm_enrichment_status": "enriched",
    "enrichment_sources": [
     "dealmachine"
    ],
-   "owner_occupied": null,
+   "owner_occupied": true,
    "owner_mailing_address": "470 PRINCETON AVENUE",
    "owner_mailing_city": "BRICK",
    "owner_mailing_state": "NJ",
@@ -82724,16 +85529,100 @@
    "net_value": 455400,
    "year_built": 1945,
    "last_sale_price": 262500,
-   "dm_enrichment_status": "pending_retry",
+   "dealmachine": {
+    "source": "dealmachine",
+    "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+    "matched": true,
+    "enrichment_status": "enriched",
+    "matched_by": "apn",
+    "enriched_at": "2026-07-02T07:33:59.910803+00:00",
+    "billing_cycle": "2026-06-06T18:30:15.000Z",
+    "owner_name": "GEORGE MIKSIS",
+    "owner_names": [
+     "GEORGE MIKSIS"
+    ],
+    "phones": [
+     "7328925233",
+     "9179229944",
+     "7328990048"
+    ],
+    "emails": [
+     "TYELAND@HOTMAIL.COM"
+    ],
+    "contacts": [
+     {
+      "dm_person_id": "per_150699253560",
+      "full_name": "GEORGE MIKSIS",
+      "first_name": "GEORGE",
+      "last_name": "MIKSIS",
+      "contact_type": "owner",
+      "is_resident": false,
+      "phones": [
+       {
+        "number": "7328925233",
+        "type": "wireless",
+        "do_not_call": false
+       },
+       {
+        "number": "9179229944",
+        "type": "landline",
+        "do_not_call": false
+       },
+       {
+        "number": "7328990048",
+        "type": "wireless",
+        "do_not_call": false
+       }
+      ],
+      "emails": [
+       "TYELAND@HOTMAIL.COM"
+      ]
+     }
+    ],
+    "mailing_address": null,
+    "property": {
+     "dm_property_id": "prop_86756218",
+     "full_address": "APN: 07-00916-0000-00040 Brick, NJ, 08724",
+     "address": "500 Princeton Ave",
+     "city": "Brick",
+     "state": "NJ",
+     "zip": "08724",
+     "latitude": 40.05783333,
+     "longitude": -74.09016615,
+     "estimated_value": 1195000,
+     "estimated_equity_amount": 1195000,
+     "estimated_equity_percentage": 100,
+     "year_built": null,
+     "living_area_sqft": 0,
+     "lot_size_sqft": 38720,
+     "num_bedrooms": 0,
+     "num_bathrooms": null,
+     "last_sale_date": "2024-06-25T00:00:00.000Z",
+     "last_sale_amount": 262500,
+     "total_assessed_value": 455400,
+     "annual_property_tax_amount": 12487,
+     "num_mortgages": 0,
+     "total_original_loan_amount": 0,
+     "total_estimated_loan_balance": 0,
+     "owner_occupied": false,
+     "apn": "07-00916-0000-00040"
+    },
+    "mortgages": [],
+    "credits": {
+     "properties": 1,
+     "people": 1
+    }
+   },
+   "dm_enrichment_status": "enriched",
    "enrichment_sources": [
     "dealmachine"
    ],
-   "owner_occupied": null,
+   "owner_occupied": false,
    "owner_mailing_address": "290 FOREST DRIVE SOUTH",
    "owner_mailing_city": "SHORT HILLS",
    "owner_mailing_state": "NJ",
    "owner_mailing_zip": "07078",
-   "absentee": false,
+   "absentee": true,
    "out_of_state": false
   },
   {
@@ -82781,16 +85670,100 @@
    "net_value": 455400,
    "year_built": 0,
    "last_sale_price": 262500,
-   "dm_enrichment_status": "pending_retry",
+   "dealmachine": {
+    "source": "dealmachine",
+    "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+    "matched": true,
+    "enrichment_status": "enriched",
+    "matched_by": "apn",
+    "enriched_at": "2026-07-02T07:33:59.910803+00:00",
+    "billing_cycle": "2026-06-06T18:30:15.000Z",
+    "owner_name": "GEORGE MIKSIS",
+    "owner_names": [
+     "GEORGE MIKSIS"
+    ],
+    "phones": [
+     "7328925233",
+     "9179229944",
+     "7328990048"
+    ],
+    "emails": [
+     "TYELAND@HOTMAIL.COM"
+    ],
+    "contacts": [
+     {
+      "dm_person_id": "per_150699253560",
+      "full_name": "GEORGE MIKSIS",
+      "first_name": "GEORGE",
+      "last_name": "MIKSIS",
+      "contact_type": "owner",
+      "is_resident": false,
+      "phones": [
+       {
+        "number": "7328925233",
+        "type": "wireless",
+        "do_not_call": false
+       },
+       {
+        "number": "9179229944",
+        "type": "landline",
+        "do_not_call": false
+       },
+       {
+        "number": "7328990048",
+        "type": "wireless",
+        "do_not_call": false
+       }
+      ],
+      "emails": [
+       "TYELAND@HOTMAIL.COM"
+      ]
+     }
+    ],
+    "mailing_address": null,
+    "property": {
+     "dm_property_id": "prop_86756222",
+     "full_address": "502 Princeton Ave Brick, NJ, 08724",
+     "address": "502 Princeton Ave",
+     "city": "Brick",
+     "state": "NJ",
+     "zip": "08724",
+     "latitude": 40.057837982,
+     "longitude": -74.08989393,
+     "estimated_value": 1310000,
+     "estimated_equity_amount": 1310000,
+     "estimated_equity_percentage": 100,
+     "year_built": 1945,
+     "living_area_sqft": 717,
+     "lot_size_sqft": 38799,
+     "num_bedrooms": 2,
+     "num_bathrooms": 1,
+     "last_sale_date": "2024-06-25T00:00:00.000Z",
+     "last_sale_amount": 262500,
+     "total_assessed_value": 455400,
+     "annual_property_tax_amount": 12487,
+     "num_mortgages": 0,
+     "total_original_loan_amount": 0,
+     "total_estimated_loan_balance": 0,
+     "owner_occupied": false,
+     "apn": "07-00916-0000-00042"
+    },
+    "mortgages": [],
+    "credits": {
+     "properties": 1,
+     "people": 1
+    }
+   },
+   "dm_enrichment_status": "enriched",
    "enrichment_sources": [
     "dealmachine"
    ],
-   "owner_occupied": null,
+   "owner_occupied": false,
    "owner_mailing_address": "290 FOREST DRIVE SOUTH",
    "owner_mailing_city": "SHORT HILLS",
    "owner_mailing_state": "NJ",
    "owner_mailing_zip": "07078",
-   "absentee": false,
+   "absentee": true,
    "out_of_state": false
   },
   {
@@ -82838,16 +85811,157 @@
    "net_value": 279400,
    "year_built": 1967,
    "last_sale_price": 275000,
-   "dm_enrichment_status": "pending_retry",
+   "dealmachine": {
+    "source": "dealmachine",
+    "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+    "matched": true,
+    "enrichment_status": "enriched",
+    "matched_by": "apn",
+    "enriched_at": "2026-07-02T07:33:59.910803+00:00",
+    "billing_cycle": "2026-06-06T18:30:15.000Z",
+    "owner_name": "MICHAEL POOLE",
+    "owner_names": [
+     "MICHAEL POOLE",
+     "MICHAEL POOLE"
+    ],
+    "phones": [
+     "7324078668",
+     "7327933838",
+     "7327933927",
+     "7328145810",
+     "7328547222"
+    ],
+    "emails": [
+     "MIKE.POOLE0779@GMAIL.COM",
+     "MIKE0779@OPTONLINE.NET",
+     "MPOOLE3927@YAHOO.COM"
+    ],
+    "contacts": [
+     {
+      "dm_person_id": "per_150398771113",
+      "full_name": "MICHAEL POOLE",
+      "first_name": "MICHAEL",
+      "last_name": "POOLE",
+      "contact_type": "owner",
+      "is_resident": false,
+      "phones": [
+       {
+        "number": "7324078668",
+        "type": "landline",
+        "do_not_call": false
+       },
+       {
+        "number": "7327933838",
+        "type": "wireless",
+        "do_not_call": false
+       },
+       {
+        "number": "7327933927",
+        "type": "wireless",
+        "do_not_call": false
+       }
+      ],
+      "emails": [
+       "MIKE.POOLE0779@GMAIL.COM",
+       "MIKE0779@OPTONLINE.NET",
+       "MPOOLE3927@YAHOO.COM"
+      ]
+     },
+     {
+      "dm_person_id": "per_1504390501399",
+      "full_name": "MICHAEL POOLE",
+      "first_name": "MICHAEL",
+      "last_name": "POOLE",
+      "contact_type": "owner",
+      "is_resident": false,
+      "phones": [
+       {
+        "number": "7328145810",
+        "type": "landline",
+        "do_not_call": false
+       },
+       {
+        "number": "7327933927",
+        "type": "wireless",
+        "do_not_call": false
+       },
+       {
+        "number": "7328547222",
+        "type": "wireless",
+        "do_not_call": false
+       }
+      ],
+      "emails": []
+     }
+    ],
+    "mailing_address": null,
+    "property": {
+     "dm_property_id": "prop_86788943",
+     "full_address": "634 Point Ave Brick, NJ, 08724",
+     "address": "634 Point Ave",
+     "city": "Brick",
+     "state": "NJ",
+     "zip": "08724",
+     "latitude": 40.0572,
+     "longitude": -74.079477,
+     "estimated_value": 370000,
+     "estimated_equity_amount": 180293,
+     "estimated_equity_percentage": 68,
+     "year_built": 1967,
+     "living_area_sqft": 1733,
+     "lot_size_sqft": 6251,
+     "num_bedrooms": 4,
+     "num_bathrooms": 2,
+     "last_sale_date": "2022-02-09T00:00:00.000Z",
+     "last_sale_amount": 275000,
+     "total_assessed_value": 279400,
+     "annual_property_tax_amount": 7661,
+     "num_mortgages": 1,
+     "total_original_loan_amount": 206250,
+     "total_estimated_loan_balance": 189707,
+     "owner_occupied": false,
+     "apn": "07-00934-0000-00023-02"
+    },
+    "mortgages": [
+     {
+      "mortgage_number": 1,
+      "id": "11879689940",
+      "transaction_id": "11879689940",
+      "lender_name": "GUARANTEED RATE INC",
+      "is_private_lender": false,
+      "loan_type_id": 20,
+      "loan_type": "New Conventional",
+      "loan_financing_type": "Unknown Financing Type",
+      "loan_amount": 206250,
+      "loan_balance": 189707,
+      "loan_interest_rate": 3.56,
+      "loan_term_months": 360,
+      "loan_start_date": "2022-02-09T00:00:00.000Z",
+      "loan_recording_date": "2022-02-09T00:00:00.000Z",
+      "loan_due_date": "2052-02-01T00:00:00.000Z",
+      "has_adjustable_rate_rider": false,
+      "lien_position": 1,
+      "estimated_payment_amount": 933.08,
+      "classification": "primary",
+      "classification_label": "Primary mortgage",
+      "classification_reason": "DataTree marks this mortgage as lien position 1."
+     }
+    ],
+    "credits": {
+     "properties": 1,
+     "people": 2
+    }
+   },
+   "dm_enrichment_status": "enriched",
    "enrichment_sources": [
     "dealmachine"
    ],
-   "owner_occupied": null,
+   "owner_occupied": false,
    "owner_mailing_address": "127 ELIZABETH AVENUE",
    "owner_mailing_city": "LAVALLETTE",
    "owner_mailing_state": "NJ",
    "owner_mailing_zip": "08735",
-   "absentee": false,
+   "absentee": true,
    "out_of_state": false
   },
   {
@@ -82895,11 +86009,144 @@
    "net_value": 273800,
    "year_built": 1964,
    "last_sale_price": 375000,
-   "dm_enrichment_status": "pending_retry",
+   "dealmachine": {
+    "source": "dealmachine",
+    "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+    "matched": true,
+    "enrichment_status": "enriched",
+    "matched_by": "apn",
+    "enriched_at": "2026-07-02T07:33:59.910803+00:00",
+    "billing_cycle": "2026-06-06T18:30:15.000Z",
+    "owner_name": "RYAN DELEEUW",
+    "owner_names": [
+     "RYAN DELEEUW"
+    ],
+    "phones": [
+     "7329985084",
+     "7322958359",
+     "7329488714"
+    ],
+    "emails": [
+     "RDELEEUW1922@YAHOO.COM",
+     "KUBKAKE@AOL.COM"
+    ],
+    "contacts": [
+     {
+      "dm_person_id": "per_15012375476",
+      "full_name": "RYAN DELEEUW",
+      "first_name": "RYAN",
+      "last_name": "DELEEUW",
+      "contact_type": "owner",
+      "is_resident": true,
+      "phones": [
+       {
+        "number": "7329985084",
+        "type": "landline",
+        "do_not_call": false
+       },
+       {
+        "number": "7322958359",
+        "type": "wireless",
+        "do_not_call": false
+       },
+       {
+        "number": "7329488714",
+        "type": "landline",
+        "do_not_call": false
+       }
+      ],
+      "emails": [
+       "RDELEEUW1922@YAHOO.COM",
+       "KUBKAKE@AOL.COM"
+      ]
+     }
+    ],
+    "mailing_address": "747 Princeton Ave Brick, NJ, 08724",
+    "property": {
+     "dm_property_id": "prop_86789026",
+     "full_address": "747 Princeton Ave Brick, NJ, 08724",
+     "address": "747 Princeton Ave",
+     "city": "Brick",
+     "state": "NJ",
+     "zip": "08724",
+     "latitude": 40.058602,
+     "longitude": -74.069897,
+     "estimated_value": 577000,
+     "estimated_equity_amount": 344538,
+     "estimated_equity_percentage": 65,
+     "year_built": 1964,
+     "living_area_sqft": 1918,
+     "lot_size_sqft": 5001,
+     "num_bedrooms": 3,
+     "num_bathrooms": 2,
+     "last_sale_date": "2021-09-28T00:00:00.000Z",
+     "last_sale_amount": 375000,
+     "total_assessed_value": 273800,
+     "annual_property_tax_amount": 7508,
+     "num_mortgages": 2,
+     "total_original_loan_amount": 256766,
+     "total_estimated_loan_balance": 232462,
+     "owner_occupied": true,
+     "apn": "07-00938-0000-00066"
+    },
+    "mortgages": [
+     {
+      "mortgage_number": 1,
+      "id": "11858726493",
+      "transaction_id": "11858726493",
+      "lender_name": "AMERICAN NEIGHBORHOOD MTG ACCE",
+      "is_private_lender": false,
+      "loan_type_id": 12,
+      "loan_type": "FHA",
+      "loan_financing_type": "Unknown Financing Type",
+      "loan_amount": 237586,
+      "loan_balance": 213815,
+      "loan_interest_rate": 2.8,
+      "loan_term_months": 360,
+      "loan_start_date": "2021-09-28T00:00:00.000Z",
+      "loan_recording_date": "2021-09-28T00:00:00.000Z",
+      "loan_due_date": "2051-09-01T00:00:00.000Z",
+      "has_adjustable_rate_rider": false,
+      "lien_position": 1,
+      "estimated_payment_amount": 976.23,
+      "classification": "primary",
+      "classification_label": "Primary mortgage",
+      "classification_reason": "DataTree marks this mortgage as lien position 1."
+     },
+     {
+      "mortgage_number": 2,
+      "id": "21247479475",
+      "transaction_id": "21247479475",
+      "lender_name": "SECRETARY/HOUSING & URBAN DEV",
+      "is_private_lender": false,
+      "loan_type_id": 20,
+      "loan_type": "New Conventional",
+      "loan_financing_type": "Unknown Financing Type",
+      "loan_amount": 19180,
+      "loan_balance": 18647,
+      "loan_interest_rate": 7.18,
+      "loan_term_months": 333,
+      "loan_start_date": "2023-11-09T00:00:00.000Z",
+      "loan_recording_date": "2023-11-09T00:00:00.000Z",
+      "loan_due_date": "2051-09-01T00:00:00.000Z",
+      "has_adjustable_rate_rider": false,
+      "lien_position": 2,
+      "estimated_payment_amount": 133.01,
+      "classification": "subordinate",
+      "classification_label": "Possible second lien",
+      "classification_reason": "DataTree marks this mortgage as lien position 2."
+     }
+    ],
+    "credits": {
+     "properties": 1,
+     "people": 1
+    }
+   },
+   "dm_enrichment_status": "enriched",
    "enrichment_sources": [
     "dealmachine"
    ],
-   "owner_occupied": null,
+   "owner_occupied": true,
    "owner_mailing_address": "747 PRINCETON AVENUE",
    "owner_mailing_city": "BRICK",
    "owner_mailing_state": "NJ",
@@ -115607,23 +118854,623 @@
    "owner_resolved": false,
    "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
    "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:267370",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-04-14",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:267370"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "267370",
+   "probate_case_type": "Guardianship of Incapacitated",
+   "filed_date": "2026-04-14",
+   "decedent_name": "Thomason Kathleen",
+   "decedent_date_of_birth": "1949-04-13",
+   "decedent_date_of_death": null,
+   "property_city": "Homeless",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:267572",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-04-24",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:267572"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "267572",
+   "probate_case_type": "Guardianship of Incapacitated",
+   "filed_date": "2026-04-24",
+   "decedent_name": "Mazzola Joseph",
+   "decedent_date_of_birth": "1936-01-27",
+   "decedent_date_of_death": null,
+   "property_city": "Manahawkin",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:267743",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-05-07",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:267743"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "267743",
+   "probate_case_type": "Guardianship of Incapacitated",
+   "filed_date": "2026-05-07",
+   "decedent_name": "Anderson Janice E.",
+   "decedent_date_of_birth": "1940-10-30",
+   "decedent_date_of_death": null,
+   "property_city": "Tuckerton",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:267973",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-05-22",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:267973"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "267973",
+   "probate_case_type": "Probate",
+   "filed_date": "2026-05-22",
+   "decedent_name": "Graziano Joann",
+   "decedent_date_of_birth": "1944-12-11",
+   "decedent_date_of_death": "2026-04-16",
+   "property_city": "Manchester",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:268195",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-06-08",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:268195"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "268195",
+   "probate_case_type": "Administration",
+   "filed_date": "2026-06-08",
+   "decedent_name": "Maloney Jacqueline B.",
+   "decedent_date_of_birth": "1974-01-13",
+   "decedent_date_of_death": "2026-02-25",
+   "property_city": "Brick",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:268228",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-06-10",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:268228"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "268228",
+   "probate_case_type": "Administration Non-Resident",
+   "filed_date": "2026-06-10",
+   "decedent_name": "Stein Fay",
+   "decedent_date_of_birth": "1916-04-03",
+   "decedent_date_of_death": "2015-02-06",
+   "property_city": "Greensboro",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:268299",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-06-15",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:268299"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "268299",
+   "probate_case_type": "Probate",
+   "filed_date": "2026-06-15",
+   "decedent_name": "Windish Winifred Ann",
+   "decedent_date_of_birth": "1942-03-20",
+   "decedent_date_of_death": "2026-03-05",
+   "property_city": "Manchester",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:268315",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-06-16",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:268315"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "268315",
+   "probate_case_type": "Probate Non-Resident",
+   "filed_date": "2026-06-16",
+   "decedent_name": "Beckmann Stephen",
+   "decedent_date_of_birth": "1958-07-10",
+   "decedent_date_of_death": "2026-05-04",
+   "property_city": "Staten Island",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:268456",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-06-26",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:268456"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "268456",
+   "probate_case_type": "Probate",
+   "filed_date": "2026-06-26",
+   "decedent_name": "Kennedy Diane C.",
+   "decedent_date_of_birth": "1933-03-26",
+   "decedent_date_of_death": "2026-05-01",
+   "property_city": "Manchester",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:268475",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-06-29",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:268475"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "268475",
+   "probate_case_type": "Probate",
+   "filed_date": "2026-06-29",
+   "decedent_name": "Matina Joanne",
+   "decedent_date_of_birth": "1939-04-18",
+   "decedent_date_of_death": "2025-08-13",
+   "property_city": "Berkeley",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:268477",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-06-29",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:268477"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "268477",
+   "probate_case_type": "Probate",
+   "filed_date": "2026-06-29",
+   "decedent_name": "Marrott Prannath",
+   "decedent_date_of_birth": "1938-06-21",
+   "decedent_date_of_death": "2026-06-13",
+   "property_city": "Brick Township",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:268490",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-06-29",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:268490"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "268490",
+   "probate_case_type": "Administration",
+   "filed_date": "2026-06-29",
+   "decedent_name": "Schiraldi Eleanor",
+   "decedent_date_of_birth": "1939-03-30",
+   "decedent_date_of_death": "2026-06-10",
+   "property_city": "Berkeley",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:268505",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-06-30",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:268505"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "268505",
+   "probate_case_type": "Probate",
+   "filed_date": "2026-06-30",
+   "decedent_name": "Byster Madeline A.",
+   "decedent_date_of_birth": "1942-05-01",
+   "decedent_date_of_death": "2026-05-21",
+   "property_city": "Plumsted Township",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:268509",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-06-30",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:268509"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "268509",
+   "probate_case_type": "Probate",
+   "filed_date": "2026-06-30",
+   "decedent_name": "Dwyer James V.",
+   "decedent_date_of_birth": "1949-10-27",
+   "decedent_date_of_death": "2026-06-20",
+   "property_city": "Brick Township",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:250787",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-06-30",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:250787"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "250787",
+   "probate_case_type": "Substitute/Succeeding Probate",
+   "filed_date": "2026-06-30",
+   "decedent_name": "Simpson Marilyn P.",
+   "decedent_date_of_birth": "1930-07-23",
+   "decedent_date_of_death": "2022-12-07",
+   "property_city": "Toms River",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:268518",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-07-01",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:268518"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "268518",
+   "probate_case_type": "Probate",
+   "filed_date": "2026-07-01",
+   "decedent_name": "Shagan Bernard P.",
+   "decedent_date_of_birth": "1935-09-29",
+   "decedent_date_of_death": "2026-06-11",
+   "property_city": "Jackson Township",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:268522",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-07-01",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:268522"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "268522",
+   "probate_case_type": "Caveats",
+   "filed_date": "2026-07-01",
+   "decedent_name": "Devers William J.",
+   "decedent_date_of_birth": null,
+   "decedent_date_of_death": "2026-06-23",
+   "property_city": "Lakewood",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:268525",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-07-01",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:268525"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "268525",
+   "probate_case_type": "Administration",
+   "filed_date": "2026-07-01",
+   "decedent_name": "Santiago Nilza",
+   "decedent_date_of_birth": "1956-10-18",
+   "decedent_date_of_death": "2026-06-22",
+   "property_city": "Toms River",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:268527",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-07-01",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:268527"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "268527",
+   "probate_case_type": "Probate",
+   "filed_date": "2026-07-01",
+   "decedent_name": "Yodice Constantino J.",
+   "decedent_date_of_birth": "1942-02-08",
+   "decedent_date_of_death": "2026-06-03",
+   "property_city": "Brick Township",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:268528",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-07-01",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:268528"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "268528",
+   "probate_case_type": "Affidavit of Surviving Spouse or Domestic Partner",
+   "filed_date": "2026-07-01",
+   "decedent_name": "Cinotti Robert A.",
+   "decedent_date_of_birth": "1948-06-22",
+   "decedent_date_of_death": "2023-04-29",
+   "property_city": "Point Pleasant Borough",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
   }
  ],
  "dealmachine_enrichment": {
-  "enriched_at": "2026-07-01T07:59:02.280882+00:00",
+  "enriched_at": "2026-07-02T07:33:59.910803+00:00",
   "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
   "source": "dealmachine",
   "actionable_targets": 532,
   "api_calls_this_run": 65,
   "reattached_from_cache": 467,
-  "enriched": 401,
-  "genuine_no_match": 66,
-  "pending_retry": 65,
-  "owner_names_recovered": 273,
-  "daniels_law_backfilled": 2,
-  "contacts_attached": 380,
-  "phones_attached": 686,
-  "emails_attached": 657,
+  "enriched": 429,
+  "genuine_no_match": 78,
+  "pending_retry": 25,
+  "owner_names_recovered": 296,
+  "daniels_law_backfilled": 3,
+  "contacts_attached": 420,
+  "phones_attached": 758,
+  "emails_attached": 728,
   "credits_before": {
    "included": 100000,
    "total_available": 110000,
@@ -115631,16 +119478,16 @@
    "monthly_credit_grant_cap": 0,
    "monthly_included": 100000,
    "additional_credit_balance": 10000,
-   "used": 9513,
-   "remaining": 100487,
-   "monthly_remaining": 90487,
+   "used": 11531,
+   "remaining": 98469,
+   "monthly_remaining": 88469,
    "additional_remaining": 10000,
    "overage": 0,
    "pools": {
     "monthly": {
      "included": 100000,
-     "used": 9513,
-     "remaining": 90487
+     "used": 11531,
+     "remaining": 88469
     },
     "additional": {
      "available": 10000,
@@ -115649,8 +119496,8 @@
     }
    },
    "breakdown": {
-    "properties": 4789,
-    "people": 4724,
+    "properties": 5736,
+    "people": 5795,
     "companies": 0
    }
   },
@@ -115661,16 +119508,16 @@
    "monthly_credit_grant_cap": 0,
    "monthly_included": 100000,
    "additional_credit_balance": 10000,
-   "used": 9633,
-   "remaining": 100367,
-   "monthly_remaining": 90367,
+   "used": 11743,
+   "remaining": 98257,
+   "monthly_remaining": 88257,
    "additional_remaining": 10000,
    "overage": 0,
    "pools": {
     "monthly": {
      "included": 100000,
-     "used": 9633,
-     "remaining": 90367
+     "used": 11743,
+     "remaining": 88257
     },
     "additional": {
      "available": 10000,
@@ -115679,8 +119526,8 @@
     }
    },
    "breakdown": {
-    "properties": 4789,
-    "people": 4724,
+    "properties": 5737,
+    "people": 5796,
     "companies": 0
    }
   }
