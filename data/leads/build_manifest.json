@@ -3,13 +3,13 @@
   "county_name": "Ocean County",
   "state_name": "New Jersey",
   "framework_version": "v5.5.0",
-  "build_timestamp": "2026-07-06T07:50:16Z",
+  "build_timestamp": "2026-07-07T07:24:20Z",
   "build_mode": "PARTIAL_BUILD",
-  "total_leads": 1942,
+  "total_leads": 1955,
   "lead_counts_by_signal": {
     "foreclosure_sale_scheduled": 28,
     "foreclosure_notice_published": 2,
-    "probate_filing_recent": 1408,
+    "probate_filing_recent": 1421,
     "tax_default_brick": 504
   },
   "hls_brick_status": {
@@ -30,8 +30,8 @@
   },
   "tax_board_detail_indexed": 10,
   "lead_counts_by_status": {
-    "APPROVED_FOR_DASHBOARD": 524,
-    "REVIEW_REQUIRED": 1418
+    "APPROVED_FOR_DASHBOARD": 523,
+    "REVIEW_REQUIRED": 1432
   },
   "parcel_join": {
     "hits": 19,
@@ -59,7 +59,7 @@
         "OWNER_STATUS"
       ],
       "source_role": "BLOCKED_SOURCE",
-      "reported_at": "2026-07-06T07:49:02Z",
+      "reported_at": "2026-07-07T07:23:27Z",
       "v5_5_0_recon_anchor": "runs/ocean_nj/recon/source_of_record_matrix.json#sources"
     },
     {
@@ -76,7 +76,7 @@
         "RECORDED_EVENT"
       ],
       "source_role": "BLOCKED_SOURCE",
-      "reported_at": "2026-07-06T07:49:02Z",
+      "reported_at": "2026-07-07T07:23:27Z",
       "v5_5_0_recon_anchor": "runs/ocean_nj/recon/source_of_record_matrix.json#sources"
     },
     {
@@ -94,7 +94,7 @@
         "TAX_DEFAULT"
       ],
       "source_role": "BLOCKED_SOURCE",
-      "reported_at": "2026-07-06T07:49:02Z",
+      "reported_at": "2026-07-07T07:23:27Z",
       "v5_5_0_recon_anchor": "runs/ocean_nj/recon/source_of_record_matrix.json#sources"
     },
     {
@@ -109,7 +109,7 @@
       ],
       "intended_lead_origins": [],
       "source_role": "BLOCKED_SOURCE",
-      "reported_at": "2026-07-06T07:49:02Z",
+      "reported_at": "2026-07-07T07:23:27Z",
       "v5_5_0_recon_anchor": "runs/ocean_nj/recon/source_of_record_matrix.json#sources"
     }
   ]
