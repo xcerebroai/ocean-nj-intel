@@ -52072,5 +52072,227 @@
     "reason": "Database query failed"
    }
   }
+ },
+ "sheriff_foreclosure:CH_779072": {
+  "hash": "653a23bd28791c97",
+  "enriched_at": "2026-07-09T07:40:36.474344+00:00",
+  "block": {
+   "source": "dealmachine",
+   "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+   "matched": false,
+   "enrichment_status": "no_dm_record",
+   "matched_by": "apn",
+   "enriched_at": "2026-07-09T07:40:36.474344+00:00",
+   "billing_cycle": "2026-07-07T18:06:43.000Z",
+   "match_failure": {
+    "code": "wrong_county",
+    "reason": "APN resolved outside Ocean County (Gibbstown, 08027)"
+   }
+  }
+ },
+ "sheriff_foreclosure:CH_780690": {
+  "hash": "67883016cdb2d8d5",
+  "enriched_at": "2026-07-09T07:40:36.474344+00:00",
+  "block": {
+   "source": "dealmachine",
+   "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+   "matched": true,
+   "enrichment_status": "enriched",
+   "matched_by": "apn",
+   "enriched_at": "2026-07-09T07:40:36.474344+00:00",
+   "billing_cycle": "2026-07-07T18:06:43.000Z",
+   "owner_name": "RUTH PESANO",
+   "owner_names": [
+    "RUTH PESANO"
+   ],
+   "phones": [
+    "7328187979",
+    "8483335319"
+   ],
+   "emails": [
+    "RUTHPESANO@GMAIL.COM",
+    "LYNNPESANO@NETSCAPE.NET",
+    "RPESANO@GMAIL.COM"
+   ],
+   "contacts": [
+    {
+     "dm_person_id": "per_1501112008558",
+     "full_name": "RUTH PESANO",
+     "first_name": "RUTH",
+     "last_name": "PESANO",
+     "contact_type": "owner",
+     "is_resident": true,
+     "phones": [
+      {
+       "number": "7328187979",
+       "type": "wireless",
+       "do_not_call": false
+      },
+      {
+       "number": "8483335319",
+       "type": "landline",
+       "do_not_call": false
+      }
+     ],
+     "emails": [
+      "RUTHPESANO@GMAIL.COM",
+      "LYNNPESANO@NETSCAPE.NET",
+      "RPESANO@GMAIL.COM"
+     ]
+    }
+   ],
+   "mailing_address": "453 Surf Ave Beachwood, NJ, 08722",
+   "property": {
+    "dm_property_id": "prop_86717631",
+    "full_address": "453 Surf Ave Beachwood, NJ, 08722",
+    "address": "453 Surf Ave",
+    "city": "Beachwood",
+    "state": "NJ",
+    "zip": "08722",
+    "latitude": 39.936883,
+    "longitude": -74.199768,
+    "estimated_value": 463000,
+    "estimated_equity_amount": 432091,
+    "estimated_equity_percentage": 93,
+    "year_built": 1971,
+    "living_area_sqft": 1415,
+    "lot_size_sqft": 8002,
+    "num_bedrooms": 3,
+    "num_bathrooms": 2,
+    "last_sale_date": "1999-10-15T00:00:00.000Z",
+    "last_sale_amount": 125000,
+    "total_assessed_value": 181400,
+    "annual_property_tax_amount": 5781,
+    "num_mortgages": 1,
+    "total_original_loan_amount": 112500,
+    "total_estimated_loan_balance": 30909,
+    "owner_occupied": true,
+    "apn": "05-00001-27-00001"
+   },
+   "mortgages": [
+    {
+     "mortgage_number": 1,
+     "id": "1120234007",
+     "transaction_id": "1120234007",
+     "lender_name": "DBA COMMONWEALTH UNITED MTG CO",
+     "is_private_lender": false,
+     "loan_type": "Unknown Type",
+     "loan_financing_type": "Unknown Financing Type",
+     "loan_amount": 112500,
+     "loan_balance": 30909,
+     "loan_interest_rate": 7.8,
+     "loan_term_months": 360,
+     "loan_start_date": "1999-10-15T00:00:00.000Z",
+     "loan_recording_date": "1999-10-15T00:00:00.000Z",
+     "loan_due_date": "2029-11-01T00:00:00.000Z",
+     "has_adjustable_rate_rider": false,
+     "lien_position": 1,
+     "estimated_payment_amount": 809.85,
+     "classification": "primary",
+     "classification_label": "Primary mortgage",
+     "classification_reason": "DataTree marks this mortgage as lien position 1."
+    }
+   ],
+   "credits": {
+    "properties": 1,
+    "people": 1
+   }
+  }
+ },
+ "sheriff_foreclosure:CH_780691": {
+  "hash": "71f590b5c083123d",
+  "enriched_at": "2026-07-09T07:40:36.474344+00:00",
+  "block": {
+   "source": "dealmachine",
+   "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+   "matched": true,
+   "enrichment_status": "enriched",
+   "matched_by": "apn",
+   "enriched_at": "2026-07-09T07:40:36.474344+00:00",
+   "billing_cycle": "2026-07-07T18:06:43.000Z",
+   "owner_name": "BLONDELL MILLIGAN",
+   "owner_names": [
+    "BLONDELL MILLIGAN"
+   ],
+   "phones": [
+    "8485259427"
+   ],
+   "emails": [],
+   "contacts": [
+    {
+     "dm_person_id": "per_150677121991",
+     "full_name": "BLONDELL MILLIGAN",
+     "first_name": "BLONDELL",
+     "last_name": "MILLIGAN",
+     "contact_type": "owner",
+     "is_resident": true,
+     "phones": [
+      {
+       "number": "8485259427",
+       "type": "landline",
+       "do_not_call": false
+      }
+     ],
+     "emails": []
+    }
+   ],
+   "mailing_address": "160 1st Ave Toms River, NJ, 08757",
+   "property": {
+    "dm_property_id": "prop_86732537",
+    "full_address": "160 1st Ave Toms River, NJ, 08757",
+    "address": "160 1st Ave",
+    "city": "Toms River",
+    "state": "NJ",
+    "zip": "08757",
+    "latitude": 39.945276,
+    "longitude": -74.217759,
+    "estimated_value": 349000,
+    "estimated_equity_amount": 266952,
+    "estimated_equity_percentage": 75,
+    "year_built": 2012,
+    "living_area_sqft": 1341,
+    "lot_size_sqft": 5998,
+    "num_bedrooms": 3,
+    "num_bathrooms": 2,
+    "last_sale_date": "2012-08-30T00:00:00.000Z",
+    "last_sale_amount": 125000,
+    "total_assessed_value": 125000,
+    "annual_property_tax_amount": 3238,
+    "num_mortgages": 1,
+    "total_original_loan_amount": 121250,
+    "total_estimated_loan_balance": 82048,
+    "owner_occupied": true,
+    "apn": "06-00030-0000-00076-02"
+   },
+   "mortgages": [
+    {
+     "mortgage_number": 1,
+     "id": "11474532194",
+     "transaction_id": "11474532194",
+     "lender_name": "NEW JERSEY HOUSING & MORTGAGE",
+     "is_private_lender": false,
+     "loan_type_id": 1,
+     "loan_type": "Stand Alone First",
+     "loan_financing_type": "Unknown Financing Type",
+     "loan_amount": 121250,
+     "loan_balance": 82048,
+     "loan_interest_rate": 3.56,
+     "loan_term_months": 360,
+     "loan_start_date": "2012-08-30T00:00:00.000Z",
+     "loan_recording_date": "2012-08-30T00:00:00.000Z",
+     "loan_due_date": "2042-09-01T00:00:00.000Z",
+     "has_adjustable_rate_rider": false,
+     "lien_position": 1,
+     "estimated_payment_amount": 548.54,
+     "classification": "primary",
+     "classification_label": "Primary mortgage",
+     "classification_reason": "DataTree marks this mortgage as lien position 1."
+    }
+   ],
+   "credits": {
+    "properties": 1,
+    "people": 1
+   }
+  }
  }
 }
