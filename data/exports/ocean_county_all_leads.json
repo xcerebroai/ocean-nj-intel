@@ -4365,6 +4365,36 @@
     "key": "hls_brick_taxsale:729955"
   },
   {
+    "first_name": "Judith",
+    "last_name": "Zywan",
+    "property_address": "18 Wedgeport Dr",
+    "property_city": "Toms River",
+    "property_state": "NJ",
+    "property_zip": "08757",
+    "phone_1": "",
+    "phone_2": "",
+    "phone_3": "",
+    "email_1": "judyzywan@cs.com",
+    "email_2": "john.zywan@wellsfargo.com",
+    "lead_type": "Sheriff Foreclosure",
+    "key": "sheriff_foreclosure:CH_780663"
+  },
+  {
+    "first_name": "Ruth",
+    "last_name": "Pesano",
+    "property_address": "453 Surf Ave",
+    "property_city": "Beachwood",
+    "property_state": "NJ",
+    "property_zip": "08722",
+    "phone_1": "+17328187979",
+    "phone_2": "",
+    "phone_3": "",
+    "email_1": "ruthpesano@gmail.com",
+    "email_2": "lynnpesano@netscape.net",
+    "lead_type": "Sheriff Foreclosure",
+    "key": "sheriff_foreclosure:CH_780690"
+  },
+  {
     "first_name": "Michelle",
     "last_name": "Davies",
     "property_address": "827 N Green St",
