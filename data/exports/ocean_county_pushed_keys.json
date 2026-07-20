@@ -2097,8 +2097,10 @@
     "hls_brick_taxsale:209573",
     "hls_brick_taxsale:308410",
     "hls_brick_taxsale:308599",
+    "hls_brick_taxsale:308718",
     "hls_brick_taxsale:308872",
     "hls_brick_taxsale:308972",
+    "hls_brick_taxsale:309030",
     "hls_brick_taxsale:309060",
     "hls_brick_taxsale:309083",
     "hls_brick_taxsale:309092",
@@ -2127,6 +2129,7 @@
     "hls_brick_taxsale:309867",
     "hls_brick_taxsale:310035",
     "hls_brick_taxsale:310057",
+    "hls_brick_taxsale:310220",
     "hls_brick_taxsale:310228",
     "hls_brick_taxsale:310284",
     "hls_brick_taxsale:310287",
@@ -2180,6 +2183,7 @@
     "hls_brick_taxsale:414009",
     "hls_brick_taxsale:414102",
     "hls_brick_taxsale:414762",
+    "hls_brick_taxsale:414788",
     "hls_brick_taxsale:414861",
     "hls_brick_taxsale:415003",
     "hls_brick_taxsale:415010",
@@ -2334,6 +2338,7 @@
     "sheriff_foreclosure:CH_780663",
     "sheriff_foreclosure:CH_780679",
     "sheriff_foreclosure:CH_780683",
+    "sheriff_foreclosure:CH_780689",
     "sheriff_foreclosure:CH_780690"
   ]
 }

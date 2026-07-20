@@ -1020,6 +1020,21 @@
     "key": "hls_brick_taxsale:308972"
   },
   {
+    "first_name": "Sara",
+    "last_name": "Greenfeld",
+    "property_address": "205 Spruce Dr",
+    "property_city": "Brick",
+    "property_state": "NJ",
+    "property_zip": "08723",
+    "phone_1": "",
+    "phone_2": "",
+    "phone_3": "",
+    "email_1": "mcsfeb@gmail.com",
+    "email_2": "",
+    "lead_type": "tax_certificate",
+    "key": "hls_brick_taxsale:309030"
+  },
+  {
     "first_name": "Jeanine",
     "last_name": "Vaiana",
     "property_address": "179 Arizona Dr",
@@ -1093,6 +1108,21 @@
     "email_2": "smsprout22@gmail.com",
     "lead_type": "tax_certificate",
     "key": "hls_brick_taxsale:308599"
+  },
+  {
+    "first_name": "Gayle",
+    "last_name": "Tikotzky",
+    "property_address": "26 Kent Dr",
+    "property_city": "Brick",
+    "property_state": "NJ",
+    "property_zip": "08723",
+    "phone_1": "+17327301376",
+    "phone_2": "",
+    "phone_3": "",
+    "email_1": "timeforet@gmail.com",
+    "email_2": "joetk120@gmail.com",
+    "lead_type": "tax_certificate",
+    "key": "hls_brick_taxsale:308718"
   },
   {
     "first_name": "Diane",
@@ -1498,6 +1528,21 @@
     "email_2": "mshark22usa@hotmail.com",
     "lead_type": "tax_certificate",
     "key": "hls_brick_taxsale:310057"
+  },
+  {
+    "first_name": "Maria",
+    "last_name": "Santiago",
+    "property_address": "521 Birch Bark Dr",
+    "property_city": "Brick",
+    "property_state": "NJ",
+    "property_zip": "08723",
+    "phone_1": "+19086590130",
+    "phone_2": "+19086864689",
+    "phone_3": "",
+    "email_1": "",
+    "email_2": "",
+    "lead_type": "tax_certificate",
+    "key": "hls_brick_taxsale:310220"
   },
   {
     "first_name": "Ryan",
@@ -2293,6 +2338,21 @@
     "email_2": "chefgeno9@gmail.com",
     "lead_type": "tax_certificate",
     "key": "hls_brick_taxsale:414762"
+  },
+  {
+    "first_name": "Isaac",
+    "last_name": "Lipschitz",
+    "property_address": "1623 W Princeton Ave",
+    "property_city": "Brick",
+    "property_state": "NJ",
+    "property_zip": "08724",
+    "phone_1": "+17323636312",
+    "phone_2": "",
+    "phone_3": "",
+    "email_1": "",
+    "email_2": "",
+    "lead_type": "tax_certificate",
+    "key": "hls_brick_taxsale:414788"
   },
   {
     "first_name": "Kim",
@@ -4378,6 +4438,21 @@
     "email_2": "john.zywan@wellsfargo.com",
     "lead_type": "Sheriff Foreclosure",
     "key": "sheriff_foreclosure:CH_780663"
+  },
+  {
+    "first_name": "Kayla",
+    "last_name": "Attinson",
+    "property_address": "459 Vine St",
+    "property_city": "Brick",
+    "property_state": "NJ",
+    "property_zip": "08723",
+    "phone_1": "+17325349224",
+    "phone_2": "+17328660900",
+    "phone_3": "",
+    "email_1": "kayla.t2724@gmail.com",
+    "email_2": "kaylat2724@gmail.com",
+    "lead_type": "Sheriff Foreclosure",
+    "key": "sheriff_foreclosure:CH_780689"
   },
   {
     "first_name": "Ruth",
