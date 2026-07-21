@@ -1,38 +1,4 @@
 {
   "mode": "live",
-  "tag": "Ocean County",
-  "attempted": 5,
-  "pushed": 5,
-  "results": [
-    {
-      "key": "hls_brick_taxsale:309030",
-      "status": 201,
-      "contact_id": "4oPo1APanP5fICFzoMWB",
-      "tagged": true
-    },
-    {
-      "key": "hls_brick_taxsale:308718",
-      "status": 201,
-      "contact_id": "0Z5tpxQ400XG5gyAMPk9",
-      "tagged": true
-    },
-    {
-      "key": "hls_brick_taxsale:310220",
-      "status": 201,
-      "contact_id": "Hf4LE5uWJLkLeEmMbwA1",
-      "tagged": true
-    },
-    {
-      "key": "hls_brick_taxsale:414788",
-      "status": 201,
-      "contact_id": "t9IetJNritA8RBLv3PXK",
-      "tagged": true
-    },
-    {
-      "key": "sheriff_foreclosure:CH_780689",
-      "status": 201,
-      "contact_id": "HbWsGrLUApFYsb6XPXnu",
-      "tagged": true
-    }
-  ]
+  "pushed": 0
 }
