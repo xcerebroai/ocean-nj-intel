@@ -1,4 +1,44 @@
 {
   "mode": "live",
-  "pushed": 0
+  "tag": "Ocean County",
+  "attempted": 6,
+  "pushed": 6,
+  "results": [
+    {
+      "key": "sheriff_foreclosure:CH_779761",
+      "status": 201,
+      "contact_id": "cqt7vhQcWcuEolbDe1fb",
+      "tagged": true
+    },
+    {
+      "key": "sheriff_foreclosure:CH_780695",
+      "status": 201,
+      "contact_id": "uyZAXjsJsmZtFuDBw2aD",
+      "tagged": true
+    },
+    {
+      "key": "sheriff_foreclosure:CH_780700",
+      "status": 201,
+      "contact_id": "ptqfXxjHGZND8M6gFMMP",
+      "tagged": true
+    },
+    {
+      "key": "sheriff_foreclosure:CH_780701",
+      "status": 201,
+      "contact_id": "06wss5jZHWDSjM4m0LSe",
+      "tagged": true
+    },
+    {
+      "key": "sheriff_foreclosure:CH_780702",
+      "status": 201,
+      "contact_id": "5FrNBIhlXsvNjVaN34aI",
+      "tagged": true
+    },
+    {
+      "key": "sheriff_foreclosure:CH_780704",
+      "status": 201,
+      "contact_id": "lbkhiwfibM0NNYzCtkiO",
+      "tagged": true
+    }
+  ]
 }
