@@ -1,1 +1,50 @@
-[]
+[
+  {
+    "first_name": "Karina",
+    "last_name": "Lusher",
+    "property_address": "220 Dogwood Dr",
+    "property_city": "Brick",
+    "property_state": "NJ",
+    "property_zip": "08723",
+    "phone_1": "+19176558142",
+    "phone_2": "+16093739842",
+    "phone_3": "",
+    "email_1": "karina4475@gmail.com",
+    "email_2": "artie.lusher@xtremeinstalls.net",
+    "lead_type": "Sheriff Foreclosure",
+    "docket": "CH 780695",
+    "key": "1506_1559_10|CH780695"
+  },
+  {
+    "first_name": "Melissa",
+    "last_name": "Polito",
+    "property_address": "23 Anchor Rd",
+    "property_city": "Barnegat",
+    "property_state": "NJ",
+    "property_zip": "08005",
+    "phone_1": "+16096384967",
+    "phone_2": "+19083303334",
+    "phone_3": "",
+    "email_1": "mpolito71670@gmail.com",
+    "email_2": "vinmelvin10@yahoo.com",
+    "lead_type": "Sheriff Foreclosure",
+    "docket": "CH 780702",
+    "key": "1501_114.27_34|CH780702"
+  },
+  {
+    "first_name": "David",
+    "last_name": "Stratton",
+    "property_address": "43 Central Blvd",
+    "property_city": "Brick",
+    "property_state": "NJ",
+    "property_zip": "08724",
+    "phone_1": "+17328403121",
+    "phone_2": "+19089039544",
+    "phone_3": "",
+    "email_1": "david.stratton@cbmoves.com",
+    "email_2": "james_stratton@woodgraindistribution.com",
+    "lead_type": "Sheriff Foreclosure",
+    "docket": "CH 780704",
+    "key": "1507_1192.08_53|CH780704"
+  }
+]
