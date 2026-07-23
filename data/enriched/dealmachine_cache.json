@@ -52294,5 +52294,532 @@
     "people": 1
    }
   }
+ },
+ "sheriff_foreclosure:CH_780695": {
+  "hash": "ea36170e3b201a96",
+  "enriched_at": "2026-07-23T07:13:11.972716+00:00",
+  "block": {
+   "source": "dealmachine",
+   "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+   "matched": true,
+   "enrichment_status": "enriched",
+   "matched_by": "apn",
+   "enriched_at": "2026-07-23T07:13:11.972716+00:00",
+   "billing_cycle": "2026-07-07T18:06:43.000Z",
+   "owner_name": "KARINA LUSHER",
+   "owner_names": [
+    "KARINA LUSHER",
+    "ARSEN LUSHER",
+    "MILANA GIRKHOVSKIY",
+    "XTREME HD",
+    "XTREME HD"
+   ],
+   "phones": [
+    "7186682919",
+    "3474665997",
+    "9176558142",
+    "6093739842"
+   ],
+   "emails": [
+    "KARINA4475@GMAIL.COM",
+    "ARTIE.LUSHER@XTREMEINSTALLS.NET",
+    "ARTIE.LUSHER@AMERICAS.BNPPARIBAS.COM",
+    "ARTIE.LUSHER@ALEXMANN.COM"
+   ],
+   "contacts": [
+    {
+     "dm_person_id": "per_150454605421",
+     "full_name": "KARINA LUSHER",
+     "first_name": "KARINA",
+     "last_name": "LUSHER",
+     "contact_type": "owner",
+     "is_resident": false,
+     "phones": [
+      {
+       "number": "7186682919",
+       "type": "landline",
+       "do_not_call": false
+      },
+      {
+       "number": "3474665997",
+       "type": "landline",
+       "do_not_call": true
+      },
+      {
+       "number": "9176558142",
+       "type": "wireless",
+       "do_not_call": false
+      }
+     ],
+     "emails": [
+      "KARINA4475@GMAIL.COM"
+     ]
+    },
+    {
+     "dm_person_id": "per_150664812678",
+     "full_name": "ARSEN LUSHER",
+     "first_name": "ARSEN",
+     "last_name": "LUSHER",
+     "contact_type": "owner",
+     "is_resident": false,
+     "phones": [
+      {
+       "number": "7186682919",
+       "type": "landline",
+       "do_not_call": false
+      },
+      {
+       "number": "6093739842",
+       "type": "wireless",
+       "do_not_call": false
+      },
+      {
+       "number": "3474665997",
+       "type": "landline",
+       "do_not_call": true
+      }
+     ],
+     "emails": [
+      "ARTIE.LUSHER@XTREMEINSTALLS.NET",
+      "ARTIE.LUSHER@AMERICAS.BNPPARIBAS.COM",
+      "ARTIE.LUSHER@ALEXMANN.COM"
+     ]
+    },
+    {
+     "dm_person_id": "per_1506465478110",
+     "full_name": "MILANA GIRKHOVSKIY",
+     "first_name": "MILANA",
+     "last_name": "GIRKHOVSKIY",
+     "contact_type": "owner",
+     "is_resident": false,
+     "phones": [],
+     "emails": []
+    },
+    {
+     "dm_person_id": "per_1508708390834",
+     "full_name": "XTREME HD",
+     "first_name": "XTREME",
+     "last_name": "HD",
+     "contact_type": "owner",
+     "is_resident": false,
+     "phones": [],
+     "emails": []
+    },
+    {
+     "dm_person_id": "per_1508728744910",
+     "full_name": "XTREME HD",
+     "first_name": "XTREME",
+     "last_name": "HD",
+     "contact_type": "owner",
+     "is_resident": false,
+     "phones": [],
+     "emails": []
+    }
+   ],
+   "mailing_address": null,
+   "property": {
+    "dm_property_id": "prop_86741730",
+    "full_address": "APN: 06-01559-0000-00010 Brick, NJ, 08723",
+    "address": "220 Dogwood Dr",
+    "city": "Brick",
+    "state": "NJ",
+    "zip": "08723",
+    "latitude": 39.883312467,
+    "longitude": -74.14333744,
+    "estimated_value": 292000,
+    "estimated_equity_amount": -99431,
+    "estimated_equity_percentage": null,
+    "year_built": null,
+    "living_area_sqft": 0,
+    "lot_size_sqft": 3202,
+    "num_bedrooms": 0,
+    "num_bathrooms": null,
+    "last_sale_date": "2024-06-18T00:00:00.000Z",
+    "last_sale_amount": 240000,
+    "total_assessed_value": 177600,
+    "annual_property_tax_amount": 4600,
+    "num_mortgages": 1,
+    "total_original_loan_amount": 399500,
+    "total_estimated_loan_balance": 391431,
+    "owner_occupied": false,
+    "apn": "06-01559-0000-00010"
+   },
+   "mortgages": [
+    {
+     "mortgage_number": 1,
+     "id": "11928703372",
+     "transaction_id": "11928703372",
+     "lender_name": "NEW SILVER LENDING LLC",
+     "is_private_lender": false,
+     "loan_type_id": 20,
+     "loan_type": "New Conventional",
+     "loan_financing_type": "Unknown Financing Type",
+     "loan_amount": 399500,
+     "loan_balance": 391431,
+     "loan_interest_rate": 7.22,
+     "loan_term_months": 360,
+     "loan_start_date": "2024-06-18T00:00:00.000Z",
+     "loan_recording_date": "2024-06-18T00:00:00.000Z",
+     "loan_due_date": "2054-06-18T00:00:00.000Z",
+     "has_adjustable_rate_rider": false,
+     "lien_position": 1,
+     "estimated_payment_amount": 2717.17,
+     "classification": "primary",
+     "classification_label": "Primary mortgage",
+     "classification_reason": "The mortgage record identifies this as lien position 1."
+    }
+   ],
+   "credits": {
+    "properties": 1,
+    "people": 5
+   }
+  }
+ },
+ "sheriff_foreclosure:CH_780702": {
+  "hash": "c549d745d14ba5e0",
+  "enriched_at": "2026-07-23T07:13:11.972716+00:00",
+  "block": {
+   "source": "dealmachine",
+   "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+   "matched": true,
+   "enrichment_status": "enriched",
+   "matched_by": "apn",
+   "enriched_at": "2026-07-23T07:13:11.972716+00:00",
+   "billing_cycle": "2026-07-07T18:06:43.000Z",
+   "owner_name": "MELISSA POLITO",
+   "owner_names": [
+    "MELISSA POLITO"
+   ],
+   "phones": [
+    "6096384967",
+    "9083303334",
+    "6096983795"
+   ],
+   "emails": [
+    "MPOLITO71670@GMAIL.COM",
+    "VINMELVIN10@YAHOO.COM",
+    "GINODEPINTO@COMCAST.NET"
+   ],
+   "contacts": [
+    {
+     "dm_person_id": "per_150180113626",
+     "full_name": "MELISSA POLITO",
+     "first_name": "MELISSA",
+     "last_name": "POLITO",
+     "contact_type": "owner",
+     "is_resident": true,
+     "phones": [
+      {
+       "number": "6096384967",
+       "type": "wireless",
+       "do_not_call": true
+      },
+      {
+       "number": "9083303334",
+       "type": "wireless",
+       "do_not_call": false
+      },
+      {
+       "number": "6096983795",
+       "type": "landline",
+       "do_not_call": false
+      }
+     ],
+     "emails": [
+      "MPOLITO71670@GMAIL.COM",
+      "VINMELVIN10@YAHOO.COM",
+      "GINODEPINTO@COMCAST.NET"
+     ]
+    }
+   ],
+   "mailing_address": "23 Anchor Rd Barnegat, NJ, 08005",
+   "property": {
+    "dm_property_id": "prop_86711888",
+    "full_address": "23 Anchor Rd Barnegat, NJ, 08005",
+    "address": "23 Anchor Rd",
+    "city": "Barnegat",
+    "state": "NJ",
+    "zip": "08005",
+    "latitude": 39.742711,
+    "longitude": -74.243721,
+    "estimated_value": 350000,
+    "estimated_equity_amount": 237127,
+    "estimated_equity_percentage": 62,
+    "year_built": 1973,
+    "living_area_sqft": 975,
+    "lot_size_sqft": 6050,
+    "num_bedrooms": 3,
+    "num_bathrooms": 1,
+    "last_sale_date": "2005-09-02T00:00:00.000Z",
+    "last_sale_amount": 213000,
+    "total_assessed_value": 128600,
+    "annual_property_tax_amount": 3965,
+    "num_mortgages": 2,
+    "total_original_loan_amount": 213000,
+    "total_estimated_loan_balance": 112873,
+    "owner_occupied": true,
+    "apn": "01-00114-27-00034"
+   },
+   "mortgages": [
+    {
+     "mortgage_number": 1,
+     "id": "1102858813",
+     "transaction_id": "1102858813",
+     "lender_name": "EQUIFIRST CORP",
+     "is_private_lender": false,
+     "loan_type_id": 13,
+     "loan_type": "Fannie Mae/Freddie Mac",
+     "loan_financing_type_id": 1,
+     "loan_financing_type": "Adjustable Rate",
+     "loan_amount": 170400,
+     "loan_balance": 91573,
+     "loan_interest_rate": 6.95,
+     "loan_term_months": 360,
+     "loan_start_date": "2005-09-02T00:00:00.000Z",
+     "loan_recording_date": "2005-09-02T00:00:00.000Z",
+     "loan_due_date": "2035-09-01T00:00:00.000Z",
+     "has_adjustable_rate_rider": true,
+     "lien_position": 1,
+     "estimated_payment_amount": 1127.96,
+     "classification": "primary",
+     "classification_label": "Primary mortgage",
+     "classification_reason": "The mortgage record identifies this as lien position 1."
+    },
+    {
+     "mortgage_number": 2,
+     "id": "1102858813",
+     "transaction_id": "1102858813",
+     "lender_name": "EQUIFIRST CORP",
+     "is_private_lender": false,
+     "loan_type_id": 2,
+     "loan_type": "Stand Alone Second",
+     "loan_financing_type": "Unknown Financing Type",
+     "loan_amount": 42600,
+     "loan_balance": 21300,
+     "loan_interest_rate": 5.81,
+     "loan_term_months": 360,
+     "loan_start_date": "2005-09-02T00:00:00.000Z",
+     "loan_recording_date": "2005-09-02T00:00:00.000Z",
+     "loan_due_date": "2035-09-01T00:00:00.000Z",
+     "has_adjustable_rate_rider": false,
+     "lien_position": 2,
+     "estimated_payment_amount": 250.23,
+     "classification": "duplicate_candidate",
+     "classification_label": "Possible duplicate",
+     "classification_reason": "This mortgage repeats a transaction identifier already shown for this property."
+    }
+   ],
+   "credits": {
+    "properties": 1,
+    "people": 1
+   }
+  }
+ },
+ "sheriff_foreclosure:CH_780704": {
+  "hash": "34b52fd1ce48b9a3",
+  "enriched_at": "2026-07-23T07:13:11.972716+00:00",
+  "block": {
+   "source": "dealmachine",
+   "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+   "matched": true,
+   "enrichment_status": "enriched",
+   "matched_by": "apn",
+   "enriched_at": "2026-07-23T07:13:11.972716+00:00",
+   "billing_cycle": "2026-07-07T18:06:43.000Z",
+   "owner_name": "DAVID STRATTON",
+   "owner_names": [
+    "DAVID STRATTON",
+    "JEANETTE STRATTON"
+   ],
+   "phones": [
+    "9085912649",
+    "7328403121",
+    "9089039544"
+   ],
+   "emails": [
+    "DAVID.STRATTON@CBMOVES.COM",
+    "JAMES_STRATTON@WOODGRAINDISTRIBUTION.COM",
+    "DAVID.STRATTON@COLDWELLBANKERMOVES.COM"
+   ],
+   "contacts": [
+    {
+     "dm_person_id": "per_15046737535",
+     "full_name": "DAVID STRATTON",
+     "first_name": "DAVID",
+     "last_name": "STRATTON",
+     "contact_type": "owner",
+     "is_resident": true,
+     "phones": [
+      {
+       "number": "9085912649",
+       "type": "landline",
+       "do_not_call": false
+      }
+     ],
+     "emails": [
+      "DAVID.STRATTON@CBMOVES.COM",
+      "JAMES_STRATTON@WOODGRAINDISTRIBUTION.COM",
+      "DAVID.STRATTON@COLDWELLBANKERMOVES.COM"
+     ]
+    },
+    {
+     "dm_person_id": "per_150513641435",
+     "full_name": "JEANETTE STRATTON",
+     "first_name": "JEANETTE",
+     "last_name": "STRATTON",
+     "contact_type": "owner",
+     "is_resident": true,
+     "phones": [
+      {
+       "number": "7328403121",
+       "type": "wireless",
+       "do_not_call": false
+      },
+      {
+       "number": "9089039544",
+       "type": "wireless",
+       "do_not_call": false
+      }
+     ],
+     "emails": [
+      "DAVID.STRATTON@CBMOVES.COM"
+     ]
+    }
+   ],
+   "mailing_address": "43 Central Blvd Brick, NJ, 08724",
+   "property": {
+    "dm_property_id": "prop_86791347",
+    "full_address": "43 Central Blvd Brick, NJ, 08724",
+    "address": "43 Central Blvd",
+    "city": "Brick",
+    "state": "NJ",
+    "zip": "08724",
+    "latitude": 40.087814,
+    "longitude": -74.139481,
+    "estimated_value": 421000,
+    "estimated_equity_amount": 289801,
+    "estimated_equity_percentage": 67,
+    "year_built": 1974,
+    "living_area_sqft": 1134,
+    "lot_size_sqft": 5001,
+    "num_bedrooms": 2,
+    "num_bathrooms": 2,
+    "last_sale_date": "2004-06-22T00:00:00.000Z",
+    "last_sale_amount": 150000,
+    "total_assessed_value": 109300,
+    "annual_property_tax_amount": 2997,
+    "num_mortgages": 1,
+    "total_original_loan_amount": 152000,
+    "total_estimated_loan_balance": 131199,
+    "owner_occupied": true,
+    "apn": "07-01192-08-00053"
+   },
+   "mortgages": [
+    {
+     "mortgage_number": 1,
+     "id": "21114395473",
+     "transaction_id": "21114395473",
+     "lender_name": "SANTANDER BANK NA",
+     "is_private_lender": false,
+     "loan_type_id": 20,
+     "loan_type": "New Conventional",
+     "loan_financing_type_id": 2,
+     "loan_financing_type": "Fixed Rate",
+     "loan_amount": 152000,
+     "loan_balance": 131199,
+     "loan_interest_rate": 4.6,
+     "loan_term_months": 360,
+     "loan_start_date": "2018-09-19T00:00:00.000Z",
+     "loan_recording_date": "2018-09-19T00:00:00.000Z",
+     "loan_due_date": "2048-08-30T00:00:00.000Z",
+     "has_adjustable_rate_rider": false,
+     "lien_position": 1,
+     "estimated_payment_amount": 779.22,
+     "classification": "primary",
+     "classification_label": "Primary mortgage",
+     "classification_reason": "DataTree marks this mortgage as lien position 1."
+    }
+   ],
+   "credits": {
+    "properties": 1,
+    "people": 2
+   }
+  }
+ },
+ "sheriff_foreclosure:CH_780705": {
+  "hash": "eab835286f9fcbb9",
+  "enriched_at": "2026-07-23T07:13:11.972716+00:00",
+  "block": {
+   "source": "dealmachine",
+   "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+   "matched": true,
+   "enrichment_status": "enriched",
+   "matched_by": "apn",
+   "enriched_at": "2026-07-23T07:13:11.972716+00:00",
+   "billing_cycle": "2026-07-07T18:06:43.000Z",
+   "owner_name": null,
+   "owner_names": [],
+   "phones": [],
+   "emails": [],
+   "contacts": [],
+   "mailing_address": "69 Chestnut Way Cir Barnegat, NJ, 08005",
+   "property": {
+    "dm_property_id": "prop_86681494",
+    "full_address": "69 Chestnut Way Cir Barnegat, NJ, 08005",
+    "address": "69 Chestnut Way Cir",
+    "city": "Barnegat",
+    "state": "NJ",
+    "zip": "08005",
+    "latitude": 39.770652,
+    "longitude": -74.243499,
+    "estimated_value": 674000,
+    "estimated_equity_amount": 460206,
+    "estimated_equity_percentage": 70,
+    "year_built": 1998,
+    "living_area_sqft": 2728,
+    "lot_size_sqft": 15377,
+    "num_bedrooms": 4,
+    "num_bathrooms": 4,
+    "last_sale_date": "2011-04-12T00:00:00.000Z",
+    "last_sale_amount": 302500,
+    "total_assessed_value": 371900,
+    "annual_property_tax_amount": 11466,
+    "num_mortgages": 1,
+    "total_original_loan_amount": 276000,
+    "total_estimated_loan_balance": 213794,
+    "owner_occupied": true,
+    "apn": "01-00116-35-00022"
+   },
+   "mortgages": [
+    {
+     "mortgage_number": 1,
+     "id": "2384697504",
+     "transaction_id": "2384697504",
+     "lender_name": "UNITY BANK",
+     "is_private_lender": false,
+     "loan_type_id": 3,
+     "loan_type": "ARM",
+     "loan_financing_type_id": 1,
+     "loan_financing_type": "Adjustable Rate",
+     "loan_amount": 276000,
+     "loan_balance": 213794,
+     "loan_interest_rate": 4.62,
+     "loan_term_months": 360,
+     "loan_start_date": "2015-04-13T00:00:00.000Z",
+     "loan_recording_date": "2015-04-13T00:00:00.000Z",
+     "loan_due_date": "2045-05-01T00:00:00.000Z",
+     "has_adjustable_rate_rider": true,
+     "lien_position": 1,
+     "estimated_payment_amount": 1418.2,
+     "classification": "primary",
+     "classification_label": "Primary mortgage",
+     "classification_reason": "The mortgage record identifies this as lien position 1."
+    }
+   ],
+   "credits": {
+    "properties": 1,
+    "people": 0
+   }
+  }
  }
 }
