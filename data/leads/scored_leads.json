@@ -3,7 +3,7 @@
  "county_name": "Ocean County",
  "state_name": "New Jersey",
  "framework_version": "v5.5.0",
- "build_timestamp": "2026-08-22T06:15:19Z",
+ "build_timestamp": "2026-08-23T06:16:46Z",
  "build_mode": "PARTIAL_BUILD",
  "total_leads": 2752,
  "lead_counts_by_signal": {
@@ -59,7 +59,7 @@
     "OWNER_STATUS"
    ],
    "source_role": "BLOCKED_SOURCE",
-   "reported_at": "2026-08-22T06:13:09Z",
+   "reported_at": "2026-08-23T06:14:38Z",
    "v5_5_0_recon_anchor": "runs/ocean_nj/recon/source_of_record_matrix.json#sources"
   },
   {
@@ -76,7 +76,7 @@
     "RECORDED_EVENT"
    ],
    "source_role": "BLOCKED_SOURCE",
-   "reported_at": "2026-08-22T06:13:09Z",
+   "reported_at": "2026-08-23T06:14:38Z",
    "v5_5_0_recon_anchor": "runs/ocean_nj/recon/source_of_record_matrix.json#sources"
   },
   {
@@ -94,7 +94,7 @@
     "TAX_DEFAULT"
    ],
    "source_role": "BLOCKED_SOURCE",
-   "reported_at": "2026-08-22T06:13:09Z",
+   "reported_at": "2026-08-23T06:14:38Z",
    "v5_5_0_recon_anchor": "runs/ocean_nj/recon/source_of_record_matrix.json#sources"
   },
   {
@@ -109,7 +109,7 @@
    ],
    "intended_lead_origins": [],
    "source_role": "BLOCKED_SOURCE",
-   "reported_at": "2026-08-22T06:13:09Z",
+   "reported_at": "2026-08-23T06:14:38Z",
    "v5_5_0_recon_anchor": "runs/ocean_nj/recon/source_of_record_matrix.json#sources"
   }
  ],
@@ -155006,7 +155006,7 @@
   }
  ],
  "dealmachine_enrichment": {
-  "enriched_at": "2026-08-22T06:15:32.908841+00:00",
+  "enriched_at": "2026-08-23T06:16:58.623697+00:00",
   "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
   "source": "dealmachine",
   "actionable_targets": 614,
@@ -155022,22 +155022,22 @@
   "emails_attached": 870,
   "credits_before": {
    "included": 100000,
-   "total_available": 97986,
+   "total_available": 97981,
    "total_cap": 100000,
    "base_included": 100000,
    "monthly_credit_grant_cap": 0,
    "monthly_included": 100000,
    "additional_credit_balance": 0,
-   "used": 2014,
-   "remaining": 97986,
-   "monthly_remaining": 97986,
+   "used": 2019,
+   "remaining": 97981,
+   "monthly_remaining": 97981,
    "additional_remaining": 0,
    "overage": 0,
    "pools": {
     "monthly": {
      "included": 100000,
-     "used": 2014,
-     "remaining": 97986
+     "used": 2019,
+     "remaining": 97981
     },
     "additional": {
      "available": 0,
@@ -155046,29 +155046,29 @@
     }
    },
    "breakdown": {
-    "properties": 1170,
-    "people": 844,
+    "properties": 1173,
+    "people": 846,
     "companies": 0
    }
   },
   "credits_after": {
    "included": 100000,
-   "total_available": 97986,
+   "total_available": 97981,
    "total_cap": 100000,
    "base_included": 100000,
    "monthly_credit_grant_cap": 0,
    "monthly_included": 100000,
    "additional_credit_balance": 0,
-   "used": 2014,
-   "remaining": 97986,
-   "monthly_remaining": 97986,
+   "used": 2019,
+   "remaining": 97981,
+   "monthly_remaining": 97981,
    "additional_remaining": 0,
    "overage": 0,
    "pools": {
     "monthly": {
      "included": 100000,
-     "used": 2014,
-     "remaining": 97986
+     "used": 2019,
+     "remaining": 97981
     },
     "additional": {
      "available": 0,
@@ -155077,8 +155077,8 @@
     }
    },
    "breakdown": {
-    "properties": 1170,
-    "people": 844,
+    "properties": 1173,
+    "people": 846,
     "companies": 0
    }
   }
