@@ -1,4 +1,80 @@
 {
   "mode": "live",
-  "pushed": 0
+  "tag": "Ocean County",
+  "attempted": 12,
+  "pushed": 12,
+  "results": [
+    {
+      "key": "sheriff_foreclosure:CH_773241",
+      "status": 201,
+      "contact_id": "HIZx65IEd8uMP05CIPyH",
+      "tagged": true
+    },
+    {
+      "key": "sheriff_foreclosure:CH_779734",
+      "status": 201,
+      "contact_id": "2nik5uc8biZPGyDmoGQD",
+      "tagged": true
+    },
+    {
+      "key": "sheriff_foreclosure:CH_780492",
+      "status": 201,
+      "contact_id": "Rl6o8zYKqyF4HF8Fy6HC",
+      "tagged": true
+    },
+    {
+      "key": "sheriff_foreclosure:CH_780493",
+      "status": 201,
+      "contact_id": "DmxTof54jIvKmp2P9bS3",
+      "tagged": true
+    },
+    {
+      "key": "sheriff_foreclosure:CH_780725",
+      "status": 201,
+      "contact_id": "TtkU1YFqOainfBJwWry4",
+      "tagged": true
+    },
+    {
+      "key": "sheriff_foreclosure:CH_780729",
+      "status": 201,
+      "contact_id": "LmocvFFwxeh9ypTvmuut",
+      "tagged": true
+    },
+    {
+      "key": "sheriff_foreclosure:CH_780734",
+      "status": 201,
+      "contact_id": "1zUs9CeowIpqC55rNtuM",
+      "tagged": true
+    },
+    {
+      "key": "sheriff_foreclosure:CH_780736",
+      "status": 201,
+      "contact_id": "2NsopYczv4UemmQnYnFb",
+      "tagged": true
+    },
+    {
+      "key": "sheriff_foreclosure:CH_780737",
+      "status": 201,
+      "contact_id": "O4K2Oywy1jLsgRRofkd6",
+      "tagged": true
+    },
+    {
+      "key": "sheriff_foreclosure:CH_780738",
+      "status": 201,
+      "contact_id": "Sf0OfPT1Q8rLKRmUIkbQ",
+      "tagged": true
+    },
+    {
+      "key": "sheriff_foreclosure:CH_780739",
+      "status": 201,
+      "contact_id": "3gWdVSZMrjjdHYFMWihJ",
+      "tagged": true
+    },
+    {
+      "key": "sheriff_foreclosure:CH_780741",
+      "status": 201,
+      "contact_id": "DuRXFZ207PXKNUbmQamM",
+      "tagged": true
+    }
+  ]
 }

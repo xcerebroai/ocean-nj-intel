@@ -2331,10 +2331,12 @@
     "hls_brick_taxsale:729920",
     "hls_brick_taxsale:729955",
     "hls_brick_taxsale:729995",
+    "sheriff_foreclosure:CH_773241",
     "sheriff_foreclosure:CH_774173",
     "sheriff_foreclosure:CH_775815",
     "sheriff_foreclosure:CH_778683",
     "sheriff_foreclosure:CH_779224",
+    "sheriff_foreclosure:CH_779734",
     "sheriff_foreclosure:CH_779761",
     "sheriff_foreclosure:CH_779848",
     "sheriff_foreclosure:CH_780102",
@@ -2347,6 +2349,8 @@
     "sheriff_foreclosure:CH_780451",
     "sheriff_foreclosure:CH_780473",
     "sheriff_foreclosure:CH_780474",
+    "sheriff_foreclosure:CH_780492",
+    "sheriff_foreclosure:CH_780493",
     "sheriff_foreclosure:CH_780522",
     "sheriff_foreclosure:CH_780551",
     "sheriff_foreclosure:CH_780552",
@@ -2389,6 +2393,14 @@
     "sheriff_foreclosure:CH_780716",
     "sheriff_foreclosure:CH_780717",
     "sheriff_foreclosure:CH_780720",
-    "sheriff_foreclosure:CH_780721"
+    "sheriff_foreclosure:CH_780721",
+    "sheriff_foreclosure:CH_780725",
+    "sheriff_foreclosure:CH_780729",
+    "sheriff_foreclosure:CH_780734",
+    "sheriff_foreclosure:CH_780736",
+    "sheriff_foreclosure:CH_780737",
+    "sheriff_foreclosure:CH_780738",
+    "sheriff_foreclosure:CH_780739",
+    "sheriff_foreclosure:CH_780741"
   ]
 }
