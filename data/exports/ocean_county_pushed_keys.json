@@ -2356,6 +2356,7 @@
     "sheriff_foreclosure:CH_780552",
     "sheriff_foreclosure:CH_780589",
     "sheriff_foreclosure:CH_780599",
+    "sheriff_foreclosure:CH_780606",
     "sheriff_foreclosure:CH_780608",
     "sheriff_foreclosure:CH_780609",
     "sheriff_foreclosure:CH_780636",
@@ -2401,6 +2402,8 @@
     "sheriff_foreclosure:CH_780737",
     "sheriff_foreclosure:CH_780738",
     "sheriff_foreclosure:CH_780739",
-    "sheriff_foreclosure:CH_780741"
+    "sheriff_foreclosure:CH_780741",
+    "sheriff_foreclosure:CH_780747",
+    "sheriff_foreclosure:CH_780748"
   ]
 }

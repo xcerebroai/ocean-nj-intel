@@ -5070,21 +5070,6 @@
     "key": "sheriff_foreclosure:CH_780672"
   },
   {
-    "first_name": "Torna",
-    "last_name": "Brown",
-    "property_address": "414 Frank Applegate Rd",
-    "property_city": "Jackson",
-    "property_state": "NJ",
-    "property_zip": "08527",
-    "phone_1": "+17324852879",
-    "phone_2": "+17325523022",
-    "phone_3": "",
-    "email_1": "realblessed4sure@yahoo.com",
-    "email_2": "tbh2350@gmail.com",
-    "lead_type": "Sheriff Foreclosure",
-    "key": "sheriff_foreclosure:CH_780673"
-  },
-  {
     "first_name": "Dean",
     "last_name": "Ludington",
     "property_address": "21 Cedar Tree Ln",
@@ -5413,6 +5398,51 @@
     "email_2": "mbichler@gmail.com",
     "lead_type": "Sheriff Foreclosure",
     "key": "sheriff_foreclosure:CH_780741"
+  },
+  {
+    "first_name": "Kyle",
+    "last_name": "Murrin",
+    "property_address": "427 N Lake Shore Dr",
+    "property_city": "Brick",
+    "property_state": "NJ",
+    "property_zip": "08723",
+    "phone_1": "+17324756362",
+    "phone_2": "+17326089528",
+    "phone_3": "",
+    "email_1": "kjmplumbingheating@gmail.com",
+    "email_2": "",
+    "lead_type": "Sheriff Foreclosure",
+    "key": "sheriff_foreclosure:CH_780606"
+  },
+  {
+    "first_name": "Keith",
+    "last_name": "Stewart",
+    "property_address": "78 Bowline St",
+    "property_city": "Barnegat",
+    "property_state": "NJ",
+    "property_zip": "08005",
+    "phone_1": "+17322161219",
+    "phone_2": "+17326047337",
+    "phone_3": "",
+    "email_1": "jennifer.brogna@yahoo.com",
+    "email_2": "jbrogna@fam1fund.com",
+    "lead_type": "Sheriff Foreclosure",
+    "key": "sheriff_foreclosure:CH_780747"
+  },
+  {
+    "first_name": "Ernestine",
+    "last_name": "Stout",
+    "property_address": "34 Collins Ct",
+    "property_city": "Brick",
+    "property_state": "NJ",
+    "property_zip": "08724",
+    "phone_1": "+17326817758",
+    "phone_2": "+17327463355",
+    "phone_3": "",
+    "email_1": "howardstout@bellsouth.net",
+    "email_2": "",
+    "lead_type": "Sheriff Foreclosure",
+    "key": "sheriff_foreclosure:CH_780748"
   },
   {
     "first_name": "Michelle",
