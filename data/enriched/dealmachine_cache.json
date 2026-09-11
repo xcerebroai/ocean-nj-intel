@@ -58351,19 +58351,78 @@
   }
  },
  "sheriff_foreclosure:CH_780555": {
-  "hash": "76b07efe2c0c83eb",
-  "enriched_at": "2026-08-15T06:14:32.459818+00:00",
+  "hash": "1febf57cfe67b6bd",
+  "enriched_at": "2026-09-11T06:40:42.864123+00:00",
   "block": {
    "source": "dealmachine",
    "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
-   "matched": false,
-   "enrichment_status": "no_dm_record",
+   "matched": true,
+   "enrichment_status": "enriched",
    "matched_by": "apn",
-   "enriched_at": "2026-08-15T06:14:32.459818+00:00",
-   "billing_cycle": "2026-08-07T18:06:43.000Z",
-   "match_failure": {
-    "code": "wrong_county",
-    "reason": "APN resolved outside Ocean County (Heislerville, 08324)"
+   "enriched_at": "2026-09-11T06:40:42.864123+00:00",
+   "billing_cycle": "2026-09-07T18:06:43.000Z",
+   "owner_name": null,
+   "owner_names": [],
+   "phones": [],
+   "emails": [],
+   "contacts": [],
+   "mailing_address": null,
+   "property": {
+    "dm_property_id": "prop_86897515",
+    "full_address": "320 Sampson Ave Lakewood, NJ, 08701",
+    "address": "320 Sampson Ave",
+    "city": "Lakewood",
+    "state": "NJ",
+    "zip": "08701",
+    "latitude": 40.093333,
+    "longitude": -74.202069,
+    "estimated_value": 1070000,
+    "estimated_equity_amount": 845544,
+    "estimated_equity_percentage": 75,
+    "year_built": 1910,
+    "living_area_sqft": 2476,
+    "lot_size_sqft": 7645,
+    "num_bedrooms": 5,
+    "num_bathrooms": 3,
+    "last_sale_date": "2011-07-21T00:00:00.000Z",
+    "last_sale_amount": 110000,
+    "total_assessed_value": 392500,
+    "annual_property_tax_amount": 10154,
+    "num_mortgages": 1,
+    "total_original_loan_amount": 250000,
+    "total_estimated_loan_balance": 224456,
+    "owner_occupied": false,
+    "apn": "15-00246-0000-00010"
+   },
+   "mortgages": [
+    {
+     "mortgage_number": 1,
+     "id": "21133657575",
+     "transaction_id": "21133657575",
+     "lender_name": "FM HOME LOANS LLC",
+     "is_private_lender": false,
+     "loan_type_id": 3,
+     "loan_type": "ARM",
+     "loan_financing_type_id": 1,
+     "loan_financing_type": "Adjustable Rate",
+     "loan_amount": 250000,
+     "loan_balance": 224456,
+     "loan_interest_rate": 6.37,
+     "loan_term_months": 360,
+     "loan_start_date": "2019-03-29T00:00:00.000Z",
+     "loan_recording_date": "2019-03-29T00:00:00.000Z",
+     "loan_due_date": "2049-04-01T00:00:00.000Z",
+     "has_adjustable_rate_rider": true,
+     "lien_position": 1,
+     "estimated_payment_amount": 1558.86,
+     "classification": "primary",
+     "classification_label": "Primary mortgage",
+     "classification_reason": "The mortgage record identifies this as lien position 1."
+    }
+   ],
+   "credits": {
+    "properties": 1,
+    "people": 0
    }
   }
  },
@@ -60094,115 +60153,19 @@
   }
  },
  "sheriff_foreclosure:CH_780673": {
-  "hash": "0f6dd3058e33e3e0",
-  "enriched_at": "2026-08-15T06:14:32.459818+00:00",
+  "hash": "ed8520a2fd510fd9",
+  "enriched_at": "2026-09-11T06:40:42.864123+00:00",
   "block": {
    "source": "dealmachine",
    "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
-   "matched": true,
-   "enrichment_status": "enriched",
+   "matched": false,
+   "enrichment_status": "no_dm_record",
    "matched_by": "address",
-   "enriched_at": "2026-08-15T06:14:32.459818+00:00",
-   "billing_cycle": "2026-08-07T18:06:43.000Z",
-   "owner_name": "TORNA BROWN",
-   "owner_names": [
-    "TORNA BROWN"
-   ],
-   "phones": [
-    "7324852879",
-    "7329282198",
-    "7325523022"
-   ],
-   "emails": [
-    "REALBLESSED4SURE@YAHOO.COM",
-    "TBH2350@GMAIL.COM"
-   ],
-   "contacts": [
-    {
-     "dm_person_id": "per_15046936922",
-     "full_name": "TORNA BROWN",
-     "first_name": "TORNA",
-     "last_name": "BROWN",
-     "contact_type": "owner",
-     "is_resident": true,
-     "phones": [
-      {
-       "number": "7324852879",
-       "type": "wireless",
-       "do_not_call": false
-      },
-      {
-       "number": "7329282198",
-       "type": "landline",
-       "do_not_call": false
-      },
-      {
-       "number": "7325523022",
-       "type": "wireless",
-       "do_not_call": false
-      }
-     ],
-     "emails": [
-      "REALBLESSED4SURE@YAHOO.COM",
-      "TBH2350@GMAIL.COM"
-     ]
-    }
-   ],
-   "mailing_address": "414 Frank Applegate Rd Jackson, NJ, 08527",
-   "property": {
-    "dm_property_id": "prop_86882525",
-    "full_address": "414 Frank Applegate Rd Jackson, NJ, 08527",
-    "address": "414 Frank Applegate Rd",
-    "city": "Jackson",
-    "state": "NJ",
-    "zip": "08527",
-    "latitude": 40.136265,
-    "longitude": -74.324595,
-    "estimated_value": 702000,
-    "estimated_equity_amount": 594803,
-    "estimated_equity_percentage": 84,
-    "year_built": 1975,
-    "living_area_sqft": 2104,
-    "lot_size_sqft": 45738,
-    "num_bedrooms": 3,
-    "num_bathrooms": 2,
-    "last_sale_date": "2003-10-16T00:00:00.000Z",
-    "last_sale_amount": 305000,
-    "total_assessed_value": 633500,
-    "annual_property_tax_amount": 9160,
-    "num_mortgages": 1,
-    "total_original_loan_amount": 244000,
-    "total_estimated_loan_balance": 107197,
-    "owner_occupied": true,
-    "apn": "12-04402-0000-00062"
-   },
-   "mortgages": [
-    {
-     "mortgage_number": 1,
-     "id": "1062393831",
-     "transaction_id": "1062393831",
-     "lender_name": "CHASE MANHATTAN MORTGAGE CORP",
-     "is_private_lender": false,
-     "loan_type": "Unknown Type",
-     "loan_financing_type": "Unknown Financing Type",
-     "loan_amount": 244000,
-     "loan_balance": 107197,
-     "loan_interest_rate": 6.43,
-     "loan_term_months": 360,
-     "loan_start_date": "2003-10-16T00:00:00.000Z",
-     "loan_recording_date": "2003-10-16T00:00:00.000Z",
-     "loan_due_date": "2033-10-16T00:00:00.000Z",
-     "has_adjustable_rate_rider": false,
-     "lien_position": 1,
-     "estimated_payment_amount": 1531.03,
-     "classification": "primary",
-     "classification_label": "Primary mortgage",
-     "classification_reason": "The mortgage record identifies this as lien position 1."
-    }
-   ],
-   "credits": {
-    "properties": 1,
-    "people": 1
+   "enriched_at": "2026-09-11T06:40:42.864123+00:00",
+   "billing_cycle": "2026-09-07T18:06:43.000Z",
+   "match_failure": {
+    "code": "no_match",
+    "reason": "No property found at this address"
    }
   }
  },
@@ -62390,6 +62353,1236 @@
    "credits": {
     "properties": 1,
     "people": 1
+   }
+  }
+ },
+ "sheriff_foreclosure:CH_780105": {
+  "hash": "1157a97b09bfca05",
+  "enriched_at": "2026-09-11T06:40:42.864123+00:00",
+  "block": {
+   "source": "dealmachine",
+   "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+   "matched": true,
+   "enrichment_status": "enriched",
+   "matched_by": "apn",
+   "enriched_at": "2026-09-11T06:40:42.864123+00:00",
+   "billing_cycle": "2026-09-07T18:06:43.000Z",
+   "owner_name": null,
+   "owner_names": [],
+   "phones": [],
+   "emails": [],
+   "contacts": [],
+   "mailing_address": "1204 Bluebell Dr Jackson, NJ, 08527",
+   "property": {
+    "dm_property_id": "prop_86803071",
+    "full_address": "1204 Bluebell Dr Jackson, NJ, 08527",
+    "address": "1204 Bluebell Dr",
+    "city": "Jackson",
+    "state": "NJ",
+    "zip": "08527",
+    "latitude": 40.120121719,
+    "longitude": -74.28148519,
+    "estimated_value": 298000,
+    "estimated_equity_amount": 187399,
+    "estimated_equity_percentage": 64,
+    "year_built": 1988,
+    "living_area_sqft": 1033,
+    "lot_size_sqft": 587,
+    "num_bedrooms": 2,
+    "num_bathrooms": 1,
+    "last_sale_date": "1999-10-21T00:00:00.000Z",
+    "last_sale_amount": 71500,
+    "total_assessed_value": 265200,
+    "annual_property_tax_amount": 3959,
+    "num_mortgages": 2,
+    "total_original_loan_amount": 136000,
+    "total_estimated_loan_balance": 110601,
+    "owner_occupied": true,
+    "apn": "12-08001-0000-00005-383"
+   },
+   "mortgages": [
+    {
+     "mortgage_number": 1,
+     "id": "2023384652",
+     "transaction_id": "2023384652",
+     "lender_name": "FIRST HALLMARK MORTGAGE CORP",
+     "is_private_lender": false,
+     "loan_type_id": 13,
+     "loan_type": "Fannie Mae/Freddie Mac",
+     "loan_financing_type": "Unknown Financing Type",
+     "loan_amount": 101000,
+     "loan_balance": 77988,
+     "loan_interest_rate": 6.26,
+     "loan_term_months": 480,
+     "loan_start_date": "2006-03-29T00:00:00.000Z",
+     "loan_recording_date": "2006-03-29T00:00:00.000Z",
+     "loan_due_date": "2046-04-01T00:00:00.000Z",
+     "has_adjustable_rate_rider": false,
+     "lien_position": 1,
+     "estimated_payment_amount": 574.13,
+     "classification": "primary",
+     "classification_label": "Primary mortgage",
+     "classification_reason": "The mortgage record identifies this as lien position 1."
+    },
+    {
+     "mortgage_number": 2,
+     "id": "21236003202",
+     "transaction_id": "21236003202",
+     "lender_name": "POINT DIGITAL FINANCE INC",
+     "is_private_lender": false,
+     "loan_type_id": 20,
+     "loan_type": "New Conventional",
+     "loan_financing_type": "Unknown Financing Type",
+     "loan_amount": 35000,
+     "loan_balance": 32613,
+     "loan_interest_rate": 4.72,
+     "loan_term_months": 360,
+     "loan_start_date": "2022-05-16T00:00:00.000Z",
+     "loan_recording_date": "2022-05-16T00:00:00.000Z",
+     "loan_due_date": "2052-05-16T00:00:00.000Z",
+     "has_adjustable_rate_rider": false,
+     "lien_position": 2,
+     "estimated_payment_amount": 181.94,
+     "classification": "subordinate",
+     "classification_label": "Possible second lien",
+     "classification_reason": "The mortgage record identifies this as lien position 2."
+    }
+   ],
+   "credits": {
+    "properties": 1,
+    "people": 0
+   }
+  }
+ },
+ "sheriff_foreclosure:CH_780568": {
+  "hash": "40dc15e0a11ac6a8",
+  "enriched_at": "2026-09-11T06:40:42.864123+00:00",
+  "block": {
+   "source": "dealmachine",
+   "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+   "matched": true,
+   "enrichment_status": "enriched",
+   "matched_by": "apn",
+   "enriched_at": "2026-09-11T06:40:42.864123+00:00",
+   "billing_cycle": "2026-09-07T18:06:43.000Z",
+   "owner_name": null,
+   "owner_names": [],
+   "phones": [],
+   "emails": [],
+   "contacts": [],
+   "mailing_address": "18 Shasta Ln Toms River, NJ, 08753",
+   "property": {
+    "dm_property_id": "prop_86771137",
+    "full_address": "18 Shasta Ln Toms River, NJ, 08753",
+    "address": "18 Shasta Ln",
+    "city": "Toms River",
+    "state": "NJ",
+    "zip": "08753",
+    "latitude": 40.008596,
+    "longitude": -74.132178,
+    "estimated_value": 623000,
+    "estimated_equity_amount": 351704,
+    "estimated_equity_percentage": 50,
+    "year_built": 1992,
+    "living_area_sqft": 1576,
+    "lot_size_sqft": 13460,
+    "num_bedrooms": 3,
+    "num_bathrooms": 2,
+    "last_sale_date": "2018-11-23T00:00:00.000Z",
+    "last_sale_amount": 330000,
+    "total_assessed_value": 327400,
+    "annual_property_tax_amount": 6401,
+    "num_mortgages": 1,
+    "total_original_loan_amount": 313479,
+    "total_estimated_loan_balance": 271296,
+    "owner_occupied": true,
+    "apn": "08-00233-24-00026-15"
+   },
+   "mortgages": [
+    {
+     "mortgage_number": 1,
+     "id": "11538807263",
+     "transaction_id": "11538807263",
+     "lender_name": "PRIMARY RESIDENTIAL MORTGAGE I",
+     "is_private_lender": false,
+     "loan_type_id": 20,
+     "loan_type": "New Conventional",
+     "loan_financing_type": "Unknown Financing Type",
+     "loan_amount": 313479,
+     "loan_balance": 271296,
+     "loan_interest_rate": 4.9,
+     "loan_term_months": 360,
+     "loan_start_date": "2018-11-23T00:00:00.000Z",
+     "loan_recording_date": "2018-11-23T00:00:00.000Z",
+     "loan_due_date": "2048-12-01T00:00:00.000Z",
+     "has_adjustable_rate_rider": false,
+     "lien_position": 1,
+     "estimated_payment_amount": 1663.72,
+     "classification": "primary",
+     "classification_label": "Primary mortgage",
+     "classification_reason": "The mortgage record identifies this as lien position 1."
+    }
+   ],
+   "credits": {
+    "properties": 1,
+    "people": 0
+   }
+  }
+ },
+ "sheriff_foreclosure:CH_780606": {
+  "hash": "18bfce6284c8b250",
+  "enriched_at": "2026-09-11T06:40:42.864123+00:00",
+  "block": {
+   "source": "dealmachine",
+   "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+   "matched": true,
+   "enrichment_status": "enriched",
+   "matched_by": "apn",
+   "enriched_at": "2026-09-11T06:40:42.864123+00:00",
+   "billing_cycle": "2026-09-07T18:06:43.000Z",
+   "owner_name": "KYLE MURRIN",
+   "owner_names": [
+    "KYLE MURRIN"
+   ],
+   "phones": [
+    "7324756362",
+    "7326089528"
+   ],
+   "emails": [
+    "KJMPLUMBINGHEATING@GMAIL.COM"
+   ],
+   "contacts": [
+    {
+     "dm_person_id": "per_150226523873",
+     "full_name": "KYLE MURRIN",
+     "first_name": "KYLE",
+     "last_name": "MURRIN",
+     "contact_type": "owner",
+     "is_resident": true,
+     "phones": [
+      {
+       "number": "7324756362",
+       "type": "wireless",
+       "do_not_call": false
+      },
+      {
+       "number": "7326089528",
+       "type": "wireless",
+       "do_not_call": false
+      }
+     ],
+     "emails": [
+      "KJMPLUMBINGHEATING@GMAIL.COM"
+     ]
+    }
+   ],
+   "mailing_address": "427 N Lake Shore Dr Brick, NJ, 08723",
+   "property": {
+    "dm_property_id": "prop_86744135",
+    "full_address": "427 N Lake Shore Dr Brick, NJ, 08723",
+    "address": "427 N Lake Shore Dr",
+    "city": "Brick",
+    "state": "NJ",
+    "zip": "08723",
+    "latitude": 40.049554,
+    "longitude": -74.143896,
+    "estimated_value": 670000,
+    "estimated_equity_amount": 433578,
+    "estimated_equity_percentage": 61,
+    "year_built": 1968,
+    "living_area_sqft": 1719,
+    "lot_size_sqft": 22481,
+    "num_bedrooms": 3,
+    "num_bathrooms": 2,
+    "last_sale_date": "2011-08-22T00:00:00.000Z",
+    "last_sale_amount": 275000,
+    "total_assessed_value": 271800,
+    "annual_property_tax_amount": 7377,
+    "num_mortgages": 3,
+    "total_original_loan_amount": 546249,
+    "total_estimated_loan_balance": 236422,
+    "owner_occupied": true,
+    "apn": "07-00446-02-00013"
+   },
+   "mortgages": [
+    {
+     "mortgage_number": 1,
+     "id": "1062332849",
+     "transaction_id": "1062332849",
+     "lender_name": "ALLIED HOME MORTGAGE CORP",
+     "is_private_lender": false,
+     "loan_type_id": 12,
+     "loan_type": "FHA",
+     "loan_financing_type": "Unknown Financing Type",
+     "loan_amount": 268028,
+     "loan_balance": 183815,
+     "loan_interest_rate": 4.75,
+     "loan_term_months": 360,
+     "loan_start_date": "2011-08-22T00:00:00.000Z",
+     "loan_recording_date": "2011-08-22T00:00:00.000Z",
+     "loan_due_date": "2041-09-01T00:00:00.000Z",
+     "has_adjustable_rate_rider": false,
+     "lien_position": 1,
+     "estimated_payment_amount": 1398.16,
+     "classification": "primary",
+     "classification_label": "Primary mortgage",
+     "classification_reason": "DataTree marks this mortgage as lien position 1."
+    },
+    {
+     "mortgage_number": 2,
+     "id": "21236541398",
+     "transaction_id": "21236541398",
+     "lender_name": "SECRETARY OF HOUSING AND URBAN",
+     "is_private_lender": false,
+     "loan_type_id": 12,
+     "loan_type": "FHA",
+     "loan_financing_type": "Unknown Financing Type",
+     "loan_amount": 34320,
+     "loan_balance": 31625,
+     "loan_interest_rate": 3.55,
+     "loan_term_months": 360,
+     "loan_start_date": "2022-04-07T00:00:00.000Z",
+     "loan_recording_date": "2022-04-07T00:00:00.000Z",
+     "loan_due_date": "2052-04-01T00:00:00.000Z",
+     "has_adjustable_rate_rider": false,
+     "lien_position": 2,
+     "estimated_payment_amount": 155.07,
+     "classification": "subordinate",
+     "classification_label": "Possible second lien",
+     "classification_reason": "DataTree marks this mortgage as lien position 2."
+    },
+    {
+     "mortgage_number": 3,
+     "id": "21251784847",
+     "transaction_id": "21251784847",
+     "lender_name": "SECRETARY/HOUSING & URBAN DEV",
+     "is_private_lender": false,
+     "loan_type_id": 12,
+     "loan_type": "FHA",
+     "loan_financing_type": "Unknown Financing Type",
+     "loan_amount": 21453,
+     "loan_balance": 20982,
+     "loan_interest_rate": 6.94,
+     "loan_term_months": 334,
+     "loan_start_date": "2024-05-23T00:00:00.000Z",
+     "loan_recording_date": "2024-05-23T00:00:00.000Z",
+     "loan_due_date": "2052-04-01T00:00:00.000Z",
+     "has_adjustable_rate_rider": false,
+     "lien_position": 3,
+     "estimated_payment_amount": 145.23,
+     "classification": "subordinate",
+     "classification_label": "Possible third lien",
+     "classification_reason": "DataTree marks this mortgage as lien position 3."
+    },
+    {
+     "mortgage_number": 4,
+     "id": "160783146",
+     "transaction_id": "160783146",
+     "lender_name": "LAKEVIEW LOAN SERVICING LLC",
+     "is_private_lender": false,
+     "loan_type_id": 19,
+     "loan_type": "Mortgage Modification",
+     "loan_financing_type": "Unknown Financing Type",
+     "loan_amount": 222448,
+     "loan_term_months": 360,
+     "loan_start_date": "2022-04-07T00:00:00.000Z",
+     "loan_recording_date": "2022-04-07T00:00:00.000Z",
+     "loan_due_date": "2052-04-01T00:00:00.000Z",
+     "has_adjustable_rate_rider": false,
+     "lien_position": 4,
+     "classification": "subordinate",
+     "classification_label": "Possible junior lien",
+     "classification_reason": "DataTree marks this mortgage as lien position 4."
+    }
+   ],
+   "credits": {
+    "properties": 1,
+    "people": 1
+   }
+  }
+ },
+ "sheriff_foreclosure:CH_780742": {
+  "hash": "405a5aec6c97db66",
+  "enriched_at": "2026-09-11T06:40:42.864123+00:00",
+  "block": {
+   "source": "dealmachine",
+   "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+   "matched": true,
+   "enrichment_status": "enriched",
+   "matched_by": "apn",
+   "enriched_at": "2026-09-11T06:40:42.864123+00:00",
+   "billing_cycle": "2026-09-07T18:06:43.000Z",
+   "owner_name": null,
+   "owner_names": [],
+   "phones": [],
+   "emails": [],
+   "contacts": [],
+   "mailing_address": "1 Cedarcrest Dr Bayville, NJ, 08721",
+   "property": {
+    "dm_property_id": "prop_86765226",
+    "full_address": "1 Cedarcrest Dr Bayville, NJ, 08721",
+    "address": "1 Cedarcrest Dr",
+    "city": "Bayville",
+    "state": "NJ",
+    "zip": "08721",
+    "latitude": 39.932823,
+    "longitude": -74.147324,
+    "estimated_value": 1080000,
+    "estimated_equity_amount": 1064353,
+    "estimated_equity_percentage": 97,
+    "year_built": 1987,
+    "living_area_sqft": 3000,
+    "lot_size_sqft": 12432,
+    "num_bedrooms": 4,
+    "num_bathrooms": 4,
+    "last_sale_date": "2008-09-29T00:00:00.000Z",
+    "last_sale_amount": 492500,
+    "total_assessed_value": 388000,
+    "annual_property_tax_amount": 10049,
+    "num_mortgages": 1,
+    "total_original_loan_amount": 165000,
+    "total_estimated_loan_balance": 15647,
+    "owner_occupied": true,
+    "apn": "06-01023-01-00001"
+   },
+   "mortgages": [
+    {
+     "mortgage_number": 1,
+     "id": "2108728444",
+     "transaction_id": "2108728444",
+     "lender_name": "WELLS FARGO BANK NA",
+     "is_private_lender": false,
+     "loan_type_id": 20,
+     "loan_type": "New Conventional",
+     "loan_financing_type": "Unknown Financing Type",
+     "loan_amount": 165000,
+     "loan_balance": 15647,
+     "loan_interest_rate": 2.99,
+     "loan_term_months": 180,
+     "loan_start_date": "2012-08-10T00:00:00.000Z",
+     "loan_recording_date": "2012-08-10T00:00:00.000Z",
+     "loan_due_date": "2027-08-01T00:00:00.000Z",
+     "has_adjustable_rate_rider": false,
+     "lien_position": 1,
+     "estimated_payment_amount": 1138.67,
+     "classification": "primary",
+     "classification_label": "Primary mortgage",
+     "classification_reason": "The mortgage record identifies this as lien position 1."
+    }
+   ],
+   "credits": {
+    "properties": 1,
+    "people": 0
+   }
+  }
+ },
+ "sheriff_foreclosure:CH_780744": {
+  "hash": "4b4e8d2e955a00a7",
+  "enriched_at": "2026-09-11T06:40:42.864123+00:00",
+  "block": {
+   "source": "dealmachine",
+   "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+   "matched": true,
+   "enrichment_status": "enriched",
+   "matched_by": "apn",
+   "enriched_at": "2026-09-11T06:40:42.864123+00:00",
+   "billing_cycle": "2026-09-07T18:06:43.000Z",
+   "owner_name": null,
+   "owner_names": [],
+   "phones": [],
+   "emails": [],
+   "contacts": [],
+   "mailing_address": "1211a Shetland Dr Lakewood, NJ, 08701",
+   "property": {
+    "dm_property_id": "prop_86830812",
+    "full_address": "1211a Shetland Dr Lakewood, NJ, 08701",
+    "address": "1211a Shetland Dr",
+    "city": "Lakewood",
+    "state": "NJ",
+    "zip": "08701",
+    "latitude": 40.029764027,
+    "longitude": -74.16069649,
+    "estimated_value": 171000,
+    "estimated_equity_amount": 118976,
+    "estimated_equity_percentage": 67,
+    "year_built": 1972,
+    "living_area_sqft": 858,
+    "lot_size_sqft": 803,
+    "num_bedrooms": 2,
+    "num_bathrooms": 1,
+    "last_sale_date": "2004-07-26T00:00:00.000Z",
+    "last_sale_amount": 87000,
+    "total_assessed_value": 53500,
+    "annual_property_tax_amount": 1384,
+    "num_mortgages": 2,
+    "total_original_loan_amount": 137044,
+    "total_estimated_loan_balance": 52024,
+    "owner_occupied": true,
+    "apn": "15-01587-0000-01211-01"
+   },
+   "mortgages": [
+    {
+     "mortgage_number": 1,
+     "id": "1062444337",
+     "transaction_id": "1062444337",
+     "lender_name": "AMERICAS WHOLESALE LENDER",
+     "is_private_lender": false,
+     "loan_type_id": 20,
+     "loan_type": "New Conventional",
+     "loan_financing_type": "Unknown Financing Type",
+     "loan_amount": 69600,
+     "loan_balance": 32634,
+     "loan_interest_rate": 6.28,
+     "loan_term_months": 360,
+     "loan_start_date": "2004-07-26T00:00:00.000Z",
+     "loan_recording_date": "2004-07-26T00:00:00.000Z",
+     "loan_due_date": "2034-06-01T00:00:00.000Z",
+     "has_adjustable_rate_rider": false,
+     "lien_position": 1,
+     "estimated_payment_amount": 429.9,
+     "classification": "primary",
+     "classification_label": "Primary mortgage",
+     "classification_reason": "The mortgage record identifies this as lien position 1."
+    },
+    {
+     "mortgage_number": 2,
+     "id": "2106722680",
+     "transaction_id": "2106722680",
+     "lender_name": "BANK OF AMERICA NA",
+     "is_private_lender": false,
+     "loan_type_id": 20,
+     "loan_type": "New Conventional",
+     "loan_financing_type": "Unknown Financing Type",
+     "loan_amount": 67444,
+     "loan_balance": 19390,
+     "loan_interest_rate": 4.76,
+     "loan_term_months": 240,
+     "loan_start_date": "2010-07-22T00:00:00.000Z",
+     "loan_recording_date": "2010-07-22T00:00:00.000Z",
+     "loan_due_date": "2030-08-01T00:00:00.000Z",
+     "has_adjustable_rate_rider": false,
+     "lien_position": 2,
+     "estimated_payment_amount": 436.21,
+     "classification": "subordinate",
+     "classification_label": "Possible second lien",
+     "classification_reason": "The mortgage record identifies this as lien position 2."
+    }
+   ],
+   "credits": {
+    "properties": 1,
+    "people": 0
+   }
+  }
+ },
+ "sheriff_foreclosure:CH_780745": {
+  "hash": "83c1103d457e1743",
+  "enriched_at": "2026-09-11T06:40:42.864123+00:00",
+  "block": {
+   "source": "dealmachine",
+   "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+   "matched": true,
+   "enrichment_status": "enriched",
+   "matched_by": "apn",
+   "enriched_at": "2026-09-11T06:40:42.864123+00:00",
+   "billing_cycle": "2026-09-07T18:06:43.000Z",
+   "owner_name": null,
+   "owner_names": [],
+   "phones": [],
+   "emails": [],
+   "contacts": [],
+   "mailing_address": "90 Wadsworth Ave Lakewood, NJ, 08701",
+   "property": {
+    "dm_property_id": "prop_160269565",
+    "full_address": "90 Wadsworth Ave Lakewood, NJ, 08701",
+    "address": "90 Wadsworth Ave",
+    "city": "Lakewood",
+    "state": "NJ",
+    "zip": "08701",
+    "latitude": 40.06360113,
+    "longitude": -74.21068257,
+    "estimated_value": 1001000,
+    "estimated_equity_amount": 336347,
+    "estimated_equity_percentage": 44,
+    "year_built": 2021,
+    "living_area_sqft": 3211,
+    "lot_size_sqft": 5009,
+    "num_bedrooms": 9,
+    "num_bathrooms": 6,
+    "last_sale_date": "2022-11-17T00:00:00.000Z",
+    "last_sale_amount": 715000,
+    "total_assessed_value": 581100,
+    "annual_property_tax_amount": 15033,
+    "num_mortgages": 1,
+    "total_original_loan_amount": 700000,
+    "total_estimated_loan_balance": 664653,
+    "owner_occupied": true,
+    "apn": "15-01026-0000-00002-01"
+   },
+   "mortgages": [
+    {
+     "mortgage_number": 1,
+     "id": "11898987622",
+     "transaction_id": "11898987622",
+     "lender_name": "UNITED WHOLESALE MORTGAGE LLC",
+     "is_private_lender": false,
+     "loan_type_id": 20,
+     "loan_type": "New Conventional",
+     "loan_financing_type": "Unknown Financing Type",
+     "loan_amount": 700000,
+     "loan_balance": 664653,
+     "loan_interest_rate": 5.66,
+     "loan_term_months": 360,
+     "loan_start_date": "2022-11-17T00:00:00.000Z",
+     "loan_recording_date": "2022-11-17T00:00:00.000Z",
+     "loan_due_date": "2052-10-01T00:00:00.000Z",
+     "has_adjustable_rate_rider": false,
+     "lien_position": 1,
+     "estimated_payment_amount": 4045.08,
+     "classification": "primary",
+     "classification_label": "Primary mortgage",
+     "classification_reason": "The mortgage record identifies this as lien position 1."
+    }
+   ],
+   "credits": {
+    "properties": 1,
+    "people": 0
+   }
+  }
+ },
+ "sheriff_foreclosure:CH_780747": {
+  "hash": "d7f286e9758b97fc",
+  "enriched_at": "2026-09-11T06:40:42.864123+00:00",
+  "block": {
+   "source": "dealmachine",
+   "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+   "matched": true,
+   "enrichment_status": "enriched",
+   "matched_by": "apn",
+   "enriched_at": "2026-09-11T06:40:42.864123+00:00",
+   "billing_cycle": "2026-09-07T18:06:43.000Z",
+   "owner_name": "KEITH STEWART",
+   "owner_names": [
+    "KEITH STEWART",
+    "JENNIFER STEWART"
+   ],
+   "phones": [
+    "7326430299",
+    "7329223661",
+    "7322161219",
+    "7326047337"
+   ],
+   "emails": [
+    "JENNIFER.BROGNA@YAHOO.COM",
+    "JBROGNA@FAM1FUND.COM"
+   ],
+   "contacts": [
+    {
+     "dm_person_id": "per_150318131310",
+     "full_name": "KEITH STEWART",
+     "first_name": "KEITH",
+     "last_name": "STEWART",
+     "contact_type": "owner",
+     "is_resident": true,
+     "phones": [
+      {
+       "number": "7326430299",
+       "type": "landline",
+       "do_not_call": false
+      },
+      {
+       "number": "7329223661",
+       "type": "landline",
+       "do_not_call": true
+      },
+      {
+       "number": "7322161219",
+       "type": "wireless",
+       "do_not_call": false
+      }
+     ],
+     "emails": []
+    },
+    {
+     "dm_person_id": "per_150388773339",
+     "full_name": "JENNIFER STEWART",
+     "first_name": "JENNIFER",
+     "last_name": "STEWART",
+     "contact_type": "owner",
+     "is_resident": true,
+     "phones": [
+      {
+       "number": "7326430299",
+       "type": "landline",
+       "do_not_call": false
+      },
+      {
+       "number": "7326047337",
+       "type": "wireless",
+       "do_not_call": false
+      }
+     ],
+     "emails": [
+      "JENNIFER.BROGNA@YAHOO.COM",
+      "JBROGNA@FAM1FUND.COM"
+     ]
+    }
+   ],
+   "mailing_address": "78 Bowline St Barnegat, NJ, 08005",
+   "property": {
+    "dm_property_id": "prop_86680586",
+    "full_address": "78 Bowline St Barnegat, NJ, 08005",
+    "address": "78 Bowline St",
+    "city": "Barnegat",
+    "state": "NJ",
+    "zip": "08005",
+    "latitude": 39.745553,
+    "longitude": -74.24364,
+    "estimated_value": 458000,
+    "estimated_equity_amount": 281461,
+    "estimated_equity_percentage": 61,
+    "year_built": 1973,
+    "living_area_sqft": 1875,
+    "lot_size_sqft": 6726,
+    "num_bedrooms": 4,
+    "num_bathrooms": 2,
+    "last_sale_date": "2016-09-09T00:00:00.000Z",
+    "last_sale_amount": 220000,
+    "total_assessed_value": 182100,
+    "annual_property_tax_amount": 5614,
+    "num_mortgages": 1,
+    "total_original_loan_amount": 226221,
+    "total_estimated_loan_balance": 176539,
+    "owner_occupied": true,
+    "apn": "01-00114-14-00057"
+   },
+   "mortgages": [
+    {
+     "mortgage_number": 1,
+     "id": "1771263702",
+     "transaction_id": "1771263702",
+     "lender_name": "PRIMARY RESIDENTIAL MTG CORP",
+     "is_private_lender": false,
+     "loan_type_id": 20,
+     "loan_type": "New Conventional",
+     "loan_financing_type_id": 2,
+     "loan_financing_type": "Fixed Rate",
+     "loan_amount": 226221,
+     "loan_balance": 176539,
+     "loan_interest_rate": 3.48,
+     "loan_term_months": 360,
+     "loan_start_date": "2016-09-09T00:00:00.000Z",
+     "loan_recording_date": "2016-09-09T00:00:00.000Z",
+     "loan_due_date": "2046-09-09T00:00:00.000Z",
+     "has_adjustable_rate_rider": false,
+     "lien_position": 1,
+     "estimated_payment_amount": 1013.31,
+     "classification": "primary",
+     "classification_label": "Primary mortgage",
+     "classification_reason": "The mortgage record identifies this as lien position 1."
+    }
+   ],
+   "credits": {
+    "properties": 1,
+    "people": 2
+   }
+  }
+ },
+ "sheriff_foreclosure:CH_780748": {
+  "hash": "73268a4def644bbe",
+  "enriched_at": "2026-09-11T06:40:42.864123+00:00",
+  "block": {
+   "source": "dealmachine",
+   "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+   "matched": true,
+   "enrichment_status": "enriched",
+   "matched_by": "apn",
+   "enriched_at": "2026-09-11T06:40:42.864123+00:00",
+   "billing_cycle": "2026-09-07T18:06:43.000Z",
+   "owner_name": "ERNESTINE STOUT",
+   "owner_names": [
+    "ERNESTINE STOUT",
+    "HOWARD STOUT"
+   ],
+   "phones": [
+    "7722016225",
+    "7326817758",
+    "7327463355",
+    "6092039594"
+   ],
+   "emails": [
+    "HOWARDSTOUT@BELLSOUTH.NET"
+   ],
+   "contacts": [
+    {
+     "dm_person_id": "per_15035896233",
+     "full_name": "ERNESTINE STOUT",
+     "first_name": "ERNESTINE",
+     "last_name": "STOUT",
+     "contact_type": "owner",
+     "is_resident": false,
+     "phones": [
+      {
+       "number": "7722016225",
+       "type": "landline",
+       "do_not_call": false
+      },
+      {
+       "number": "7326817758",
+       "type": "wireless",
+       "do_not_call": false
+      },
+      {
+       "number": "7327463355",
+       "type": "wireless",
+       "do_not_call": false
+      }
+     ],
+     "emails": [
+      "HOWARDSTOUT@BELLSOUTH.NET"
+     ]
+    },
+    {
+     "dm_person_id": "per_150362770806",
+     "full_name": "HOWARD STOUT",
+     "first_name": "HOWARD",
+     "last_name": "STOUT",
+     "contact_type": "owner",
+     "is_resident": false,
+     "phones": [
+      {
+       "number": "6092039594",
+       "type": "landline",
+       "do_not_call": false
+      }
+     ],
+     "emails": []
+    }
+   ],
+   "mailing_address": "34 Collins Ct Brick, NJ, 08724",
+   "property": {
+    "dm_property_id": "prop_86735181",
+    "full_address": "34 Collins Ct Brick, NJ, 08724",
+    "address": "34 Collins Ct",
+    "city": "Brick",
+    "state": "NJ",
+    "zip": "08724",
+    "latitude": 40.087302,
+    "longitude": -74.135908,
+    "estimated_value": 310000,
+    "estimated_equity_amount": 214854,
+    "estimated_equity_percentage": 66,
+    "year_built": 1973,
+    "living_area_sqft": 1024,
+    "lot_size_sqft": 4901,
+    "num_bedrooms": 2,
+    "num_bathrooms": 2,
+    "last_sale_date": "2010-08-06T00:00:00.000Z",
+    "last_sale_amount": 128000,
+    "total_assessed_value": 108100,
+    "annual_property_tax_amount": 2964,
+    "num_mortgages": 1,
+    "total_original_loan_amount": 122625,
+    "total_estimated_loan_balance": 95146,
+    "owner_occupied": true,
+    "apn": "07-01192-19-00123"
+   },
+   "mortgages": [
+    {
+     "mortgage_number": 1,
+     "id": "2329080009",
+     "transaction_id": "2329080009",
+     "lender_name": "QUICKEN LOANS INC",
+     "is_private_lender": false,
+     "loan_type_id": 20,
+     "loan_type": "New Conventional",
+     "loan_financing_type": "Unknown Financing Type",
+     "loan_amount": 122625,
+     "loan_balance": 95146,
+     "loan_interest_rate": 3.88,
+     "loan_term_months": 360,
+     "loan_start_date": "2015-10-07T00:00:00.000Z",
+     "loan_recording_date": "2015-10-07T00:00:00.000Z",
+     "loan_due_date": "2045-10-01T00:00:00.000Z",
+     "has_adjustable_rate_rider": false,
+     "lien_position": 1,
+     "estimated_payment_amount": 576.98,
+     "classification": "primary",
+     "classification_label": "Primary mortgage",
+     "classification_reason": "DataTree marks this mortgage as lien position 1."
+    }
+   ],
+   "credits": {
+    "properties": 1,
+    "people": 2
+   }
+  }
+ },
+ "sheriff_foreclosure:CH_780749": {
+  "hash": "57994d35536d81d6",
+  "enriched_at": "2026-09-11T06:40:42.864123+00:00",
+  "block": {
+   "source": "dealmachine",
+   "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+   "matched": true,
+   "enrichment_status": "enriched",
+   "matched_by": "apn",
+   "enriched_at": "2026-09-11T06:40:42.864123+00:00",
+   "billing_cycle": "2026-09-07T18:06:43.000Z",
+   "owner_name": null,
+   "owner_names": [],
+   "phones": [],
+   "emails": [],
+   "contacts": [],
+   "mailing_address": "202 Hearth Ct W Lakewood, NJ, 08701",
+   "property": {
+    "dm_property_id": "prop_86822116",
+    "full_address": "202 Hearth Ct W Lakewood, NJ, 08701",
+    "address": "202 Hearth Ct W",
+    "city": "Lakewood",
+    "state": "NJ",
+    "zip": "08701",
+    "latitude": 40.082438,
+    "longitude": -74.229337,
+    "estimated_value": 1107000,
+    "estimated_equity_amount": 1029367,
+    "estimated_equity_percentage": 90,
+    "year_built": 1973,
+    "living_area_sqft": 1764,
+    "lot_size_sqft": 12767,
+    "num_bedrooms": 4,
+    "num_bathrooms": 2,
+    "last_sale_date": "2003-01-09T00:00:00.000Z",
+    "last_sale_amount": 247500,
+    "total_assessed_value": 370800,
+    "annual_property_tax_amount": 9593,
+    "num_mortgages": 1,
+    "total_original_loan_amount": 355098,
+    "total_estimated_loan_balance": 77633,
+    "owner_occupied": true,
+    "apn": "15-00284-03-00007"
+   },
+   "mortgages": [
+    {
+     "mortgage_number": 1,
+     "id": "1101460657",
+     "transaction_id": "1101460657",
+     "lender_name": "BNY MORTGAGE",
+     "is_private_lender": false,
+     "loan_type": "Unknown Type",
+     "loan_financing_type": "Unknown Financing Type",
+     "loan_amount": 198000,
+     "loan_balance": 77633,
+     "loan_interest_rate": 6.19,
+     "loan_term_months": 360,
+     "loan_start_date": "2003-01-09T00:00:00.000Z",
+     "loan_recording_date": "2003-01-09T00:00:00.000Z",
+     "loan_due_date": "2033-01-09T00:00:00.000Z",
+     "has_adjustable_rate_rider": false,
+     "lien_position": 1,
+     "estimated_payment_amount": 1211.4,
+     "classification": "primary",
+     "classification_label": "Primary mortgage",
+     "classification_reason": "The mortgage record identifies this as lien position 1."
+    },
+    {
+     "mortgage_number": 2,
+     "id": "159911187",
+     "transaction_id": "159911187",
+     "lender_name": "WELLS FARGO BANK NA",
+     "is_private_lender": false,
+     "loan_type_id": 19,
+     "loan_type": "Mortgage Modification",
+     "loan_financing_type": "Unknown Financing Type",
+     "loan_amount": 157098,
+     "loan_term_months": 479,
+     "loan_start_date": "2022-03-29T00:00:00.000Z",
+     "loan_recording_date": "2022-03-29T00:00:00.000Z",
+     "loan_due_date": "2062-03-01T00:00:00.000Z",
+     "has_adjustable_rate_rider": false,
+     "lien_position": 2,
+     "classification": "subordinate",
+     "classification_label": "Possible second lien",
+     "classification_reason": "The mortgage record identifies this as lien position 2."
+    }
+   ],
+   "credits": {
+    "properties": 1,
+    "people": 0
+   }
+  }
+ },
+ "sheriff_foreclosure:CH_779771": {
+  "hash": "77de869a7a07beb7",
+  "enriched_at": "2026-09-11T06:40:42.864123+00:00",
+  "block": {
+   "source": "dealmachine",
+   "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+   "matched": false,
+   "enrichment_status": "no_dm_record",
+   "matched_by": "address",
+   "enriched_at": "2026-09-11T06:40:42.864123+00:00",
+   "billing_cycle": "2026-09-07T18:06:43.000Z",
+   "match_failure": {
+    "code": "no_match",
+    "reason": "No property found at this address"
+   }
+  }
+ },
+ "sheriff_foreclosure:CH_779969": {
+  "hash": "fa5b3800a156027f",
+  "enriched_at": "2026-09-11T06:40:42.864123+00:00",
+  "block": {
+   "source": "dealmachine",
+   "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+   "matched": true,
+   "enrichment_status": "enriched",
+   "matched_by": "address",
+   "enriched_at": "2026-09-11T06:40:42.864123+00:00",
+   "billing_cycle": "2026-09-07T18:06:43.000Z",
+   "owner_name": null,
+   "owner_names": [],
+   "phones": [],
+   "emails": [],
+   "contacts": [],
+   "mailing_address": "8 Nature Blvd Jackson, NJ, 08527",
+   "property": {
+    "dm_property_id": "prop_86847189",
+    "full_address": "8 Nature Blvd Jackson, NJ, 08527",
+    "address": "8 Nature Blvd",
+    "city": "Jackson",
+    "state": "NJ",
+    "zip": "08527",
+    "latitude": 40.115324,
+    "longitude": -74.268754,
+    "estimated_value": 828000,
+    "estimated_equity_amount": 796376,
+    "estimated_equity_percentage": 96,
+    "year_built": 1991,
+    "living_area_sqft": 2052,
+    "lot_size_sqft": 27443,
+    "num_bedrooms": 4,
+    "num_bathrooms": 4,
+    "last_sale_date": "1999-01-08T00:00:00.000Z",
+    "last_sale_amount": 163500,
+    "total_assessed_value": 749700,
+    "annual_property_tax_amount": 11193,
+    "num_mortgages": 2,
+    "total_original_loan_amount": 169521,
+    "total_estimated_loan_balance": 31624,
+    "owner_occupied": true,
+    "apn": "12-07701-0000-00065"
+   },
+   "mortgages": [
+    {
+     "mortgage_number": 1,
+     "id": "1192577362",
+     "transaction_id": "1192577362",
+     "lender_name": "MEGA MTG SERVICES LLC",
+     "is_private_lender": false,
+     "loan_type_id": 22,
+     "loan_type": "Purchase Money Mortgage",
+     "loan_financing_type": "Unknown Financing Type",
+     "loan_amount": 155300,
+     "loan_balance": 28709,
+     "loan_interest_rate": 6.8,
+     "loan_term_months": 360,
+     "loan_start_date": "1999-01-08T00:00:00.000Z",
+     "loan_recording_date": "1999-01-08T00:00:00.000Z",
+     "loan_due_date": "2029-01-01T00:00:00.000Z",
+     "has_adjustable_rate_rider": false,
+     "lien_position": 1,
+     "estimated_payment_amount": 1012.44,
+     "classification": "primary",
+     "classification_label": "Primary mortgage",
+     "classification_reason": "The mortgage record identifies this as lien position 1."
+    },
+    {
+     "mortgage_number": 2,
+     "id": "2105927335",
+     "transaction_id": "2105927335",
+     "lender_name": "POOL TOWN INC",
+     "is_private_lender": false,
+     "loan_type_id": 27,
+     "loan_type": "Unknown",
+     "loan_financing_type": "Unknown Financing Type",
+     "loan_amount": 14221,
+     "loan_balance": 2915,
+     "loan_interest_rate": 7.04,
+     "loan_term_months": 360,
+     "loan_start_date": "1999-04-15T00:00:00.000Z",
+     "loan_recording_date": "1999-04-15T00:00:00.000Z",
+     "loan_due_date": "2029-04-15T00:00:00.000Z",
+     "has_adjustable_rate_rider": false,
+     "lien_position": 2,
+     "estimated_payment_amount": 95,
+     "classification": "subordinate",
+     "classification_label": "Possible second lien",
+     "classification_reason": "The mortgage record identifies this as lien position 2."
+    }
+   ],
+   "credits": {
+    "properties": 1,
+    "people": 0
+   }
+  }
+ },
+ "sheriff_foreclosure:CH_780347": {
+  "hash": "86f735ee5e91a5cb",
+  "enriched_at": "2026-09-11T06:40:42.864123+00:00",
+  "block": {
+   "source": "dealmachine",
+   "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+   "matched": false,
+   "enrichment_status": "no_dm_record",
+   "matched_by": "address",
+   "enriched_at": "2026-09-11T06:40:42.864123+00:00",
+   "billing_cycle": "2026-09-07T18:06:43.000Z",
+   "match_failure": {
+    "code": "no_match",
+    "reason": "No property found at this address"
+   }
+  }
+ },
+ "sheriff_foreclosure:CH_780364": {
+  "hash": "3880b3a844623da7",
+  "enriched_at": "2026-09-11T06:40:42.864123+00:00",
+  "block": {
+   "source": "dealmachine",
+   "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+   "matched": false,
+   "enrichment_status": "no_dm_record",
+   "matched_by": "address",
+   "enriched_at": "2026-09-11T06:40:42.864123+00:00",
+   "billing_cycle": "2026-09-07T18:06:43.000Z",
+   "match_failure": {
+    "code": "no_match",
+    "reason": "No property found at this address"
+   }
+  }
+ },
+ "sheriff_foreclosure:CH_780743": {
+  "hash": "f87e6b884c1d72da",
+  "enriched_at": "2026-09-11T06:40:42.864123+00:00",
+  "block": {
+   "source": "dealmachine",
+   "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+   "matched": false,
+   "enrichment_status": "no_dm_record",
+   "matched_by": "address",
+   "enriched_at": "2026-09-11T06:40:42.864123+00:00",
+   "billing_cycle": "2026-09-07T18:06:43.000Z",
+   "match_failure": {
+    "code": "no_match",
+    "reason": "No property found at this address"
+   }
+  }
+ },
+ "sheriff_foreclosure:CH_780746": {
+  "hash": "24be5bc91facb8f7",
+  "enriched_at": "2026-09-11T06:40:42.864123+00:00",
+  "block": {
+   "source": "dealmachine",
+   "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+   "matched": false,
+   "enrichment_status": "no_dm_record",
+   "matched_by": "address",
+   "enriched_at": "2026-09-11T06:40:42.864123+00:00",
+   "billing_cycle": "2026-09-07T18:06:43.000Z",
+   "match_failure": {
+    "code": "no_match",
+    "reason": "No property found at this address"
+   }
+  }
+ },
+ "sheriff_foreclosure:CH_780750": {
+  "hash": "73164903c7adf043",
+  "enriched_at": "2026-09-11T06:40:42.864123+00:00",
+  "block": {
+   "source": "dealmachine",
+   "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+   "matched": true,
+   "enrichment_status": "enriched",
+   "matched_by": "address",
+   "enriched_at": "2026-09-11T06:40:42.864123+00:00",
+   "billing_cycle": "2026-09-07T18:06:43.000Z",
+   "owner_name": null,
+   "owner_names": [],
+   "phones": [],
+   "emails": [],
+   "contacts": [],
+   "mailing_address": "981d Aberdeen Dr Lakewood, NJ, 08701",
+   "property": {
+    "dm_property_id": "prop_86878766",
+    "full_address": "981d Aberdeen Dr Lakewood, NJ, 08701",
+    "address": "981d Aberdeen Dr",
+    "city": "Lakewood",
+    "state": "NJ",
+    "zip": "08701",
+    "latitude": 40.03296,
+    "longitude": -74.168602,
+    "estimated_value": 228000,
+    "estimated_equity_amount": 220879,
+    "estimated_equity_percentage": 96,
+    "year_built": 1971,
+    "living_area_sqft": 982,
+    "lot_size_sqft": 1180,
+    "num_bedrooms": 2,
+    "num_bathrooms": 1,
+    "last_sale_date": "1998-06-23T00:00:00.000Z",
+    "last_sale_amount": 50000,
+    "total_assessed_value": 79400,
+    "annual_property_tax_amount": 2054,
+    "num_mortgages": 1,
+    "total_original_loan_amount": 47500,
+    "total_estimated_loan_balance": 7121,
+    "owner_occupied": true,
+    "apn": "15-01587-0000-00981-04"
+   },
+   "mortgages": [
+    {
+     "mortgage_number": 1,
+     "id": "1192606092",
+     "transaction_id": "1192606092",
+     "lender_name": "OCEAN FSB",
+     "is_private_lender": false,
+     "loan_type_id": 22,
+     "loan_type": "Purchase Money Mortgage",
+     "loan_financing_type": "Unknown Financing Type",
+     "loan_amount": 47500,
+     "loan_balance": 7121,
+     "loan_interest_rate": 7.09,
+     "loan_term_months": 360,
+     "loan_start_date": "1998-06-23T00:00:00.000Z",
+     "loan_recording_date": "1998-06-23T00:00:00.000Z",
+     "loan_due_date": "2028-07-01T00:00:00.000Z",
+     "has_adjustable_rate_rider": false,
+     "lien_position": 1,
+     "estimated_payment_amount": 318.89,
+     "classification": "primary",
+     "classification_label": "Primary mortgage",
+     "classification_reason": "The mortgage record identifies this as lien position 1."
+    }
+   ],
+   "credits": {
+    "properties": 1,
+    "people": 0
+   }
+  }
+ },
+ "sheriff_foreclosure:CH_780751": {
+  "hash": "fdf353d49ace585c",
+  "enriched_at": "2026-09-11T06:40:42.864123+00:00",
+  "block": {
+   "source": "dealmachine",
+   "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+   "matched": false,
+   "enrichment_status": "no_dm_record",
+   "matched_by": "address",
+   "enriched_at": "2026-09-11T06:40:42.864123+00:00",
+   "billing_cycle": "2026-09-07T18:06:43.000Z",
+   "match_failure": {
+    "code": "no_match",
+    "reason": "No property found at this address"
    }
   }
  }
