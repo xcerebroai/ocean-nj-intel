@@ -1,34 +1,5 @@
 {
   "mode": "live",
-  "attempted": 3,
-  "pushed": 3,
-  "results": [
-    {
-      "key": "1507_446.02_13|CH780606",
-      "status": 201,
-      "contact_id": "DTRg61K2qEsV96UQSGoa",
-      "tags": [
-        "ocean-new-lead",
-        "ocean county"
-      ]
-    },
-    {
-      "key": "1501_114.14_57|CH780747",
-      "status": 201,
-      "contact_id": "Cn5puddeCmTDjQkvBGIj",
-      "tags": [
-        "ocean-new-lead",
-        "ocean county"
-      ]
-    },
-    {
-      "key": "1507_1192.19_123|CH780748",
-      "status": 201,
-      "contact_id": "ZkAbH3CCdv0FYbZuCfsp",
-      "tags": [
-        "ocean-new-lead",
-        "ocean county"
-      ]
-    }
-  ]
+  "pushed": 0,
+  "results": []
 }
