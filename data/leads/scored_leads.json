@@ -3,13 +3,13 @@
  "county_name": "Ocean County",
  "state_name": "New Jersey",
  "framework_version": "v5.5.0",
- "build_timestamp": "2026-09-24T06:36:22Z",
+ "build_timestamp": "2026-09-25T06:35:19Z",
  "build_mode": "PARTIAL_BUILD",
- "total_leads": 3264,
+ "total_leads": 3304,
  "lead_counts_by_signal": {
-  "foreclosure_sale_scheduled": 153,
+  "foreclosure_sale_scheduled": 173,
   "foreclosure_notice_published": 2,
-  "probate_filing_recent": 2605,
+  "probate_filing_recent": 2625,
   "tax_default_brick": 504
  },
  "hls_brick_status": {
@@ -30,11 +30,11 @@
  },
  "tax_board_detail_indexed": 10,
  "lead_counts_by_status": {
-  "APPROVED_FOR_DASHBOARD": 567,
-  "REVIEW_REQUIRED": 2697
+  "APPROVED_FOR_DASHBOARD": 586,
+  "REVIEW_REQUIRED": 2718
  },
  "parcel_join": {
-  "hits": 27,
+  "hits": 36,
   "misses": 13,
   "resolved_owner_fraction": 0.0,
   "enrichment_join_unavailable": true,
@@ -59,7 +59,7 @@
     "OWNER_STATUS"
    ],
    "source_role": "BLOCKED_SOURCE",
-   "reported_at": "2026-09-24T06:34:08Z",
+   "reported_at": "2026-09-25T06:34:27Z",
    "v5_5_0_recon_anchor": "runs/ocean_nj/recon/source_of_record_matrix.json#sources"
   },
   {
@@ -76,7 +76,7 @@
     "RECORDED_EVENT"
    ],
    "source_role": "BLOCKED_SOURCE",
-   "reported_at": "2026-09-24T06:34:08Z",
+   "reported_at": "2026-09-25T06:34:27Z",
    "v5_5_0_recon_anchor": "runs/ocean_nj/recon/source_of_record_matrix.json#sources"
   },
   {
@@ -94,7 +94,7 @@
     "TAX_DEFAULT"
    ],
    "source_role": "BLOCKED_SOURCE",
-   "reported_at": "2026-09-24T06:34:08Z",
+   "reported_at": "2026-09-25T06:34:27Z",
    "v5_5_0_recon_anchor": "runs/ocean_nj/recon/source_of_record_matrix.json#sources"
   },
   {
@@ -109,7 +109,7 @@
    ],
    "intended_lead_origins": [],
    "source_role": "BLOCKED_SOURCE",
-   "reported_at": "2026-09-24T06:34:08Z",
+   "reported_at": "2026-09-25T06:34:27Z",
    "v5_5_0_recon_anchor": "runs/ocean_nj/recon/source_of_record_matrix.json#sources"
   }
  ],
@@ -2208,7 +2208,7 @@
    "lead_origin_type": "RECORDED_EVENT",
    "primary_event_date": "2026-10-06",
    "scheduled_event_category": "UPCOMING_SALE",
-   "qualification_status": "REVIEW_REQUIRED",
+   "qualification_status": "QUALIFIED",
    "source_ids": [
     "sheriff_foreclosure",
     "njogis_parcels_modiv"
@@ -2224,9 +2224,9 @@
    "plaintiff": "LAKEVIEW LOAN SERVICING, LLC",
    "defendant_name": "JESSE C. GEORGAKLIS, ET ALS",
    "upset_amount": 378008.68,
-   "sale_date": "2026-09-08",
-   "adjournment_date": "2026-10-06",
-   "sheriff_status": "ADJOURNED UNTIL",
+   "sale_date": "2026-10-06",
+   "adjournment_date": null,
+   "sheriff_status": null,
    "attorney_firm": "STERN, LAVINTHAL & FRANKENBERG, LLC.",
    "attorney_phone": "973-797-1100",
    "property_address": "54 TIMBERLINE ROAD",
@@ -122461,8 +122461,8 @@
   {
    "lead_id": "sheriff_foreclosure:CH_779072",
    "lead_origin_type": "RECORDED_EVENT",
-   "primary_event_date": "2026-09-22",
-   "scheduled_event_category": "PAST_SALE",
+   "primary_event_date": "2026-10-06",
+   "scheduled_event_category": "UPCOMING_SALE",
    "qualification_status": "QUALIFIED",
    "source_ids": [
     "sheriff_foreclosure",
@@ -122472,14 +122472,14 @@
     "sheriff_foreclosure:CH_779072",
     "njogis_parcels_modiv:1507_160_3"
    ],
-   "lead_status": "REVIEW_REQUIRED",
+   "lead_status": "APPROVED_FOR_DASHBOARD",
    "doc_type": "sheriff_sale_listing",
    "distress_signal": "foreclosure_sale_scheduled",
    "chancery_docket": "CH 779072",
    "plaintiff": "WILMINGTON SAVINGS FUND SOCIETY, FS",
    "defendant_name": "GARY BEYERS, ET UX, ET ALS",
-   "upset_amount": 987894.2,
-   "sale_date": "2026-09-22",
+   "upset_amount": 989538.17,
+   "sale_date": "2026-10-06",
    "adjournment_date": null,
    "sheriff_status": null,
    "attorney_firm": "PLUESE, BECKER, SALTZMAN & THOMAS, LLC.",
@@ -123957,7 +123957,7 @@
    "lead_origin_type": "RECORDED_EVENT",
    "primary_event_date": "2026-10-06",
    "scheduled_event_category": "UPCOMING_SALE",
-   "qualification_status": "REVIEW_REQUIRED",
+   "qualification_status": "QUALIFIED",
    "source_ids": [
     "sheriff_foreclosure",
     "njogis_parcels_modiv"
@@ -123973,9 +123973,9 @@
    "plaintiff": "CITIMORTGAGE, INC.",
    "defendant_name": "AVINOAM RUDICH, ET ALS",
    "upset_amount": 944380.31,
-   "sale_date": "2026-08-11",
-   "adjournment_date": "2026-10-06",
-   "sheriff_status": "ADJOURNED UNTIL",
+   "sale_date": "2026-10-06",
+   "adjournment_date": null,
+   "sheriff_status": null,
    "attorney_firm": "POWERS KIRN, LLC",
    "attorney_phone": "856-802-1000",
    "property_address": "2287 MAPLE MANOR COURT TOMS",
@@ -124379,7 +124379,7 @@
    "lead_origin_type": "RECORDED_EVENT",
    "primary_event_date": "2026-10-06",
    "scheduled_event_category": "UPCOMING_SALE",
-   "qualification_status": "REVIEW_REQUIRED",
+   "qualification_status": "QUALIFIED",
    "source_ids": [
     "sheriff_foreclosure"
    ],
@@ -124392,10 +124392,10 @@
    "chancery_docket": "CH 780676",
    "plaintiff": "FEDERAL HOME LOAN MORTGAGE CORPORAT",
    "defendant_name": "MARC M. FESSLER, ET ALS",
-   "upset_amount": 67913.77,
-   "sale_date": "2026-08-25",
-   "adjournment_date": "2026-10-06",
-   "sheriff_status": "ADJOURNED UNTIL",
+   "upset_amount": 71184.8,
+   "sale_date": "2026-10-06",
+   "adjournment_date": null,
+   "sheriff_status": null,
    "attorney_firm": "HLADIK, ONORATO & FEDERMAN LLP",
    "attorney_phone": "609-840-5001",
    "property_address": "14 ROYCE COURT STAFFORD",
@@ -124788,7 +124788,7 @@
    "lead_origin_type": "RECORDED_EVENT",
    "primary_event_date": "2026-10-06",
    "scheduled_event_category": "UPCOMING_SALE",
-   "qualification_status": "REVIEW_REQUIRED",
+   "qualification_status": "QUALIFIED",
    "source_ids": [
     "sheriff_foreclosure",
     "njogis_parcels_modiv"
@@ -124804,9 +124804,9 @@
    "plaintiff": "NEW JERSEY HOUSING AND MORTGAGE FIN",
    "defendant_name": "BLONDELL M. MILLIGAN, ET ALS",
    "upset_amount": 98410.03,
-   "sale_date": "2026-09-22",
-   "adjournment_date": "2026-10-06",
-   "sheriff_status": "ADJOURNED UNTIL",
+   "sale_date": "2026-10-06",
+   "adjournment_date": null,
+   "sheriff_status": null,
    "attorney_firm": "PLUESE, BECKER, SALTZMAN & THOMAS, LLC.",
    "attorney_phone": "856-813-1700",
    "property_address": "160 FIRST AVENUE",
@@ -132303,7 +132303,7 @@
    "lead_origin_type": "RECORDED_EVENT",
    "primary_event_date": "2026-10-06",
    "scheduled_event_category": "UPCOMING_SALE",
-   "qualification_status": "REVIEW_REQUIRED",
+   "qualification_status": "QUALIFIED",
    "source_ids": [
     "sheriff_foreclosure"
    ],
@@ -132317,9 +132317,9 @@
    "plaintiff": "MORTGAGE ASSETS MANAGEMENT, LLC",
    "defendant_name": "EILEEN M. RAUM, ET ALS",
    "upset_amount": 364416.08,
-   "sale_date": "2026-08-11",
-   "adjournment_date": "2026-10-06",
-   "sheriff_status": "ADJOURNED UNTIL",
+   "sale_date": "2026-10-06",
+   "adjournment_date": null,
+   "sheriff_status": null,
    "attorney_firm": "ROBERTSON ANSCHUTZ SCHNEID CRANE & PARTNERS PLLC.",
    "attorney_phone": "973-575-0707",
    "property_address": "58 HOMESTEAD ROAD TOMS",
@@ -132774,8 +132774,8 @@
    "lead_id": "sheriff_foreclosure:CH_780309",
    "lead_origin_type": "RECORDED_EVENT",
    "primary_event_date": "2026-10-06",
-   "scheduled_event_category": "UPCOMING_SALE",
-   "qualification_status": "REVIEW_REQUIRED",
+   "scheduled_event_category": "HISTORICAL_CONTEXT_ONLY",
+   "qualification_status": "QUALIFIED",
    "source_ids": [
     "sheriff_foreclosure",
     "njogis_parcels_modiv"
@@ -132784,16 +132784,16 @@
     "sheriff_foreclosure:CH_780309",
     "njogis_parcels_modiv:1522_63_10"
    ],
-   "lead_status": "APPROVED_FOR_DASHBOARD",
+   "lead_status": "REVIEW_REQUIRED",
    "doc_type": "sheriff_sale_listing",
    "distress_signal": "foreclosure_sale_scheduled",
    "chancery_docket": "CH 780309",
    "plaintiff": "FEDERAL HOME LOAN MORTGAGE CORPORAT",
    "defendant_name": "JULIE A. TROVATO, ET ALS",
-   "upset_amount": 184589.53,
-   "sale_date": "2026-08-11",
-   "adjournment_date": "2026-10-06",
-   "sheriff_status": "ADJOURNED UNTIL",
+   "upset_amount": 176070.9,
+   "sale_date": "2026-10-06",
+   "adjournment_date": null,
+   "sheriff_status": "CANCELLATION",
    "attorney_firm": "PLUESE, BECKER, SALTZMAN & THOMAS, LLC.",
    "attorney_phone": "856-813-1700",
    "property_address": "535 EAST POINT PLEASANT AVENUE OCEAN",
@@ -132976,7 +132976,7 @@
    "lead_origin_type": "RECORDED_EVENT",
    "primary_event_date": "2026-10-06",
    "scheduled_event_category": "UPCOMING_SALE",
-   "qualification_status": "REVIEW_REQUIRED",
+   "qualification_status": "QUALIFIED",
    "source_ids": [
     "sheriff_foreclosure",
     "njogis_parcels_modiv"
@@ -132992,9 +132992,9 @@
    "plaintiff": "U.S. BANK TRUST NATIONAL ASSOCIATIO",
    "defendant_name": "JAMES HOLMES, ET AL",
    "upset_amount": 630973.61,
-   "sale_date": "2026-08-11",
-   "adjournment_date": "2026-10-06",
-   "sheriff_status": "ADJOURNED UNTIL",
+   "sale_date": "2026-10-06",
+   "adjournment_date": null,
+   "sheriff_status": null,
    "attorney_firm": "GROSS POLOWY LLC",
    "attorney_phone": "716-204-1700",
    "property_address": "613 BRANCH DRIVE TOMS",
@@ -133178,7 +133178,7 @@
    "lead_origin_type": "RECORDED_EVENT",
    "primary_event_date": "2026-10-06",
    "scheduled_event_category": "UPCOMING_SALE",
-   "qualification_status": "REVIEW_REQUIRED",
+   "qualification_status": "QUALIFIED",
    "source_ids": [
     "sheriff_foreclosure",
     "njogis_parcels_modiv"
@@ -133193,10 +133193,10 @@
    "chancery_docket": "CH 780473",
    "plaintiff": "NEWREZ LLC D/B/A SHELLPOINT MORTGAG",
    "defendant_name": "JOSEPHINE GANT, ET ALS",
-   "upset_amount": 88640.2,
-   "sale_date": "2026-08-11",
-   "adjournment_date": "2026-10-06",
-   "sheriff_status": "ADJOURNED UNTIL",
+   "upset_amount": 94252.52,
+   "sale_date": "2026-10-06",
+   "adjournment_date": null,
+   "sheriff_status": null,
    "attorney_firm": "PARKER, MC CAY",
    "attorney_phone": "856-596-8900",
    "property_address": "13 HAMPSHIRE LANE",
@@ -134384,7 +134384,7 @@
    "lead_origin_type": "RECORDED_EVENT",
    "primary_event_date": "2026-10-06",
    "scheduled_event_category": "UPCOMING_SALE",
-   "qualification_status": "REVIEW_REQUIRED",
+   "qualification_status": "QUALIFIED",
    "source_ids": [
     "sheriff_foreclosure",
     "njogis_parcels_modiv"
@@ -134400,9 +134400,9 @@
    "plaintiff": "NEWREZ LLC D/B/A SHELLPOINT MORTGAG",
    "defendant_name": "MARIE E. NIMETH, ET ALS",
    "upset_amount": 241757.84,
-   "sale_date": "2026-09-08",
-   "adjournment_date": "2026-10-06",
-   "sheriff_status": "ADJOURNED UNTIL",
+   "sale_date": "2026-10-06",
+   "adjournment_date": null,
+   "sheriff_status": null,
    "attorney_firm": "FRIEDMAN VARTOLO LLP",
    "attorney_phone": "212-471-5100",
    "property_address": "104 MORNING GLORY LANE",
@@ -134776,7 +134776,7 @@
    "lead_origin_type": "RECORDED_EVENT",
    "primary_event_date": "2026-10-06",
    "scheduled_event_category": "UPCOMING_SALE",
-   "qualification_status": "REVIEW_REQUIRED",
+   "qualification_status": "QUALIFIED",
    "source_ids": [
     "sheriff_foreclosure",
     "njogis_parcels_modiv"
@@ -134792,9 +134792,9 @@
    "plaintiff": "NEW SILVER LENDING LLC",
    "defendant_name": "AKL HOME MANAGEMENT LLC, ET ALS",
    "upset_amount": 269824.19,
-   "sale_date": "2026-09-08",
-   "adjournment_date": "2026-10-06",
-   "sheriff_status": "ADJOURNED UNTIL",
+   "sale_date": "2026-10-06",
+   "adjournment_date": null,
+   "sheriff_status": null,
    "attorney_firm": "FEIN, SUCH, KAHN & SHEPARD, PC",
    "attorney_phone": "973-538-4700",
    "property_address": "220 DOGWOOD DRIVE",
@@ -135188,7 +135188,7 @@
    "lead_origin_type": "RECORDED_EVENT",
    "primary_event_date": "2026-10-06",
    "scheduled_event_category": "UPCOMING_SALE",
-   "qualification_status": "REVIEW_REQUIRED",
+   "qualification_status": "QUALIFIED",
    "source_ids": [
     "sheriff_foreclosure",
     "njogis_parcels_modiv"
@@ -135204,9 +135204,9 @@
    "plaintiff": "NEWREZ LLC D/B/A SHELLPOINT MORTGAG",
    "defendant_name": "DAVID F. MANSFIELD, ET ALS",
    "upset_amount": 78544.25,
-   "sale_date": "2026-09-08",
-   "adjournment_date": "2026-10-06",
-   "sheriff_status": "ADJOURNED UNTIL",
+   "sale_date": "2026-10-06",
+   "adjournment_date": null,
+   "sheriff_status": null,
    "attorney_firm": "ROBERTSON ANSCHUTZ SCHNEID CRANE & PARTNERS PLLC.",
    "attorney_phone": "973-575-0707",
    "property_address": "24 BAY AVE",
@@ -135354,7 +135354,7 @@
    "lead_origin_type": "RECORDED_EVENT",
    "primary_event_date": "2026-10-06",
    "scheduled_event_category": "UPCOMING_SALE",
-   "qualification_status": "REVIEW_REQUIRED",
+   "qualification_status": "QUALIFIED",
    "source_ids": [
     "sheriff_foreclosure",
     "njogis_parcels_modiv"
@@ -135370,9 +135370,9 @@
    "plaintiff": "DEUTSCHE BANK NATIONAL TRUST COMPAN",
    "defendant_name": "ANNA MAY CARMEL, ET AL",
    "upset_amount": 305375.86,
-   "sale_date": "2026-09-08",
-   "adjournment_date": "2026-10-06",
-   "sheriff_status": "ADJOURNED UNTIL",
+   "sale_date": "2026-10-06",
+   "adjournment_date": null,
+   "sheriff_status": null,
    "attorney_firm": "ROBERTSON ANSCHUTZ SCHNEID CRANE & PARTNERS PLLC.",
    "attorney_phone": "973-575-0707",
    "property_address": "2O SOUTH DAYTON DRIVE LITTLE EGG",
@@ -135517,7 +135517,7 @@
    "lead_origin_type": "RECORDED_EVENT",
    "primary_event_date": "2026-10-06",
    "scheduled_event_category": "UPCOMING_SALE",
-   "qualification_status": "REVIEW_REQUIRED",
+   "qualification_status": "QUALIFIED",
    "source_ids": [
     "sheriff_foreclosure"
    ],
@@ -135531,9 +135531,9 @@
    "plaintiff": "NEW JERSEY HOUSING AND MORTGAGE FIN",
    "defendant_name": "KATRINA BROOKS, ET ALS",
    "upset_amount": 425494.69,
-   "sale_date": "2026-09-08",
-   "adjournment_date": "2026-10-06",
-   "sheriff_status": "ADJOURNED UNTIL",
+   "sale_date": "2026-10-06",
+   "adjournment_date": null,
+   "sheriff_status": null,
    "attorney_firm": "PLUESE, BECKER, SALTZMAN & THOMAS, LLC.",
    "attorney_phone": "856-813-1700",
    "property_address": "10 LAKEWOOD ROAD NEW",
@@ -135944,7 +135944,7 @@
    "lead_origin_type": "RECORDED_EVENT",
    "primary_event_date": "2026-10-06",
    "scheduled_event_category": "UPCOMING_SALE",
-   "qualification_status": "REVIEW_REQUIRED",
+   "qualification_status": "QUALIFIED",
    "source_ids": [
     "sheriff_foreclosure",
     "njogis_parcels_modiv"
@@ -135960,9 +135960,9 @@
    "plaintiff": "U.S. BANK NATIONAL ASSOCIATION, AS",
    "defendant_name": "MELISSA DEPINTO, ET ALS",
    "upset_amount": 263617.33,
-   "sale_date": "2026-08-11",
-   "adjournment_date": "2026-10-06",
-   "sheriff_status": "ADJOURNED UNTIL",
+   "sale_date": "2026-10-06",
+   "adjournment_date": null,
+   "sheriff_status": null,
    "attorney_firm": "STERN & EISENBERG, PC",
    "attorney_phone": "609-397-9200",
    "property_address": "23 ANCHOR ROAD",
@@ -136214,7 +136214,7 @@
    "lead_origin_type": "RECORDED_EVENT",
    "primary_event_date": "2026-10-06",
    "scheduled_event_category": "UPCOMING_SALE",
-   "qualification_status": "REVIEW_REQUIRED",
+   "qualification_status": "QUALIFIED",
    "source_ids": [
     "sheriff_foreclosure",
     "njogis_parcels_modiv"
@@ -136230,9 +136230,9 @@
    "plaintiff": "SANTANDER BANK, N.A.",
    "defendant_name": "JEANETTE M. STRATTON",
    "upset_amount": 170044.5,
-   "sale_date": "2026-08-11",
-   "adjournment_date": "2026-10-06",
-   "sheriff_status": "ADJOURNED UNTIL",
+   "sale_date": "2026-10-06",
+   "adjournment_date": null,
+   "sheriff_status": null,
    "attorney_firm": "BROCK & SCOTT PLLC",
    "attorney_phone": "844-856-6646",
    "property_address": "43 CENTRAL BLVD",
@@ -136403,7 +136403,7 @@
    "lead_origin_type": "RECORDED_EVENT",
    "primary_event_date": "2026-10-06",
    "scheduled_event_category": "UPCOMING_SALE",
-   "qualification_status": "REVIEW_REQUIRED",
+   "qualification_status": "QUALIFIED",
    "source_ids": [
     "sheriff_foreclosure",
     "njogis_parcels_modiv"
@@ -136419,9 +136419,9 @@
    "plaintiff": "UNITY BANK",
    "defendant_name": "GEORGE LAROSA, ET ALS",
    "upset_amount": 338784.88,
-   "sale_date": "2026-09-08",
-   "adjournment_date": "2026-10-06",
-   "sheriff_status": "ADJOURNED UNTIL",
+   "sale_date": "2026-10-06",
+   "adjournment_date": null,
+   "sheriff_status": null,
    "attorney_firm": "BROCK & SCOTT PLLC",
    "attorney_phone": "844-856-6646",
    "property_address": "69 CHESTNUT WAY CIRCLE",
@@ -149196,7 +149196,7 @@
    "lead_origin_type": "RECORDED_EVENT",
    "primary_event_date": "2026-10-06",
    "scheduled_event_category": "UPCOMING_SALE",
-   "qualification_status": "REVIEW_REQUIRED",
+   "qualification_status": "QUALIFIED",
    "source_ids": [
     "sheriff_foreclosure",
     "njogis_parcels_modiv"
@@ -149212,9 +149212,9 @@
    "plaintiff": "LEISURE VILLAGE EAST ASSOCIATION, I",
    "defendant_name": "JUDITH KONECNY, ETC., ET ALS",
    "upset_amount": 11087.66,
-   "sale_date": "2026-09-22",
-   "adjournment_date": "2026-10-06",
-   "sheriff_status": "ADJOURNED UNTIL",
+   "sale_date": "2026-10-06",
+   "adjournment_date": null,
+   "sheriff_status": null,
    "attorney_firm": "MCGOVERN LEGAL SERVICES, LLC.",
    "attorney_phone": "732-246-1221",
    "property_address": "1239A HAMILTON COURT",
@@ -156537,7 +156537,7 @@
    "lead_origin_type": "RECORDED_EVENT",
    "primary_event_date": "2026-10-06",
    "scheduled_event_category": "UPCOMING_SALE",
-   "qualification_status": "REVIEW_REQUIRED",
+   "qualification_status": "QUALIFIED",
    "source_ids": [
     "sheriff_foreclosure",
     "njogis_parcels_modiv"
@@ -156553,9 +156553,9 @@
    "plaintiff": "NEW JERSEY HOUSING AND MORTGAGE FIN",
    "defendant_name": "ALICIA R. GREEN, ET VIR",
    "upset_amount": 224433.95,
-   "sale_date": "2026-09-08",
-   "adjournment_date": "2026-10-06",
-   "sheriff_status": "ADJOURNED UNTIL",
+   "sale_date": "2026-10-06",
+   "adjournment_date": null,
+   "sheriff_status": null,
    "attorney_firm": "KML LAW GROUP, P.C.",
    "attorney_phone": "215-627-1322",
    "property_address": "248 SECOND AVENUE",
@@ -157687,7 +157687,7 @@
    "lead_origin_type": "RECORDED_EVENT",
    "primary_event_date": "2026-10-06",
    "scheduled_event_category": "UPCOMING_SALE",
-   "qualification_status": "REVIEW_REQUIRED",
+   "qualification_status": "QUALIFIED",
    "source_ids": [
     "sheriff_foreclosure"
    ],
@@ -157701,9 +157701,9 @@
    "plaintiff": "NEW JERSEY HOUSING AND MORTGAGE FIN",
    "defendant_name": "MARISSA SANTIAGO, ET AL",
    "upset_amount": 371756.73,
-   "sale_date": "2026-09-08",
-   "adjournment_date": "2026-10-06",
-   "sheriff_status": "ADJOURNED UNTIL",
+   "sale_date": "2026-10-06",
+   "adjournment_date": null,
+   "sheriff_status": null,
    "attorney_firm": "PLUESE, BECKER, SALTZMAN & THOMAS, LLC.",
    "attorney_phone": "856-813-1700",
    "property_address": "606 BOWSPRIT POINT LACEY",
@@ -157757,7 +157757,7 @@
    "lead_origin_type": "RECORDED_EVENT",
    "primary_event_date": "2026-10-06",
    "scheduled_event_category": "UPCOMING_SALE",
-   "qualification_status": "REVIEW_REQUIRED",
+   "qualification_status": "QUALIFIED",
    "source_ids": [
     "sheriff_foreclosure",
     "njogis_parcels_modiv"
@@ -157773,9 +157773,9 @@
    "plaintiff": "SELECT PORTFOLIO SERVICING, INC.",
    "defendant_name": "MICHELLE A. NUGENT, ET ALS",
    "upset_amount": 216731.64,
-   "sale_date": "2026-09-08",
-   "adjournment_date": "2026-10-06",
-   "sheriff_status": "ADJOURNED UNTIL",
+   "sale_date": "2026-10-06",
+   "adjournment_date": null,
+   "sheriff_status": null,
    "attorney_firm": "FRENKEL LAMBERT WEISS WEISMAN & GORDON, LLP",
    "attorney_phone": "973-325-8800",
    "property_address": "84 VACARI WAY LITTLE EGG",
@@ -158024,7 +158024,7 @@
    "lead_origin_type": "RECORDED_EVENT",
    "primary_event_date": "2026-10-06",
    "scheduled_event_category": "UPCOMING_SALE",
-   "qualification_status": "REVIEW_REQUIRED",
+   "qualification_status": "QUALIFIED",
    "source_ids": [
     "sheriff_foreclosure",
     "njogis_parcels_modiv"
@@ -158040,9 +158040,9 @@
    "plaintiff": "MIDFIRST BANK",
    "defendant_name": "PRECINA T. RADDER, ET ALS",
    "upset_amount": 268921.24,
-   "sale_date": "2026-09-08",
-   "adjournment_date": "2026-10-06",
-   "sheriff_status": "ADJOURNED UNTIL",
+   "sale_date": "2026-10-06",
+   "adjournment_date": null,
+   "sheriff_status": null,
    "attorney_firm": "GROSS POLOWY",
    "attorney_phone": "716-204-1700",
    "property_address": "603 MISSISSIPPI STREET TOMS",
@@ -158742,7 +158742,7 @@
    "lead_origin_type": "RECORDED_EVENT",
    "primary_event_date": "2026-10-06",
    "scheduled_event_category": "UPCOMING_SALE",
-   "qualification_status": "REVIEW_REQUIRED",
+   "qualification_status": "QUALIFIED",
    "source_ids": [
     "sheriff_foreclosure"
    ],
@@ -158756,9 +158756,9 @@
    "plaintiff": "ARCPE 1 LLC",
    "defendant_name": "CAROL PATER, ET ALS",
    "upset_amount": 76279.01,
-   "sale_date": "2026-09-08",
-   "adjournment_date": "2026-10-06",
-   "sheriff_status": "ADJOURNED UNTIL",
+   "sale_date": "2026-10-06",
+   "adjournment_date": null,
+   "sheriff_status": null,
    "attorney_firm": "BERG & DAVID",
    "attorney_phone": "718-989-1392",
    "property_address": "13 STARBOARD WAY OCEAN",
@@ -158812,7 +158812,7 @@
    "lead_origin_type": "RECORDED_EVENT",
    "primary_event_date": "2026-10-06",
    "scheduled_event_category": "UPCOMING_SALE",
-   "qualification_status": "REVIEW_REQUIRED",
+   "qualification_status": "QUALIFIED",
    "source_ids": [
     "sheriff_foreclosure",
     "njogis_parcels_modiv"
@@ -158828,9 +158828,9 @@
    "plaintiff": "WILMINGTON SAVINGS FUND SOCIETY, FS",
    "defendant_name": "ERIN KATE NIELSEN, ET ALS",
    "upset_amount": 186834.1,
-   "sale_date": "2026-09-08",
-   "adjournment_date": "2026-10-06",
-   "sheriff_status": "ADJOURNED UNTIL",
+   "sale_date": "2026-10-06",
+   "adjournment_date": null,
+   "sheriff_status": null,
    "attorney_firm": "HILL WALLACK LLP",
    "attorney_phone": "609-924-0808",
    "property_address": "2425 MINERVA STREET POINT",
@@ -159063,7 +159063,7 @@
    "lead_origin_type": "RECORDED_EVENT",
    "primary_event_date": "2026-10-06",
    "scheduled_event_category": "UPCOMING_SALE",
-   "qualification_status": "REVIEW_REQUIRED",
+   "qualification_status": "QUALIFIED",
    "source_ids": [
     "sheriff_foreclosure",
     "njogis_parcels_modiv"
@@ -159079,9 +159079,9 @@
    "plaintiff": "AMERICAN NEIGHBORHOOD MORTGAGE ACCE",
    "defendant_name": "JOAN A. BOOS, ET AL",
    "upset_amount": 162002.49,
-   "sale_date": "2026-09-08",
-   "adjournment_date": "2026-10-06",
-   "sheriff_status": "ADJOURNED UNTIL",
+   "sale_date": "2026-10-06",
+   "adjournment_date": null,
+   "sheriff_status": null,
    "attorney_firm": "KML LAW GROUP, P.C.",
    "attorney_phone": "215-627-1322",
    "property_address": "103 GEORGETOWN ROAD",
@@ -159237,7 +159237,7 @@
    "lead_origin_type": "RECORDED_EVENT",
    "primary_event_date": "2026-10-06",
    "scheduled_event_category": "UPCOMING_SALE",
-   "qualification_status": "REVIEW_REQUIRED",
+   "qualification_status": "QUALIFIED",
    "source_ids": [
     "sheriff_foreclosure",
     "njogis_parcels_modiv"
@@ -159253,9 +159253,9 @@
    "plaintiff": "WELLS FARGO BANK, N.A.",
    "defendant_name": "ELIZABETH GIANANTONIO, ET ALS",
    "upset_amount": 114948.64,
-   "sale_date": "2026-09-08",
-   "adjournment_date": "2026-10-06",
-   "sheriff_status": "ADJOURNED UNTIL",
+   "sale_date": "2026-10-06",
+   "adjournment_date": null,
+   "sheriff_status": null,
    "attorney_firm": "BROCK & SCOTT PLLC",
    "attorney_phone": "844-856-6646",
    "property_address": "8 BRISTOL TERRACE LITTLE EGG",
@@ -159447,7 +159447,7 @@
   {
    "lead_id": "sheriff_foreclosure:CH_780738",
    "lead_origin_type": "RECORDED_EVENT",
-   "primary_event_date": "2026-10-06",
+   "primary_event_date": "2026-12-01",
    "scheduled_event_category": "UPCOMING_SALE",
    "qualification_status": "REVIEW_REQUIRED",
    "source_ids": [
@@ -159464,9 +159464,9 @@
    "chancery_docket": "CH 780738",
    "plaintiff": "THE BANK OF NEW YORK MELLON F/K/A T",
    "defendant_name": "GARY MILLER, ET ALS",
-   "upset_amount": 191754.9,
-   "sale_date": "2026-09-08",
-   "adjournment_date": "2026-10-06",
+   "upset_amount": 193612.22,
+   "sale_date": "2026-10-06",
+   "adjournment_date": "2026-12-01",
    "sheriff_status": "ADJOURNED UNTIL",
    "attorney_firm": null,
    "attorney_phone": null,
@@ -159602,7 +159602,7 @@
    "lead_origin_type": "RECORDED_EVENT",
    "primary_event_date": "2026-10-06",
    "scheduled_event_category": "UPCOMING_SALE",
-   "qualification_status": "REVIEW_REQUIRED",
+   "qualification_status": "QUALIFIED",
    "source_ids": [
     "sheriff_foreclosure"
    ],
@@ -159616,9 +159616,9 @@
    "plaintiff": "U.S. BANK TRUST NATIONAL ASSOCIATIO",
    "defendant_name": "TRACEE DUBEK, ET AL",
    "upset_amount": 364557.64,
-   "sale_date": "2026-09-08",
-   "adjournment_date": "2026-10-06",
-   "sheriff_status": "ADJOURNED UNTIL",
+   "sale_date": "2026-10-06",
+   "adjournment_date": null,
+   "sheriff_status": null,
    "attorney_firm": "STERN & EISENBERG, PC",
    "attorney_phone": "609-397-9200",
    "property_address": "1008 HALLIARD AVENUE",
@@ -159732,7 +159732,7 @@
    "lead_origin_type": "RECORDED_EVENT",
    "primary_event_date": "2026-10-06",
    "scheduled_event_category": "UPCOMING_SALE",
-   "qualification_status": "REVIEW_REQUIRED",
+   "qualification_status": "QUALIFIED",
    "source_ids": [
     "sheriff_foreclosure",
     "njogis_parcels_modiv"
@@ -159748,9 +159748,9 @@
    "plaintiff": "U.S. BANK TRUST NATIONAL ASSOCIATIO",
    "defendant_name": "TBZ LLC, ET ALS",
    "upset_amount": 1187410.96,
-   "sale_date": "2026-09-08",
-   "adjournment_date": "2026-10-06",
-   "sheriff_status": "ADJOURNED UNTIL",
+   "sale_date": "2026-10-06",
+   "adjournment_date": null,
+   "sheriff_status": null,
    "attorney_firm": "GREENSPOON MARDER LLP",
    "attorney_phone": "954-491-1120",
    "property_address": "74 MILL POND ROAD",
@@ -174667,41 +174667,3145 @@
    "owner_resolved": false,
    "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
    "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "sheriff_foreclosure:CH_776240",
+   "lead_origin_type": "RECORDED_EVENT",
+   "primary_event_date": "2026-10-06",
+   "scheduled_event_category": "UPCOMING_SALE",
+   "qualification_status": "QUALIFIED",
+   "source_ids": [
+    "sheriff_foreclosure",
+    "njogis_parcels_modiv"
+   ],
+   "evidence_ids": [
+    "sheriff_foreclosure:CH_776240",
+    "njogis_parcels_modiv:1515_1051_49.07"
+   ],
+   "lead_status": "APPROVED_FOR_DASHBOARD",
+   "doc_type": "sheriff_sale_listing",
+   "distress_signal": "foreclosure_sale_scheduled",
+   "chancery_docket": "CH 776240",
+   "plaintiff": "HSBC BANK, USA NATIONAL ASSOCIATION",
+   "defendant_name": "ZEEV RAFAILOV, ET ALS",
+   "upset_amount": 1465250.57,
+   "sale_date": "2026-10-06",
+   "adjournment_date": null,
+   "sheriff_status": null,
+   "attorney_firm": "FRENKEL LAMBERT WEISS WEISMAN & GORDON, LLP",
+   "attorney_phone": "973-325-8800",
+   "property_address": "1158 CECIL COURT",
+   "property_city": "LAKEWOOD",
+   "property_state": "NJ",
+   "property_zip": "08701",
+   "block": "1051",
+   "lot": "49.07",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED",
+   "parcel_id": "1515_1051_49.07",
+   "parcel_muni": "LAKEWOOD TWP",
+   "parcel_address": "1158 CECIL COURT",
+   "land_value": 150500,
+   "improvement_value": 277600,
+   "net_value": 428100,
+   "year_built": 1988,
+   "acreage": 0.2165,
+   "dwelling_units": 1,
+   "last_sale_price": 1,
+   "last_sale_date": "2022-04-27",
+   "prop_class": "2",
+   "dealmachine": {
+    "source": "dealmachine",
+    "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+    "matched": true,
+    "enrichment_status": "enriched",
+    "matched_by": "apn",
+    "enriched_at": "2026-09-25T06:35:39.977848+00:00",
+    "billing_cycle": "2026-09-07T18:06:43.000Z",
+    "owner_name": null,
+    "owner_names": [],
+    "phones": [],
+    "emails": [],
+    "contacts": [],
+    "mailing_address": null,
+    "property": {
+     "dm_property_id": "prop_86828162",
+     "full_address": "1158 Cecil Ct Lakewood, NJ 08701",
+     "address": "1158 Cecil Ct",
+     "city": "Lakewood",
+     "state": "NJ",
+     "zip": "08701",
+     "latitude": 40.056159,
+     "longitude": -74.213633,
+     "estimated_value": 927000,
+     "estimated_equity_amount": 627120,
+     "estimated_equity_percentage": 65,
+     "year_built": 1988,
+     "living_area_sqft": 2862,
+     "lot_size_sqft": 9431,
+     "num_bedrooms": 7,
+     "num_bathrooms": 4,
+     "last_sale_date": "2004-06-25T00:00:00.000Z",
+     "last_sale_amount": 385000,
+     "total_assessed_value": 428100,
+     "annual_property_tax_amount": 11075,
+     "num_mortgages": 2,
+     "total_original_loan_amount": 537750,
+     "total_estimated_loan_balance": 299880,
+     "owner_occupied": false,
+     "apn": "15-01051-0000-00049-07"
+    },
+    "mortgages": [
+     {
+      "mortgage_number": 1,
+      "id": "2109277587",
+      "transaction_id": "2109277587",
+      "lender_name": "NEW JERSEY LENDERS CORP",
+      "is_private_lender": false,
+      "loan_type_id": 27,
+      "loan_type": "Unknown",
+      "loan_financing_type": "Unknown Financing Type",
+      "loan_amount": 480000,
+      "loan_balance": 272981,
+      "loan_interest_rate": 6.47,
+      "loan_term_months": 360,
+      "loan_start_date": "2006-10-17T00:00:00.000Z",
+      "loan_recording_date": "2006-10-17T00:00:00.000Z",
+      "loan_due_date": "2036-10-01T00:00:00.000Z",
+      "has_adjustable_rate_rider": false,
+      "lien_position": 1,
+      "estimated_payment_amount": 3024.46,
+      "classification": "primary",
+      "classification_label": "Primary mortgage",
+      "classification_reason": "The mortgage record identifies this as lien position 1."
+     },
+     {
+      "mortgage_number": 2,
+      "id": "1062438612",
+      "transaction_id": "1062438612",
+      "lender_name": "COUNTRYWIDE HOME LOANS INC",
+      "is_private_lender": false,
+      "loan_type_id": 11,
+      "loan_type": "Credit Line",
+      "loan_financing_type": "Unknown Financing Type",
+      "loan_amount": 57750,
+      "loan_balance": 26899,
+      "loan_interest_rate": 6.3,
+      "loan_term_months": 360,
+      "loan_start_date": "2004-06-25T00:00:00.000Z",
+      "loan_recording_date": "2004-06-25T00:00:00.000Z",
+      "loan_due_date": "2034-06-25T00:00:00.000Z",
+      "has_adjustable_rate_rider": false,
+      "lien_position": 2,
+      "estimated_payment_amount": 357.46,
+      "classification": "subordinate",
+      "classification_label": "Possible second lien",
+      "classification_reason": "The mortgage record identifies this as lien position 2."
+     }
+    ],
+    "credits": {
+     "properties": 1,
+     "people": 0
+    }
+   },
+   "dm_enrichment_status": "enriched",
+   "enrichment_sources": [
+    "dealmachine"
+   ],
+   "owner_occupied": false,
+   "owner_mailing_address": "1156 TIFFANY LANE",
+   "owner_mailing_city": "LAKEWOOD",
+   "owner_mailing_state": "NJ",
+   "owner_mailing_zip": "08701",
+   "absentee": true,
+   "out_of_state": false
+  },
+  {
+   "lead_id": "sheriff_foreclosure:CH_777028",
+   "lead_origin_type": "RECORDED_EVENT",
+   "primary_event_date": "2026-10-06",
+   "scheduled_event_category": "UPCOMING_SALE",
+   "qualification_status": "QUALIFIED",
+   "source_ids": [
+    "sheriff_foreclosure",
+    "njogis_parcels_modiv"
+   ],
+   "evidence_ids": [
+    "sheriff_foreclosure:CH_777028",
+    "njogis_parcels_modiv:1507_1421.09_4"
+   ],
+   "lead_status": "APPROVED_FOR_DASHBOARD",
+   "doc_type": "sheriff_sale_listing",
+   "distress_signal": "foreclosure_sale_scheduled",
+   "chancery_docket": "CH 777028",
+   "plaintiff": "DEUTSCHE BANK NATIONAL TRUST COMPAN",
+   "defendant_name": "KEITH WOLFSOHN, ET UX, ET ALS",
+   "upset_amount": 626130.67,
+   "sale_date": "2026-10-06",
+   "adjournment_date": null,
+   "sheriff_status": null,
+   "attorney_firm": "ECKERT SEAMANS ATTORNEYS AT LAW",
+   "attorney_phone": "215-851-8429",
+   "property_address": "634 CAMPBELL PLACE",
+   "property_city": "BRICK",
+   "property_state": "NJ",
+   "property_zip": "08724",
+   "block": "1421.09",
+   "lot": "4",
+   "owner_name": "TAMMY WOLFSOHN",
+   "owner_resolved": true,
+   "owner_resolution_status": "DEALMACHINE_RESOLVED",
+   "parcel_id": "1507_1421.09_4",
+   "parcel_muni": "BRICK TWP",
+   "parcel_address": "634 CAMPBELL PL.",
+   "land_value": 130000,
+   "improvement_value": 126000,
+   "net_value": 256000,
+   "year_built": 1960,
+   "acreage": 0.1722,
+   "dwelling_units": 1,
+   "last_sale_price": 315000,
+   "last_sale_date": "2005-06-29",
+   "prop_class": "2",
+   "dealmachine": {
+    "source": "dealmachine",
+    "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+    "matched": true,
+    "enrichment_status": "enriched",
+    "matched_by": "apn",
+    "enriched_at": "2026-09-25T06:35:39.977848+00:00",
+    "billing_cycle": "2026-09-07T18:06:43.000Z",
+    "owner_name": "TAMMY WOLFSOHN",
+    "owner_names": [
+     "TAMMY WOLFSOHN",
+     "KEITH WOLFSOHN"
+    ],
+    "phones": [
+     "7328647248",
+     "7324756046",
+     "7325691816",
+     "7327146695"
+    ],
+    "emails": [
+     "TAMMY.ORLANDO@HOTMAIL.COM",
+     "TAMMY.ORLANDO@MAIL.COM",
+     "TKA81191@COMCAST.NET",
+     "TKA81191@HOTMAIL.COM"
+    ],
+    "contacts": [
+     {
+      "dm_person_id": "per_150501057224",
+      "full_name": "TAMMY WOLFSOHN",
+      "first_name": "TAMMY",
+      "last_name": "WOLFSOHN",
+      "contact_type": "owner",
+      "is_resident": true,
+      "phones": [
+       {
+        "number": "7328647248",
+        "type": "wireless",
+        "do_not_call": false
+       },
+       {
+        "number": "7324756046",
+        "type": "landline",
+        "do_not_call": false
+       },
+       {
+        "number": "7325691816",
+        "type": "wireless",
+        "do_not_call": false
+       }
+      ],
+      "emails": [
+       "TAMMY.ORLANDO@HOTMAIL.COM",
+       "TAMMY.ORLANDO@MAIL.COM",
+       "TKA81191@COMCAST.NET"
+      ]
+     },
+     {
+      "dm_person_id": "per_150779208792",
+      "full_name": "KEITH WOLFSOHN",
+      "first_name": "KEITH",
+      "last_name": "WOLFSOHN",
+      "contact_type": "owner",
+      "is_resident": true,
+      "phones": [
+       {
+        "number": "7328647248",
+        "type": "wireless",
+        "do_not_call": false
+       },
+       {
+        "number": "7324756046",
+        "type": "landline",
+        "do_not_call": false
+       },
+       {
+        "number": "7327146695",
+        "type": "landline",
+        "do_not_call": false
+       }
+      ],
+      "emails": [
+       "TKA81191@HOTMAIL.COM"
+      ]
+     }
+    ],
+    "mailing_address": "634 Campbell Pl Brick, NJ 08724",
+    "property": {
+     "dm_property_id": "prop_86741405",
+     "full_address": "634 Campbell Pl Brick, NJ 08724",
+     "address": "634 Campbell Pl",
+     "city": "Brick",
+     "state": "NJ",
+     "zip": "08724",
+     "latitude": 40.113085,
+     "longitude": -74.124115,
+     "estimated_value": 542000,
+     "estimated_equity_amount": 353911,
+     "estimated_equity_percentage": 64,
+     "year_built": 1960,
+     "living_area_sqft": 1220,
+     "lot_size_sqft": 7501,
+     "num_bedrooms": 3,
+     "num_bathrooms": 2,
+     "last_sale_date": "2005-06-30T00:00:00.000Z",
+     "last_sale_amount": 315000,
+     "total_assessed_value": 256000,
+     "annual_property_tax_amount": 7040,
+     "num_mortgages": 1,
+     "total_original_loan_amount": 315000,
+     "total_estimated_loan_balance": 188089,
+     "owner_occupied": true,
+     "apn": "07-01421-09-00004"
+    },
+    "mortgages": [
+     {
+      "mortgage_number": 1,
+      "id": "1121043975",
+      "transaction_id": "1121043975",
+      "lender_name": "LONG BEACH MORTGAGE CO",
+      "is_private_lender": false,
+      "loan_type_id": 22,
+      "loan_type": "Purchase Money Mortgage",
+      "loan_financing_type_id": 2,
+      "loan_financing_type": "Fixed Rate",
+      "loan_amount": 252000,
+      "loan_balance": 188089,
+      "loan_interest_rate": 5.97,
+      "loan_term_months": 480,
+      "loan_start_date": "2005-06-30T00:00:00.000Z",
+      "loan_recording_date": "2005-06-30T00:00:00.000Z",
+      "loan_due_date": "2045-07-01T00:00:00.000Z",
+      "has_adjustable_rate_rider": true,
+      "lien_position": 1,
+      "estimated_payment_amount": 1381.27,
+      "classification": "primary",
+      "classification_label": "Primary mortgage",
+      "classification_reason": "The mortgage record identifies this as lien position 1."
+     },
+     {
+      "mortgage_number": 2,
+      "id": "1121043975",
+      "transaction_id": "1121043975",
+      "lender_name": "Unknown Lender",
+      "is_private_lender": false,
+      "loan_type": "Unknown Type",
+      "loan_financing_type": "Unknown Financing Type",
+      "loan_amount": 63000,
+      "loan_term_months": 360,
+      "loan_start_date": "2005-06-30T00:00:00.000Z",
+      "loan_recording_date": "2005-06-30T00:00:00.000Z",
+      "loan_due_date": "2035-06-30T00:00:00.000Z",
+      "has_adjustable_rate_rider": false,
+      "lien_position": 2,
+      "classification": "duplicate_candidate",
+      "classification_label": "Possible duplicate",
+      "classification_reason": "This mortgage repeats a transaction identifier already shown for this property."
+     }
+    ],
+    "credits": {
+     "properties": 1,
+     "people": 2
+    }
+   },
+   "dm_enrichment_status": "enriched",
+   "enrichment_sources": [
+    "dealmachine"
+   ],
+   "owner_name_source": "dealmachine",
+   "owner_resolution_status_prior": "DANIELS_LAW_REDACTED",
+   "daniels_law_backfilled": true,
+   "owner_occupied": true,
+   "owner_mailing_address": "634 CAMPBELL PL",
+   "owner_mailing_city": "BRICK",
+   "owner_mailing_state": "NJ",
+   "owner_mailing_zip": "08724",
+   "absentee": false,
+   "out_of_state": false
+  },
+  {
+   "lead_id": "sheriff_foreclosure:CH_777893",
+   "lead_origin_type": "RECORDED_EVENT",
+   "primary_event_date": "2026-10-06",
+   "scheduled_event_category": "UPCOMING_SALE",
+   "qualification_status": "QUALIFIED",
+   "source_ids": [
+    "sheriff_foreclosure",
+    "njogis_parcels_modiv"
+   ],
+   "evidence_ids": [
+    "sheriff_foreclosure:CH_777893",
+    "njogis_parcels_modiv:1508_298_45.16"
+   ],
+   "lead_status": "APPROVED_FOR_DASHBOARD",
+   "doc_type": "sheriff_sale_listing",
+   "distress_signal": "foreclosure_sale_scheduled",
+   "chancery_docket": "CH 777893",
+   "plaintiff": "DEUTSCHE BANK NATIONAL TRUST COMPAN",
+   "defendant_name": "JOANNE A. RAIMONDI, ET ALS",
+   "upset_amount": 752026.18,
+   "sale_date": "2026-10-06",
+   "adjournment_date": null,
+   "sheriff_status": null,
+   "attorney_firm": "MCCALLA RAYMER LEIBERT PIERCE, LLP",
+   "attorney_phone": "732-902-5399",
+   "property_address": "225 MEDJAY LANE TOMS",
+   "property_city": "RIVER",
+   "property_state": "NJ",
+   "property_zip": "08755",
+   "block": "298",
+   "lot": "45.16",
+   "owner_name": "GERARD RAIMONDI",
+   "owner_resolved": true,
+   "owner_resolution_status": "DEALMACHINE_RESOLVED",
+   "parcel_id": "1508_298_45.16",
+   "parcel_muni": "TOMS RIVER TWP",
+   "parcel_address": "225 MEDJAY LANE",
+   "land_value": 307000,
+   "improvement_value": 525700,
+   "net_value": 832700,
+   "year_built": 1997,
+   "acreage": 1.051,
+   "dwelling_units": 1,
+   "last_sale_price": 279990,
+   "last_sale_date": "1997-10-02",
+   "prop_class": "2",
+   "dealmachine": {
+    "source": "dealmachine",
+    "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+    "matched": true,
+    "enrichment_status": "enriched",
+    "matched_by": "apn",
+    "enriched_at": "2026-09-25T06:35:39.977848+00:00",
+    "billing_cycle": "2026-09-07T18:06:43.000Z",
+    "owner_name": "GERARD RAIMONDI",
+    "owner_names": [
+     "GERARD RAIMONDI",
+     "JOANNE RAIMONDI"
+    ],
+    "phones": [
+     "7323414429",
+     "7327796599",
+     "7322706056",
+     "7328144894"
+    ],
+    "emails": [
+     "DOUBLEJAY1977@AOL.COM",
+     "RCUTIEPIE1@AOL.COM",
+     "DOUBLEJAY041977@GMAIL.COM",
+     "JRAIMONDI1977@GMAIL.COM",
+     "JRAIMONDI1977@HOTMAIL.COM"
+    ],
+    "contacts": [
+     {
+      "dm_person_id": "per_150197512498",
+      "full_name": "GERARD RAIMONDI",
+      "first_name": "GERARD",
+      "last_name": "RAIMONDI",
+      "contact_type": "owner",
+      "is_resident": true,
+      "phones": [
+       {
+        "number": "7323414429",
+        "type": "landline",
+        "do_not_call": true
+       },
+       {
+        "number": "7327796599",
+        "type": "wireless",
+        "do_not_call": true
+       },
+       {
+        "number": "7322706056",
+        "type": "landline",
+        "do_not_call": true
+       }
+      ],
+      "emails": [
+       "DOUBLEJAY1977@AOL.COM",
+       "RCUTIEPIE1@AOL.COM",
+       "DOUBLEJAY041977@GMAIL.COM"
+      ]
+     },
+     {
+      "dm_person_id": "per_150410587214",
+      "full_name": "JOANNE RAIMONDI",
+      "first_name": "JOANNE",
+      "last_name": "RAIMONDI",
+      "contact_type": "owner",
+      "is_resident": true,
+      "phones": [
+       {
+        "number": "7328144894",
+        "type": "wireless",
+        "do_not_call": true
+       },
+       {
+        "number": "7323414429",
+        "type": "landline",
+        "do_not_call": true
+       },
+       {
+        "number": "7327796599",
+        "type": "wireless",
+        "do_not_call": true
+       }
+      ],
+      "emails": [
+       "JRAIMONDI1977@GMAIL.COM",
+       "JRAIMONDI1977@HOTMAIL.COM",
+       "DOUBLEJAY1977@AOL.COM"
+      ]
+     }
+    ],
+    "mailing_address": "225 Medjay Ln Toms River, NJ 08755",
+    "property": {
+     "dm_property_id": "prop_86798438",
+     "full_address": "225 Medjay Ln Toms River, NJ 08755",
+     "address": "225 Medjay Ln",
+     "city": "Toms River",
+     "state": "NJ",
+     "zip": "08755",
+     "latitude": 40.021731,
+     "longitude": -74.237127,
+     "estimated_value": 1302000,
+     "estimated_equity_amount": 1153272,
+     "estimated_equity_percentage": 88,
+     "year_built": 1997,
+     "living_area_sqft": 3896,
+     "lot_size_sqft": 45782,
+     "num_bedrooms": 5,
+     "num_bathrooms": 4,
+     "last_sale_date": "1997-10-14T00:00:00.000Z",
+     "last_sale_amount": 279990,
+     "total_assessed_value": 832700,
+     "annual_property_tax_amount": 16279,
+     "num_mortgages": 1,
+     "total_original_loan_amount": 305000,
+     "total_estimated_loan_balance": 148728,
+     "owner_occupied": true,
+     "apn": "08-00298-0000-00045-16"
+    },
+    "mortgages": [
+     {
+      "mortgage_number": 1,
+      "id": "2106561566",
+      "transaction_id": "2106561566",
+      "lender_name": "CHASE BANK USA NA",
+      "is_private_lender": false,
+      "loan_type_id": 13,
+      "loan_type": "Fannie Mae/Freddie Mac",
+      "loan_financing_type_id": 1,
+      "loan_financing_type": "Adjustable Rate",
+      "loan_amount": 305000,
+      "loan_balance": 148728,
+      "loan_interest_rate": 5.75,
+      "loan_term_months": 360,
+      "loan_start_date": "2005-05-12T00:00:00.000Z",
+      "loan_recording_date": "2005-05-12T00:00:00.000Z",
+      "loan_due_date": "2035-06-01T00:00:00.000Z",
+      "has_adjustable_rate_rider": true,
+      "lien_position": 1,
+      "estimated_payment_amount": 1779.9,
+      "classification": "primary",
+      "classification_label": "Primary mortgage",
+      "classification_reason": "The mortgage record identifies this as lien position 1."
+     }
+    ],
+    "credits": {
+     "properties": 1,
+     "people": 2
+    }
+   },
+   "dm_enrichment_status": "enriched",
+   "enrichment_sources": [
+    "dealmachine"
+   ],
+   "owner_name_source": "dealmachine",
+   "owner_resolution_status_prior": "DANIELS_LAW_REDACTED",
+   "daniels_law_backfilled": true,
+   "owner_occupied": true,
+   "owner_mailing_address": "225 MEDJAY LANE",
+   "owner_mailing_city": "TOMS RIVER,",
+   "owner_mailing_state": "NJ",
+   "owner_mailing_zip": "08755",
+   "absentee": false,
+   "out_of_state": false
+  },
+  {
+   "lead_id": "sheriff_foreclosure:CH_778965",
+   "lead_origin_type": "RECORDED_EVENT",
+   "primary_event_date": "2026-10-06",
+   "scheduled_event_category": "UPCOMING_SALE",
+   "qualification_status": "QUALIFIED",
+   "source_ids": [
+    "sheriff_foreclosure",
+    "njogis_parcels_modiv"
+   ],
+   "evidence_ids": [
+    "sheriff_foreclosure:CH_778965",
+    "njogis_parcels_modiv:1505_5.26_10"
+   ],
+   "lead_status": "APPROVED_FOR_DASHBOARD",
+   "doc_type": "sheriff_sale_listing",
+   "distress_signal": "foreclosure_sale_scheduled",
+   "chancery_docket": "CH 778965",
+   "plaintiff": "US BANK TRUST N.A., NOT IN IT INDIV",
+   "defendant_name": "ROBERT J. DI BELLA, ETC, ET ALS",
+   "upset_amount": 302814.03,
+   "sale_date": "2026-10-06",
+   "adjournment_date": null,
+   "sheriff_status": null,
+   "attorney_firm": "STERN & EISENBERG, PC",
+   "attorney_phone": "609-397-9200",
+   "property_address": "1008 HALLIARD AVENUE",
+   "property_city": "BEACHWOOD",
+   "property_state": "NJ",
+   "property_zip": "08722",
+   "block": "5.26",
+   "lot": "10",
+   "owner_name": "ROBERT DIBELLA",
+   "owner_resolved": true,
+   "owner_resolution_status": "DEALMACHINE_RESOLVED",
+   "parcel_id": "1505_5.26_10",
+   "parcel_muni": "BEACHWOOD BORO",
+   "parcel_address": "1008 HALLIARD AVE",
+   "land_value": 75000,
+   "improvement_value": 149500,
+   "net_value": 224500,
+   "year_built": 1971,
+   "acreage": 0.1837,
+   "dwelling_units": 1,
+   "last_sale_price": 140000,
+   "last_sale_date": "2001-12-03",
+   "prop_class": "2",
+   "dealmachine": {
+    "source": "dealmachine",
+    "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+    "matched": true,
+    "enrichment_status": "enriched",
+    "matched_by": "apn",
+    "enriched_at": "2026-09-25T06:35:39.977848+00:00",
+    "billing_cycle": "2026-09-07T18:06:43.000Z",
+    "owner_name": "ROBERT DIBELLA",
+    "owner_names": [
+     "ROBERT DIBELLA"
+    ],
+    "phones": [
+     "7327730293"
+    ],
+    "emails": [
+     "BOBBYJOSEPH@MAIL.COM"
+    ],
+    "contacts": [
+     {
+      "dm_person_id": "per_150454787766",
+      "full_name": "ROBERT DIBELLA",
+      "first_name": "ROBERT",
+      "last_name": "DIBELLA",
+      "contact_type": "owner",
+      "is_resident": false,
+      "phones": [
+       {
+        "number": "7327730293",
+        "type": "wireless",
+        "do_not_call": false
+       }
+      ],
+      "emails": [
+       "BOBBYJOSEPH@MAIL.COM"
+      ]
+     }
+    ],
+    "mailing_address": "1008 Halliard Ave Beachwood, NJ 08722",
+    "property": {
+     "dm_property_id": "prop_86720082",
+     "full_address": "1008 Halliard Ave Beachwood, NJ 08722",
+     "address": "1008 Halliard Ave",
+     "city": "Beachwood",
+     "state": "NJ",
+     "zip": "08722",
+     "latitude": 39.928685,
+     "longitude": -74.20577,
+     "estimated_value": 570000,
+     "estimated_equity_amount": 570000,
+     "estimated_equity_percentage": 100,
+     "year_built": 1971,
+     "living_area_sqft": 2340,
+     "lot_size_sqft": 8002,
+     "num_bedrooms": 4,
+     "num_bathrooms": 2,
+     "last_sale_date": "2001-12-03T00:00:00.000Z",
+     "last_sale_amount": 140000,
+     "total_assessed_value": 224500,
+     "annual_property_tax_amount": 7155,
+     "num_mortgages": 0,
+     "total_original_loan_amount": 0,
+     "total_estimated_loan_balance": 0,
+     "owner_occupied": true,
+     "apn": "05-00005-26-00010"
+    },
+    "mortgages": [],
+    "credits": {
+     "properties": 1,
+     "people": 1
+    }
+   },
+   "dm_enrichment_status": "enriched",
+   "enrichment_sources": [
+    "dealmachine"
+   ],
+   "owner_name_source": "dealmachine",
+   "owner_resolution_status_prior": "DANIELS_LAW_REDACTED",
+   "daniels_law_backfilled": true,
+   "owner_occupied": true,
+   "owner_mailing_address": "1008 HALLIARD AVE",
+   "owner_mailing_city": "BEACHWOOD",
+   "owner_mailing_state": "NJ",
+   "owner_mailing_zip": "08722",
+   "absentee": false,
+   "out_of_state": false
+  },
+  {
+   "lead_id": "sheriff_foreclosure:CH_779164",
+   "lead_origin_type": "RECORDED_EVENT",
+   "primary_event_date": "2026-10-06",
+   "scheduled_event_category": "UPCOMING_SALE",
+   "qualification_status": "QUALIFIED",
+   "source_ids": [
+    "sheriff_foreclosure",
+    "njogis_parcels_modiv"
+   ],
+   "evidence_ids": [
+    "sheriff_foreclosure:CH_779164",
+    "njogis_parcels_modiv:1508_614_13"
+   ],
+   "lead_status": "APPROVED_FOR_DASHBOARD",
+   "doc_type": "sheriff_sale_listing",
+   "distress_signal": "foreclosure_sale_scheduled",
+   "chancery_docket": "CH 779164",
+   "plaintiff": "MATRIX FINANCIAL SERVICES CORPORATI",
+   "defendant_name": "CARYN ANN ESPOSITO, ET VIR",
+   "upset_amount": 275135.68,
+   "sale_date": "2026-10-06",
+   "adjournment_date": null,
+   "sheriff_status": null,
+   "attorney_firm": "FEIN, SUCH, KAHN & SHEPARD, PC",
+   "attorney_phone": "973-538-4700",
+   "property_address": "12 DAYTON AVENUE TOMS",
+   "property_city": "RIVER",
+   "property_state": "NJ",
+   "property_zip": "08753",
+   "block": "614",
+   "lot": "13",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED",
+   "parcel_id": "1508_614_13",
+   "parcel_muni": "TOMS RIVER TWP",
+   "parcel_address": "12 DAYTON AVENUE",
+   "land_value": 123000,
+   "improvement_value": 141000,
+   "net_value": 264000,
+   "year_built": 1984,
+   "acreage": 0.2296,
+   "dwelling_units": 1,
+   "last_sale_price": 200000,
+   "last_sale_date": "2015-04-13",
+   "prop_class": "2",
+   "dealmachine": {
+    "source": "dealmachine",
+    "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+    "matched": true,
+    "enrichment_status": "enriched",
+    "matched_by": "apn",
+    "enriched_at": "2026-09-25T06:35:39.977848+00:00",
+    "billing_cycle": "2026-09-07T18:06:43.000Z",
+    "owner_name": null,
+    "owner_names": [],
+    "phones": [],
+    "emails": [],
+    "contacts": [],
+    "mailing_address": "12 Dayton Ave Toms River, NJ 08753",
+    "property": {
+     "dm_property_id": "prop_86801104",
+     "full_address": "12 Dayton Ave Toms River, NJ 08753",
+     "address": "12 Dayton Ave",
+     "city": "Toms River",
+     "state": "NJ",
+     "zip": "08753",
+     "latitude": 39.959679,
+     "longitude": -74.198522,
+     "estimated_value": 400000,
+     "estimated_equity_amount": 264568,
+     "estimated_equity_percentage": 70,
+     "year_built": 1984,
+     "living_area_sqft": 1212,
+     "lot_size_sqft": 10001,
+     "num_bedrooms": 3,
+     "num_bathrooms": 2,
+     "last_sale_date": "2015-05-05T00:00:00.000Z",
+     "last_sale_amount": 200000,
+     "total_assessed_value": 264000,
+     "annual_property_tax_amount": 5159,
+     "num_mortgages": 1,
+     "total_original_loan_amount": 180000,
+     "total_estimated_loan_balance": 135432,
+     "owner_occupied": true,
+     "apn": "08-00614-0000-00013"
+    },
+    "mortgages": [
+     {
+      "mortgage_number": 1,
+      "id": "1231004889",
+      "transaction_id": "1231004889",
+      "lender_name": "PROSPECT MORTGAGE LLC",
+      "is_private_lender": false,
+      "loan_type_id": 20,
+      "loan_type": "New Conventional",
+      "loan_financing_type": "Unknown Financing Type",
+      "loan_amount": 180000,
+      "loan_balance": 135432,
+      "loan_interest_rate": 3.76,
+      "loan_term_months": 360,
+      "loan_start_date": "2015-05-05T00:00:00.000Z",
+      "loan_recording_date": "2015-05-05T00:00:00.000Z",
+      "loan_due_date": "2045-05-01T00:00:00.000Z",
+      "has_adjustable_rate_rider": false,
+      "lien_position": 1,
+      "estimated_payment_amount": 834.63,
+      "classification": "primary",
+      "classification_label": "Primary mortgage",
+      "classification_reason": "The mortgage record identifies this as lien position 1."
+     }
+    ],
+    "credits": {
+     "properties": 1,
+     "people": 0
+    }
+   },
+   "dm_enrichment_status": "enriched",
+   "enrichment_sources": [
+    "dealmachine"
+   ],
+   "owner_occupied": true,
+   "owner_mailing_address": "12 DAYTON AVENUE",
+   "owner_mailing_city": "TOMS RIVER",
+   "owner_mailing_state": "NJ",
+   "owner_mailing_zip": "08753",
+   "absentee": false,
+   "out_of_state": false
+  },
+  {
+   "lead_id": "sheriff_foreclosure:CH_779963",
+   "lead_origin_type": "RECORDED_EVENT",
+   "primary_event_date": "2026-10-06",
+   "scheduled_event_category": "UPCOMING_SALE",
+   "qualification_status": "QUALIFIED",
+   "source_ids": [
+    "sheriff_foreclosure"
+   ],
+   "evidence_ids": [
+    "sheriff_foreclosure:CH_779963"
+   ],
+   "lead_status": "APPROVED_FOR_DASHBOARD",
+   "doc_type": "sheriff_sale_listing",
+   "distress_signal": "foreclosure_sale_scheduled",
+   "chancery_docket": "CH 779963",
+   "plaintiff": "LEGACY MORTGAGE ASSET TRUST 2021-GS",
+   "defendant_name": "ANGELA L. KROLICZAK, ET VIR, ET AL",
+   "upset_amount": 272832.17,
+   "sale_date": "2026-10-06",
+   "adjournment_date": null,
+   "sheriff_status": null,
+   "attorney_firm": "MCCABE, WEISBERG & CONWAY, LLC",
+   "attorney_phone": "856-858-7080",
+   "property_address": "59 NEWELL AVENUE WEST",
+   "property_city": "CREEK",
+   "property_state": "NJ",
+   "property_zip": "08092",
+   "block": "142",
+   "lot": "10",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "PARCEL_NOT_JOINED",
+   "parcel_id": null,
+   "parcel_muni": null,
+   "parcel_address": null,
+   "land_value": null,
+   "improvement_value": null,
+   "net_value": null,
+   "year_built": null,
+   "acreage": null,
+   "dwelling_units": null,
+   "last_sale_price": null,
+   "last_sale_date": null,
+   "prop_class": null,
+   "dealmachine": {
+    "source": "dealmachine",
+    "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+    "matched": false,
+    "enrichment_status": "no_dm_record",
+    "matched_by": "address",
+    "enriched_at": "2026-09-25T06:35:39.977848+00:00",
+    "billing_cycle": "2026-09-07T18:06:43.000Z",
+    "match_failure": {
+     "code": "no_match",
+     "reason": "No property found at this address"
+    }
+   },
+   "dm_enrichment_status": "no_dm_record",
+   "enrichment_sources": [
+    "dealmachine"
+   ],
+   "owner_occupied": null,
+   "owner_mailing_address": null,
+   "owner_mailing_city": null,
+   "owner_mailing_state": null,
+   "owner_mailing_zip": null,
+   "absentee": false,
+   "out_of_state": false
+  },
+  {
+   "lead_id": "sheriff_foreclosure:CH_780619",
+   "lead_origin_type": "RECORDED_EVENT",
+   "primary_event_date": "2026-12-01",
+   "scheduled_event_category": "UPCOMING_SALE",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "sheriff_foreclosure",
+    "njogis_parcels_modiv"
+   ],
+   "evidence_ids": [
+    "sheriff_foreclosure:CH_780619",
+    "njogis_parcels_modiv:1508_443.32_2"
+   ],
+   "lead_status": "APPROVED_FOR_DASHBOARD",
+   "doc_type": "sheriff_sale_listing",
+   "distress_signal": "foreclosure_sale_scheduled",
+   "chancery_docket": "CH 780619",
+   "plaintiff": "U.S. BANK NATIONAL ASSOCIATION, AS",
+   "defendant_name": "ELIZABETH KRALJEV-VARELLAS, ETC., ET ALS",
+   "upset_amount": 383210.99,
+   "sale_date": "2026-10-06",
+   "adjournment_date": "2026-12-01",
+   "sheriff_status": "ADJOURNED UNTIL",
+   "attorney_firm": "ROBERTSON ANSCHUTZ SCHNEID CRANE & PARTNERS PLLC.",
+   "attorney_phone": "973-575-0707",
+   "property_address": "4 CHIPPEWA RD TOMS",
+   "property_city": "RIVER",
+   "property_state": "NJ",
+   "property_zip": "08753",
+   "block": "443.32",
+   "lot": "2",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED",
+   "parcel_id": "1508_443.32_2",
+   "parcel_muni": "TOMS RIVER TWP",
+   "parcel_address": "4 CHIPPEWA ROAD",
+   "land_value": 123000,
+   "improvement_value": 365500,
+   "net_value": 488500,
+   "year_built": 1974,
+   "acreage": 0.377,
+   "dwelling_units": 1,
+   "last_sale_price": 400000,
+   "last_sale_date": "2009-08-14",
+   "prop_class": "2",
+   "dealmachine": {
+    "source": "dealmachine",
+    "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+    "matched": true,
+    "enrichment_status": "enriched",
+    "matched_by": "apn",
+    "enriched_at": "2026-09-25T06:35:39.977848+00:00",
+    "billing_cycle": "2026-09-07T18:06:43.000Z",
+    "owner_name": null,
+    "owner_names": [],
+    "phones": [],
+    "emails": [],
+    "contacts": [],
+    "mailing_address": "4 Chippewa Rd Toms River, NJ 08753",
+    "property": {
+     "dm_property_id": "prop_86738753",
+     "full_address": "4 Chippewa Rd Toms River, NJ 08753",
+     "address": "4 Chippewa Rd",
+     "city": "Toms River",
+     "state": "NJ",
+     "zip": "08753",
+     "latitude": 39.982067,
+     "longitude": -74.169712,
+     "estimated_value": 814000,
+     "estimated_equity_amount": 626131,
+     "estimated_equity_percentage": 75,
+     "year_built": 1974,
+     "living_area_sqft": 2526,
+     "lot_size_sqft": 16422,
+     "num_bedrooms": 4,
+     "num_bathrooms": 4,
+     "last_sale_date": "2009-08-31T00:00:00.000Z",
+     "last_sale_amount": 400000,
+     "total_assessed_value": 488500,
+     "annual_property_tax_amount": 9545,
+     "num_mortgages": 1,
+     "total_original_loan_amount": 300000,
+     "total_estimated_loan_balance": 187869,
+     "owner_occupied": true,
+     "apn": "08-00443-32-00002"
+    },
+    "mortgages": [
+     {
+      "mortgage_number": 1,
+      "id": "11475797253",
+      "transaction_id": "11475797253",
+      "lender_name": "WEICHERT FINANCIAL SERVICES",
+      "is_private_lender": false,
+      "loan_type_id": 1,
+      "loan_type": "Stand Alone First",
+      "loan_financing_type": "Unknown Financing Type",
+      "loan_amount": 300000,
+      "loan_balance": 187869,
+      "loan_interest_rate": 5.17,
+      "loan_term_months": 360,
+      "loan_start_date": "2009-08-31T00:00:00.000Z",
+      "loan_recording_date": "2009-08-31T00:00:00.000Z",
+      "loan_due_date": "2039-09-01T00:00:00.000Z",
+      "has_adjustable_rate_rider": false,
+      "lien_position": 1,
+      "estimated_payment_amount": 1641.78,
+      "classification": "primary",
+      "classification_label": "Primary mortgage",
+      "classification_reason": "The mortgage record identifies this as lien position 1."
+     }
+    ],
+    "credits": {
+     "properties": 1,
+     "people": 0
+    }
+   },
+   "dm_enrichment_status": "enriched",
+   "enrichment_sources": [
+    "dealmachine"
+   ],
+   "owner_occupied": true,
+   "owner_mailing_address": "4 CHIPPEWA ROAD",
+   "owner_mailing_city": "TOMS RIVER,",
+   "owner_mailing_state": "NJ",
+   "owner_mailing_zip": "08753",
+   "absentee": false,
+   "out_of_state": false
+  },
+  {
+   "lead_id": "sheriff_foreclosure:CH_780752",
+   "lead_origin_type": "RECORDED_EVENT",
+   "primary_event_date": "2026-10-06",
+   "scheduled_event_category": "UPCOMING_SALE",
+   "qualification_status": "QUALIFIED",
+   "source_ids": [
+    "sheriff_foreclosure",
+    "njogis_parcels_modiv"
+   ],
+   "evidence_ids": [
+    "sheriff_foreclosure:CH_780752",
+    "njogis_parcels_modiv:1507_324.23_4"
+   ],
+   "lead_status": "APPROVED_FOR_DASHBOARD",
+   "doc_type": "sheriff_sale_listing",
+   "distress_signal": "foreclosure_sale_scheduled",
+   "chancery_docket": "CH 780752",
+   "plaintiff": "LOAN FUNDER LLC, SERIES 65922",
+   "defendant_name": "INFINITY REAL ESTATE INVESTMENTS LIMITED LIABILIT",
+   "upset_amount": 690450.56,
+   "sale_date": "2026-10-06",
+   "adjournment_date": null,
+   "sheriff_status": null,
+   "attorney_firm": "WEBER GALLAGHER",
+   "attorney_phone": "215-972-7900",
+   "property_address": "93 CLUB HOUSE ROAD",
+   "property_city": "BRICK",
+   "property_state": "NJ",
+   "property_zip": "08723",
+   "block": "324.23",
+   "lot": "4",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED",
+   "parcel_id": "1507_324.23_4",
+   "parcel_muni": "BRICK TWP",
+   "parcel_address": "93 CLUB HOUSE RD.",
+   "land_value": 256300,
+   "improvement_value": 107700,
+   "net_value": 364000,
+   "year_built": 1968,
+   "acreage": 0.1148,
+   "dwelling_units": 1,
+   "last_sale_price": 500000,
+   "last_sale_date": "2024-01-04",
+   "prop_class": "2",
+   "dealmachine": {
+    "source": "dealmachine",
+    "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+    "matched": true,
+    "enrichment_status": "enriched",
+    "matched_by": "apn",
+    "enriched_at": "2026-09-25T06:35:39.977848+00:00",
+    "billing_cycle": "2026-09-07T18:06:43.000Z",
+    "owner_name": null,
+    "owner_names": [],
+    "phones": [],
+    "emails": [],
+    "contacts": [],
+    "mailing_address": null,
+    "property": {
+     "dm_property_id": "prop_86783144",
+     "full_address": "93 Club House Rd Brick, NJ, 08723",
+     "address": "93 Club House Rd",
+     "city": "Brick",
+     "state": "NJ",
+     "zip": "08723",
+     "latitude": 40.027635,
+     "longitude": -74.121008,
+     "estimated_value": 573000,
+     "estimated_equity_amount": 573000,
+     "estimated_equity_percentage": 100,
+     "year_built": 1968,
+     "living_area_sqft": 1493,
+     "lot_size_sqft": 5001,
+     "num_bedrooms": 3,
+     "num_bathrooms": 2,
+     "last_sale_date": "2024-02-02T00:00:00.000Z",
+     "last_sale_amount": 500000,
+     "total_assessed_value": 364000,
+     "annual_property_tax_amount": 9879,
+     "num_mortgages": 0,
+     "total_original_loan_amount": 0,
+     "total_estimated_loan_balance": 0,
+     "owner_occupied": false,
+     "apn": "07-00324-23-00004"
+    },
+    "mortgages": [],
+    "credits": {
+     "properties": 1,
+     "people": 0
+    }
+   },
+   "dm_enrichment_status": "enriched",
+   "enrichment_sources": [
+    "dealmachine"
+   ],
+   "owner_occupied": false,
+   "owner_mailing_address": "330 MOUNTS CORNER DRIVE",
+   "owner_mailing_city": "FREEHOLD",
+   "owner_mailing_state": "NJ",
+   "owner_mailing_zip": "08005",
+   "absentee": true,
+   "out_of_state": false
+  },
+  {
+   "lead_id": "sheriff_foreclosure:CH_780753",
+   "lead_origin_type": "RECORDED_EVENT",
+   "primary_event_date": "2026-10-06",
+   "scheduled_event_category": "UPCOMING_SALE",
+   "qualification_status": "QUALIFIED",
+   "source_ids": [
+    "sheriff_foreclosure",
+    "njogis_parcels_modiv"
+   ],
+   "evidence_ids": [
+    "sheriff_foreclosure:CH_780753",
+    "njogis_parcels_modiv:1508_165.01_5"
+   ],
+   "lead_status": "APPROVED_FOR_DASHBOARD",
+   "doc_type": "sheriff_sale_listing",
+   "distress_signal": "foreclosure_sale_scheduled",
+   "chancery_docket": "CH 780753",
+   "plaintiff": "U.S. BANK NATIONAL ASSOCIATION, NOT",
+   "defendant_name": "CHANAN PASHKUS, ET ALS",
+   "upset_amount": 559901.69,
+   "sale_date": "2026-10-06",
+   "adjournment_date": null,
+   "sheriff_status": null,
+   "attorney_firm": "FRIEDMAN VARTOLO LLP",
+   "attorney_phone": "212-471-5100",
+   "property_address": "110 STARC ROAD TOMS",
+   "property_city": "RIVER",
+   "property_state": "NJ",
+   "property_zip": "08755",
+   "block": "165.01",
+   "lot": "5",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED",
+   "parcel_id": "1508_165.01_5",
+   "parcel_muni": "TOMS RIVER TWP",
+   "parcel_address": "110 STARC ROAD",
+   "land_value": 165000,
+   "improvement_value": 341100,
+   "net_value": 506100,
+   "year_built": 1975,
+   "acreage": 1.0034,
+   "dwelling_units": 1,
+   "last_sale_price": 700000,
+   "last_sale_date": "2022-06-25",
+   "prop_class": "2",
+   "dealmachine": {
+    "source": "dealmachine",
+    "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+    "matched": true,
+    "enrichment_status": "enriched",
+    "matched_by": "apn",
+    "enriched_at": "2026-09-25T06:35:39.977848+00:00",
+    "billing_cycle": "2026-09-07T18:06:43.000Z",
+    "owner_name": null,
+    "owner_names": [],
+    "phones": [],
+    "emails": [],
+    "contacts": [],
+    "mailing_address": "110 Starc Rd Toms River, NJ 08755",
+    "property": {
+     "dm_property_id": "prop_86726828",
+     "full_address": "110 Starc Rd Toms River, NJ 08755",
+     "address": "110 Starc Rd",
+     "city": "Toms River",
+     "state": "NJ",
+     "zip": "08755",
+     "latitude": 40.035386,
+     "longitude": -74.215142,
+     "estimated_value": 818000,
+     "estimated_equity_amount": 358046,
+     "estimated_equity_percentage": 40,
+     "year_built": 1975,
+     "living_area_sqft": 1816,
+     "lot_size_sqft": 43708,
+     "num_bedrooms": 3,
+     "num_bathrooms": 2,
+     "last_sale_date": "2022-07-13T00:00:00.000Z",
+     "last_sale_amount": 700000,
+     "total_assessed_value": 506100,
+     "annual_property_tax_amount": 9894,
+     "num_mortgages": 1,
+     "total_original_loan_amount": 490000,
+     "total_estimated_loan_balance": 459954,
+     "owner_occupied": true,
+     "apn": "08-00165-01-00005"
+    },
+    "mortgages": [
+     {
+      "mortgage_number": 1,
+      "id": "11892443391",
+      "transaction_id": "11892443391",
+      "lender_name": "ARC HOME LLC",
+      "is_private_lender": false,
+      "loan_type_id": 20,
+      "loan_type": "New Conventional",
+      "loan_financing_type": "Unknown Financing Type",
+      "loan_amount": 490000,
+      "loan_balance": 459954,
+      "loan_interest_rate": 5.09,
+      "loan_term_months": 360,
+      "loan_start_date": "2022-07-13T00:00:00.000Z",
+      "loan_recording_date": "2022-07-13T00:00:00.000Z",
+      "loan_due_date": "2052-08-01T00:00:00.000Z",
+      "has_adjustable_rate_rider": false,
+      "lien_position": 1,
+      "estimated_payment_amount": 2657.44,
+      "classification": "primary",
+      "classification_label": "Primary mortgage",
+      "classification_reason": "The mortgage record identifies this as lien position 1."
+     }
+    ],
+    "credits": {
+     "properties": 1,
+     "people": 0
+    }
+   },
+   "dm_enrichment_status": "enriched",
+   "enrichment_sources": [
+    "dealmachine"
+   ],
+   "owner_occupied": true,
+   "owner_mailing_address": "110 STARC ROAD",
+   "owner_mailing_city": "TOMS RIVER",
+   "owner_mailing_state": "NJ",
+   "owner_mailing_zip": "08755",
+   "absentee": false,
+   "out_of_state": false
+  },
+  {
+   "lead_id": "sheriff_foreclosure:CH_780754",
+   "lead_origin_type": "RECORDED_EVENT",
+   "primary_event_date": "2026-10-06",
+   "scheduled_event_category": "UPCOMING_SALE",
+   "qualification_status": "QUALIFIED",
+   "source_ids": [
+    "sheriff_foreclosure"
+   ],
+   "evidence_ids": [
+    "sheriff_foreclosure:CH_780754"
+   ],
+   "lead_status": "APPROVED_FOR_DASHBOARD",
+   "doc_type": "sheriff_sale_listing",
+   "distress_signal": "foreclosure_sale_scheduled",
+   "chancery_docket": "CH 780754",
+   "plaintiff": "WELLS FARGO BANK, N.A. SBM TO WELLS",
+   "defendant_name": "ANTHONY DIPASTINA, ET ALS",
+   "upset_amount": 349784.08,
+   "sale_date": "2026-10-06",
+   "adjournment_date": null,
+   "sheriff_status": null,
+   "attorney_firm": "ROBERTSON ANSCHUTZ SCHNEID CRANE & PARTNERS PLLC.",
+   "attorney_phone": "973-575-0707",
+   "property_address": "101 PKWY PT.PLEASANT",
+   "property_city": "BCH",
+   "property_state": "NJ",
+   "property_zip": "08742",
+   "block": "102",
+   "lot": "1",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "PARCEL_NOT_JOINED",
+   "parcel_id": null,
+   "parcel_muni": null,
+   "parcel_address": null,
+   "land_value": null,
+   "improvement_value": null,
+   "net_value": null,
+   "year_built": null,
+   "acreage": null,
+   "dwelling_units": null,
+   "last_sale_price": null,
+   "last_sale_date": null,
+   "prop_class": null,
+   "dealmachine": {
+    "source": "dealmachine",
+    "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+    "matched": false,
+    "enrichment_status": "no_dm_record",
+    "matched_by": "address",
+    "enriched_at": "2026-09-25T06:35:39.977848+00:00",
+    "billing_cycle": "2026-09-07T18:06:43.000Z",
+    "match_failure": {
+     "code": "no_match",
+     "reason": "No property found at this address"
+    }
+   },
+   "dm_enrichment_status": "no_dm_record",
+   "enrichment_sources": [
+    "dealmachine"
+   ],
+   "owner_occupied": null,
+   "owner_mailing_address": null,
+   "owner_mailing_city": null,
+   "owner_mailing_state": null,
+   "owner_mailing_zip": null,
+   "absentee": false,
+   "out_of_state": false
+  },
+  {
+   "lead_id": "sheriff_foreclosure:CH_780755",
+   "lead_origin_type": "RECORDED_EVENT",
+   "primary_event_date": "2026-10-06",
+   "scheduled_event_category": "UPCOMING_SALE",
+   "qualification_status": "QUALIFIED",
+   "source_ids": [
+    "sheriff_foreclosure",
+    "njogis_parcels_modiv"
+   ],
+   "evidence_ids": [
+    "sheriff_foreclosure:CH_780755",
+    "njogis_parcels_modiv:1507_1233_305"
+   ],
+   "lead_status": "APPROVED_FOR_DASHBOARD",
+   "doc_type": "sheriff_sale_listing",
+   "distress_signal": "foreclosure_sale_scheduled",
+   "chancery_docket": "CH 780755",
+   "plaintiff": "PENNYMAC LOAN SERVICES, LLC",
+   "defendant_name": "ISMAEL RIBOY, ET AL",
+   "upset_amount": 278272.28,
+   "sale_date": "2026-10-06",
+   "adjournment_date": null,
+   "sheriff_status": null,
+   "attorney_firm": "FRENKEL LAMBERT WEISS WEISMAN & GORDON, LLP",
+   "attorney_phone": "973-325-8800",
+   "property_address": "450 GODFREY LAKE DR",
+   "property_city": "BRICK",
+   "property_state": "NJ",
+   "property_zip": "08724",
+   "block": "1233",
+   "lot": "305",
+   "owner_name": "ISMAEL RIBOT",
+   "owner_resolved": true,
+   "owner_resolution_status": "DEALMACHINE_RESOLVED",
+   "parcel_id": "1507_1233_305",
+   "parcel_muni": "BRICK TWP",
+   "parcel_address": "450 GODFREY LAKE DR.",
+   "land_value": 134500,
+   "improvement_value": 132800,
+   "net_value": 267300,
+   "year_built": 1942,
+   "acreage": 0.2755,
+   "dwelling_units": 1,
+   "last_sale_price": 60000,
+   "last_sale_date": "2022-05-20",
+   "prop_class": "2",
+   "dealmachine": {
+    "source": "dealmachine",
+    "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+    "matched": true,
+    "enrichment_status": "enriched",
+    "matched_by": "apn",
+    "enriched_at": "2026-09-25T06:35:39.977848+00:00",
+    "billing_cycle": "2026-09-07T18:06:43.000Z",
+    "owner_name": "ISMAEL RIBOT",
+    "owner_names": [
+     "ISMAEL RIBOT"
+    ],
+    "phones": [
+     "9089020935",
+     "7329036759"
+    ],
+    "emails": [],
+    "contacts": [
+     {
+      "dm_person_id": "per_150159179179",
+      "full_name": "ISMAEL RIBOT",
+      "first_name": "ISMAEL",
+      "last_name": "RIBOT",
+      "contact_type": "owner",
+      "is_resident": true,
+      "phones": [
+       {
+        "number": "9089020935",
+        "type": "wireless",
+        "do_not_call": true
+       },
+       {
+        "number": "7329036759",
+        "type": "landline",
+        "do_not_call": true
+       }
+      ],
+      "emails": []
+     }
+    ],
+    "mailing_address": "450 Godfrey Lake Dr Brick, NJ 08724",
+    "property": {
+     "dm_property_id": "prop_86736378",
+     "full_address": "450 Godfrey Lake Dr Brick, NJ 08724",
+     "address": "450 Godfrey Lake Dr",
+     "city": "Brick",
+     "state": "NJ",
+     "zip": "08724",
+     "latitude": 40.098740669,
+     "longitude": -74.10660159,
+     "estimated_value": 430000,
+     "estimated_equity_amount": 196279,
+     "estimated_equity_percentage": 58,
+     "year_built": 1942,
+     "living_area_sqft": 2110,
+     "lot_size_sqft": 12001,
+     "num_bedrooms": 3,
+     "num_bathrooms": 2,
+     "last_sale_date": "2022-06-21T00:00:00.000Z",
+     "last_sale_amount": 60000,
+     "total_assessed_value": 267300,
+     "annual_property_tax_amount": 7351,
+     "num_mortgages": 1,
+     "total_original_loan_amount": 250000,
+     "total_estimated_loan_balance": 233721,
+     "owner_occupied": true,
+     "apn": "07-01233-0000-00305"
+    },
+    "mortgages": [
+     {
+      "mortgage_number": 1,
+      "id": "11890985863",
+      "transaction_id": "11890985863",
+      "lender_name": "PENNYMAC LOAN SERVICES LLC",
+      "is_private_lender": false,
+      "loan_type_id": 20,
+      "loan_type": "New Conventional",
+      "loan_financing_type": "Unknown Financing Type",
+      "loan_amount": 250000,
+      "loan_balance": 233721,
+      "loan_interest_rate": 5.27,
+      "loan_term_months": 348,
+      "loan_start_date": "2022-06-21T00:00:00.000Z",
+      "loan_recording_date": "2022-06-21T00:00:00.000Z",
+      "loan_due_date": "2051-07-01T00:00:00.000Z",
+      "has_adjustable_rate_rider": false,
+      "lien_position": 1,
+      "estimated_payment_amount": 1403.32,
+      "classification": "primary",
+      "classification_label": "Primary mortgage",
+      "classification_reason": "The mortgage record identifies this as lien position 1."
+     }
+    ],
+    "credits": {
+     "properties": 1,
+     "people": 1
+    }
+   },
+   "dm_enrichment_status": "enriched",
+   "enrichment_sources": [
+    "dealmachine"
+   ],
+   "owner_name_source": "dealmachine",
+   "owner_resolution_status_prior": "DANIELS_LAW_REDACTED",
+   "daniels_law_backfilled": true,
+   "owner_occupied": true,
+   "owner_mailing_address": "450 GODFREY LAKE DR",
+   "owner_mailing_city": "BRICK",
+   "owner_mailing_state": "NJ",
+   "owner_mailing_zip": "08724",
+   "absentee": false,
+   "out_of_state": false
+  },
+  {
+   "lead_id": "sheriff_foreclosure:CH_780756",
+   "lead_origin_type": "RECORDED_EVENT",
+   "primary_event_date": "2026-10-06",
+   "scheduled_event_category": "UPCOMING_SALE",
+   "qualification_status": "QUALIFIED",
+   "source_ids": [
+    "sheriff_foreclosure"
+   ],
+   "evidence_ids": [
+    "sheriff_foreclosure:CH_780756"
+   ],
+   "lead_status": "APPROVED_FOR_DASHBOARD",
+   "doc_type": "sheriff_sale_listing",
+   "distress_signal": "foreclosure_sale_scheduled",
+   "chancery_docket": "CH 780756",
+   "plaintiff": "U.S. BANK TRUST NATIONAL ASSOCIATIO",
+   "defendant_name": "FRANK MONTICELLO, ET ALS",
+   "upset_amount": 385409.16,
+   "sale_date": "2026-10-06",
+   "adjournment_date": null,
+   "sheriff_status": null,
+   "attorney_firm": "FRIEDMAN VARTOLO LLP",
+   "attorney_phone": "212-471-5100",
+   "property_address": "58 INNSBRUCK DRIVE TOMS",
+   "property_city": "RIVER",
+   "property_state": "NJ",
+   "property_zip": "08757",
+   "block": "4.217",
+   "lot": "65",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "PARCEL_NOT_JOINED",
+   "parcel_id": null,
+   "parcel_muni": null,
+   "parcel_address": null,
+   "land_value": null,
+   "improvement_value": null,
+   "net_value": null,
+   "year_built": null,
+   "acreage": null,
+   "dwelling_units": null,
+   "last_sale_price": null,
+   "last_sale_date": null,
+   "prop_class": null,
+   "dealmachine": {
+    "source": "dealmachine",
+    "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+    "matched": false,
+    "enrichment_status": "no_dm_record",
+    "matched_by": "address",
+    "enriched_at": "2026-09-25T06:35:39.977848+00:00",
+    "billing_cycle": "2026-09-07T18:06:43.000Z",
+    "match_failure": {
+     "code": "no_match",
+     "reason": "No property found at this address"
+    }
+   },
+   "dm_enrichment_status": "no_dm_record",
+   "enrichment_sources": [
+    "dealmachine"
+   ],
+   "owner_occupied": null,
+   "owner_mailing_address": null,
+   "owner_mailing_city": null,
+   "owner_mailing_state": null,
+   "owner_mailing_zip": null,
+   "absentee": false,
+   "out_of_state": false
+  },
+  {
+   "lead_id": "sheriff_foreclosure:CH_780757",
+   "lead_origin_type": "RECORDED_EVENT",
+   "primary_event_date": "2026-10-06",
+   "scheduled_event_category": "HISTORICAL_CONTEXT_ONLY",
+   "qualification_status": "QUALIFIED",
+   "source_ids": [
+    "sheriff_foreclosure",
+    "njogis_parcels_modiv"
+   ],
+   "evidence_ids": [
+    "sheriff_foreclosure:CH_780757",
+    "njogis_parcels_modiv:1515_1587_901.02"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "sheriff_sale_listing",
+   "distress_signal": "foreclosure_sale_scheduled",
+   "chancery_docket": "CH 780757",
+   "plaintiff": "LEISURE VILLAGE EAST ASSOCIATION, I",
+   "defendant_name": "JOHN YAMAN, ETC., ET AL",
+   "upset_amount": 10389.5,
+   "sale_date": "2026-10-06",
+   "adjournment_date": null,
+   "sheriff_status": "CANCELLATION",
+   "attorney_firm": "MCGOVERN LEGAL SERVICES, LLC.",
+   "attorney_phone": "732-246-1221",
+   "property_address": "901B DUMBARTON DRIVE",
+   "property_city": "LAKEWOOD",
+   "property_state": "NJ",
+   "property_zip": "08701",
+   "block": "1587",
+   "lot": "901.02",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED",
+   "parcel_id": "1515_1587_901.02",
+   "parcel_muni": "LAKEWOOD TWP",
+   "parcel_address": "901B DUMBARTON DRIVE",
+   "land_value": 22500,
+   "improvement_value": 99100,
+   "net_value": 121600,
+   "year_built": 1971,
+   "acreage": 0.0,
+   "dwelling_units": 1,
+   "last_sale_price": 84000,
+   "last_sale_date": "2000-09-23",
+   "prop_class": "2",
+   "dealmachine": {
+    "source": "dealmachine",
+    "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+    "matched": true,
+    "enrichment_status": "enriched",
+    "matched_by": "apn",
+    "enriched_at": "2026-09-25T06:35:39.977848+00:00",
+    "billing_cycle": "2026-09-07T18:06:43.000Z",
+    "owner_name": null,
+    "owner_names": [],
+    "phones": [],
+    "emails": [],
+    "contacts": [],
+    "mailing_address": "901b Dumbarton Dr Lakewood, NJ 08701",
+    "property": {
+     "dm_property_id": "prop_86924246",
+     "full_address": "901b Dumbarton Dr Lakewood, NJ 08701",
+     "address": "901b Dumbarton Dr",
+     "city": "Lakewood",
+     "state": "NJ",
+     "zip": "08701",
+     "latitude": 40.032787946,
+     "longitude": -74.16511408,
+     "estimated_value": 290000,
+     "estimated_equity_amount": 290000,
+     "estimated_equity_percentage": 100,
+     "year_built": 1971,
+     "living_area_sqft": 1490,
+     "lot_size_sqft": 1739,
+     "num_bedrooms": 2,
+     "num_bathrooms": 2,
+     "last_sale_date": "2000-10-04T00:00:00.000Z",
+     "last_sale_amount": 84000,
+     "total_assessed_value": 121600,
+     "annual_property_tax_amount": 3146,
+     "num_mortgages": 0,
+     "total_original_loan_amount": 285000,
+     "total_estimated_loan_balance": 0,
+     "owner_occupied": true,
+     "apn": "15-01587-0000-00901-02"
+    },
+    "mortgages": [
+     {
+      "mortgage_number": 1,
+      "id": "2023563193",
+      "transaction_id": "2023563193",
+      "lender_name": "FINANCIAL FREEDOM SENIOR FUNDI",
+      "is_private_lender": false,
+      "loan_type_id": 32,
+      "loan_type": "Reverse Mortgage",
+      "loan_financing_type_id": 1,
+      "loan_financing_type": "Adjustable Rate",
+      "loan_amount": 285000,
+      "loan_interest_rate": 6,
+      "loan_term_months": 999,
+      "loan_start_date": "2007-06-19T00:00:00.000Z",
+      "loan_recording_date": "2007-06-19T00:00:00.000Z",
+      "loan_due_date": "2037-06-19T00:00:00.000Z",
+      "has_adjustable_rate_rider": true,
+      "lien_position": 1,
+      "classification": "primary",
+      "classification_label": "Primary mortgage",
+      "classification_reason": "The mortgage record identifies this as lien position 1."
+     }
+    ],
+    "credits": {
+     "properties": 1,
+     "people": 0
+    }
+   },
+   "dm_enrichment_status": "enriched",
+   "enrichment_sources": [
+    "dealmachine"
+   ],
+   "owner_occupied": true,
+   "owner_mailing_address": "901B DUMBARTON DRIVE",
+   "owner_mailing_city": "LAKEWOOD",
+   "owner_mailing_state": "NJ",
+   "owner_mailing_zip": "08701",
+   "absentee": false,
+   "out_of_state": false
+  },
+  {
+   "lead_id": "sheriff_foreclosure:CH_780758",
+   "lead_origin_type": "RECORDED_EVENT",
+   "primary_event_date": "2026-10-06",
+   "scheduled_event_category": "UPCOMING_SALE",
+   "qualification_status": "QUALIFIED",
+   "source_ids": [
+    "sheriff_foreclosure",
+    "njogis_parcels_modiv"
+   ],
+   "evidence_ids": [
+    "sheriff_foreclosure:CH_780758",
+    "njogis_parcels_modiv:1512_5901_8"
+   ],
+   "lead_status": "APPROVED_FOR_DASHBOARD",
+   "doc_type": "sheriff_sale_listing",
+   "distress_signal": "foreclosure_sale_scheduled",
+   "chancery_docket": "CH 780758",
+   "plaintiff": "WILMINGTON SAVINGS FUND SOCIETY, FS",
+   "defendant_name": "SUNIL G. SINGH, ET ALS",
+   "upset_amount": 411258.2,
+   "sale_date": "2026-10-06",
+   "adjournment_date": null,
+   "sheriff_status": null,
+   "attorney_firm": "FRIEDMAN VARTOLO LLP",
+   "attorney_phone": "212-471-5100",
+   "property_address": "15 NORTH NEW PROSPECT ROAD",
+   "property_city": "JACKSON",
+   "property_state": "NJ",
+   "property_zip": "08527",
+   "block": "5901",
+   "lot": "8",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED",
+   "parcel_id": "1512_5901_8",
+   "parcel_muni": "JACKSON TWP",
+   "parcel_address": "15 N NEW PROSPECT ROAD",
+   "land_value": 226200,
+   "improvement_value": 294400,
+   "net_value": 520600,
+   "year_built": 1965,
+   "acreage": 0.45,
+   "dwelling_units": 1,
+   "last_sale_price": 175367,
+   "last_sale_date": "2022-07-14",
+   "prop_class": "2",
+   "dealmachine": {
+    "source": "dealmachine",
+    "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+    "matched": false,
+    "enrichment_status": "no_dm_record",
+    "matched_by": "apn",
+    "enriched_at": "2026-09-25T06:35:39.977848+00:00",
+    "billing_cycle": "2026-09-07T18:06:43.000Z",
+    "match_failure": {
+     "code": "wrong_county",
+     "reason": "APN resolved outside Ocean County (Whippany, 07981)"
+    }
+   },
+   "dm_enrichment_status": "no_dm_record",
+   "enrichment_sources": [
+    "dealmachine"
+   ],
+   "owner_occupied": null,
+   "owner_mailing_address": "15 N NEW PROSPECT ROAD",
+   "owner_mailing_city": "JACKSON",
+   "owner_mailing_state": "NJ",
+   "owner_mailing_zip": "08527",
+   "absentee": false,
+   "out_of_state": false
+  },
+  {
+   "lead_id": "sheriff_foreclosure:CH_780759",
+   "lead_origin_type": "RECORDED_EVENT",
+   "primary_event_date": "2026-10-06",
+   "scheduled_event_category": "UPCOMING_SALE",
+   "qualification_status": "QUALIFIED",
+   "source_ids": [
+    "sheriff_foreclosure",
+    "njogis_parcels_modiv"
+   ],
+   "evidence_ids": [
+    "sheriff_foreclosure:CH_780759",
+    "njogis_parcels_modiv:1515_524.03_16"
+   ],
+   "lead_status": "APPROVED_FOR_DASHBOARD",
+   "doc_type": "sheriff_sale_listing",
+   "distress_signal": "foreclosure_sale_scheduled",
+   "chancery_docket": "CH 780759",
+   "plaintiff": "FAIRWAYS AT LAKE RIDGE HOMEOWNERS A",
+   "defendant_name": "JOSEPH J. KULBACKY, ETC., ET ALS",
+   "upset_amount": 10944.02,
+   "sale_date": "2026-10-06",
+   "adjournment_date": null,
+   "sheriff_status": null,
+   "attorney_firm": "MCGOVERN LEGAL SERVICES, LLC.",
+   "attorney_phone": "732-246-1221",
+   "property_address": "87 FOXWOOD ROAD",
+   "property_city": "LAKEWOOD",
+   "property_state": "NJ",
+   "property_zip": "08701",
+   "block": "524.03",
+   "lot": "16",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED",
+   "parcel_id": "1515_524.03_16",
+   "parcel_muni": "LAKEWOOD TWP",
+   "parcel_address": "87 FOXWOOD ROAD",
+   "land_value": 70000,
+   "improvement_value": 195000,
+   "net_value": 265000,
+   "year_built": 1999,
+   "acreage": 0.202,
+   "dwelling_units": 1,
+   "last_sale_price": 212400,
+   "last_sale_date": "2001-09-25",
+   "prop_class": "2",
+   "dealmachine": {
+    "source": "dealmachine",
+    "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+    "matched": true,
+    "enrichment_status": "enriched",
+    "matched_by": "apn",
+    "enriched_at": "2026-09-25T06:35:39.977848+00:00",
+    "billing_cycle": "2026-09-07T18:06:43.000Z",
+    "owner_name": null,
+    "owner_names": [],
+    "phones": [],
+    "emails": [],
+    "contacts": [],
+    "mailing_address": "87 Foxwood Rd Lakewood, NJ 08701",
+    "property": {
+     "dm_property_id": "prop_86874910",
+     "full_address": "87 Foxwood Rd Lakewood, NJ 08701",
+     "address": "87 Foxwood Rd",
+     "city": "Lakewood",
+     "state": "NJ",
+     "zip": "08701",
+     "latitude": 40.054835,
+     "longitude": -74.233297,
+     "estimated_value": 643000,
+     "estimated_equity_amount": 643000,
+     "estimated_equity_percentage": 100,
+     "year_built": 1999,
+     "living_area_sqft": 2030,
+     "lot_size_sqft": 8799,
+     "num_bedrooms": 2,
+     "num_bathrooms": 2,
+     "last_sale_date": "2001-10-04T00:00:00.000Z",
+     "last_sale_amount": 212400,
+     "total_assessed_value": 265000,
+     "annual_property_tax_amount": 6856,
+     "num_mortgages": 0,
+     "total_original_loan_amount": 465000,
+     "total_estimated_loan_balance": 0,
+     "owner_occupied": true,
+     "apn": "15-00524-03-00016"
+    },
+    "mortgages": [
+     {
+      "mortgage_number": 1,
+      "id": "2106710235",
+      "transaction_id": "2106710235",
+      "lender_name": "WELLS FARGO BANK NA",
+      "is_private_lender": false,
+      "loan_type_id": 32,
+      "loan_type": "Reverse Mortgage",
+      "loan_financing_type_id": 2,
+      "loan_financing_type": "Fixed Rate",
+      "loan_amount": 465000,
+      "loan_interest_rate": 5.36,
+      "loan_term_months": 999,
+      "loan_start_date": "2009-09-10T00:00:00.000Z",
+      "loan_recording_date": "2009-09-10T00:00:00.000Z",
+      "loan_due_date": "2039-09-10T00:00:00.000Z",
+      "has_adjustable_rate_rider": false,
+      "lien_position": 1,
+      "classification": "primary",
+      "classification_label": "Primary mortgage",
+      "classification_reason": "The mortgage record identifies this as lien position 1."
+     }
+    ],
+    "credits": {
+     "properties": 1,
+     "people": 0
+    }
+   },
+   "dm_enrichment_status": "enriched",
+   "enrichment_sources": [
+    "dealmachine"
+   ],
+   "owner_occupied": true,
+   "owner_mailing_address": "87 FOXWOOD ROAD",
+   "owner_mailing_city": "LAKEWOOD",
+   "owner_mailing_state": "NJ",
+   "owner_mailing_zip": "08701",
+   "absentee": false,
+   "out_of_state": false
+  },
+  {
+   "lead_id": "sheriff_foreclosure:CH_780760",
+   "lead_origin_type": "RECORDED_EVENT",
+   "primary_event_date": "2026-10-06",
+   "scheduled_event_category": "UPCOMING_SALE",
+   "qualification_status": "QUALIFIED",
+   "source_ids": [
+    "sheriff_foreclosure"
+   ],
+   "evidence_ids": [
+    "sheriff_foreclosure:CH_780760"
+   ],
+   "lead_status": "APPROVED_FOR_DASHBOARD",
+   "doc_type": "sheriff_sale_listing",
+   "distress_signal": "foreclosure_sale_scheduled",
+   "chancery_docket": "CH 780760",
+   "plaintiff": "ONSLOW BAY FINANCIAL LLC",
+   "defendant_name": "MICHAEL P. AGUGLIARO, ET AL",
+   "upset_amount": 314804.55,
+   "sale_date": "2026-10-06",
+   "adjournment_date": null,
+   "sheriff_status": null,
+   "attorney_firm": "BROCK & SCOTT PLLC",
+   "attorney_phone": "844-856-6646",
+   "property_address": "100 ROANOKE AVE SEASIDE",
+   "property_city": "HEIGHTS",
+   "property_state": "NJ",
+   "property_zip": "08751",
+   "block": "1681",
+   "lot": "45,46,47,48",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "PARCEL_NOT_JOINED",
+   "parcel_id": null,
+   "parcel_muni": null,
+   "parcel_address": null,
+   "land_value": null,
+   "improvement_value": null,
+   "net_value": null,
+   "year_built": null,
+   "acreage": null,
+   "dwelling_units": null,
+   "last_sale_price": null,
+   "last_sale_date": null,
+   "prop_class": null,
+   "dealmachine": {
+    "source": "dealmachine",
+    "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+    "matched": false,
+    "enrichment_status": "no_dm_record",
+    "matched_by": "address",
+    "enriched_at": "2026-09-25T06:35:39.977848+00:00",
+    "billing_cycle": "2026-09-07T18:06:43.000Z",
+    "match_failure": {
+     "code": "no_match",
+     "reason": "No property found at this address"
+    }
+   },
+   "dm_enrichment_status": "no_dm_record",
+   "enrichment_sources": [
+    "dealmachine"
+   ],
+   "owner_occupied": null,
+   "owner_mailing_address": null,
+   "owner_mailing_city": null,
+   "owner_mailing_state": null,
+   "owner_mailing_zip": null,
+   "absentee": false,
+   "out_of_state": false
+  },
+  {
+   "lead_id": "sheriff_foreclosure:CH_780761",
+   "lead_origin_type": "RECORDED_EVENT",
+   "primary_event_date": "2026-10-06",
+   "scheduled_event_category": "UPCOMING_SALE",
+   "qualification_status": "QUALIFIED",
+   "source_ids": [
+    "sheriff_foreclosure"
+   ],
+   "evidence_ids": [
+    "sheriff_foreclosure:CH_780761"
+   ],
+   "lead_status": "APPROVED_FOR_DASHBOARD",
+   "doc_type": "sheriff_sale_listing",
+   "distress_signal": "foreclosure_sale_scheduled",
+   "chancery_docket": "CH 780761",
+   "plaintiff": "JPMORGAN CHASE BANK, NATIONAL ASSOC",
+   "defendant_name": "1704 FLEETWOOD, L.L.C., ET ALS",
+   "upset_amount": 96587.71,
+   "sale_date": "2026-10-06",
+   "adjournment_date": null,
+   "sheriff_status": null,
+   "attorney_firm": "ROBERTSON ANSCHUTZ SCHNEID CRANE & PARTNERS PLLC.",
+   "attorney_phone": "973-575-0707",
+   "property_address": "1704 FLEETWOOD DRIVE FORKED",
+   "property_city": "RIVER",
+   "property_state": "NJ",
+   "property_zip": "08731",
+   "block": "1282",
+   "lot": "11 & 12",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "PARCEL_NOT_JOINED",
+   "parcel_id": null,
+   "parcel_muni": null,
+   "parcel_address": null,
+   "land_value": null,
+   "improvement_value": null,
+   "net_value": null,
+   "year_built": null,
+   "acreage": null,
+   "dwelling_units": null,
+   "last_sale_price": null,
+   "last_sale_date": null,
+   "prop_class": null,
+   "dealmachine": {
+    "source": "dealmachine",
+    "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+    "matched": false,
+    "enrichment_status": "no_dm_record",
+    "matched_by": "address",
+    "enriched_at": "2026-09-25T06:35:39.977848+00:00",
+    "billing_cycle": "2026-09-07T18:06:43.000Z",
+    "match_failure": {
+     "code": "no_match",
+     "reason": "No property found at this address"
+    }
+   },
+   "dm_enrichment_status": "no_dm_record",
+   "enrichment_sources": [
+    "dealmachine"
+   ],
+   "owner_occupied": null,
+   "owner_mailing_address": null,
+   "owner_mailing_city": null,
+   "owner_mailing_state": null,
+   "owner_mailing_zip": null,
+   "absentee": false,
+   "out_of_state": false
+  },
+  {
+   "lead_id": "sheriff_foreclosure:CH_780762",
+   "lead_origin_type": "RECORDED_EVENT",
+   "primary_event_date": "2026-10-06",
+   "scheduled_event_category": "UPCOMING_SALE",
+   "qualification_status": "QUALIFIED",
+   "source_ids": [
+    "sheriff_foreclosure"
+   ],
+   "evidence_ids": [
+    "sheriff_foreclosure:CH_780762"
+   ],
+   "lead_status": "APPROVED_FOR_DASHBOARD",
+   "doc_type": "sheriff_sale_listing",
+   "distress_signal": "foreclosure_sale_scheduled",
+   "chancery_docket": "CH 780762",
+   "plaintiff": "WATERS EDGE AT TOMS RIVER CONDOMINI",
+   "defendant_name": "MARY ELLEN LOPEZ",
+   "upset_amount": 7697.23,
+   "sale_date": "2026-10-06",
+   "adjournment_date": null,
+   "sheriff_status": null,
+   "attorney_firm": "CUTOLO BARROS",
+   "attorney_phone": "732-414-1170",
+   "property_address": "1713 WATERS EDGE DRIVE TOMS",
+   "property_city": "RIVER",
+   "property_state": "NJ",
+   "property_zip": "08753",
+   "block": "442.15",
+   "lot": "8 QUAL. C1713",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "PARCEL_NOT_JOINED",
+   "parcel_id": null,
+   "parcel_muni": null,
+   "parcel_address": null,
+   "land_value": null,
+   "improvement_value": null,
+   "net_value": null,
+   "year_built": null,
+   "acreage": null,
+   "dwelling_units": null,
+   "last_sale_price": null,
+   "last_sale_date": null,
+   "prop_class": null,
+   "dealmachine": {
+    "source": "dealmachine",
+    "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+    "matched": false,
+    "enrichment_status": "no_dm_record",
+    "matched_by": "address",
+    "enriched_at": "2026-09-25T06:35:39.977848+00:00",
+    "billing_cycle": "2026-09-07T18:06:43.000Z",
+    "match_failure": {
+     "code": "no_match",
+     "reason": "No property found at this address"
+    }
+   },
+   "dm_enrichment_status": "no_dm_record",
+   "enrichment_sources": [
+    "dealmachine"
+   ],
+   "owner_occupied": null,
+   "owner_mailing_address": null,
+   "owner_mailing_city": null,
+   "owner_mailing_state": null,
+   "owner_mailing_zip": null,
+   "absentee": false,
+   "out_of_state": false
+  },
+  {
+   "lead_id": "sheriff_foreclosure:CH_780763",
+   "lead_origin_type": "RECORDED_EVENT",
+   "primary_event_date": "2026-10-06",
+   "scheduled_event_category": "UPCOMING_SALE",
+   "qualification_status": "QUALIFIED",
+   "source_ids": [
+    "sheriff_foreclosure"
+   ],
+   "evidence_ids": [
+    "sheriff_foreclosure:CH_780763"
+   ],
+   "lead_status": "APPROVED_FOR_DASHBOARD",
+   "doc_type": "sheriff_sale_listing",
+   "distress_signal": "foreclosure_sale_scheduled",
+   "chancery_docket": "CH 780763",
+   "plaintiff": "CITIZENS BANK, N.A.",
+   "defendant_name": "JAMES AMBROSE MORAN, ETC., ET ALS",
+   "upset_amount": 406893.16,
+   "sale_date": "2026-10-06",
+   "adjournment_date": null,
+   "sheriff_status": null,
+   "attorney_firm": "MCCABE, WEISBERG & CONWAY, LLC",
+   "attorney_phone": "856-858-7080",
+   "property_address": "104 BOWLINE ROAD",
+   "property_city": "MANAHAWKIN",
+   "property_state": "NJ",
+   "property_zip": "08050",
+   "block": "23",
+   "lot": "44.132",
+   "owner_name": "DEBRA VARLARO",
+   "owner_resolved": false,
+   "owner_resolution_status": "PARCEL_NOT_JOINED",
+   "parcel_id": null,
+   "parcel_muni": null,
+   "parcel_address": null,
+   "land_value": null,
+   "improvement_value": null,
+   "net_value": null,
+   "year_built": null,
+   "acreage": null,
+   "dwelling_units": null,
+   "last_sale_price": null,
+   "last_sale_date": null,
+   "prop_class": null,
+   "dealmachine": {
+    "source": "dealmachine",
+    "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+    "matched": true,
+    "enrichment_status": "enriched",
+    "matched_by": "address",
+    "enriched_at": "2026-09-25T06:35:39.977848+00:00",
+    "billing_cycle": "2026-09-07T18:06:43.000Z",
+    "owner_name": "DEBRA VARLARO",
+    "owner_names": [
+     "DEBRA VARLARO",
+     "ROBERT MORAN",
+     "KAYLA VARLARO"
+    ],
+    "phones": [
+     "6096986811",
+     "7322280934",
+     "6095692880",
+     "6098919253",
+     "6095972385",
+     "6097132803",
+     "6095977075"
+    ],
+    "emails": [
+     "DEBRAVARLARO414@GMAIL.COM",
+     "R_MORAN1@YAHOO.COM",
+     "DAWNBORST@GMAIL.COM"
+    ],
+    "contacts": [
+     {
+      "dm_person_id": "per_150850154397",
+      "full_name": "DEBRA VARLARO",
+      "first_name": "DEBRA",
+      "last_name": "VARLARO",
+      "contact_type": "owner",
+      "is_resident": true,
+      "phones": [
+       {
+        "number": "6096986811",
+        "type": "landline",
+        "do_not_call": true
+       },
+       {
+        "number": "7322280934",
+        "type": "wireless",
+        "do_not_call": false
+       },
+       {
+        "number": "6095692880",
+        "type": "wireless",
+        "do_not_call": false
+       }
+      ],
+      "emails": [
+       "DEBRAVARLARO414@GMAIL.COM"
+      ]
+     },
+     {
+      "dm_person_id": "per_1501013462536",
+      "full_name": "ROBERT MORAN",
+      "first_name": "ROBERT",
+      "last_name": "MORAN",
+      "contact_type": "owner",
+      "is_resident": true,
+      "phones": [
+       {
+        "number": "6098919253",
+        "type": "wireless",
+        "do_not_call": false
+       },
+       {
+        "number": "6095972385",
+        "type": "landline",
+        "do_not_call": true
+       },
+       {
+        "number": "6097132803",
+        "type": "wireless",
+        "do_not_call": true
+       }
+      ],
+      "emails": [
+       "R_MORAN1@YAHOO.COM",
+       "DAWNBORST@GMAIL.COM"
+      ]
+     },
+     {
+      "dm_person_id": "per_1505596483745",
+      "full_name": "KAYLA VARLARO",
+      "first_name": "KAYLA",
+      "last_name": "VARLARO",
+      "contact_type": "owner",
+      "is_resident": true,
+      "phones": [
+       {
+        "number": "6095977075",
+        "type": "landline",
+        "do_not_call": true
+       }
+      ],
+      "emails": []
+     }
+    ],
+    "mailing_address": null,
+    "property": {
+     "dm_property_id": "prop_86928906",
+     "full_address": "104 Bowline Rd Manahawkin, NJ 08050",
+     "address": "104 Bowline Rd",
+     "city": "Manahawkin",
+     "state": "NJ",
+     "zip": "08050",
+     "latitude": 39.739893952,
+     "longitude": -74.29697411,
+     "estimated_value": 453000,
+     "estimated_equity_amount": 174066,
+     "estimated_equity_percentage": 37,
+     "year_built": 1979,
+     "living_area_sqft": 1406,
+     "lot_size_sqft": 11265,
+     "num_bedrooms": 3,
+     "num_bathrooms": 2,
+     "last_sale_date": "2021-11-15T00:00:00.000Z",
+     "last_sale_amount": 319900,
+     "total_assessed_value": 413300,
+     "annual_property_tax_amount": 5078,
+     "num_mortgages": 1,
+     "total_original_loan_amount": 310235,
+     "total_estimated_loan_balance": 278934,
+     "owner_occupied": false,
+     "apn": "31-00044-132-00023"
+    },
+    "mortgages": [
+     {
+      "mortgage_number": 1,
+      "id": "11869125809",
+      "transaction_id": "11869125809",
+      "lender_name": "AMERICAS CHOICE HOME LOANS LP",
+      "is_private_lender": false,
+      "loan_type_id": 12,
+      "loan_type": "FHA",
+      "loan_financing_type": "Unknown Financing Type",
+      "loan_amount": 310235,
+      "loan_balance": 278934,
+      "loan_interest_rate": 3.01,
+      "loan_term_months": 360,
+      "loan_start_date": "2021-11-15T00:00:00.000Z",
+      "loan_recording_date": "2021-11-15T00:00:00.000Z",
+      "loan_due_date": "2051-12-01T00:00:00.000Z",
+      "has_adjustable_rate_rider": false,
+      "lien_position": 1,
+      "estimated_payment_amount": 1309.64,
+      "classification": "primary",
+      "classification_label": "Primary mortgage",
+      "classification_reason": "The mortgage record identifies this as lien position 1."
+     }
+    ],
+    "credits": {
+     "properties": 1,
+     "people": 3
+    }
+   },
+   "dm_enrichment_status": "enriched",
+   "enrichment_sources": [
+    "dealmachine"
+   ],
+   "owner_name_source": "dealmachine",
+   "owner_occupied": false,
+   "owner_mailing_address": null,
+   "owner_mailing_city": null,
+   "owner_mailing_state": null,
+   "owner_mailing_zip": null,
+   "absentee": true,
+   "out_of_state": false
+  },
+  {
+   "lead_id": "sheriff_foreclosure:CH_780764",
+   "lead_origin_type": "RECORDED_EVENT",
+   "primary_event_date": "2026-10-06",
+   "scheduled_event_category": "UPCOMING_SALE",
+   "qualification_status": "QUALIFIED",
+   "source_ids": [
+    "sheriff_foreclosure",
+    "njogis_parcels_modiv"
+   ],
+   "evidence_ids": [
+    "sheriff_foreclosure:CH_780764",
+    "njogis_parcels_modiv:1525_194_6"
+   ],
+   "lead_status": "APPROVED_FOR_DASHBOARD",
+   "doc_type": "sheriff_sale_listing",
+   "distress_signal": "foreclosure_sale_scheduled",
+   "chancery_docket": "CH 780764",
+   "plaintiff": "LAKEVIEW LOAN SERVICING, LLC",
+   "defendant_name": "TERENCE TRYON, ET ALS",
+   "upset_amount": 291568.4,
+   "sale_date": "2026-10-06",
+   "adjournment_date": null,
+   "sheriff_status": null,
+   "attorney_firm": "MCCABE, WEISBERG & CONWAY, LLC",
+   "attorney_phone": "856-858-7080",
+   "property_address": "2609 CEDAR STREET POINT",
+   "property_city": "PLEASANT",
+   "property_state": "NJ",
+   "property_zip": "08742",
+   "block": "194",
+   "lot": "6",
+   "owner_name": "TERENCE TRYON",
+   "owner_resolved": true,
+   "owner_resolution_status": "DEALMACHINE_RESOLVED",
+   "parcel_id": "1525_194_6",
+   "parcel_muni": "POINT PLEASANT BORO",
+   "parcel_address": "2609 CEDAR ST",
+   "land_value": 184000,
+   "improvement_value": 91200,
+   "net_value": 275200,
+   "year_built": 1955,
+   "acreage": 0.2273,
+   "dwelling_units": 1,
+   "last_sale_price": 295000,
+   "last_sale_date": "2019-10-09",
+   "prop_class": "2",
+   "dealmachine": {
+    "source": "dealmachine",
+    "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+    "matched": true,
+    "enrichment_status": "enriched",
+    "matched_by": "apn",
+    "enriched_at": "2026-09-25T06:35:39.977848+00:00",
+    "billing_cycle": "2026-09-07T18:06:43.000Z",
+    "owner_name": "TERENCE TRYON",
+    "owner_names": [
+     "TERENCE TRYON"
+    ],
+    "phones": [
+     "2018195885"
+    ],
+    "emails": [
+     "TTRYON08@YAHOO.COM"
+    ],
+    "contacts": [
+     {
+      "dm_person_id": "per_150552560702",
+      "full_name": "TERENCE TRYON",
+      "first_name": "TERENCE",
+      "last_name": "TRYON",
+      "contact_type": "owner",
+      "is_resident": true,
+      "phones": [
+       {
+        "number": "2018195885",
+        "type": "wireless",
+        "do_not_call": false
+       }
+      ],
+      "emails": [
+       "TTRYON08@YAHOO.COM"
+      ]
+     }
+    ],
+    "mailing_address": "2609 Cedar St Point Pleasant Boro, NJ 08742",
+    "property": {
+     "dm_property_id": "prop_86955116",
+     "full_address": "2609 Cedar St Point Pleasant Boro, NJ 08742",
+     "address": "2609 Cedar St",
+     "city": "Point Pleasant Boro",
+     "state": "NJ",
+     "zip": "08742",
+     "latitude": 40.08067576,
+     "longitude": -74.07701931,
+     "estimated_value": 580000,
+     "estimated_equity_amount": 335216,
+     "estimated_equity_percentage": 60,
+     "year_built": 1955,
+     "living_area_sqft": 986,
+     "lot_size_sqft": 9901,
+     "num_bedrooms": 2,
+     "num_bathrooms": 1,
+     "last_sale_date": "2019-10-24T00:00:00.000Z",
+     "last_sale_amount": 295000,
+     "total_assessed_value": 275200,
+     "annual_property_tax_amount": 6671,
+     "num_mortgages": 1,
+     "total_original_loan_amount": 285154,
+     "total_estimated_loan_balance": 244784,
+     "owner_occupied": true,
+     "apn": "25-00194-0000-00006"
+    },
+    "mortgages": [
+     {
+      "mortgage_number": 1,
+      "id": "11672626742",
+      "transaction_id": "11672626742",
+      "lender_name": "FINANCE OF AMERICA MORTGAGE LL",
+      "is_private_lender": false,
+      "loan_type_id": 12,
+      "loan_type": "FHA",
+      "loan_financing_type": "Unknown Financing Type",
+      "loan_amount": 285154,
+      "loan_balance": 244784,
+      "loan_interest_rate": 3.5,
+      "loan_term_months": 360,
+      "loan_start_date": "2019-10-24T00:00:00.000Z",
+      "loan_recording_date": "2019-10-24T00:00:00.000Z",
+      "loan_due_date": "2049-11-01T00:00:00.000Z",
+      "has_adjustable_rate_rider": false,
+      "lien_position": 1,
+      "estimated_payment_amount": 1280.47,
+      "classification": "primary",
+      "classification_label": "Primary mortgage",
+      "classification_reason": "The mortgage record identifies this as lien position 1."
+     }
+    ],
+    "credits": {
+     "properties": 1,
+     "people": 1
+    }
+   },
+   "dm_enrichment_status": "enriched",
+   "enrichment_sources": [
+    "dealmachine"
+   ],
+   "owner_name_source": "dealmachine",
+   "owner_resolution_status_prior": "DANIELS_LAW_REDACTED",
+   "daniels_law_backfilled": true,
+   "owner_occupied": true,
+   "owner_mailing_address": "2609 CEDAR ST",
+   "owner_mailing_city": "POINT PLEASANT",
+   "owner_mailing_state": "NJ",
+   "owner_mailing_zip": "08742",
+   "absentee": false,
+   "out_of_state": false
+  },
+  {
+   "lead_id": "surrogate_probate:268575",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-07-07",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:268575"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "268575",
+   "probate_case_type": "Probate",
+   "filed_date": "2026-07-07",
+   "decedent_name": "Mazzarisi Yolanda",
+   "decedent_date_of_birth": "1932-10-22",
+   "decedent_date_of_death": "2026-06-12",
+   "property_city": "Jackson",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:268794",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-07-21",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:268794"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "268794",
+   "probate_case_type": "Administration",
+   "filed_date": "2026-07-21",
+   "decedent_name": "O'Neill Paul J. Jr.",
+   "decedent_date_of_birth": "1964-06-02",
+   "decedent_date_of_death": "2026-05-20",
+   "property_city": "Lakewood",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:268937",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-07-30",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:268937"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "268937",
+   "probate_case_type": "Guardianship of Incapacitated",
+   "filed_date": "2026-07-30",
+   "decedent_name": "Haran Gracie S",
+   "decedent_date_of_birth": "2008-07-12",
+   "decedent_date_of_death": null,
+   "property_city": "New Egypt",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:269394",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-09-01",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:269394"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "269394",
+   "probate_case_type": "Administration",
+   "filed_date": "2026-09-01",
+   "decedent_name": "Hampton Sarah",
+   "decedent_date_of_birth": "1956-09-23",
+   "decedent_date_of_death": "2024-05-12",
+   "property_city": "Berkeley",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:269602",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-09-15",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:269602"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "269602",
+   "probate_case_type": "Probate",
+   "filed_date": "2026-09-15",
+   "decedent_name": "Rendfrey Alderina M.",
+   "decedent_date_of_birth": "1955-10-17",
+   "decedent_date_of_death": "2026-08-17",
+   "property_city": "Toms River",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:269659",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-09-18",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:269659"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "269659",
+   "probate_case_type": "Probate",
+   "filed_date": "2026-09-18",
+   "decedent_name": "Pecora James Anthony",
+   "decedent_date_of_birth": "1952-01-04",
+   "decedent_date_of_death": "2026-09-13",
+   "property_city": "Manchester Township",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:269672",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-09-21",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:269672"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "269672",
+   "probate_case_type": "Administration",
+   "filed_date": "2026-09-21",
+   "decedent_name": "Shaw Joan V.",
+   "decedent_date_of_birth": "1934-09-17",
+   "decedent_date_of_death": "2026-09-02",
+   "property_city": "Jackson",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:269703",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-09-22",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:269703"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "269703",
+   "probate_case_type": "Affidavit of Surviving Spouse or Domestic Partner",
+   "filed_date": "2026-09-22",
+   "decedent_name": "Spaloss Janet",
+   "decedent_date_of_birth": "1959-10-18",
+   "decedent_date_of_death": "2020-10-15",
+   "property_city": "Jackson",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:269710",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-09-22",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:269710"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "269710",
+   "probate_case_type": "Probate",
+   "filed_date": "2026-09-22",
+   "decedent_name": "Voelker Robert Andrew",
+   "decedent_date_of_birth": "1938-10-08",
+   "decedent_date_of_death": "2026-08-25",
+   "property_city": "Stafford Township",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:269731",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-09-23",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:269731"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "269731",
+   "probate_case_type": "Administration",
+   "filed_date": "2026-09-23",
+   "decedent_name": "McGrath Lael L.",
+   "decedent_date_of_birth": "1951-09-30",
+   "decedent_date_of_death": "2026-08-05",
+   "property_city": "Toms River",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:269733",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-09-24",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:269733"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "269733",
+   "probate_case_type": "Probate",
+   "filed_date": "2026-09-24",
+   "decedent_name": "Santaniello Judith A.",
+   "decedent_date_of_birth": "1942-07-05",
+   "decedent_date_of_death": "2026-09-13",
+   "property_city": "Jackson",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:269734",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-09-24",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:269734"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "269734",
+   "probate_case_type": "Recording Foreign Will",
+   "filed_date": "2026-09-24",
+   "decedent_name": "Conti Arlene",
+   "decedent_date_of_birth": "1935-11-02",
+   "decedent_date_of_death": "2026-04-07",
+   "property_city": "Philadelphia",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:269736",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-09-24",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:269736"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "269736",
+   "probate_case_type": "Affidavit Next of Kin",
+   "filed_date": "2026-09-24",
+   "decedent_name": "Freeman Erburde",
+   "decedent_date_of_birth": "1943-03-02",
+   "decedent_date_of_death": "2026-08-05",
+   "property_city": "Lakewood",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:269739",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-09-24",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:269739"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "269739",
+   "probate_case_type": "Probate",
+   "filed_date": "2026-09-24",
+   "decedent_name": "Johnson Patricia",
+   "decedent_date_of_birth": "1944-05-16",
+   "decedent_date_of_death": "2023-11-04",
+   "property_city": "Lakewood",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:269740",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-09-24",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:269740"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "269740",
+   "probate_case_type": "Probate",
+   "filed_date": "2026-09-24",
+   "decedent_name": "LoBello Ann",
+   "decedent_date_of_birth": "1924-08-24",
+   "decedent_date_of_death": "2026-09-11",
+   "property_city": "Toms River",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:269742",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-09-24",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:269742"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "269742",
+   "probate_case_type": "Administration",
+   "filed_date": "2026-09-24",
+   "decedent_name": "Walczak Andrew Michael",
+   "decedent_date_of_birth": "1971-10-20",
+   "decedent_date_of_death": "2026-09-10",
+   "property_city": "Jackson",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:269745",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-09-24",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:269745"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "269745",
+   "probate_case_type": "Probate",
+   "filed_date": "2026-09-24",
+   "decedent_name": "Fee Thomas",
+   "decedent_date_of_birth": "1941-11-01",
+   "decedent_date_of_death": "2026-08-05",
+   "property_city": "Beachwood Borough",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:269746",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-09-24",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:269746"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "269746",
+   "probate_case_type": "Probate",
+   "filed_date": "2026-09-24",
+   "decedent_name": "D'Adamo Juliet Marie",
+   "decedent_date_of_birth": "1951-02-12",
+   "decedent_date_of_death": "2025-08-23",
+   "property_city": "Stafford Township",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:269747",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-09-24",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:269747"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "269747",
+   "probate_case_type": "Probate",
+   "filed_date": "2026-09-24",
+   "decedent_name": "Barich Zlatko M.",
+   "decedent_date_of_birth": "1940-04-27",
+   "decedent_date_of_death": "2026-08-19",
+   "property_city": "Brick",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:269749",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-09-24",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:269749"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "269749",
+   "probate_case_type": "Probate",
+   "filed_date": "2026-09-24",
+   "decedent_name": "Carmon Laura",
+   "decedent_date_of_birth": "1963-11-06",
+   "decedent_date_of_death": "2023-05-31",
+   "property_city": "Manchester",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
   }
  ],
  "dealmachine_enrichment": {
-  "enriched_at": "2026-09-24T06:36:36.327631+00:00",
+  "enriched_at": "2026-09-25T06:35:39.977848+00:00",
   "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
   "source": "dealmachine",
-  "actionable_targets": 657,
-  "api_calls_this_run": 0,
+  "actionable_targets": 677,
+  "api_calls_this_run": 20,
   "reattached_from_cache": 657,
-  "enriched": 526,
-  "genuine_no_match": 131,
+  "enriched": 539,
+  "genuine_no_match": 138,
   "pending_retry": 0,
-  "owner_names_recovered": 364,
-  "daniels_law_backfilled": 64,
-  "contacts_attached": 535,
-  "phones_attached": 939,
-  "emails_attached": 913,
+  "owner_names_recovered": 370,
+  "daniels_law_backfilled": 69,
+  "contacts_attached": 545,
+  "phones_attached": 958,
+  "emails_attached": 927,
   "credits_before": {
    "included": 100000,
-   "total_available": 58353,
+   "total_available": 57917,
    "total_cap": 100000,
    "base_included": 100000,
    "monthly_credit_grant_cap": 0,
    "monthly_included": 100000,
    "additional_credit_balance": 0,
-   "used": 41647,
-   "remaining": 58353,
-   "monthly_remaining": 58353,
+   "used": 42083,
+   "remaining": 57917,
+   "monthly_remaining": 57917,
    "additional_remaining": 0,
    "overage": 0,
    "pools": {
     "monthly": {
      "included": 100000,
-     "used": 41647,
-     "remaining": 58353
+     "used": 42083,
+     "remaining": 57917
     },
     "additional": {
      "available": 0,
@@ -174710,29 +177814,29 @@
     }
    },
    "breakdown": {
-    "properties": 28196,
-    "people": 13451,
+    "properties": 28390,
+    "people": 13693,
     "companies": 0
    }
   },
   "credits_after": {
    "included": 100000,
-   "total_available": 58353,
+   "total_available": 57894,
    "total_cap": 100000,
    "base_included": 100000,
    "monthly_credit_grant_cap": 0,
    "monthly_included": 100000,
    "additional_credit_balance": 0,
-   "used": 41647,
-   "remaining": 58353,
-   "monthly_remaining": 58353,
+   "used": 42106,
+   "remaining": 57894,
+   "monthly_remaining": 57894,
    "additional_remaining": 0,
    "overage": 0,
    "pools": {
     "monthly": {
      "included": 100000,
-     "used": 41647,
-     "remaining": 58353
+     "used": 42106,
+     "remaining": 57894
     },
     "additional": {
      "available": 0,
@@ -174741,8 +177845,8 @@
     }
    },
    "breakdown": {
-    "properties": 28196,
-    "people": 13451,
+    "properties": 28403,
+    "people": 13703,
     "companies": 0
    }
   }

@@ -63585,5 +63585,1407 @@
     "reason": "No property found at this address"
    }
   }
+ },
+ "sheriff_foreclosure:CH_776240": {
+  "hash": "00a44f4b4f046296",
+  "enriched_at": "2026-09-25T06:35:39.977848+00:00",
+  "block": {
+   "source": "dealmachine",
+   "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+   "matched": true,
+   "enrichment_status": "enriched",
+   "matched_by": "apn",
+   "enriched_at": "2026-09-25T06:35:39.977848+00:00",
+   "billing_cycle": "2026-09-07T18:06:43.000Z",
+   "owner_name": null,
+   "owner_names": [],
+   "phones": [],
+   "emails": [],
+   "contacts": [],
+   "mailing_address": null,
+   "property": {
+    "dm_property_id": "prop_86828162",
+    "full_address": "1158 Cecil Ct Lakewood, NJ 08701",
+    "address": "1158 Cecil Ct",
+    "city": "Lakewood",
+    "state": "NJ",
+    "zip": "08701",
+    "latitude": 40.056159,
+    "longitude": -74.213633,
+    "estimated_value": 927000,
+    "estimated_equity_amount": 627120,
+    "estimated_equity_percentage": 65,
+    "year_built": 1988,
+    "living_area_sqft": 2862,
+    "lot_size_sqft": 9431,
+    "num_bedrooms": 7,
+    "num_bathrooms": 4,
+    "last_sale_date": "2004-06-25T00:00:00.000Z",
+    "last_sale_amount": 385000,
+    "total_assessed_value": 428100,
+    "annual_property_tax_amount": 11075,
+    "num_mortgages": 2,
+    "total_original_loan_amount": 537750,
+    "total_estimated_loan_balance": 299880,
+    "owner_occupied": false,
+    "apn": "15-01051-0000-00049-07"
+   },
+   "mortgages": [
+    {
+     "mortgage_number": 1,
+     "id": "2109277587",
+     "transaction_id": "2109277587",
+     "lender_name": "NEW JERSEY LENDERS CORP",
+     "is_private_lender": false,
+     "loan_type_id": 27,
+     "loan_type": "Unknown",
+     "loan_financing_type": "Unknown Financing Type",
+     "loan_amount": 480000,
+     "loan_balance": 272981,
+     "loan_interest_rate": 6.47,
+     "loan_term_months": 360,
+     "loan_start_date": "2006-10-17T00:00:00.000Z",
+     "loan_recording_date": "2006-10-17T00:00:00.000Z",
+     "loan_due_date": "2036-10-01T00:00:00.000Z",
+     "has_adjustable_rate_rider": false,
+     "lien_position": 1,
+     "estimated_payment_amount": 3024.46,
+     "classification": "primary",
+     "classification_label": "Primary mortgage",
+     "classification_reason": "The mortgage record identifies this as lien position 1."
+    },
+    {
+     "mortgage_number": 2,
+     "id": "1062438612",
+     "transaction_id": "1062438612",
+     "lender_name": "COUNTRYWIDE HOME LOANS INC",
+     "is_private_lender": false,
+     "loan_type_id": 11,
+     "loan_type": "Credit Line",
+     "loan_financing_type": "Unknown Financing Type",
+     "loan_amount": 57750,
+     "loan_balance": 26899,
+     "loan_interest_rate": 6.3,
+     "loan_term_months": 360,
+     "loan_start_date": "2004-06-25T00:00:00.000Z",
+     "loan_recording_date": "2004-06-25T00:00:00.000Z",
+     "loan_due_date": "2034-06-25T00:00:00.000Z",
+     "has_adjustable_rate_rider": false,
+     "lien_position": 2,
+     "estimated_payment_amount": 357.46,
+     "classification": "subordinate",
+     "classification_label": "Possible second lien",
+     "classification_reason": "The mortgage record identifies this as lien position 2."
+    }
+   ],
+   "credits": {
+    "properties": 1,
+    "people": 0
+   }
+  }
+ },
+ "sheriff_foreclosure:CH_777028": {
+  "hash": "3fa344c2c52f8dac",
+  "enriched_at": "2026-09-25T06:35:39.977848+00:00",
+  "block": {
+   "source": "dealmachine",
+   "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+   "matched": true,
+   "enrichment_status": "enriched",
+   "matched_by": "apn",
+   "enriched_at": "2026-09-25T06:35:39.977848+00:00",
+   "billing_cycle": "2026-09-07T18:06:43.000Z",
+   "owner_name": "TAMMY WOLFSOHN",
+   "owner_names": [
+    "TAMMY WOLFSOHN",
+    "KEITH WOLFSOHN"
+   ],
+   "phones": [
+    "7328647248",
+    "7324756046",
+    "7325691816",
+    "7327146695"
+   ],
+   "emails": [
+    "TAMMY.ORLANDO@HOTMAIL.COM",
+    "TAMMY.ORLANDO@MAIL.COM",
+    "TKA81191@COMCAST.NET",
+    "TKA81191@HOTMAIL.COM"
+   ],
+   "contacts": [
+    {
+     "dm_person_id": "per_150501057224",
+     "full_name": "TAMMY WOLFSOHN",
+     "first_name": "TAMMY",
+     "last_name": "WOLFSOHN",
+     "contact_type": "owner",
+     "is_resident": true,
+     "phones": [
+      {
+       "number": "7328647248",
+       "type": "wireless",
+       "do_not_call": false
+      },
+      {
+       "number": "7324756046",
+       "type": "landline",
+       "do_not_call": false
+      },
+      {
+       "number": "7325691816",
+       "type": "wireless",
+       "do_not_call": false
+      }
+     ],
+     "emails": [
+      "TAMMY.ORLANDO@HOTMAIL.COM",
+      "TAMMY.ORLANDO@MAIL.COM",
+      "TKA81191@COMCAST.NET"
+     ]
+    },
+    {
+     "dm_person_id": "per_150779208792",
+     "full_name": "KEITH WOLFSOHN",
+     "first_name": "KEITH",
+     "last_name": "WOLFSOHN",
+     "contact_type": "owner",
+     "is_resident": true,
+     "phones": [
+      {
+       "number": "7328647248",
+       "type": "wireless",
+       "do_not_call": false
+      },
+      {
+       "number": "7324756046",
+       "type": "landline",
+       "do_not_call": false
+      },
+      {
+       "number": "7327146695",
+       "type": "landline",
+       "do_not_call": false
+      }
+     ],
+     "emails": [
+      "TKA81191@HOTMAIL.COM"
+     ]
+    }
+   ],
+   "mailing_address": "634 Campbell Pl Brick, NJ 08724",
+   "property": {
+    "dm_property_id": "prop_86741405",
+    "full_address": "634 Campbell Pl Brick, NJ 08724",
+    "address": "634 Campbell Pl",
+    "city": "Brick",
+    "state": "NJ",
+    "zip": "08724",
+    "latitude": 40.113085,
+    "longitude": -74.124115,
+    "estimated_value": 542000,
+    "estimated_equity_amount": 353911,
+    "estimated_equity_percentage": 64,
+    "year_built": 1960,
+    "living_area_sqft": 1220,
+    "lot_size_sqft": 7501,
+    "num_bedrooms": 3,
+    "num_bathrooms": 2,
+    "last_sale_date": "2005-06-30T00:00:00.000Z",
+    "last_sale_amount": 315000,
+    "total_assessed_value": 256000,
+    "annual_property_tax_amount": 7040,
+    "num_mortgages": 1,
+    "total_original_loan_amount": 315000,
+    "total_estimated_loan_balance": 188089,
+    "owner_occupied": true,
+    "apn": "07-01421-09-00004"
+   },
+   "mortgages": [
+    {
+     "mortgage_number": 1,
+     "id": "1121043975",
+     "transaction_id": "1121043975",
+     "lender_name": "LONG BEACH MORTGAGE CO",
+     "is_private_lender": false,
+     "loan_type_id": 22,
+     "loan_type": "Purchase Money Mortgage",
+     "loan_financing_type_id": 2,
+     "loan_financing_type": "Fixed Rate",
+     "loan_amount": 252000,
+     "loan_balance": 188089,
+     "loan_interest_rate": 5.97,
+     "loan_term_months": 480,
+     "loan_start_date": "2005-06-30T00:00:00.000Z",
+     "loan_recording_date": "2005-06-30T00:00:00.000Z",
+     "loan_due_date": "2045-07-01T00:00:00.000Z",
+     "has_adjustable_rate_rider": true,
+     "lien_position": 1,
+     "estimated_payment_amount": 1381.27,
+     "classification": "primary",
+     "classification_label": "Primary mortgage",
+     "classification_reason": "The mortgage record identifies this as lien position 1."
+    },
+    {
+     "mortgage_number": 2,
+     "id": "1121043975",
+     "transaction_id": "1121043975",
+     "lender_name": "Unknown Lender",
+     "is_private_lender": false,
+     "loan_type": "Unknown Type",
+     "loan_financing_type": "Unknown Financing Type",
+     "loan_amount": 63000,
+     "loan_term_months": 360,
+     "loan_start_date": "2005-06-30T00:00:00.000Z",
+     "loan_recording_date": "2005-06-30T00:00:00.000Z",
+     "loan_due_date": "2035-06-30T00:00:00.000Z",
+     "has_adjustable_rate_rider": false,
+     "lien_position": 2,
+     "classification": "duplicate_candidate",
+     "classification_label": "Possible duplicate",
+     "classification_reason": "This mortgage repeats a transaction identifier already shown for this property."
+    }
+   ],
+   "credits": {
+    "properties": 1,
+    "people": 2
+   }
+  }
+ },
+ "sheriff_foreclosure:CH_777893": {
+  "hash": "310f92ca1a9294a3",
+  "enriched_at": "2026-09-25T06:35:39.977848+00:00",
+  "block": {
+   "source": "dealmachine",
+   "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+   "matched": true,
+   "enrichment_status": "enriched",
+   "matched_by": "apn",
+   "enriched_at": "2026-09-25T06:35:39.977848+00:00",
+   "billing_cycle": "2026-09-07T18:06:43.000Z",
+   "owner_name": "GERARD RAIMONDI",
+   "owner_names": [
+    "GERARD RAIMONDI",
+    "JOANNE RAIMONDI"
+   ],
+   "phones": [
+    "7323414429",
+    "7327796599",
+    "7322706056",
+    "7328144894"
+   ],
+   "emails": [
+    "DOUBLEJAY1977@AOL.COM",
+    "RCUTIEPIE1@AOL.COM",
+    "DOUBLEJAY041977@GMAIL.COM",
+    "JRAIMONDI1977@GMAIL.COM",
+    "JRAIMONDI1977@HOTMAIL.COM"
+   ],
+   "contacts": [
+    {
+     "dm_person_id": "per_150197512498",
+     "full_name": "GERARD RAIMONDI",
+     "first_name": "GERARD",
+     "last_name": "RAIMONDI",
+     "contact_type": "owner",
+     "is_resident": true,
+     "phones": [
+      {
+       "number": "7323414429",
+       "type": "landline",
+       "do_not_call": true
+      },
+      {
+       "number": "7327796599",
+       "type": "wireless",
+       "do_not_call": true
+      },
+      {
+       "number": "7322706056",
+       "type": "landline",
+       "do_not_call": true
+      }
+     ],
+     "emails": [
+      "DOUBLEJAY1977@AOL.COM",
+      "RCUTIEPIE1@AOL.COM",
+      "DOUBLEJAY041977@GMAIL.COM"
+     ]
+    },
+    {
+     "dm_person_id": "per_150410587214",
+     "full_name": "JOANNE RAIMONDI",
+     "first_name": "JOANNE",
+     "last_name": "RAIMONDI",
+     "contact_type": "owner",
+     "is_resident": true,
+     "phones": [
+      {
+       "number": "7328144894",
+       "type": "wireless",
+       "do_not_call": true
+      },
+      {
+       "number": "7323414429",
+       "type": "landline",
+       "do_not_call": true
+      },
+      {
+       "number": "7327796599",
+       "type": "wireless",
+       "do_not_call": true
+      }
+     ],
+     "emails": [
+      "JRAIMONDI1977@GMAIL.COM",
+      "JRAIMONDI1977@HOTMAIL.COM",
+      "DOUBLEJAY1977@AOL.COM"
+     ]
+    }
+   ],
+   "mailing_address": "225 Medjay Ln Toms River, NJ 08755",
+   "property": {
+    "dm_property_id": "prop_86798438",
+    "full_address": "225 Medjay Ln Toms River, NJ 08755",
+    "address": "225 Medjay Ln",
+    "city": "Toms River",
+    "state": "NJ",
+    "zip": "08755",
+    "latitude": 40.021731,
+    "longitude": -74.237127,
+    "estimated_value": 1302000,
+    "estimated_equity_amount": 1153272,
+    "estimated_equity_percentage": 88,
+    "year_built": 1997,
+    "living_area_sqft": 3896,
+    "lot_size_sqft": 45782,
+    "num_bedrooms": 5,
+    "num_bathrooms": 4,
+    "last_sale_date": "1997-10-14T00:00:00.000Z",
+    "last_sale_amount": 279990,
+    "total_assessed_value": 832700,
+    "annual_property_tax_amount": 16279,
+    "num_mortgages": 1,
+    "total_original_loan_amount": 305000,
+    "total_estimated_loan_balance": 148728,
+    "owner_occupied": true,
+    "apn": "08-00298-0000-00045-16"
+   },
+   "mortgages": [
+    {
+     "mortgage_number": 1,
+     "id": "2106561566",
+     "transaction_id": "2106561566",
+     "lender_name": "CHASE BANK USA NA",
+     "is_private_lender": false,
+     "loan_type_id": 13,
+     "loan_type": "Fannie Mae/Freddie Mac",
+     "loan_financing_type_id": 1,
+     "loan_financing_type": "Adjustable Rate",
+     "loan_amount": 305000,
+     "loan_balance": 148728,
+     "loan_interest_rate": 5.75,
+     "loan_term_months": 360,
+     "loan_start_date": "2005-05-12T00:00:00.000Z",
+     "loan_recording_date": "2005-05-12T00:00:00.000Z",
+     "loan_due_date": "2035-06-01T00:00:00.000Z",
+     "has_adjustable_rate_rider": true,
+     "lien_position": 1,
+     "estimated_payment_amount": 1779.9,
+     "classification": "primary",
+     "classification_label": "Primary mortgage",
+     "classification_reason": "The mortgage record identifies this as lien position 1."
+    }
+   ],
+   "credits": {
+    "properties": 1,
+    "people": 2
+   }
+  }
+ },
+ "sheriff_foreclosure:CH_778965": {
+  "hash": "b297bca4daeab4df",
+  "enriched_at": "2026-09-25T06:35:39.977848+00:00",
+  "block": {
+   "source": "dealmachine",
+   "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+   "matched": true,
+   "enrichment_status": "enriched",
+   "matched_by": "apn",
+   "enriched_at": "2026-09-25T06:35:39.977848+00:00",
+   "billing_cycle": "2026-09-07T18:06:43.000Z",
+   "owner_name": "ROBERT DIBELLA",
+   "owner_names": [
+    "ROBERT DIBELLA"
+   ],
+   "phones": [
+    "7327730293"
+   ],
+   "emails": [
+    "BOBBYJOSEPH@MAIL.COM"
+   ],
+   "contacts": [
+    {
+     "dm_person_id": "per_150454787766",
+     "full_name": "ROBERT DIBELLA",
+     "first_name": "ROBERT",
+     "last_name": "DIBELLA",
+     "contact_type": "owner",
+     "is_resident": false,
+     "phones": [
+      {
+       "number": "7327730293",
+       "type": "wireless",
+       "do_not_call": false
+      }
+     ],
+     "emails": [
+      "BOBBYJOSEPH@MAIL.COM"
+     ]
+    }
+   ],
+   "mailing_address": "1008 Halliard Ave Beachwood, NJ 08722",
+   "property": {
+    "dm_property_id": "prop_86720082",
+    "full_address": "1008 Halliard Ave Beachwood, NJ 08722",
+    "address": "1008 Halliard Ave",
+    "city": "Beachwood",
+    "state": "NJ",
+    "zip": "08722",
+    "latitude": 39.928685,
+    "longitude": -74.20577,
+    "estimated_value": 570000,
+    "estimated_equity_amount": 570000,
+    "estimated_equity_percentage": 100,
+    "year_built": 1971,
+    "living_area_sqft": 2340,
+    "lot_size_sqft": 8002,
+    "num_bedrooms": 4,
+    "num_bathrooms": 2,
+    "last_sale_date": "2001-12-03T00:00:00.000Z",
+    "last_sale_amount": 140000,
+    "total_assessed_value": 224500,
+    "annual_property_tax_amount": 7155,
+    "num_mortgages": 0,
+    "total_original_loan_amount": 0,
+    "total_estimated_loan_balance": 0,
+    "owner_occupied": true,
+    "apn": "05-00005-26-00010"
+   },
+   "mortgages": [],
+   "credits": {
+    "properties": 1,
+    "people": 1
+   }
+  }
+ },
+ "sheriff_foreclosure:CH_779164": {
+  "hash": "d3bd540626b9f500",
+  "enriched_at": "2026-09-25T06:35:39.977848+00:00",
+  "block": {
+   "source": "dealmachine",
+   "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+   "matched": true,
+   "enrichment_status": "enriched",
+   "matched_by": "apn",
+   "enriched_at": "2026-09-25T06:35:39.977848+00:00",
+   "billing_cycle": "2026-09-07T18:06:43.000Z",
+   "owner_name": null,
+   "owner_names": [],
+   "phones": [],
+   "emails": [],
+   "contacts": [],
+   "mailing_address": "12 Dayton Ave Toms River, NJ 08753",
+   "property": {
+    "dm_property_id": "prop_86801104",
+    "full_address": "12 Dayton Ave Toms River, NJ 08753",
+    "address": "12 Dayton Ave",
+    "city": "Toms River",
+    "state": "NJ",
+    "zip": "08753",
+    "latitude": 39.959679,
+    "longitude": -74.198522,
+    "estimated_value": 400000,
+    "estimated_equity_amount": 264568,
+    "estimated_equity_percentage": 70,
+    "year_built": 1984,
+    "living_area_sqft": 1212,
+    "lot_size_sqft": 10001,
+    "num_bedrooms": 3,
+    "num_bathrooms": 2,
+    "last_sale_date": "2015-05-05T00:00:00.000Z",
+    "last_sale_amount": 200000,
+    "total_assessed_value": 264000,
+    "annual_property_tax_amount": 5159,
+    "num_mortgages": 1,
+    "total_original_loan_amount": 180000,
+    "total_estimated_loan_balance": 135432,
+    "owner_occupied": true,
+    "apn": "08-00614-0000-00013"
+   },
+   "mortgages": [
+    {
+     "mortgage_number": 1,
+     "id": "1231004889",
+     "transaction_id": "1231004889",
+     "lender_name": "PROSPECT MORTGAGE LLC",
+     "is_private_lender": false,
+     "loan_type_id": 20,
+     "loan_type": "New Conventional",
+     "loan_financing_type": "Unknown Financing Type",
+     "loan_amount": 180000,
+     "loan_balance": 135432,
+     "loan_interest_rate": 3.76,
+     "loan_term_months": 360,
+     "loan_start_date": "2015-05-05T00:00:00.000Z",
+     "loan_recording_date": "2015-05-05T00:00:00.000Z",
+     "loan_due_date": "2045-05-01T00:00:00.000Z",
+     "has_adjustable_rate_rider": false,
+     "lien_position": 1,
+     "estimated_payment_amount": 834.63,
+     "classification": "primary",
+     "classification_label": "Primary mortgage",
+     "classification_reason": "The mortgage record identifies this as lien position 1."
+    }
+   ],
+   "credits": {
+    "properties": 1,
+    "people": 0
+   }
+  }
+ },
+ "sheriff_foreclosure:CH_780619": {
+  "hash": "50db6de262ea8c61",
+  "enriched_at": "2026-09-25T06:35:39.977848+00:00",
+  "block": {
+   "source": "dealmachine",
+   "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+   "matched": true,
+   "enrichment_status": "enriched",
+   "matched_by": "apn",
+   "enriched_at": "2026-09-25T06:35:39.977848+00:00",
+   "billing_cycle": "2026-09-07T18:06:43.000Z",
+   "owner_name": null,
+   "owner_names": [],
+   "phones": [],
+   "emails": [],
+   "contacts": [],
+   "mailing_address": "4 Chippewa Rd Toms River, NJ 08753",
+   "property": {
+    "dm_property_id": "prop_86738753",
+    "full_address": "4 Chippewa Rd Toms River, NJ 08753",
+    "address": "4 Chippewa Rd",
+    "city": "Toms River",
+    "state": "NJ",
+    "zip": "08753",
+    "latitude": 39.982067,
+    "longitude": -74.169712,
+    "estimated_value": 814000,
+    "estimated_equity_amount": 626131,
+    "estimated_equity_percentage": 75,
+    "year_built": 1974,
+    "living_area_sqft": 2526,
+    "lot_size_sqft": 16422,
+    "num_bedrooms": 4,
+    "num_bathrooms": 4,
+    "last_sale_date": "2009-08-31T00:00:00.000Z",
+    "last_sale_amount": 400000,
+    "total_assessed_value": 488500,
+    "annual_property_tax_amount": 9545,
+    "num_mortgages": 1,
+    "total_original_loan_amount": 300000,
+    "total_estimated_loan_balance": 187869,
+    "owner_occupied": true,
+    "apn": "08-00443-32-00002"
+   },
+   "mortgages": [
+    {
+     "mortgage_number": 1,
+     "id": "11475797253",
+     "transaction_id": "11475797253",
+     "lender_name": "WEICHERT FINANCIAL SERVICES",
+     "is_private_lender": false,
+     "loan_type_id": 1,
+     "loan_type": "Stand Alone First",
+     "loan_financing_type": "Unknown Financing Type",
+     "loan_amount": 300000,
+     "loan_balance": 187869,
+     "loan_interest_rate": 5.17,
+     "loan_term_months": 360,
+     "loan_start_date": "2009-08-31T00:00:00.000Z",
+     "loan_recording_date": "2009-08-31T00:00:00.000Z",
+     "loan_due_date": "2039-09-01T00:00:00.000Z",
+     "has_adjustable_rate_rider": false,
+     "lien_position": 1,
+     "estimated_payment_amount": 1641.78,
+     "classification": "primary",
+     "classification_label": "Primary mortgage",
+     "classification_reason": "The mortgage record identifies this as lien position 1."
+    }
+   ],
+   "credits": {
+    "properties": 1,
+    "people": 0
+   }
+  }
+ },
+ "sheriff_foreclosure:CH_780752": {
+  "hash": "4ef68d36038185fa",
+  "enriched_at": "2026-09-25T06:35:39.977848+00:00",
+  "block": {
+   "source": "dealmachine",
+   "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+   "matched": true,
+   "enrichment_status": "enriched",
+   "matched_by": "apn",
+   "enriched_at": "2026-09-25T06:35:39.977848+00:00",
+   "billing_cycle": "2026-09-07T18:06:43.000Z",
+   "owner_name": null,
+   "owner_names": [],
+   "phones": [],
+   "emails": [],
+   "contacts": [],
+   "mailing_address": null,
+   "property": {
+    "dm_property_id": "prop_86783144",
+    "full_address": "93 Club House Rd Brick, NJ, 08723",
+    "address": "93 Club House Rd",
+    "city": "Brick",
+    "state": "NJ",
+    "zip": "08723",
+    "latitude": 40.027635,
+    "longitude": -74.121008,
+    "estimated_value": 573000,
+    "estimated_equity_amount": 573000,
+    "estimated_equity_percentage": 100,
+    "year_built": 1968,
+    "living_area_sqft": 1493,
+    "lot_size_sqft": 5001,
+    "num_bedrooms": 3,
+    "num_bathrooms": 2,
+    "last_sale_date": "2024-02-02T00:00:00.000Z",
+    "last_sale_amount": 500000,
+    "total_assessed_value": 364000,
+    "annual_property_tax_amount": 9879,
+    "num_mortgages": 0,
+    "total_original_loan_amount": 0,
+    "total_estimated_loan_balance": 0,
+    "owner_occupied": false,
+    "apn": "07-00324-23-00004"
+   },
+   "mortgages": [],
+   "credits": {
+    "properties": 1,
+    "people": 0
+   }
+  }
+ },
+ "sheriff_foreclosure:CH_780753": {
+  "hash": "1e51778695e1ecb8",
+  "enriched_at": "2026-09-25T06:35:39.977848+00:00",
+  "block": {
+   "source": "dealmachine",
+   "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+   "matched": true,
+   "enrichment_status": "enriched",
+   "matched_by": "apn",
+   "enriched_at": "2026-09-25T06:35:39.977848+00:00",
+   "billing_cycle": "2026-09-07T18:06:43.000Z",
+   "owner_name": null,
+   "owner_names": [],
+   "phones": [],
+   "emails": [],
+   "contacts": [],
+   "mailing_address": "110 Starc Rd Toms River, NJ 08755",
+   "property": {
+    "dm_property_id": "prop_86726828",
+    "full_address": "110 Starc Rd Toms River, NJ 08755",
+    "address": "110 Starc Rd",
+    "city": "Toms River",
+    "state": "NJ",
+    "zip": "08755",
+    "latitude": 40.035386,
+    "longitude": -74.215142,
+    "estimated_value": 818000,
+    "estimated_equity_amount": 358046,
+    "estimated_equity_percentage": 40,
+    "year_built": 1975,
+    "living_area_sqft": 1816,
+    "lot_size_sqft": 43708,
+    "num_bedrooms": 3,
+    "num_bathrooms": 2,
+    "last_sale_date": "2022-07-13T00:00:00.000Z",
+    "last_sale_amount": 700000,
+    "total_assessed_value": 506100,
+    "annual_property_tax_amount": 9894,
+    "num_mortgages": 1,
+    "total_original_loan_amount": 490000,
+    "total_estimated_loan_balance": 459954,
+    "owner_occupied": true,
+    "apn": "08-00165-01-00005"
+   },
+   "mortgages": [
+    {
+     "mortgage_number": 1,
+     "id": "11892443391",
+     "transaction_id": "11892443391",
+     "lender_name": "ARC HOME LLC",
+     "is_private_lender": false,
+     "loan_type_id": 20,
+     "loan_type": "New Conventional",
+     "loan_financing_type": "Unknown Financing Type",
+     "loan_amount": 490000,
+     "loan_balance": 459954,
+     "loan_interest_rate": 5.09,
+     "loan_term_months": 360,
+     "loan_start_date": "2022-07-13T00:00:00.000Z",
+     "loan_recording_date": "2022-07-13T00:00:00.000Z",
+     "loan_due_date": "2052-08-01T00:00:00.000Z",
+     "has_adjustable_rate_rider": false,
+     "lien_position": 1,
+     "estimated_payment_amount": 2657.44,
+     "classification": "primary",
+     "classification_label": "Primary mortgage",
+     "classification_reason": "The mortgage record identifies this as lien position 1."
+    }
+   ],
+   "credits": {
+    "properties": 1,
+    "people": 0
+   }
+  }
+ },
+ "sheriff_foreclosure:CH_780755": {
+  "hash": "b8dfff8c25497b53",
+  "enriched_at": "2026-09-25T06:35:39.977848+00:00",
+  "block": {
+   "source": "dealmachine",
+   "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+   "matched": true,
+   "enrichment_status": "enriched",
+   "matched_by": "apn",
+   "enriched_at": "2026-09-25T06:35:39.977848+00:00",
+   "billing_cycle": "2026-09-07T18:06:43.000Z",
+   "owner_name": "ISMAEL RIBOT",
+   "owner_names": [
+    "ISMAEL RIBOT"
+   ],
+   "phones": [
+    "9089020935",
+    "7329036759"
+   ],
+   "emails": [],
+   "contacts": [
+    {
+     "dm_person_id": "per_150159179179",
+     "full_name": "ISMAEL RIBOT",
+     "first_name": "ISMAEL",
+     "last_name": "RIBOT",
+     "contact_type": "owner",
+     "is_resident": true,
+     "phones": [
+      {
+       "number": "9089020935",
+       "type": "wireless",
+       "do_not_call": true
+      },
+      {
+       "number": "7329036759",
+       "type": "landline",
+       "do_not_call": true
+      }
+     ],
+     "emails": []
+    }
+   ],
+   "mailing_address": "450 Godfrey Lake Dr Brick, NJ 08724",
+   "property": {
+    "dm_property_id": "prop_86736378",
+    "full_address": "450 Godfrey Lake Dr Brick, NJ 08724",
+    "address": "450 Godfrey Lake Dr",
+    "city": "Brick",
+    "state": "NJ",
+    "zip": "08724",
+    "latitude": 40.098740669,
+    "longitude": -74.10660159,
+    "estimated_value": 430000,
+    "estimated_equity_amount": 196279,
+    "estimated_equity_percentage": 58,
+    "year_built": 1942,
+    "living_area_sqft": 2110,
+    "lot_size_sqft": 12001,
+    "num_bedrooms": 3,
+    "num_bathrooms": 2,
+    "last_sale_date": "2022-06-21T00:00:00.000Z",
+    "last_sale_amount": 60000,
+    "total_assessed_value": 267300,
+    "annual_property_tax_amount": 7351,
+    "num_mortgages": 1,
+    "total_original_loan_amount": 250000,
+    "total_estimated_loan_balance": 233721,
+    "owner_occupied": true,
+    "apn": "07-01233-0000-00305"
+   },
+   "mortgages": [
+    {
+     "mortgage_number": 1,
+     "id": "11890985863",
+     "transaction_id": "11890985863",
+     "lender_name": "PENNYMAC LOAN SERVICES LLC",
+     "is_private_lender": false,
+     "loan_type_id": 20,
+     "loan_type": "New Conventional",
+     "loan_financing_type": "Unknown Financing Type",
+     "loan_amount": 250000,
+     "loan_balance": 233721,
+     "loan_interest_rate": 5.27,
+     "loan_term_months": 348,
+     "loan_start_date": "2022-06-21T00:00:00.000Z",
+     "loan_recording_date": "2022-06-21T00:00:00.000Z",
+     "loan_due_date": "2051-07-01T00:00:00.000Z",
+     "has_adjustable_rate_rider": false,
+     "lien_position": 1,
+     "estimated_payment_amount": 1403.32,
+     "classification": "primary",
+     "classification_label": "Primary mortgage",
+     "classification_reason": "The mortgage record identifies this as lien position 1."
+    }
+   ],
+   "credits": {
+    "properties": 1,
+    "people": 1
+   }
+  }
+ },
+ "sheriff_foreclosure:CH_780757": {
+  "hash": "d5752e53ed91b744",
+  "enriched_at": "2026-09-25T06:35:39.977848+00:00",
+  "block": {
+   "source": "dealmachine",
+   "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+   "matched": true,
+   "enrichment_status": "enriched",
+   "matched_by": "apn",
+   "enriched_at": "2026-09-25T06:35:39.977848+00:00",
+   "billing_cycle": "2026-09-07T18:06:43.000Z",
+   "owner_name": null,
+   "owner_names": [],
+   "phones": [],
+   "emails": [],
+   "contacts": [],
+   "mailing_address": "901b Dumbarton Dr Lakewood, NJ 08701",
+   "property": {
+    "dm_property_id": "prop_86924246",
+    "full_address": "901b Dumbarton Dr Lakewood, NJ 08701",
+    "address": "901b Dumbarton Dr",
+    "city": "Lakewood",
+    "state": "NJ",
+    "zip": "08701",
+    "latitude": 40.032787946,
+    "longitude": -74.16511408,
+    "estimated_value": 290000,
+    "estimated_equity_amount": 290000,
+    "estimated_equity_percentage": 100,
+    "year_built": 1971,
+    "living_area_sqft": 1490,
+    "lot_size_sqft": 1739,
+    "num_bedrooms": 2,
+    "num_bathrooms": 2,
+    "last_sale_date": "2000-10-04T00:00:00.000Z",
+    "last_sale_amount": 84000,
+    "total_assessed_value": 121600,
+    "annual_property_tax_amount": 3146,
+    "num_mortgages": 0,
+    "total_original_loan_amount": 285000,
+    "total_estimated_loan_balance": 0,
+    "owner_occupied": true,
+    "apn": "15-01587-0000-00901-02"
+   },
+   "mortgages": [
+    {
+     "mortgage_number": 1,
+     "id": "2023563193",
+     "transaction_id": "2023563193",
+     "lender_name": "FINANCIAL FREEDOM SENIOR FUNDI",
+     "is_private_lender": false,
+     "loan_type_id": 32,
+     "loan_type": "Reverse Mortgage",
+     "loan_financing_type_id": 1,
+     "loan_financing_type": "Adjustable Rate",
+     "loan_amount": 285000,
+     "loan_interest_rate": 6,
+     "loan_term_months": 999,
+     "loan_start_date": "2007-06-19T00:00:00.000Z",
+     "loan_recording_date": "2007-06-19T00:00:00.000Z",
+     "loan_due_date": "2037-06-19T00:00:00.000Z",
+     "has_adjustable_rate_rider": true,
+     "lien_position": 1,
+     "classification": "primary",
+     "classification_label": "Primary mortgage",
+     "classification_reason": "The mortgage record identifies this as lien position 1."
+    }
+   ],
+   "credits": {
+    "properties": 1,
+    "people": 0
+   }
+  }
+ },
+ "sheriff_foreclosure:CH_780758": {
+  "hash": "47c34fdea585bbe0",
+  "enriched_at": "2026-09-25T06:35:39.977848+00:00",
+  "block": {
+   "source": "dealmachine",
+   "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+   "matched": false,
+   "enrichment_status": "no_dm_record",
+   "matched_by": "apn",
+   "enriched_at": "2026-09-25T06:35:39.977848+00:00",
+   "billing_cycle": "2026-09-07T18:06:43.000Z",
+   "match_failure": {
+    "code": "wrong_county",
+    "reason": "APN resolved outside Ocean County (Whippany, 07981)"
+   }
+  }
+ },
+ "sheriff_foreclosure:CH_780759": {
+  "hash": "48e338e9c65a7b22",
+  "enriched_at": "2026-09-25T06:35:39.977848+00:00",
+  "block": {
+   "source": "dealmachine",
+   "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+   "matched": true,
+   "enrichment_status": "enriched",
+   "matched_by": "apn",
+   "enriched_at": "2026-09-25T06:35:39.977848+00:00",
+   "billing_cycle": "2026-09-07T18:06:43.000Z",
+   "owner_name": null,
+   "owner_names": [],
+   "phones": [],
+   "emails": [],
+   "contacts": [],
+   "mailing_address": "87 Foxwood Rd Lakewood, NJ 08701",
+   "property": {
+    "dm_property_id": "prop_86874910",
+    "full_address": "87 Foxwood Rd Lakewood, NJ 08701",
+    "address": "87 Foxwood Rd",
+    "city": "Lakewood",
+    "state": "NJ",
+    "zip": "08701",
+    "latitude": 40.054835,
+    "longitude": -74.233297,
+    "estimated_value": 643000,
+    "estimated_equity_amount": 643000,
+    "estimated_equity_percentage": 100,
+    "year_built": 1999,
+    "living_area_sqft": 2030,
+    "lot_size_sqft": 8799,
+    "num_bedrooms": 2,
+    "num_bathrooms": 2,
+    "last_sale_date": "2001-10-04T00:00:00.000Z",
+    "last_sale_amount": 212400,
+    "total_assessed_value": 265000,
+    "annual_property_tax_amount": 6856,
+    "num_mortgages": 0,
+    "total_original_loan_amount": 465000,
+    "total_estimated_loan_balance": 0,
+    "owner_occupied": true,
+    "apn": "15-00524-03-00016"
+   },
+   "mortgages": [
+    {
+     "mortgage_number": 1,
+     "id": "2106710235",
+     "transaction_id": "2106710235",
+     "lender_name": "WELLS FARGO BANK NA",
+     "is_private_lender": false,
+     "loan_type_id": 32,
+     "loan_type": "Reverse Mortgage",
+     "loan_financing_type_id": 2,
+     "loan_financing_type": "Fixed Rate",
+     "loan_amount": 465000,
+     "loan_interest_rate": 5.36,
+     "loan_term_months": 999,
+     "loan_start_date": "2009-09-10T00:00:00.000Z",
+     "loan_recording_date": "2009-09-10T00:00:00.000Z",
+     "loan_due_date": "2039-09-10T00:00:00.000Z",
+     "has_adjustable_rate_rider": false,
+     "lien_position": 1,
+     "classification": "primary",
+     "classification_label": "Primary mortgage",
+     "classification_reason": "The mortgage record identifies this as lien position 1."
+    }
+   ],
+   "credits": {
+    "properties": 1,
+    "people": 0
+   }
+  }
+ },
+ "sheriff_foreclosure:CH_780764": {
+  "hash": "7b31dfadfbdfc107",
+  "enriched_at": "2026-09-25T06:35:39.977848+00:00",
+  "block": {
+   "source": "dealmachine",
+   "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+   "matched": true,
+   "enrichment_status": "enriched",
+   "matched_by": "apn",
+   "enriched_at": "2026-09-25T06:35:39.977848+00:00",
+   "billing_cycle": "2026-09-07T18:06:43.000Z",
+   "owner_name": "TERENCE TRYON",
+   "owner_names": [
+    "TERENCE TRYON"
+   ],
+   "phones": [
+    "2018195885"
+   ],
+   "emails": [
+    "TTRYON08@YAHOO.COM"
+   ],
+   "contacts": [
+    {
+     "dm_person_id": "per_150552560702",
+     "full_name": "TERENCE TRYON",
+     "first_name": "TERENCE",
+     "last_name": "TRYON",
+     "contact_type": "owner",
+     "is_resident": true,
+     "phones": [
+      {
+       "number": "2018195885",
+       "type": "wireless",
+       "do_not_call": false
+      }
+     ],
+     "emails": [
+      "TTRYON08@YAHOO.COM"
+     ]
+    }
+   ],
+   "mailing_address": "2609 Cedar St Point Pleasant Boro, NJ 08742",
+   "property": {
+    "dm_property_id": "prop_86955116",
+    "full_address": "2609 Cedar St Point Pleasant Boro, NJ 08742",
+    "address": "2609 Cedar St",
+    "city": "Point Pleasant Boro",
+    "state": "NJ",
+    "zip": "08742",
+    "latitude": 40.08067576,
+    "longitude": -74.07701931,
+    "estimated_value": 580000,
+    "estimated_equity_amount": 335216,
+    "estimated_equity_percentage": 60,
+    "year_built": 1955,
+    "living_area_sqft": 986,
+    "lot_size_sqft": 9901,
+    "num_bedrooms": 2,
+    "num_bathrooms": 1,
+    "last_sale_date": "2019-10-24T00:00:00.000Z",
+    "last_sale_amount": 295000,
+    "total_assessed_value": 275200,
+    "annual_property_tax_amount": 6671,
+    "num_mortgages": 1,
+    "total_original_loan_amount": 285154,
+    "total_estimated_loan_balance": 244784,
+    "owner_occupied": true,
+    "apn": "25-00194-0000-00006"
+   },
+   "mortgages": [
+    {
+     "mortgage_number": 1,
+     "id": "11672626742",
+     "transaction_id": "11672626742",
+     "lender_name": "FINANCE OF AMERICA MORTGAGE LL",
+     "is_private_lender": false,
+     "loan_type_id": 12,
+     "loan_type": "FHA",
+     "loan_financing_type": "Unknown Financing Type",
+     "loan_amount": 285154,
+     "loan_balance": 244784,
+     "loan_interest_rate": 3.5,
+     "loan_term_months": 360,
+     "loan_start_date": "2019-10-24T00:00:00.000Z",
+     "loan_recording_date": "2019-10-24T00:00:00.000Z",
+     "loan_due_date": "2049-11-01T00:00:00.000Z",
+     "has_adjustable_rate_rider": false,
+     "lien_position": 1,
+     "estimated_payment_amount": 1280.47,
+     "classification": "primary",
+     "classification_label": "Primary mortgage",
+     "classification_reason": "The mortgage record identifies this as lien position 1."
+    }
+   ],
+   "credits": {
+    "properties": 1,
+    "people": 1
+   }
+  }
+ },
+ "sheriff_foreclosure:CH_779963": {
+  "hash": "b6484bbf2697738c",
+  "enriched_at": "2026-09-25T06:35:39.977848+00:00",
+  "block": {
+   "source": "dealmachine",
+   "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+   "matched": false,
+   "enrichment_status": "no_dm_record",
+   "matched_by": "address",
+   "enriched_at": "2026-09-25T06:35:39.977848+00:00",
+   "billing_cycle": "2026-09-07T18:06:43.000Z",
+   "match_failure": {
+    "code": "no_match",
+    "reason": "No property found at this address"
+   }
+  }
+ },
+ "sheriff_foreclosure:CH_780754": {
+  "hash": "c0a42595ba5ff97b",
+  "enriched_at": "2026-09-25T06:35:39.977848+00:00",
+  "block": {
+   "source": "dealmachine",
+   "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+   "matched": false,
+   "enrichment_status": "no_dm_record",
+   "matched_by": "address",
+   "enriched_at": "2026-09-25T06:35:39.977848+00:00",
+   "billing_cycle": "2026-09-07T18:06:43.000Z",
+   "match_failure": {
+    "code": "no_match",
+    "reason": "No property found at this address"
+   }
+  }
+ },
+ "sheriff_foreclosure:CH_780756": {
+  "hash": "88131cbe112f7626",
+  "enriched_at": "2026-09-25T06:35:39.977848+00:00",
+  "block": {
+   "source": "dealmachine",
+   "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+   "matched": false,
+   "enrichment_status": "no_dm_record",
+   "matched_by": "address",
+   "enriched_at": "2026-09-25T06:35:39.977848+00:00",
+   "billing_cycle": "2026-09-07T18:06:43.000Z",
+   "match_failure": {
+    "code": "no_match",
+    "reason": "No property found at this address"
+   }
+  }
+ },
+ "sheriff_foreclosure:CH_780760": {
+  "hash": "84b420dc3b7baadf",
+  "enriched_at": "2026-09-25T06:35:39.977848+00:00",
+  "block": {
+   "source": "dealmachine",
+   "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+   "matched": false,
+   "enrichment_status": "no_dm_record",
+   "matched_by": "address",
+   "enriched_at": "2026-09-25T06:35:39.977848+00:00",
+   "billing_cycle": "2026-09-07T18:06:43.000Z",
+   "match_failure": {
+    "code": "no_match",
+    "reason": "No property found at this address"
+   }
+  }
+ },
+ "sheriff_foreclosure:CH_780761": {
+  "hash": "50222f5c2a29a92b",
+  "enriched_at": "2026-09-25T06:35:39.977848+00:00",
+  "block": {
+   "source": "dealmachine",
+   "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+   "matched": false,
+   "enrichment_status": "no_dm_record",
+   "matched_by": "address",
+   "enriched_at": "2026-09-25T06:35:39.977848+00:00",
+   "billing_cycle": "2026-09-07T18:06:43.000Z",
+   "match_failure": {
+    "code": "no_match",
+    "reason": "No property found at this address"
+   }
+  }
+ },
+ "sheriff_foreclosure:CH_780762": {
+  "hash": "b92300cf58c53ecc",
+  "enriched_at": "2026-09-25T06:35:39.977848+00:00",
+  "block": {
+   "source": "dealmachine",
+   "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+   "matched": false,
+   "enrichment_status": "no_dm_record",
+   "matched_by": "address",
+   "enriched_at": "2026-09-25T06:35:39.977848+00:00",
+   "billing_cycle": "2026-09-07T18:06:43.000Z",
+   "match_failure": {
+    "code": "no_match",
+    "reason": "No property found at this address"
+   }
+  }
+ },
+ "sheriff_foreclosure:CH_780763": {
+  "hash": "9f56292b68a4cca0",
+  "enriched_at": "2026-09-25T06:35:39.977848+00:00",
+  "block": {
+   "source": "dealmachine",
+   "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
+   "matched": true,
+   "enrichment_status": "enriched",
+   "matched_by": "address",
+   "enriched_at": "2026-09-25T06:35:39.977848+00:00",
+   "billing_cycle": "2026-09-07T18:06:43.000Z",
+   "owner_name": "DEBRA VARLARO",
+   "owner_names": [
+    "DEBRA VARLARO",
+    "ROBERT MORAN",
+    "KAYLA VARLARO"
+   ],
+   "phones": [
+    "6096986811",
+    "7322280934",
+    "6095692880",
+    "6098919253",
+    "6095972385",
+    "6097132803",
+    "6095977075"
+   ],
+   "emails": [
+    "DEBRAVARLARO414@GMAIL.COM",
+    "R_MORAN1@YAHOO.COM",
+    "DAWNBORST@GMAIL.COM"
+   ],
+   "contacts": [
+    {
+     "dm_person_id": "per_150850154397",
+     "full_name": "DEBRA VARLARO",
+     "first_name": "DEBRA",
+     "last_name": "VARLARO",
+     "contact_type": "owner",
+     "is_resident": true,
+     "phones": [
+      {
+       "number": "6096986811",
+       "type": "landline",
+       "do_not_call": true
+      },
+      {
+       "number": "7322280934",
+       "type": "wireless",
+       "do_not_call": false
+      },
+      {
+       "number": "6095692880",
+       "type": "wireless",
+       "do_not_call": false
+      }
+     ],
+     "emails": [
+      "DEBRAVARLARO414@GMAIL.COM"
+     ]
+    },
+    {
+     "dm_person_id": "per_1501013462536",
+     "full_name": "ROBERT MORAN",
+     "first_name": "ROBERT",
+     "last_name": "MORAN",
+     "contact_type": "owner",
+     "is_resident": true,
+     "phones": [
+      {
+       "number": "6098919253",
+       "type": "wireless",
+       "do_not_call": false
+      },
+      {
+       "number": "6095972385",
+       "type": "landline",
+       "do_not_call": true
+      },
+      {
+       "number": "6097132803",
+       "type": "wireless",
+       "do_not_call": true
+      }
+     ],
+     "emails": [
+      "R_MORAN1@YAHOO.COM",
+      "DAWNBORST@GMAIL.COM"
+     ]
+    },
+    {
+     "dm_person_id": "per_1505596483745",
+     "full_name": "KAYLA VARLARO",
+     "first_name": "KAYLA",
+     "last_name": "VARLARO",
+     "contact_type": "owner",
+     "is_resident": true,
+     "phones": [
+      {
+       "number": "6095977075",
+       "type": "landline",
+       "do_not_call": true
+      }
+     ],
+     "emails": []
+    }
+   ],
+   "mailing_address": null,
+   "property": {
+    "dm_property_id": "prop_86928906",
+    "full_address": "104 Bowline Rd Manahawkin, NJ 08050",
+    "address": "104 Bowline Rd",
+    "city": "Manahawkin",
+    "state": "NJ",
+    "zip": "08050",
+    "latitude": 39.739893952,
+    "longitude": -74.29697411,
+    "estimated_value": 453000,
+    "estimated_equity_amount": 174066,
+    "estimated_equity_percentage": 37,
+    "year_built": 1979,
+    "living_area_sqft": 1406,
+    "lot_size_sqft": 11265,
+    "num_bedrooms": 3,
+    "num_bathrooms": 2,
+    "last_sale_date": "2021-11-15T00:00:00.000Z",
+    "last_sale_amount": 319900,
+    "total_assessed_value": 413300,
+    "annual_property_tax_amount": 5078,
+    "num_mortgages": 1,
+    "total_original_loan_amount": 310235,
+    "total_estimated_loan_balance": 278934,
+    "owner_occupied": false,
+    "apn": "31-00044-132-00023"
+   },
+   "mortgages": [
+    {
+     "mortgage_number": 1,
+     "id": "11869125809",
+     "transaction_id": "11869125809",
+     "lender_name": "AMERICAS CHOICE HOME LOANS LP",
+     "is_private_lender": false,
+     "loan_type_id": 12,
+     "loan_type": "FHA",
+     "loan_financing_type": "Unknown Financing Type",
+     "loan_amount": 310235,
+     "loan_balance": 278934,
+     "loan_interest_rate": 3.01,
+     "loan_term_months": 360,
+     "loan_start_date": "2021-11-15T00:00:00.000Z",
+     "loan_recording_date": "2021-11-15T00:00:00.000Z",
+     "loan_due_date": "2051-12-01T00:00:00.000Z",
+     "has_adjustable_rate_rider": false,
+     "lien_position": 1,
+     "estimated_payment_amount": 1309.64,
+     "classification": "primary",
+     "classification_label": "Primary mortgage",
+     "classification_reason": "The mortgage record identifies this as lien position 1."
+    }
+   ],
+   "credits": {
+    "properties": 1,
+    "people": 3
+   }
+  }
  }
 }
