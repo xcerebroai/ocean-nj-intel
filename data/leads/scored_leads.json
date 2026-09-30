@@ -3,7 +3,7 @@
  "county_name": "Ocean County",
  "state_name": "New Jersey",
  "framework_version": "v5.5.0",
- "build_timestamp": "2026-09-29T06:37:02Z",
+ "build_timestamp": "2026-09-30T06:40:29Z",
  "build_mode": "PARTIAL_BUILD",
  "total_leads": 3345,
  "lead_counts_by_signal": {
@@ -34,8 +34,8 @@
   "REVIEW_REQUIRED": 2759
  },
  "parcel_join": {
-  "hits": 36,
-  "misses": 13,
+  "hits": 0,
+  "misses": 0,
   "resolved_owner_fraction": 0.0,
   "enrichment_join_unavailable": true,
   "enrichment_join_unavailable_reason": "Daniel's Law (P.L. 2020, c. 125) redacts owner_name from NJOGIS Ocean County parcels/MOD-IV. Surrogate probate records carry decedent name + town but no street address. Owner-resolution path requires either S8 Tax Board owner probe OR S3 Clerk land-records unlock."
@@ -59,7 +59,7 @@
     "OWNER_STATUS"
    ],
    "source_role": "BLOCKED_SOURCE",
-   "reported_at": "2026-09-29T06:35:27Z",
+   "reported_at": "2026-09-30T06:37:21Z",
    "v5_5_0_recon_anchor": "runs/ocean_nj/recon/source_of_record_matrix.json#sources"
   },
   {
@@ -76,7 +76,7 @@
     "RECORDED_EVENT"
    ],
    "source_role": "BLOCKED_SOURCE",
-   "reported_at": "2026-09-29T06:35:27Z",
+   "reported_at": "2026-09-30T06:37:21Z",
    "v5_5_0_recon_anchor": "runs/ocean_nj/recon/source_of_record_matrix.json#sources"
   },
   {
@@ -94,7 +94,7 @@
     "TAX_DEFAULT"
    ],
    "source_role": "BLOCKED_SOURCE",
-   "reported_at": "2026-09-29T06:35:27Z",
+   "reported_at": "2026-09-30T06:37:21Z",
    "v5_5_0_recon_anchor": "runs/ocean_nj/recon/source_of_record_matrix.json#sources"
   },
   {
@@ -109,7 +109,7 @@
    ],
    "intended_lead_origins": [],
    "source_role": "BLOCKED_SOURCE",
-   "reported_at": "2026-09-29T06:35:27Z",
+   "reported_at": "2026-09-30T06:37:21Z",
    "v5_5_0_recon_anchor": "runs/ocean_nj/recon/source_of_record_matrix.json#sources"
   }
  ],
@@ -179004,7 +179004,7 @@
   }
  ],
  "dealmachine_enrichment": {
-  "enriched_at": "2026-09-29T06:37:16.332198+00:00",
+  "enriched_at": "2026-09-30T06:40:44.251134+00:00",
   "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
   "source": "dealmachine",
   "actionable_targets": 677,
@@ -179020,22 +179020,22 @@
   "emails_attached": 927,
   "credits_before": {
    "included": 100000,
-   "total_available": 56823,
+   "total_available": 56496,
    "total_cap": 100000,
    "base_included": 100000,
    "monthly_credit_grant_cap": 0,
    "monthly_included": 100000,
    "additional_credit_balance": 0,
-   "used": 43177,
-   "remaining": 56823,
-   "monthly_remaining": 56823,
+   "used": 43504,
+   "remaining": 56496,
+   "monthly_remaining": 56496,
    "additional_remaining": 0,
    "overage": 0,
    "pools": {
     "monthly": {
      "included": 100000,
-     "used": 43177,
-     "remaining": 56823
+     "used": 43504,
+     "remaining": 56496
     },
     "additional": {
      "available": 0,
@@ -179044,29 +179044,29 @@
     }
    },
    "breakdown": {
-    "properties": 28941,
-    "people": 14236,
+    "properties": 29081,
+    "people": 14423,
     "companies": 0
    }
   },
   "credits_after": {
    "included": 100000,
-   "total_available": 56823,
+   "total_available": 56496,
    "total_cap": 100000,
    "base_included": 100000,
    "monthly_credit_grant_cap": 0,
    "monthly_included": 100000,
    "additional_credit_balance": 0,
-   "used": 43177,
-   "remaining": 56823,
-   "monthly_remaining": 56823,
+   "used": 43504,
+   "remaining": 56496,
+   "monthly_remaining": 56496,
    "additional_remaining": 0,
    "overage": 0,
    "pools": {
     "monthly": {
      "included": 100000,
-     "used": 43177,
-     "remaining": 56823
+     "used": 43504,
+     "remaining": 56496
     },
     "additional": {
      "available": 0,
@@ -179075,8 +179075,8 @@
     }
    },
    "breakdown": {
-    "properties": 28941,
-    "people": 14236,
+    "properties": 29081,
+    "people": 14423,
     "companies": 0
    }
   }
