@@ -3,13 +3,13 @@
   "county_name": "Ocean County",
   "state_name": "New Jersey",
   "framework_version": "v5.5.0",
-  "build_timestamp": "2026-10-07T13:11:13Z",
+  "build_timestamp": "2026-10-08T13:16:49Z",
   "build_mode": "PARTIAL_BUILD",
-  "total_leads": 3462,
+  "total_leads": 3505,
   "lead_counts_by_signal": {
-    "foreclosure_sale_scheduled": 173,
+    "foreclosure_sale_scheduled": 195,
     "foreclosure_notice_published": 2,
-    "probate_filing_recent": 2783,
+    "probate_filing_recent": 2804,
     "tax_default_brick": 504
   },
   "hls_brick_status": {
@@ -30,12 +30,12 @@
   },
   "tax_board_detail_indexed": 10,
   "lead_counts_by_status": {
-    "APPROVED_FOR_DASHBOARD": 559,
-    "REVIEW_REQUIRED": 2903
+    "APPROVED_FOR_DASHBOARD": 578,
+    "REVIEW_REQUIRED": 2927
   },
   "parcel_join": {
-    "hits": 36,
-    "misses": 13,
+    "hits": 35,
+    "misses": 11,
     "resolved_owner_fraction": 0.0,
     "enrichment_join_unavailable": true,
     "enrichment_join_unavailable_reason": "Daniel's Law (P.L. 2020, c. 125) redacts owner_name from NJOGIS Ocean County parcels/MOD-IV. Surrogate probate records carry decedent name + town but no street address. Owner-resolution path requires either S8 Tax Board owner probe OR S3 Clerk land-records unlock."
@@ -59,7 +59,7 @@
         "OWNER_STATUS"
       ],
       "source_role": "BLOCKED_SOURCE",
-      "reported_at": "2026-10-07T13:08:52Z",
+      "reported_at": "2026-10-08T13:15:56Z",
       "v5_5_0_recon_anchor": "runs/ocean_nj/recon/source_of_record_matrix.json#sources"
     },
     {
@@ -76,7 +76,7 @@
         "RECORDED_EVENT"
       ],
       "source_role": "BLOCKED_SOURCE",
-      "reported_at": "2026-10-07T13:08:52Z",
+      "reported_at": "2026-10-08T13:15:56Z",
       "v5_5_0_recon_anchor": "runs/ocean_nj/recon/source_of_record_matrix.json#sources"
     },
     {
@@ -94,7 +94,7 @@
         "TAX_DEFAULT"
       ],
       "source_role": "BLOCKED_SOURCE",
-      "reported_at": "2026-10-07T13:08:52Z",
+      "reported_at": "2026-10-08T13:15:56Z",
       "v5_5_0_recon_anchor": "runs/ocean_nj/recon/source_of_record_matrix.json#sources"
     },
     {
@@ -109,7 +109,7 @@
       ],
       "intended_lead_origins": [],
       "source_role": "BLOCKED_SOURCE",
-      "reported_at": "2026-10-07T13:08:52Z",
+      "reported_at": "2026-10-08T13:15:56Z",
       "v5_5_0_recon_anchor": "runs/ocean_nj/recon/source_of_record_matrix.json#sources"
     }
   ]
