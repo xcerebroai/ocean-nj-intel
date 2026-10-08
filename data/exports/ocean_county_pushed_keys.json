@@ -2339,6 +2339,7 @@
     "sheriff_foreclosure:CH_778683",
     "sheriff_foreclosure:CH_778965",
     "sheriff_foreclosure:CH_779224",
+    "sheriff_foreclosure:CH_779632",
     "sheriff_foreclosure:CH_779734",
     "sheriff_foreclosure:CH_779761",
     "sheriff_foreclosure:CH_779848",
@@ -2346,6 +2347,7 @@
     "sheriff_foreclosure:CH_780230",
     "sheriff_foreclosure:CH_780305",
     "sheriff_foreclosure:CH_780337",
+    "sheriff_foreclosure:CH_780364",
     "sheriff_foreclosure:CH_780404",
     "sheriff_foreclosure:CH_780408",
     "sheriff_foreclosure:CH_780428",
@@ -2355,6 +2357,8 @@
     "sheriff_foreclosure:CH_780492",
     "sheriff_foreclosure:CH_780493",
     "sheriff_foreclosure:CH_780522",
+    "sheriff_foreclosure:CH_780541",
+    "sheriff_foreclosure:CH_780546",
     "sheriff_foreclosure:CH_780551",
     "sheriff_foreclosure:CH_780552",
     "sheriff_foreclosure:CH_780589",
@@ -2410,6 +2414,9 @@
     "sheriff_foreclosure:CH_780748",
     "sheriff_foreclosure:CH_780755",
     "sheriff_foreclosure:CH_780763",
-    "sheriff_foreclosure:CH_780764"
+    "sheriff_foreclosure:CH_780764",
+    "sheriff_foreclosure:CH_780765",
+    "sheriff_foreclosure:CH_780766",
+    "sheriff_foreclosure:CH_780767"
   ]
 }
