@@ -3,13 +3,13 @@
  "county_name": "Ocean County",
  "state_name": "New Jersey",
  "framework_version": "v5.5.0",
- "build_timestamp": "2026-10-17T10:39:06Z",
+ "build_timestamp": "2026-10-19T12:53:00Z",
  "build_mode": "PARTIAL_BUILD",
- "total_leads": 3626,
+ "total_leads": 3628,
  "lead_counts_by_signal": {
   "foreclosure_sale_scheduled": 195,
   "foreclosure_notice_published": 2,
-  "probate_filing_recent": 2925,
+  "probate_filing_recent": 2927,
   "tax_default_brick": 504
  },
  "hls_brick_status": {
@@ -31,7 +31,7 @@
  "tax_board_detail_indexed": 10,
  "lead_counts_by_status": {
   "APPROVED_FOR_DASHBOARD": 578,
-  "REVIEW_REQUIRED": 3048
+  "REVIEW_REQUIRED": 3050
  },
  "parcel_join": {
   "hits": 35,
@@ -59,7 +59,7 @@
     "OWNER_STATUS"
    ],
    "source_role": "BLOCKED_SOURCE",
-   "reported_at": "2026-10-17T10:30:29Z",
+   "reported_at": "2026-10-19T12:52:01Z",
    "v5_5_0_recon_anchor": "runs/ocean_nj/recon/source_of_record_matrix.json#sources"
   },
   {
@@ -76,7 +76,7 @@
     "RECORDED_EVENT"
    ],
    "source_role": "BLOCKED_SOURCE",
-   "reported_at": "2026-10-17T10:30:29Z",
+   "reported_at": "2026-10-19T12:52:01Z",
    "v5_5_0_recon_anchor": "runs/ocean_nj/recon/source_of_record_matrix.json#sources"
   },
   {
@@ -94,7 +94,7 @@
     "TAX_DEFAULT"
    ],
    "source_role": "BLOCKED_SOURCE",
-   "reported_at": "2026-10-17T10:30:29Z",
+   "reported_at": "2026-10-19T12:52:01Z",
    "v5_5_0_recon_anchor": "runs/ocean_nj/recon/source_of_record_matrix.json#sources"
   },
   {
@@ -109,7 +109,7 @@
    ],
    "intended_lead_origins": [],
    "source_role": "BLOCKED_SOURCE",
-   "reported_at": "2026-10-17T10:30:29Z",
+   "reported_at": "2026-10-19T12:52:01Z",
    "v5_5_0_recon_anchor": "runs/ocean_nj/recon/source_of_record_matrix.json#sources"
   }
  ],
@@ -190098,10 +190098,70 @@
    "owner_resolved": false,
    "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
    "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:269786",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-09-29",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:269786"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "269786",
+   "probate_case_type": "Administration",
+   "filed_date": "2026-09-29",
+   "decedent_name": "Doughtery Leo  John",
+   "decedent_date_of_birth": "1958-09-28",
+   "decedent_date_of_death": "2026-07-31",
+   "property_city": "Jackson",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:269991",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-10-14",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:269991"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "269991",
+   "probate_case_type": "Probate",
+   "filed_date": "2026-10-14",
+   "decedent_name": "Jimenez Constance Agnes",
+   "decedent_date_of_birth": "1942-07-26",
+   "decedent_date_of_death": "2026-10-06",
+   "property_city": "Manchester",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
   }
  ],
  "dealmachine_enrichment": {
-  "enriched_at": "2026-10-17T10:39:15.436527+00:00",
+  "enriched_at": "2026-10-19T12:53:12.202219+00:00",
   "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
   "source": "dealmachine",
   "actionable_targets": 699,
@@ -190117,22 +190177,22 @@
   "emails_attached": 951,
   "credits_before": {
    "included": 100000,
-   "total_available": 81814,
+   "total_available": 81449,
    "total_cap": 100000,
    "base_included": 100000,
    "monthly_credit_grant_cap": 0,
    "monthly_included": 100000,
    "additional_credit_balance": 0,
-   "used": 18186,
-   "remaining": 81814,
-   "monthly_remaining": 81814,
+   "used": 18551,
+   "remaining": 81449,
+   "monthly_remaining": 81449,
    "additional_remaining": 0,
    "overage": 0,
    "pools": {
     "monthly": {
      "included": 100000,
-     "used": 18186,
-     "remaining": 81814
+     "used": 18551,
+     "remaining": 81449
     },
     "additional": {
      "available": 0,
@@ -190141,29 +190201,29 @@
     }
    },
    "breakdown": {
-    "properties": 12103,
-    "people": 6083,
+    "properties": 12251,
+    "people": 6300,
     "companies": 0
    }
   },
   "credits_after": {
    "included": 100000,
-   "total_available": 81814,
+   "total_available": 81449,
    "total_cap": 100000,
    "base_included": 100000,
    "monthly_credit_grant_cap": 0,
    "monthly_included": 100000,
    "additional_credit_balance": 0,
-   "used": 18186,
-   "remaining": 81814,
-   "monthly_remaining": 81814,
+   "used": 18551,
+   "remaining": 81449,
+   "monthly_remaining": 81449,
    "additional_remaining": 0,
    "overage": 0,
    "pools": {
     "monthly": {
      "included": 100000,
-     "used": 18186,
-     "remaining": 81814
+     "used": 18551,
+     "remaining": 81449
     },
     "additional": {
      "available": 0,
@@ -190172,8 +190232,8 @@
     }
    },
    "breakdown": {
-    "properties": 12103,
-    "people": 6083,
+    "properties": 12251,
+    "people": 6300,
     "companies": 0
    }
   }
