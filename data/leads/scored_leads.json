@@ -3,13 +3,13 @@
  "county_name": "Ocean County",
  "state_name": "New Jersey",
  "framework_version": "v5.5.0",
- "build_timestamp": "2026-10-25T11:14:38Z",
+ "build_timestamp": "2026-10-26T12:45:38Z",
  "build_mode": "PARTIAL_BUILD",
- "total_leads": 3758,
+ "total_leads": 3762,
  "lead_counts_by_signal": {
   "foreclosure_sale_scheduled": 228,
   "foreclosure_notice_published": 2,
-  "probate_filing_recent": 3024,
+  "probate_filing_recent": 3028,
   "tax_default_brick": 504
  },
  "hls_brick_status": {
@@ -31,7 +31,7 @@
  "tax_board_detail_indexed": 10,
  "lead_counts_by_status": {
   "APPROVED_FOR_DASHBOARD": 605,
-  "REVIEW_REQUIRED": 3153
+  "REVIEW_REQUIRED": 3157
  },
  "parcel_join": {
   "hits": 62,
@@ -59,7 +59,7 @@
     "OWNER_STATUS"
    ],
    "source_role": "BLOCKED_SOURCE",
-   "reported_at": "2026-10-25T11:10:27Z",
+   "reported_at": "2026-10-26T12:44:19Z",
    "v5_5_0_recon_anchor": "runs/ocean_nj/recon/source_of_record_matrix.json#sources"
   },
   {
@@ -76,7 +76,7 @@
     "RECORDED_EVENT"
    ],
    "source_role": "BLOCKED_SOURCE",
-   "reported_at": "2026-10-25T11:10:27Z",
+   "reported_at": "2026-10-26T12:44:19Z",
    "v5_5_0_recon_anchor": "runs/ocean_nj/recon/source_of_record_matrix.json#sources"
   },
   {
@@ -94,7 +94,7 @@
     "TAX_DEFAULT"
    ],
    "source_role": "BLOCKED_SOURCE",
-   "reported_at": "2026-10-25T11:10:27Z",
+   "reported_at": "2026-10-26T12:44:19Z",
    "v5_5_0_recon_anchor": "runs/ocean_nj/recon/source_of_record_matrix.json#sources"
   },
   {
@@ -109,7 +109,7 @@
    ],
    "intended_lead_origins": [],
    "source_role": "BLOCKED_SOURCE",
-   "reported_at": "2026-10-25T11:10:27Z",
+   "reported_at": "2026-10-26T12:44:19Z",
    "v5_5_0_recon_anchor": "runs/ocean_nj/recon/source_of_record_matrix.json#sources"
   }
  ],
@@ -197858,10 +197858,130 @@
    "owner_resolved": false,
    "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
    "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:270119",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-10-23",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:270119"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "270119",
+   "probate_case_type": "Probate",
+   "filed_date": "2026-10-23",
+   "decedent_name": "Hastick Kathleen",
+   "decedent_date_of_birth": "1963-11-20",
+   "decedent_date_of_death": "2026-10-13",
+   "property_city": "Stafford Township",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:270125",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-10-23",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:270125"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "270125",
+   "probate_case_type": "Probate",
+   "filed_date": "2026-10-23",
+   "decedent_name": "Resch Ursula",
+   "decedent_date_of_birth": "1946-10-20",
+   "decedent_date_of_death": "2026-10-13",
+   "property_city": "Little Egg Harbor",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:176878",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-10-23",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:176878"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "176878",
+   "probate_case_type": "Affidavit Next of Kin",
+   "filed_date": "2026-10-23",
+   "decedent_name": "Nickens Dennis W.",
+   "decedent_date_of_birth": "1977-05-07",
+   "decedent_date_of_death": "2026-10-19",
+   "property_city": "Toms River",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:270150",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-10-26",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:270150"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "270150",
+   "probate_case_type": "Probate",
+   "filed_date": "2026-10-26",
+   "decedent_name": "Spry James F. Jr.",
+   "decedent_date_of_birth": "1956-08-31",
+   "decedent_date_of_death": "2026-09-27",
+   "property_city": "Jackson",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
   }
  ],
  "dealmachine_enrichment": {
-  "enriched_at": "2026-10-25T11:14:49.585495+00:00",
+  "enriched_at": "2026-10-26T12:45:49.117409+00:00",
   "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
   "source": "dealmachine",
   "actionable_targets": 732,
@@ -197877,22 +197997,22 @@
   "emails_attached": 986,
   "credits_before": {
    "included": 100000,
-   "total_available": 60559,
+   "total_available": 60557,
    "total_cap": 100000,
    "base_included": 100000,
    "monthly_credit_grant_cap": 0,
    "monthly_included": 100000,
    "additional_credit_balance": 0,
-   "used": 39441,
-   "remaining": 60559,
-   "monthly_remaining": 60559,
+   "used": 39443,
+   "remaining": 60557,
+   "monthly_remaining": 60557,
    "additional_remaining": 0,
    "overage": 0,
    "pools": {
     "monthly": {
      "included": 100000,
-     "used": 39441,
-     "remaining": 60559
+     "used": 39443,
+     "remaining": 60557
     },
     "additional": {
      "available": 0,
@@ -197901,29 +198021,29 @@
     }
    },
    "breakdown": {
-    "properties": 23695,
-    "people": 15746,
+    "properties": 23696,
+    "people": 15747,
     "companies": 0
    }
   },
   "credits_after": {
    "included": 100000,
-   "total_available": 60559,
+   "total_available": 60557,
    "total_cap": 100000,
    "base_included": 100000,
    "monthly_credit_grant_cap": 0,
    "monthly_included": 100000,
    "additional_credit_balance": 0,
-   "used": 39441,
-   "remaining": 60559,
-   "monthly_remaining": 60559,
+   "used": 39443,
+   "remaining": 60557,
+   "monthly_remaining": 60557,
    "additional_remaining": 0,
    "overage": 0,
    "pools": {
     "monthly": {
      "included": 100000,
-     "used": 39441,
-     "remaining": 60559
+     "used": 39443,
+     "remaining": 60557
     },
     "additional": {
      "available": 0,
@@ -197932,8 +198052,8 @@
     }
    },
    "breakdown": {
-    "properties": 23695,
-    "people": 15746,
+    "properties": 23696,
+    "people": 15747,
     "companies": 0
    }
   }
