@@ -3,13 +3,13 @@
  "county_name": "Ocean County",
  "state_name": "New Jersey",
  "framework_version": "v5.5.0",
- "build_timestamp": "2026-11-10T14:45:18Z",
+ "build_timestamp": "2026-11-12T15:02:18Z",
  "build_mode": "PARTIAL_BUILD",
- "total_leads": 3966,
+ "total_leads": 3985,
  "lead_counts_by_signal": {
   "foreclosure_sale_scheduled": 228,
   "foreclosure_notice_published": 2,
-  "probate_filing_recent": 3232,
+  "probate_filing_recent": 3251,
   "tax_default_brick": 504
  },
  "hls_brick_status": {
@@ -30,12 +30,12 @@
  },
  "tax_board_detail_indexed": 10,
  "lead_counts_by_status": {
-  "APPROVED_FOR_DASHBOARD": 603,
-  "REVIEW_REQUIRED": 3363
+  "APPROVED_FOR_DASHBOARD": 598,
+  "REVIEW_REQUIRED": 3387
  },
  "parcel_join": {
-  "hits": 0,
-  "misses": 0,
+  "hits": 62,
+  "misses": 21,
   "resolved_owner_fraction": 0.0,
   "enrichment_join_unavailable": true,
   "enrichment_join_unavailable_reason": "Daniel's Law (P.L. 2020, c. 125) redacts owner_name from NJOGIS Ocean County parcels/MOD-IV. Surrogate probate records carry decedent name + town but no street address. Owner-resolution path requires either S8 Tax Board owner probe OR S3 Clerk land-records unlock."
@@ -59,7 +59,7 @@
     "OWNER_STATUS"
    ],
    "source_role": "BLOCKED_SOURCE",
-   "reported_at": "2026-11-10T14:43:43Z",
+   "reported_at": "2026-11-12T14:59:48Z",
    "v5_5_0_recon_anchor": "runs/ocean_nj/recon/source_of_record_matrix.json#sources"
   },
   {
@@ -76,7 +76,7 @@
     "RECORDED_EVENT"
    ],
    "source_role": "BLOCKED_SOURCE",
-   "reported_at": "2026-11-10T14:43:43Z",
+   "reported_at": "2026-11-12T14:59:48Z",
    "v5_5_0_recon_anchor": "runs/ocean_nj/recon/source_of_record_matrix.json#sources"
   },
   {
@@ -94,7 +94,7 @@
     "TAX_DEFAULT"
    ],
    "source_role": "BLOCKED_SOURCE",
-   "reported_at": "2026-11-10T14:43:43Z",
+   "reported_at": "2026-11-12T14:59:48Z",
    "v5_5_0_recon_anchor": "runs/ocean_nj/recon/source_of_record_matrix.json#sources"
   },
   {
@@ -109,7 +109,7 @@
    ],
    "intended_lead_origins": [],
    "source_role": "BLOCKED_SOURCE",
-   "reported_at": "2026-11-10T14:43:43Z",
+   "reported_at": "2026-11-12T14:59:48Z",
    "v5_5_0_recon_anchor": "runs/ocean_nj/recon/source_of_record_matrix.json#sources"
   }
  ],
@@ -124620,7 +124620,7 @@
    "lead_id": "sheriff_foreclosure:CH_780690",
    "lead_origin_type": "RECORDED_EVENT",
    "primary_event_date": "2026-11-17",
-   "scheduled_event_category": "UPCOMING_SALE",
+   "scheduled_event_category": "HISTORICAL_CONTEXT_ONLY",
    "qualification_status": "QUALIFIED",
    "source_ids": [
     "sheriff_foreclosure",
@@ -124630,16 +124630,16 @@
     "sheriff_foreclosure:CH_780690",
     "njogis_parcels_modiv:1505_1.27_1"
    ],
-   "lead_status": "APPROVED_FOR_DASHBOARD",
+   "lead_status": "REVIEW_REQUIRED",
    "doc_type": "sheriff_sale_listing",
    "distress_signal": "foreclosure_sale_scheduled",
    "chancery_docket": "CH 780690",
    "plaintiff": "PHH MORTGAGE CORPORATION",
    "defendant_name": "MARY E. BRAND, ET ALS",
-   "upset_amount": 433507.09,
+   "upset_amount": 421718.85,
    "sale_date": "2026-11-17",
    "adjournment_date": null,
-   "sheriff_status": null,
+   "sheriff_status": "CANCELLATION",
    "attorney_firm": "ROBERTSON ANSCHUTZ SCHNEID CRANE & PARTNERS PLLC.",
    "attorney_phone": "973-575-0707",
    "property_address": "453 SURF AVENUE",
@@ -166262,7 +166262,7 @@
    "lead_id": "sheriff_foreclosure:CH_780105",
    "lead_origin_type": "RECORDED_EVENT",
    "primary_event_date": "2026-11-17",
-   "scheduled_event_category": "UPCOMING_SALE",
+   "scheduled_event_category": "HISTORICAL_CONTEXT_ONLY",
    "qualification_status": "QUALIFIED",
    "source_ids": [
     "sheriff_foreclosure",
@@ -166272,16 +166272,16 @@
     "sheriff_foreclosure:CH_780105",
     "njogis_parcels_modiv:1512_8001_5.383"
    ],
-   "lead_status": "APPROVED_FOR_DASHBOARD",
+   "lead_status": "REVIEW_REQUIRED",
    "doc_type": "sheriff_sale_listing",
    "distress_signal": "foreclosure_sale_scheduled",
    "chancery_docket": "CH 780105",
    "plaintiff": "FMJM RWL IV TRUST 2017-1",
    "defendant_name": "FRANK CATALANO, ET ALS",
-   "upset_amount": 199764.84,
+   "upset_amount": 192371.69,
    "sale_date": "2026-11-17",
    "adjournment_date": null,
-   "sheriff_status": null,
+   "sheriff_status": "CANCELLATION",
    "attorney_firm": "HILL WALLACK LLP",
    "attorney_phone": "609-924-0808",
    "property_address": "1204 BLUEBELL DRIVE",
@@ -166780,9 +166780,9 @@
   {
    "lead_id": "sheriff_foreclosure:CH_780606",
    "lead_origin_type": "RECORDED_EVENT",
-   "primary_event_date": "2026-11-17",
+   "primary_event_date": "2027-01-19",
    "scheduled_event_category": "UPCOMING_SALE",
-   "qualification_status": "QUALIFIED",
+   "qualification_status": "REVIEW_REQUIRED",
    "source_ids": [
     "sheriff_foreclosure",
     "njogis_parcels_modiv"
@@ -166797,10 +166797,10 @@
    "chancery_docket": "CH 780606",
    "plaintiff": "LAKEVIEW LOAN SERVICING, LLC",
    "defendant_name": "KYLE MURRIN, ET AL",
-   "upset_amount": 280479.75,
+   "upset_amount": 283158.52,
    "sale_date": "2026-11-17",
-   "adjournment_date": null,
-   "sheriff_status": null,
+   "adjournment_date": "2027-01-19",
+   "sheriff_status": "ADJOURNED UNTIL",
    "attorney_firm": "KML LAW GROUP, P.C.",
    "attorney_phone": "215-627-1322",
    "property_address": "427 NORTH LAKE SHORE DRIVE",
@@ -167564,7 +167564,7 @@
    "lead_id": "sheriff_foreclosure:CH_780747",
    "lead_origin_type": "RECORDED_EVENT",
    "primary_event_date": "2026-11-17",
-   "scheduled_event_category": "UPCOMING_SALE",
+   "scheduled_event_category": "HISTORICAL_CONTEXT_ONLY",
    "qualification_status": "QUALIFIED",
    "source_ids": [
     "sheriff_foreclosure",
@@ -167574,16 +167574,16 @@
     "sheriff_foreclosure:CH_780747",
     "njogis_parcels_modiv:1501_114.14_57"
    ],
-   "lead_status": "APPROVED_FOR_DASHBOARD",
+   "lead_status": "REVIEW_REQUIRED",
    "doc_type": "sheriff_sale_listing",
    "distress_signal": "foreclosure_sale_scheduled",
    "chancery_docket": "CH 780747",
    "plaintiff": "NATIONSTAR MORTGAGE LLC",
    "defendant_name": "KEITH H. STEWART, ET ALS",
-   "upset_amount": 269118.73,
+   "upset_amount": 258028.59,
    "sale_date": "2026-11-17",
    "adjournment_date": null,
-   "sheriff_status": null,
+   "sheriff_status": "CANCELLATION",
    "attorney_firm": "GROSS POLOWY",
    "attorney_phone": "716-204-1700",
    "property_address": "78 BOWLINE STREET",
@@ -176997,7 +176997,7 @@
    "chancery_docket": "CH 780762",
    "plaintiff": "WATERS EDGE AT TOMS RIVER CONDOMINI",
    "defendant_name": "MARY ELLEN LOPEZ",
-   "upset_amount": 7734.8,
+   "upset_amount": 18240.62,
    "sale_date": "2026-11-17",
    "adjournment_date": null,
    "sheriff_status": null,
@@ -177271,9 +177271,9 @@
   {
    "lead_id": "sheriff_foreclosure:CH_780764",
    "lead_origin_type": "RECORDED_EVENT",
-   "primary_event_date": "2026-11-17",
+   "primary_event_date": "2026-12-15",
    "scheduled_event_category": "UPCOMING_SALE",
-   "qualification_status": "QUALIFIED",
+   "qualification_status": "REVIEW_REQUIRED",
    "source_ids": [
     "sheriff_foreclosure",
     "njogis_parcels_modiv"
@@ -177288,10 +177288,10 @@
    "chancery_docket": "CH 780764",
    "plaintiff": "LAKEVIEW LOAN SERVICING, LLC",
    "defendant_name": "TERENCE TRYON, ET ALS",
-   "upset_amount": 293717.07,
+   "upset_amount": 295186.84,
    "sale_date": "2026-11-17",
-   "adjournment_date": null,
-   "sheriff_status": null,
+   "adjournment_date": "2026-12-15",
+   "sheriff_status": "ADJOURNED UNTIL",
    "attorney_firm": "MCCABE, WEISBERG & CONWAY, LLC",
    "attorney_phone": "856-858-7080",
    "property_address": "2609 CEDAR STREET POINT",
@@ -190751,7 +190751,7 @@
    "lead_origin_type": "RECORDED_EVENT",
    "primary_event_date": "2026-11-17",
    "scheduled_event_category": "UPCOMING_SALE",
-   "qualification_status": "QUALIFIED",
+   "qualification_status": "REVIEW_REQUIRED",
    "source_ids": [
     "sheriff_foreclosure",
     "njogis_parcels_modiv"
@@ -190760,16 +190760,16 @@
     "sheriff_foreclosure:CH_779810",
     "njogis_parcels_modiv:1506_1841.18_10"
    ],
-   "lead_status": "APPROVED_FOR_DASHBOARD",
+   "lead_status": "REVIEW_REQUIRED",
    "doc_type": "sheriff_sale_listing",
    "distress_signal": "foreclosure_sale_scheduled",
    "chancery_docket": "CH 779810",
    "plaintiff": "MIDFIRST BANK",
    "defendant_name": "PATRICIA A. OPPEL, ETC., ET ALS",
-   "upset_amount": 452908.1,
+   "upset_amount": 435353.03,
    "sale_date": "2026-11-17",
    "adjournment_date": null,
-   "sheriff_status": null,
+   "sheriff_status": "BANKRUPTCY",
    "attorney_firm": "KML LAW GROUP, P.C.",
    "attorney_phone": "215-627-1322",
    "property_address": "195 PHEASANT DRIVE",
@@ -192071,7 +192071,7 @@
    "lead_origin_type": "RECORDED_EVENT",
    "primary_event_date": "2026-11-17",
    "scheduled_event_category": "UPCOMING_SALE",
-   "qualification_status": "QUALIFIED",
+   "qualification_status": "REVIEW_REQUIRED",
    "source_ids": [
     "sheriff_foreclosure",
     "njogis_parcels_modiv"
@@ -192086,10 +192086,10 @@
    "chancery_docket": "CH 780778",
    "plaintiff": "DENOIA TAMBASCO & GERMANN, L.L.C.",
    "defendant_name": null,
-   "upset_amount": 103547.64,
+   "upset_amount": 104051.75,
    "sale_date": "2026-11-17",
    "adjournment_date": null,
-   "sheriff_status": null,
+   "sheriff_status": "ADJOURNED UNTIL",
    "attorney_firm": null,
    "attorney_phone": null,
    "property_address": "719 HUNTINGTON AVENUE PINE",
@@ -192892,23 +192892,23 @@
    "lead_origin_type": "RECORDED_EVENT",
    "primary_event_date": "2026-11-17",
    "scheduled_event_category": "UPCOMING_SALE",
-   "qualification_status": "QUALIFIED",
+   "qualification_status": "REVIEW_REQUIRED",
    "source_ids": [
     "sheriff_foreclosure"
    ],
    "evidence_ids": [
     "sheriff_foreclosure:CH_780783"
    ],
-   "lead_status": "APPROVED_FOR_DASHBOARD",
+   "lead_status": "REVIEW_REQUIRED",
    "doc_type": "sheriff_sale_listing",
    "distress_signal": "foreclosure_sale_scheduled",
    "chancery_docket": "CH 780783",
    "plaintiff": "NEWREZ LLC",
    "defendant_name": "MICHAEL J. TKACZUK, ETC., ET ALS",
-   "upset_amount": 434041.5,
+   "upset_amount": 417177.81,
    "sale_date": "2026-11-17",
    "adjournment_date": null,
-   "sheriff_status": null,
+   "sheriff_status": "BANKRUPTCY",
    "attorney_firm": "ROBERTSON ANSCHUTZ SCHNEID CRANE & PARTNERS PLLC.",
    "attorney_phone": "973-575-0707",
    "property_address": "411 BEACH AVENUE",
@@ -193139,7 +193139,7 @@
    "chancery_docket": "CH 780784",
    "plaintiff": "FAWN LAKES CONDOMINIUM, SECTION 3 A",
    "defendant_name": "ROBERT HOO",
-   "upset_amount": 14096.38,
+   "upset_amount": 19991.39,
    "sale_date": "2026-11-17",
    "adjournment_date": null,
    "sheriff_status": null,
@@ -193688,9 +193688,9 @@
   {
    "lead_id": "sheriff_foreclosure:CH_780788",
    "lead_origin_type": "RECORDED_EVENT",
-   "primary_event_date": "2026-11-17",
+   "primary_event_date": "2026-12-15",
    "scheduled_event_category": "UPCOMING_SALE",
-   "qualification_status": "QUALIFIED",
+   "qualification_status": "REVIEW_REQUIRED",
    "source_ids": [
     "sheriff_foreclosure"
    ],
@@ -193703,10 +193703,10 @@
    "chancery_docket": "CH 780788",
    "plaintiff": "U.S. BANK TRUST COMPANY, NATIONAL A",
    "defendant_name": "LINNEA C. CORSON, ETC., ET ALS",
-   "upset_amount": 378174.58,
+   "upset_amount": 380009.72,
    "sale_date": "2026-11-17",
-   "adjournment_date": null,
-   "sheriff_status": null,
+   "adjournment_date": "2026-12-15",
+   "sheriff_status": "ADJOURNED UNTIL",
    "attorney_firm": "STERN & EISENBERG, PC",
    "attorney_phone": "609-397-9200",
    "property_address": "243 LAKEWOOD AVENUE",
@@ -194191,9 +194191,9 @@
   {
    "lead_id": "sheriff_foreclosure:CH_780791",
    "lead_origin_type": "RECORDED_EVENT",
-   "primary_event_date": "2026-11-17",
+   "primary_event_date": "2026-12-15",
    "scheduled_event_category": "UPCOMING_SALE",
-   "qualification_status": "QUALIFIED",
+   "qualification_status": "REVIEW_REQUIRED",
    "source_ids": [
     "sheriff_foreclosure",
     "njogis_parcels_modiv"
@@ -194208,10 +194208,10 @@
    "chancery_docket": "CH 780791",
    "plaintiff": "WELLS FARGO BANK, N.A.",
    "defendant_name": "KEVIN G. PIASECKI, ETC., ET ALS",
-   "upset_amount": 49989.58,
+   "upset_amount": 50255.5,
    "sale_date": "2026-11-17",
-   "adjournment_date": null,
-   "sheriff_status": null,
+   "adjournment_date": "2026-12-15",
+   "sheriff_status": "ADJOURNED UNTIL",
    "attorney_firm": "ROBERTSON ANSCHUTZ SCHNEID CRANE & PARTNERS PLLC.",
    "attorney_phone": "973-575-0707",
    "property_address": "711 PINE AVE",
@@ -200789,7 +200789,7 @@
    "probate_docket": "270185",
    "probate_case_type": "Probate",
    "filed_date": "2026-10-27",
-   "decedent_name": "Nemick Margaret M.",
+   "decedent_name": "Nemcick Margaret M.",
    "decedent_date_of_birth": "1947-03-30",
    "decedent_date_of_death": "2026-09-17",
    "property_city": "Berkeley",
@@ -204098,10 +204098,580 @@
    "owner_resolved": false,
    "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
    "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:269178",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-08-17",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:269178"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "269178",
+   "probate_case_type": "Guardianship of Incapacitated",
+   "filed_date": "2026-08-17",
+   "decedent_name": "Akhnoukh Matthew",
+   "decedent_date_of_birth": "2008-08-15",
+   "decedent_date_of_death": null,
+   "property_city": "Jackson",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:270213",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-10-29",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:270213"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "270213",
+   "probate_case_type": "Probate",
+   "filed_date": "2026-10-29",
+   "decedent_name": "Volpe Alfred A.",
+   "decedent_date_of_birth": "1940-01-13",
+   "decedent_date_of_death": "2026-10-14",
+   "property_city": "Lacey",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:270267",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-11-02",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:270267"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "270267",
+   "probate_case_type": "Administration",
+   "filed_date": "2026-11-02",
+   "decedent_name": "Keough Rose V.",
+   "decedent_date_of_birth": "1955-01-11",
+   "decedent_date_of_death": "2026-08-13",
+   "property_city": "Manchester",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:270319",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-11-05",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:270319"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "270319",
+   "probate_case_type": "Probate",
+   "filed_date": "2026-11-05",
+   "decedent_name": "Manno Joseph",
+   "decedent_date_of_birth": "1941-06-11",
+   "decedent_date_of_death": "2026-10-20",
+   "property_city": "Berkeley",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:270334",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-11-06",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:270334"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "270334",
+   "probate_case_type": "Probate",
+   "filed_date": "2026-11-06",
+   "decedent_name": "Saveriano Ann L.",
+   "decedent_date_of_birth": "1943-04-27",
+   "decedent_date_of_death": "2026-11-01",
+   "property_city": "Toms River",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:270352",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-11-09",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:270352"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "270352",
+   "probate_case_type": "Probate",
+   "filed_date": "2026-11-09",
+   "decedent_name": "Holzwarth Renee Elisabeth",
+   "decedent_date_of_birth": "1959-11-06",
+   "decedent_date_of_death": "2026-09-20",
+   "property_city": "Long Beach",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:270356",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-11-09",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:270356"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "270356",
+   "probate_case_type": "Probate",
+   "filed_date": "2026-11-09",
+   "decedent_name": "DePolo Grace  G.",
+   "decedent_date_of_birth": "1933-12-05",
+   "decedent_date_of_death": "2026-10-17",
+   "property_city": "Point Pleasant",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:270357",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-11-09",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:270357"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "270357",
+   "probate_case_type": "Probate",
+   "filed_date": "2026-11-09",
+   "decedent_name": "Barrett Janice",
+   "decedent_date_of_birth": "1945-04-20",
+   "decedent_date_of_death": "2026-05-12",
+   "property_city": "Lavallette",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:270370",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-11-10",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:270370"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "270370",
+   "probate_case_type": "Administration",
+   "filed_date": "2026-11-10",
+   "decedent_name": "Elfand Blake S.",
+   "decedent_date_of_birth": "1972-08-30",
+   "decedent_date_of_death": "2026-09-29",
+   "property_city": "Jackson",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:270372",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-11-10",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:270372"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "270372",
+   "probate_case_type": "Caveats",
+   "filed_date": "2026-11-10",
+   "decedent_name": "O'Regan Esther",
+   "decedent_date_of_birth": null,
+   "decedent_date_of_death": "2026-10-21",
+   "property_city": "Jackson",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:270373",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-11-10",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:270373"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "270373",
+   "probate_case_type": "Probate",
+   "filed_date": "2026-11-10",
+   "decedent_name": "Barney Donald J. Sr.",
+   "decedent_date_of_birth": "1943-04-05",
+   "decedent_date_of_death": "2026-10-28",
+   "property_city": "Lakewood",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:270375",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-11-10",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:270375"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "270375",
+   "probate_case_type": "Probate",
+   "filed_date": "2026-11-10",
+   "decedent_name": "Pattison Janis A.",
+   "decedent_date_of_birth": "1951-09-10",
+   "decedent_date_of_death": "2026-10-29",
+   "property_city": "Brick Township",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:270377",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-11-10",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:270377"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "270377",
+   "probate_case_type": "Probate",
+   "filed_date": "2026-11-10",
+   "decedent_name": "Allen  Patricia  A.",
+   "decedent_date_of_birth": "1944-04-21",
+   "decedent_date_of_death": "2026-11-01",
+   "property_city": "Brick",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:270379",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-11-10",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:270379"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "270379",
+   "probate_case_type": "Probate",
+   "filed_date": "2026-11-10",
+   "decedent_name": "Morris Thomas M.",
+   "decedent_date_of_birth": "1937-12-08",
+   "decedent_date_of_death": "2026-10-30",
+   "property_city": "Brick",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:270380",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-11-10",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:270380"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "270380",
+   "probate_case_type": "Probate",
+   "filed_date": "2026-11-10",
+   "decedent_name": "Miller Cyril",
+   "decedent_date_of_birth": "1940-09-16",
+   "decedent_date_of_death": "2026-09-27",
+   "property_city": "Toms River Township",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:270381",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-11-10",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:270381"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "270381",
+   "probate_case_type": "Probate",
+   "filed_date": "2026-11-10",
+   "decedent_name": "Lavoro Michael C.",
+   "decedent_date_of_birth": "1934-04-15",
+   "decedent_date_of_death": "2026-11-01",
+   "property_city": "Berkeley",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:270385",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-11-10",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:270385"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "270385",
+   "probate_case_type": "Probate",
+   "filed_date": "2026-11-10",
+   "decedent_name": "Reber Janet",
+   "decedent_date_of_birth": "1934-08-23",
+   "decedent_date_of_death": "2026-10-28",
+   "property_city": "Point Pleasant Borough",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:270388",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-11-12",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:270388"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "270388",
+   "probate_case_type": "Probate",
+   "filed_date": "2026-11-12",
+   "decedent_name": "Cruz Marie L.",
+   "decedent_date_of_birth": "1929-12-21",
+   "decedent_date_of_death": "2026-10-29",
+   "property_city": "Manchester",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:270390",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-11-12",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:270390"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "270390",
+   "probate_case_type": "Probate",
+   "filed_date": "2026-11-12",
+   "decedent_name": "Fornelius Leonard E.",
+   "decedent_date_of_birth": "1948-05-29",
+   "decedent_date_of_death": "2026-10-30",
+   "property_city": "Manchester",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
   }
  ],
  "dealmachine_enrichment": {
-  "enriched_at": "2026-11-10T14:45:29.258597+00:00",
+  "enriched_at": "2026-11-12T15:02:29.318288+00:00",
   "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
   "source": "dealmachine",
   "actionable_targets": 732,
@@ -204117,22 +204687,22 @@
   "emails_attached": 986,
   "credits_before": {
    "included": 100000,
-   "total_available": 99056,
+   "total_available": 69893,
    "total_cap": 100000,
    "base_included": 100000,
    "monthly_credit_grant_cap": 0,
    "monthly_included": 100000,
    "additional_credit_balance": 0,
-   "used": 944,
-   "remaining": 99056,
-   "monthly_remaining": 99056,
+   "used": 30107,
+   "remaining": 69893,
+   "monthly_remaining": 69893,
    "additional_remaining": 0,
    "overage": 0,
    "pools": {
     "monthly": {
      "included": 100000,
-     "used": 944,
-     "remaining": 99056
+     "used": 30107,
+     "remaining": 69893
     },
     "additional": {
      "available": 0,
@@ -204141,29 +204711,29 @@
     }
    },
    "breakdown": {
-    "properties": 641,
-    "people": 298,
+    "properties": 22439,
+    "people": 7668,
     "companies": 0
    }
   },
   "credits_after": {
    "included": 100000,
-   "total_available": 99056,
+   "total_available": 69893,
    "total_cap": 100000,
    "base_included": 100000,
    "monthly_credit_grant_cap": 0,
    "monthly_included": 100000,
    "additional_credit_balance": 0,
-   "used": 944,
-   "remaining": 99056,
-   "monthly_remaining": 99056,
+   "used": 30107,
+   "remaining": 69893,
+   "monthly_remaining": 69893,
    "additional_remaining": 0,
    "overage": 0,
    "pools": {
     "monthly": {
      "included": 100000,
-     "used": 944,
-     "remaining": 99056
+     "used": 30107,
+     "remaining": 69893
     },
     "additional": {
      "available": 0,
@@ -204172,8 +204742,8 @@
     }
    },
    "breakdown": {
-    "properties": 641,
-    "people": 298,
+    "properties": 22439,
+    "people": 7668,
     "companies": 0
    }
   }
