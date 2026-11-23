@@ -1,5 +1,16 @@
 {
   "mode": "live",
-  "pushed": 0,
-  "results": []
+  "attempted": 1,
+  "pushed": 1,
+  "results": [
+    {
+      "key": "1507_1399_108|CH780807",
+      "status": 201,
+      "contact_id": "b0vUDiEMYUPBXay7A9y9",
+      "tags": [
+        "ocean-new-lead",
+        "ocean county"
+      ]
+    }
+  ]
 }
