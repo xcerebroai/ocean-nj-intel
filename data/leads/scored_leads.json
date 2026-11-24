@@ -3,13 +3,13 @@
  "county_name": "Ocean County",
  "state_name": "New Jersey",
  "framework_version": "v5.5.0",
- "build_timestamp": "2026-11-23T17:56:15Z",
+ "build_timestamp": "2026-11-24T17:27:50Z",
  "build_mode": "PARTIAL_BUILD",
- "total_leads": 4176,
+ "total_leads": 4193,
  "lead_counts_by_signal": {
   "foreclosure_sale_scheduled": 249,
   "foreclosure_notice_published": 2,
-  "probate_filing_recent": 3421,
+  "probate_filing_recent": 3438,
   "tax_default_brick": 504
  },
  "hls_brick_status": {
@@ -30,8 +30,8 @@
  },
  "tax_board_detail_indexed": 10,
  "lead_counts_by_status": {
-  "APPROVED_FOR_DASHBOARD": 590,
-  "REVIEW_REQUIRED": 3586
+  "APPROVED_FOR_DASHBOARD": 589,
+  "REVIEW_REQUIRED": 3604
  },
  "parcel_join": {
   "hits": 23,
@@ -59,7 +59,7 @@
     "OWNER_STATUS"
    ],
    "source_role": "BLOCKED_SOURCE",
-   "reported_at": "2026-11-23T17:54:04Z",
+   "reported_at": "2026-11-24T17:26:58Z",
    "v5_5_0_recon_anchor": "runs/ocean_nj/recon/source_of_record_matrix.json#sources"
   },
   {
@@ -76,7 +76,7 @@
     "RECORDED_EVENT"
    ],
    "source_role": "BLOCKED_SOURCE",
-   "reported_at": "2026-11-23T17:54:04Z",
+   "reported_at": "2026-11-24T17:26:58Z",
    "v5_5_0_recon_anchor": "runs/ocean_nj/recon/source_of_record_matrix.json#sources"
   },
   {
@@ -94,7 +94,7 @@
     "TAX_DEFAULT"
    ],
    "source_role": "BLOCKED_SOURCE",
-   "reported_at": "2026-11-23T17:54:04Z",
+   "reported_at": "2026-11-24T17:26:58Z",
    "v5_5_0_recon_anchor": "runs/ocean_nj/recon/source_of_record_matrix.json#sources"
   },
   {
@@ -109,7 +109,7 @@
    ],
    "intended_lead_origins": [],
    "source_role": "BLOCKED_SOURCE",
-   "reported_at": "2026-11-23T17:54:04Z",
+   "reported_at": "2026-11-24T17:26:58Z",
    "v5_5_0_recon_anchor": "runs/ocean_nj/recon/source_of_record_matrix.json#sources"
   }
  ],
@@ -210615,7 +210615,7 @@
    "lead_id": "sheriff_foreclosure:CH_780804",
    "lead_origin_type": "RECORDED_EVENT",
    "primary_event_date": "2026-12-01",
-   "scheduled_event_category": "UPCOMING_SALE",
+   "scheduled_event_category": "HISTORICAL_CONTEXT_ONLY",
    "qualification_status": "QUALIFIED",
    "source_ids": [
     "sheriff_foreclosure"
@@ -210623,16 +210623,16 @@
    "evidence_ids": [
     "sheriff_foreclosure:CH_780804"
    ],
-   "lead_status": "APPROVED_FOR_DASHBOARD",
+   "lead_status": "REVIEW_REQUIRED",
    "doc_type": "sheriff_sale_listing",
    "distress_signal": "foreclosure_sale_scheduled",
    "chancery_docket": "CH 780804",
    "plaintiff": "PNC BANK, NATIONAL ASSOCIATION",
    "defendant_name": "OMEGA FARM, LLC, ET ALS",
-   "upset_amount": 120110.18,
+   "upset_amount": 117440.79,
    "sale_date": "2026-12-01",
    "adjournment_date": null,
-   "sheriff_status": null,
+   "sheriff_status": "CANCELLATION",
    "attorney_firm": "FEIN, SUCH, KAHN & SHEPARD, PC",
    "attorney_phone": "973-538-4700",
    "property_address": "237 EAST VETERANS HIGHWAY",
@@ -211780,9 +211780,9 @@
   {
    "lead_id": "sheriff_foreclosure:CH_780812",
    "lead_origin_type": "RECORDED_EVENT",
-   "primary_event_date": "2026-12-01",
+   "primary_event_date": "2027-02-02",
    "scheduled_event_category": "UPCOMING_SALE",
-   "qualification_status": "QUALIFIED",
+   "qualification_status": "REVIEW_REQUIRED",
    "source_ids": [
     "sheriff_foreclosure",
     "njogis_parcels_modiv"
@@ -211797,10 +211797,10 @@
    "chancery_docket": "CH 780812",
    "plaintiff": "WELLS FRAGO BANK, N.A.",
    "defendant_name": "NANCY A. GRODBERG ETC., ET ALS",
-   "upset_amount": 165752.76,
+   "upset_amount": 167518.94,
    "sale_date": "2026-12-01",
-   "adjournment_date": null,
-   "sheriff_status": null,
+   "adjournment_date": "2027-02-02",
+   "sheriff_status": "ADJOURNED UNTIL",
    "attorney_firm": "LOGS LEGAL GROUP LLP",
    "attorney_phone": "856-793-3080",
    "property_address": "912 BEACON AVENUE",
@@ -212462,15 +212462,525 @@
    "owner_resolved": false,
    "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
    "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:269480",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-09-08",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:269480"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "269480",
+   "probate_case_type": "Guardianship of Incapacitated",
+   "filed_date": "2026-09-08",
+   "decedent_name": "Peisachoff Susanne",
+   "decedent_date_of_birth": "1947-08-24",
+   "decedent_date_of_death": null,
+   "property_city": "Lakewood",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:270153",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-10-26",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:270153"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "270153",
+   "probate_case_type": "Affidavit Next of Kin",
+   "filed_date": "2026-10-26",
+   "decedent_name": "Greck Charlotte L.",
+   "decedent_date_of_birth": "1934-10-27",
+   "decedent_date_of_death": "2021-08-24",
+   "property_city": "Little Egg Harbor",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:270155",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-10-26",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:270155"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "270155",
+   "probate_case_type": "Administration",
+   "filed_date": "2026-10-26",
+   "decedent_name": "Liboff Robin A.",
+   "decedent_date_of_birth": "1970-08-08",
+   "decedent_date_of_death": "2024-09-22",
+   "property_city": "Toms River",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:261023",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-11-12",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:261023"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "261023",
+   "probate_case_type": "Administration",
+   "filed_date": "2026-11-12",
+   "decedent_name": "Cillo Anna B.",
+   "decedent_date_of_birth": "1922-03-05",
+   "decedent_date_of_death": "2024-01-30",
+   "property_city": "Toms River",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:270493",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-11-18",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:270493"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "270493",
+   "probate_case_type": "Affidavit Next of Kin",
+   "filed_date": "2026-11-18",
+   "decedent_name": "Ditermini Charles",
+   "decedent_date_of_birth": "1962-05-16",
+   "decedent_date_of_death": "2026-11-07",
+   "property_city": "Brick Township",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:270564",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-11-23",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:270564"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "270564",
+   "probate_case_type": "Affidavit of Surviving Spouse or Domestic Partner",
+   "filed_date": "2026-11-23",
+   "decedent_name": "Nastasi  Leeann",
+   "decedent_date_of_birth": "1960-07-08",
+   "decedent_date_of_death": "2026-11-14",
+   "property_city": "Berkeley",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:270565",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-11-23",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:270565"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "270565",
+   "probate_case_type": "Probate",
+   "filed_date": "2026-11-23",
+   "decedent_name": "Kensler Michael A.",
+   "decedent_date_of_birth": "1949-08-07",
+   "decedent_date_of_death": "2026-10-26",
+   "property_city": "Stafford Township",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:270566",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-11-23",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:270566"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "270566",
+   "probate_case_type": "Affidavit of Surviving Spouse or Domestic Partner",
+   "filed_date": "2026-11-23",
+   "decedent_name": "Kalfa George",
+   "decedent_date_of_birth": "1938-03-31",
+   "decedent_date_of_death": "2021-10-01",
+   "property_city": "Little Egg Harbor",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:270567",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-11-23",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:270567"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "270567",
+   "probate_case_type": "Probate",
+   "filed_date": "2026-11-23",
+   "decedent_name": "Esralew Lois Ann",
+   "decedent_date_of_birth": "1943-03-09",
+   "decedent_date_of_death": "2026-10-06",
+   "property_city": "Jackson",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:270568",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-11-23",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:270568"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "270568",
+   "probate_case_type": "Probate",
+   "filed_date": "2026-11-23",
+   "decedent_name": "Bucci- Gowar Dorothy",
+   "decedent_date_of_birth": "1944-08-28",
+   "decedent_date_of_death": "2026-10-05",
+   "property_city": "Berkeley",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:270569",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-11-23",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:270569"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "270569",
+   "probate_case_type": "Guardianship of Minor Property",
+   "filed_date": "2026-11-23",
+   "decedent_name": "Diamond  Eliyahu",
+   "decedent_date_of_birth": "2010-03-14",
+   "decedent_date_of_death": null,
+   "property_city": "Lakewood",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:270573",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-11-24",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:270573"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "270573",
+   "probate_case_type": "Probate",
+   "filed_date": "2026-11-24",
+   "decedent_name": "Cicero Barbara",
+   "decedent_date_of_birth": "1945-05-06",
+   "decedent_date_of_death": "2026-10-28",
+   "property_city": "Toms River",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:270574",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-11-24",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:270574"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "270574",
+   "probate_case_type": "Administration",
+   "filed_date": "2026-11-24",
+   "decedent_name": "Singerline Richard",
+   "decedent_date_of_birth": "1947-09-19",
+   "decedent_date_of_death": "2026-09-15",
+   "property_city": "Pine Beach Borough",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:270575",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-11-24",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:270575"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "270575",
+   "probate_case_type": "Affidavit of Surviving Spouse or Domestic Partner",
+   "filed_date": "2026-11-24",
+   "decedent_name": "Trabold Marleen",
+   "decedent_date_of_birth": "1953-06-30",
+   "decedent_date_of_death": "2026-11-12",
+   "property_city": "Toms River",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:270577",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-11-24",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:270577"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "270577",
+   "probate_case_type": "Probate",
+   "filed_date": "2026-11-24",
+   "decedent_name": "Wizda Gloria  Jean",
+   "decedent_date_of_birth": "1943-05-04",
+   "decedent_date_of_death": "2026-11-07",
+   "property_city": "Manchester",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:270578",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-11-24",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:270578"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "270578",
+   "probate_case_type": "Probate",
+   "filed_date": "2026-11-24",
+   "decedent_name": "Schmeling Richard John",
+   "decedent_date_of_birth": "1962-08-24",
+   "decedent_date_of_death": "2024-12-16",
+   "property_city": "Beachwood",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
+  },
+  {
+   "lead_id": "surrogate_probate:270580",
+   "lead_origin_type": "RECORDED_EVENT",
+   "additional_lead_origin_types": [
+    "OWNER_STATUS"
+   ],
+   "primary_event_date": "2026-11-24",
+   "qualification_status": "REVIEW_REQUIRED",
+   "source_ids": [
+    "surrogate_probate"
+   ],
+   "evidence_ids": [
+    "surrogate_probate:270580"
+   ],
+   "lead_status": "REVIEW_REQUIRED",
+   "doc_type": "probate_filing",
+   "distress_signal": "probate_filing_recent",
+   "probate_docket": "270580",
+   "probate_case_type": "Probate",
+   "filed_date": "2026-11-24",
+   "decedent_name": "Schoonmaker Barbara M.",
+   "decedent_date_of_birth": "1935-03-20",
+   "decedent_date_of_death": "2026-11-09",
+   "property_city": "Manchester",
+   "property_state": "NJ",
+   "owner_name": null,
+   "owner_resolved": false,
+   "owner_resolution_status": "DANIELS_LAW_REDACTED_AND_NO_PROBATE_ADDRESS",
+   "enrichment_join_unavailable": true
   }
  ],
  "dealmachine_enrichment": {
-  "enriched_at": "2026-11-23T17:56:33.566703+00:00",
+  "enriched_at": "2026-11-24T17:28:01.343463+00:00",
   "scope": "COMMERCIAL_ENRICHMENT_SOURCE",
   "source": "dealmachine",
   "actionable_targets": 753,
-  "api_calls_this_run": 22,
-  "reattached_from_cache": 731,
+  "api_calls_this_run": 1,
+  "reattached_from_cache": 752,
   "enriched": 600,
   "genuine_no_match": 152,
   "pending_retry": 0,
@@ -212481,22 +212991,22 @@
   "emails_attached": 990,
   "credits_before": {
    "included": 100000,
-   "total_available": 44379,
+   "total_available": 44086,
    "total_cap": 100000,
    "base_included": 100000,
    "monthly_credit_grant_cap": 0,
    "monthly_included": 100000,
    "additional_credit_balance": 0,
-   "used": 55621,
-   "remaining": 44379,
-   "monthly_remaining": 44379,
+   "used": 55914,
+   "remaining": 44086,
+   "monthly_remaining": 44086,
    "additional_remaining": 0,
    "overage": 0,
    "pools": {
     "monthly": {
      "included": 100000,
-     "used": 55621,
-     "remaining": 44379
+     "used": 55914,
+     "remaining": 44086
     },
     "additional": {
      "available": 0,
@@ -212505,29 +213015,29 @@
     }
    },
    "breakdown": {
-    "properties": 36224,
-    "people": 19397,
+    "properties": 36393,
+    "people": 19521,
     "companies": 0
    }
   },
   "credits_after": {
    "included": 100000,
-   "total_available": 44362,
+   "total_available": 44086,
    "total_cap": 100000,
    "base_included": 100000,
    "monthly_credit_grant_cap": 0,
    "monthly_included": 100000,
    "additional_credit_balance": 0,
-   "used": 55638,
-   "remaining": 44362,
-   "monthly_remaining": 44362,
+   "used": 55914,
+   "remaining": 44086,
+   "monthly_remaining": 44086,
    "additional_remaining": 0,
    "overage": 0,
    "pools": {
     "monthly": {
      "included": 100000,
-     "used": 55638,
-     "remaining": 44362
+     "used": 55914,
+     "remaining": 44086
     },
     "additional": {
      "available": 0,
@@ -212536,8 +213046,8 @@
     }
    },
    "breakdown": {
-    "properties": 36241,
-    "people": 19397,
+    "properties": 36393,
+    "people": 19521,
     "companies": 0
    }
   }
