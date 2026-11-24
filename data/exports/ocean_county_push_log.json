@@ -1,14 +1,4 @@
 {
   "mode": "live",
-  "tag": "Ocean County",
-  "attempted": 1,
-  "pushed": 1,
-  "results": [
-    {
-      "key": "sheriff_foreclosure:CH_780807",
-      "status": 201,
-      "contact_id": "b0vUDiEMYUPBXay7A9y9",
-      "tagged": true
-    }
-  ]
+  "pushed": 0
 }
